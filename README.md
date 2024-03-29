@@ -1,17 +1,22 @@
 # KazanExplore
-### Website with basic information about Kazan
+ Website with basic information about Kazan
+ 
+![image](https://github.com/kamilanazirova/KazanExplore/assets/75425567/983dfada-0377-4a24-83b5-f4be0333ae55) 
 
-### Main page (Nazirova Kamila):
-- Password registration and recovery
-- Weather
-- Map
-  
-### "Places of Interest" page (Vasilova Liliya):
-- Cultural sites
-- Restaurants and cafes
-- Parks and Natural Areas
 
-### Transport and Infrastructure page (Khasanova Guzel):
-- Public transport
-- Local Events and Activities
-- Services and amenities
+- Main (Назирова Камила):
+  - Регистрация и восстановление пароля
+  - Погода
+  - Новости
+    
+- Интересные места (Василова Лилия):
+  - Культурные объекты: Описание и фотографии главных культурных мест Казани, таких как музеи, театры и галереи
+  - Рестораны и кафе: Рейтинг и рецензии на популярные места питания, возможность оставлять свои отзывы
+  - Карта города
+    
+- Транспорт и инфроструктура (Хасанова Гузель):
+  - Общественный транспорт: Расписание общественного транспорта, интерактивная карта маршрутов
+  - Местные события и мероприятия: Календарь культурных и общественных событий, проходящих в города
+  - Услуги и удобства: Информация о банках, больницах, аптеках, аэропортах и других важных учреждениях
+    
+[Figma](https://www.figma.com/file/hAQRn14BNGzsM8K0MmyxSZ/KazaExplore?type=design&node-id=0%3A1&mode=design&t=Yh9pRCjMLs4OTOn5-1)
