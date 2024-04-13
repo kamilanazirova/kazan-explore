@@ -1,0 +1,155 @@
+
+body {                                        /* стили для всего  body */
+    font-family: "Inter", sans-serif; 
+    font-size: 17px; 
+    line-height: 18px; 
+    font-weight: 400; 
+    color:#000000; 
+    background-color: #011208;
+} 
+a {                                           /* ссылки */
+    text-decoration: none; 
+    color: inherit; 
+} 
+p {                                           /* параграф */
+    color:#FFFFFF;
+    font-weight:400;
+    font-size: 24px;
+    line-height: 1.5em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 80px;
+    margin-right: 450px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/* .image-text-container{
+    font-size: 20px;
+    font-weight: 665;
+    line-height: 1em;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    color:#FFFFFF;
+} */
+h1 {
+    font-size: 38px;
+    font-weight: 665;
+    line-height: 1em;
+    padding-left: 140px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    color:#FFFFFF;
+} 
+
+h2 {
+    font-size: 28px;
+    font-weight: 665;
+    margin-top: 150px;
+    margin-left: 80px;
+    margin-right: 50px;
+    line-height: 1em;
+    color:#FFFFFF;
+}
+
+button {
+    margin-left: 13px;
+    margin-right: 13px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    height: 54px;
+    width: 97px;
+    font-size: 22px;
+    font-weight: 665;
+    border-color: #929292;
+    border-width: 4px;
+    border-radius: 5px;
+    color: #FFFFFF;
+    background-color:#011208;
+    text-align: center;
+}
+
+
+.header{
+    background-color: #010A05;
+    padding: 10px 0 10px;
+    color: #FFFFFF;
+    font-size: 17px;
+    line-height: 17px;
+    font-weight: 500;
+}
+
+ul{ 
+    margin: 0; 
+    padding: 0; 
+    list-style: none; 
+} 
+
+.container{ 
+/*     max-width: 1160px; */   
+    margin-left: 30px; 
+    margin-left: 5px;
+    padding: 0 15px;  
+} 
+.nav{ 
+    display: flex; 
+    justify-content: space-between; 
+} 
+.menu{ 
+    display: flex; 
+    margin: 17px; 
+} 
+.menu-item{ 
+    padding-right: 15px; 
+} 
+.login{ 
+    margin: 15px; 
+}
+
+.map{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.img_transport {
+    /* position: relative; */ /* Устанавливаем относительное позиционирование для контейнера */
+    position: absolute;
+    top: 120px; /* Расположить изображение на 50px от верхней границы */
+    left: 1100px; /* Расположить изображение на 100px от левой границы */
+}
+
+.img1, .img2 {
+    position: absolute; /* Устанавливаем абсолютное позиционирование для изображений */
+    top: 0;
+    left: 0;
+}
+
+.img2 {
+    opacity: 0.9;
+}
+
+.img-transp{
+    margin-left: 30px;
+    position: absolute;
+    top: 117px; /* Расположить изображение на 50px от верхней границы */
+    left: 60px; /* Расположить изображение на 100px от левой границы */
+}
+
+.btn_bus{
+    text-align: center;
+    
+}
+
+.btn_tral{
+    margin-left: 55px;
+}
+
+
+
