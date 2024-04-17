@@ -1,5 +1,12 @@
 import React from "react";
-import './transport.css';
+
+import './style/transport.css';
+
+import logo from '../assets/logo.png'
+import transport_icon from '../assets/transport_icon.png'
+import Rectangle33 from '../assets/Rectangle 33.png'
+import Rectangle34 from '../assets/Rectangle 34.png'
+import Group75 from '../assets/Group 75.png'
 
 const transport = () => {
     return (
@@ -8,7 +15,7 @@ const transport = () => {
         <div className="container">
           <nav className="nav">
             <a className="logo">
-            <img src="assets/logo.png" alt="логотип сайта" className="logo-img"/>
+            <img src={logo} alt="логотип сайта" className="logo-img"/>
             </a>
             <ul className="menu">
               <li className="menu-item">
@@ -37,7 +44,7 @@ const transport = () => {
       </header>
       
       <body> 
-        <img src="assets/transport_icon.png" alt="иконка транспорта" className="img-transp" />
+        <img src={transport_icon} alt="иконка транспорта" className="img-transp" />
         <h1>Транспорт и инфраструктура</h1>
       
         <p>Наиболее развитая сеть в городе – <b>автобусная</b>. Она обеспечивает беспересадочные перевозки пассажиров
@@ -52,8 +59,8 @@ const transport = () => {
           новейшими системами автоматики, позволяют на высоком уровне обслуживать пассажиров.</p>
       
         <div className="img_transport">
-          <img src="assets/Rectangle 33.png" alt="Фотография автобуса изнутри" className="img1"/>
-          <img src="assets/Rectangle 34.png" className="img2"/>
+          <img src={Rectangle33} alt="Фотография автобуса изнутри" className="img1"/>
+          <img src={Rectangle34} className="img2"/>
         </div>
       
         <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
@@ -141,7 +148,7 @@ const transport = () => {
         </div>
         <br />
         <br />
-        <div className="map"><img src="assets/Group 75.png" alt="карта маршрутов" /></div>
+        <div className="map"><img src={Group75} alt="карта маршрутов" /></div>
       </body>
     </>
     );
