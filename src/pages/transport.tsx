@@ -2,9 +2,9 @@ import React from "react";
 
 import logo from '../assets/logo.png'
 import transport_icon from '../assets/transport_icon.png'
-import Rectangle33 from '../assets/Rectangle 33.png'
-import Rectangle34 from '../assets/Rectangle 34.png'
-import Group75 from '../assets/Group 75.png'
+import Rectangle33 from '../assets/Rectangle_33.png'
+import Rectangle34 from '../assets/Rectangle_34.png'
+import Group75 from '../assets/Group_75.png'
 
 const transport = () => {
     return (
