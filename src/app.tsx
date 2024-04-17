@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import { Transport } from './pages/transport'
+import Transport  from './pages/transport'
 
 const App = () => {
   return (
