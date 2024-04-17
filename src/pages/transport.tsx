@@ -1,7 +1,5 @@
 import React from "react";
 
-import './style/transport.css';
-
 import logo from '../assets/logo.png'
 import transport_icon from '../assets/transport_icon.png'
 import Rectangle33 from '../assets/Rectangle 33.png'
