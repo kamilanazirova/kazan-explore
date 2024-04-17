@@ -1,8 +1,13 @@
 import React from 'react';
 
+
+import Transport from './pages/transport'
+
 const App = () => {
   return (
-    <h1>Hello world для проекта - kazanexplore</h1>
+    <>
+    <Transport/>
+    </>
   );
 };
 
