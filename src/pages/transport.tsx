@@ -58,7 +58,7 @@ const transport = () => {
       
         <div className="img_transport">
           <img src={Rectangle33} alt="Фотография автобуса изнутри" className="img1"/>
-          <img src={Rectangle34} className="img2"/>
+          <img src={Rectangle34} alt="Прозрачность" className="img2"/>
         </div>
       
         <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
