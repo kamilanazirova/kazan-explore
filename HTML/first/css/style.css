@@ -1,0 +1,221 @@
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    line-height: 18px;
+    font-weight: 400;
+    color:#FFFFFF;
+}
+.header{
+    width: 100%;
+    background-color: rgba(0, 0, 0);
+    padding: 10px 0 15px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 10px;
+}
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0; 
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+    display: flex;
+    margin: 15px;
+}
+.menu-item{
+    padding-right: 15px;
+}
+.login{
+    margin: 15px;
+}
+.headline{
+    height: 758px; 
+}
+.headline-img {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0; 
+    height: auto;
+    display: block;
+}
+.overlay {
+    position: absolute;
+    top: 50%; /* разместить плашку по вертикали по центру */
+    left: 50%; /* разместить плашку по горизонтали по центру */
+    transform: translate(-50%, -50%); /* Центрирование плашки */
+    width: 1100px;
+    height: 500px;
+    top: 600px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 40px; 
+    padding: 60px;
+    backdrop-filter: blur(2px);
+}
+.text-container {
+    margin-top: 20%;
+    color: white; 
+    font-size: 50px;
+}
+.title{
+    font-size: 70px;
+}
+.overlay-btn1 {
+    position: absolute;
+    top: 400px;
+    width: max-content;
+    left: 45px;
+    border: 2px solid white;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 10px; 
+    border-radius: 15px;
+    text-align: center;
+}
+.overlay-btn2 {
+    position: absolute;
+    top: 400px;
+    width: max-content;
+    left: 230px;
+    border: 2px solid white;
+    background-color: transparent;
+    padding: 10px 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+.headline-btn1{
+    color: #000000;
+}  
+.text-about-kazan{
+    font-size: 25px;
+    line-height: 1.5;
+}
+.menu-link-here{
+    color: #FFFBA0;
+}
+.information{
+    width: 100%;
+    height: auto;
+    background-color: #011208;
+    padding: 150px 70px 15px;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.kazan-video{
+    width: 670px;
+    border-radius: 40px; 
+}
+.about-video{
+    width: 700px;
+
+}
+.sun{
+    position: absolute;
+    top: 1000px;
+    left: 820px;
+}
+.tweather{
+    position: absolute;
+    margin: 0;
+    top: 990px;
+    left: 890px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.time{
+    position: absolute;
+    margin: 0;
+    top: 1070px;
+    left: 890px;
+    font-size: 20px;
+}
+.temp{
+    position: absolute;
+    margin: 0;
+    top: 1100px;
+    left: 890px;
+    font-size: 50px;
+}
+.moon{
+    position: absolute;
+    margin: 0;
+    top: 1115px;
+    left: 1000px;
+    font-size: 50px;
+}
+.state{
+    position: absolute;
+    margin: 0;
+    top: 1110px;
+    left: 1060px;
+    font-size: 20px;
+    color: #dddddd;
+}
+.feel{
+    position: absolute;
+    margin: 0;
+    top: 1135px;
+    left: 1060px;
+    font-size: 20px;
+    color: #dddddd;
+
+}
+.news{
+    width: 100%;
+    height: auto;
+    background-color: #011208;
+    padding: 150px 70px 35px;
+    color: #FFFFFF;
+    font-size: 20px;
+    line-height: 1.5;
+}
+.tnews{
+    position: absolute;
+    top: 1520px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+.new{
+    display: flex;
+    align-items: flex-start;
+    margin: 30px 0 0 0;  
+}
+ .new-img{
+    margin: 0 15px 0 0;
+}
+.footer{
+    display: inline-block;
+    width: 100%;
+    background-color: #011208;
+    padding: 10px 70px 15px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 10px;
+}
+.main, .footer {
+    border: 1px solid rgb(255, 255, 255);
+}
+.contacts{
+    float: left;
+    display: block;
+    width: 300px;
+    margin: 2px;
+}
+.socialsites{
+    float: left;
+    display: block;
+    width: 300px;
+    margin: 2px;
+}
