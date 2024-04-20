@@ -8,7 +8,6 @@ import new1 from '../assets/new1.png'
 import new2 from '../assets/new2.png'
 import new3 from '../assets/new3.png'
 import sun from '../assets/sun.png'
-import { kazanvideo } from '../assets/kazanvideo.mp4'
 
 
 const first = () => {
@@ -66,7 +65,7 @@ const first = () => {
     <section className="information">
      <div className="info">
       <div className="video">
-      <video src={videoElement} controls className="kazan-video">Казань с высоты птичьего полета</video>
+      <video controls className="kazan-video">Казань с высоты птичьего полета</video>
         <p className="about-video">Видео, снятое с высоты птичьего полета над Казанью представляет захватывающий панорамный обзор города, раскрывая его красоту и архитектурное многообразие.</p>
       </div>
       <div className="weather">

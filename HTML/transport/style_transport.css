@@ -2,7 +2,7 @@ body {                                        /* стили для всего  b
     font-family: "Inter", sans-serif; 
     font-size: 17px; 
     line-height: 18px; 
-    font-weight: 400; 
+    font-weight: 500; 
     color:#000000; 
     background-color: #011208;
 } 
@@ -81,7 +81,7 @@ button {
     color: #FFFFFF;
     font-size: 17px;
     line-height: 17px;
-    font-weight: 500;
+    font-weight: 550px;
 }
 
 ul{ 
