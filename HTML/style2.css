@@ -188,3 +188,27 @@ main {
     top: 364px;
     left: 142px;
 }
+.footer{
+    display: inline-block;
+    width: 100%;
+    background-color: #011208;
+    padding: 10px 70px 15px;
+    color: #FFFFFF;
+    font-size: 15px;
+    line-height: 10px;
+}
+.main, .footer {
+    border: 1px solid rgb(255, 255, 255);
+}
+.contacts{
+    float: left;
+    display: block;
+    width: 300px;
+    margin: 2px;
+}
+.socialsites{
+    float: left;
+    display: block;
+    width: 300px;
+    margin: 2px;
+}
