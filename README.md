@@ -1,5 +1,6 @@
 # KazanExplore 
-![image](https://github.com/kamilanazirova/KazanExplore/assets/75425567/983dfada-0377-4a24-83b5-f4be0333ae55) 
+![image](https://blog.ostrovok.ru/wp-content/uploads/2023/02/1%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F-2.jpg) 
+
 
 Сайт о Казани
 
