@@ -1,0 +1,21 @@
+.footer{ 
+    display: inline-block; 
+    width: 100%; 
+    background-color: #011208; 
+    color: #FFFFFF; 
+    font-size: 15px; 
+    line-height: 10px; 
+    box-shadow: inset 0 1px #FFFFFF;
+} 
+.contacts{ 
+    float: left; 
+    display: block; 
+    width: 300px; 
+    margin: 2px; 
+} 
+.socialsites{ 
+    float: left; 
+    display: block; 
+    width: 300px; 
+    margin: 2px; 
+}

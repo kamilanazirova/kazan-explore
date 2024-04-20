@@ -2,10 +2,11 @@ import React from "react";
 
 import logo from '../assets/logo.svg'
 import transport_icon from '../assets/transport_icon.png'
-import Group373 from '../assets/Group_373.png'
-import Group75 from '../assets/Group_75.png'
+import group373 from '../assets/Group_373.png'
+import group75 from '../assets/Group_75.png'
+import { Header } from "../components/header";
 
-const transport = () => {
+const Transport = () => {
   return (
     <>
       <body>
@@ -13,7 +14,7 @@ const transport = () => {
           <div className="container">
             <nav className="nav">
               <a className="logo">
-                <img src={logo} />
+                <img src={logo} alt="логотип сайта"/>
               </a>
               <ul className="menu">
                 <li className="menu-item">
@@ -62,7 +63,7 @@ const transport = () => {
                 новейшими системами автоматики, позволяют на высоком уровне обслуживать пассажиров.</p>
             </div>
             <div className="img-transport">
-              <img src={Group373} alt="Фотография автобуса изнутри" className="img1" />
+              <img src={group373} alt="фотография автобуса изнутри" className="img1" />
             </div>
           </div>
 
@@ -144,9 +145,8 @@ const transport = () => {
             <button>№12</button>
             <button>№13</button>
           </div>
-          <br />
-          <br />
-          <div className="map"><img src={Group75} className="img-map" alt="карта маршрутов" /></div>
+
+          <div className="map"><img src={group75} className="img-map" alt="карта маршрутов" /></div>
         </main>
         <footer className="footer">
           <div className="container">
@@ -164,10 +164,9 @@ const transport = () => {
           </div>
         </footer>
 
-
       </body>
     </>
   );
 };
 
-export default transport;
+export default Transport;
