@@ -9,10 +9,10 @@ module.exports = {
   },
   /* use https://kc.admin.inno-js.ru/ to create config, navigations and features */
   navigations: {
-    'kazanexplore.main': '/kazanexplore'
+    'kazan-explore.main': '/kazan-explore'
   },
   features: {
-    'kazanexplore': {
+    'kazan-explore': {
       // add your features here in the format [featureName]: { value: string }
     },
   },
