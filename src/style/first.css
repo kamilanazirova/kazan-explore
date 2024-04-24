@@ -1,84 +1,124 @@
-a{
+a {
     text-decoration: none;
     color: inherit;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 10px;
     list-style: none;
 }
-body{
+
+body {
+    margin: 0;
+    padding: 0;
     font-family: "Inter", sans-serif;
     background-color: #011208;
     font-size: 17px;
     font-weight: 400;
-    color:#FFFFFF;
-}
-.header{
-    width: 100%;
-    background-color: rgba(0, 0, 0);
-    padding: 10px 0 15px;
     color: #FFFFFF;
-    font-size: 15px;
+}
+
+.header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0;
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 14px;
     line-height: 10px;
 }
-.container{
+
+.container {
     margin: 0 auto;
-    max-width: 1360px;
-    padding: 0; 
+    max-width: 1200px;
+    padding: 0;
+    overflow: hidden;
 }
-.nav{
+
+.nav {
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
-.menu{
+
+.menu {
     display: flex;
+    margin: 5px;
+}
+
+.menu-item {
+    padding: 0 9px;
+    line-height: 1em;
+}
+
+.login {
     margin: 15px;
 }
-.menu-item{
-    padding-right: 15px;
+
+.main {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0;
+    overflow: hidden;
 }
-.login{
-    margin: 15px;
+
+.headline {
+    height: 758px;
 }
-.main{
-        margin: 0 auto;
-    max-width: 1360px;
-    padding: 0; 
-}
-.headline{
-    height: 758px; 
-}
+
 .headline-img {
     width: 100%;
     margin: 0 auto;
-    padding: 0; 
+    padding: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     height: auto;
     display: block;
+    object-fit: cover;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
 }
+
+.headline-image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .overlay {
     position: absolute;
-    top: 50%; /* разместить плашку по вертикали по центру */
-    left: 50%; /* разместить плашку по горизонтали по центру */
-    transform: translate(-50%, -50%); /* Центрирование плашки */
-    width: 1100px;
+    top: 50%;
+    /* разместить плашку по вертикали по центру */
+    left: 50%;
+    /* разместить плашку по горизонтали по центру */
+    transform: translate(-50%, -50%);
+    /* Центрирование плашки */
+    width: 1000px;
     height: 500px;
     top: 600px;
     background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 40px; 
+    border-radius: 40px;
     padding: 60px;
     backdrop-filter: blur(2px);
 }
+
 .text-container {
     margin-top: 20%;
-    color: white; 
+    color: white;
     font-size: 50px;
 }
-.title{
+
+.title {
     padding: 0;
     font-size: 70px;
     margin: 30px 0;
 }
+
 .overlay-btn1 {
     position: absolute;
     top: 400px;
@@ -86,10 +126,11 @@ body{
     left: 45px;
     border: 2px solid white;
     background-color: rgb(255, 255, 255);
-    padding: 10px 10px; 
+    padding: 10px 10px;
     border-radius: 15px;
     text-align: center;
 }
+
 .overlay-btn2 {
     position: absolute;
     top: 400px;
@@ -101,26 +142,31 @@ body{
     border-radius: 15px;
     text-align: center;
 }
-.like{
+
+.like {
     position: absolute;
     top: 394px;
     left: 470px;
     padding: 10px 10px;
     text-align: center;
 }
-.headline-btn1{
+
+.headline-btn1 {
     color: #000000;
-}  
-.text-about-kazan{
+}
+
+.text-about-kazan {
     font-size: 25px;
     line-height: 1.5;
     margin: 0;
     padding: 0;
 }
-.menu-link-here{
+
+.menu-link-here {
     color: #FFFBA0;
 }
-.information{
+
+.information {
     width: 100%;
     height: auto;
     background-color: #011208;
@@ -129,66 +175,78 @@ body{
     font-size: 20px;
     line-height: 1.5;
 }
-.kazan-video{
+
+.kazan-video {
     width: 670px;
-    border-radius: 40px; 
+    border-radius: 40px;
 }
-.about-video{
+
+.about-video {
     width: 700px;
     margin: 0;
 }
-.sun{
+
+.sun {
     float: left;
     display: block;
     margin: 5px 10px 10px 90px;
     font-size: 50px;
     font-weight: bolder;
 }
-.info{
+
+.info {
     display: flex;
     align-items: flex-start;
 }
-.weather{
+
+.weather {
     float: left;
     display: block;
 }
-.tweather{
+
+.tweather {
     margin: 0 0 10px 160px;
     font-size: 30px;
     font-weight: bolder;
     padding: 0;
 }
-.time{
+
+.time {
     margin: 0 0 0 165px;
     font-size: 20px;
     padding: 0;
 }
-.temp{
+
+.temp {
     float: left;
     display: block;
     margin: -5px 0 0 160px;
     font-size: 50px;
 }
-.moon{
+
+.moon {
     float: left;
     display: block;
     margin: 30px 0 0 40px;
     font-size: 20px;
 }
-.state{
+
+.state {
     margin: 15px 0 0 310px;
     font-size: 20px;
     color: #dddddd;
     padding: 0;
-} 
-.feel{
+}
+
+.feel {
     display: block;
     margin: 0 0 0 310px;
     font-size: 15px;
     color: #dddddd;
     padding: 0;
 }
-.news{
+
+.news {
     width: 100%;
     height: auto;
     background-color: #011208;
@@ -197,61 +255,72 @@ body{
     font-size: 20px;
     line-height: 1.5;
 }
-.tnews{
+
+.tnews {
     position: absolute;
     top: 1520px;
     font-size: 50px;
     font-weight: bolder;
     margin: 0;
 }
-.new{
+
+.new {
     display: flex;
     align-items: flex-start;
-    margin: 30px 0 0 0;  
+    margin: 30px 0 0 0;
 }
-.new-img{
+
+.new-img {
     margin: 0 15px 0 0;
 }
-.footer{
+
+.footer {
     display: inline-block;
     width: 100%;
     background-color: #011208;
     color: #FFFFFF;
     box-shadow: inset 0 1px #FFFFFF;
 }
-.contacts{
+
+.contacts {
     float: left;
     display: block;
     width: 300px;
     margin: 2px;
 }
-.socialsites{
+
+.socialsites {
     float: left;
     display: block;
     width: 300px;
     margin: 2px;
 }
-.tcontacts{
+
+.tcontacts {
     font-size: 18px;
     padding: 0;
     width: 300px;
     padding: 15px 0 0 0;
 }
-.phone{
+
+.phone {
     font-size: 15px;
     padding: 0;
     width: 300px;
 }
-.username1{
+
+.username1 {
     font-size: 15px;
     padding: 0;
 }
-.tsocialsites{
+
+.tsocialsites {
     font-size: 18px;
     padding: 15px 0 0 0;
     width: 300px;
 }
-.username2{
+
+.username2 {
     font-size: 15px;
     padding: 0;
 }
