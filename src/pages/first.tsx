@@ -9,41 +9,13 @@ import new2 from '../assets/new2.png'
 import new3 from '../assets/new3.png'
 import sun from '../assets/sun.png'
 
+import { Header } from "../components/header";
+import { Footer } from "../components/footer";
 
 const first = () => {
   return (
     <>
-      <header className="header">
-        <div className="container">
-          <nav className="nav">
-            <a className="logo">
-              <img src={logo} alt="логотип сайта" className="logo-img" />
-            </a>
-            <ul className="menu">
-              <li className="menu-item">
-                <a href="#" className="menu-link">Интересные места</a>
-              </li>
-              <li className="menu-item">
-                <a href="#" className="menu-link">Транспорт и инфраструктура</a>
-              </li>
-              <li className="menu-item">
-                <a href="#" className="menu-link">Спорт и развлечения</a>
-              </li>
-              <li className="menu-item">
-                <a href="#" className="menu-link">История и культура</a>
-              </li>
-              <li className="menu-item">
-                <a href="#" className="menu-link">Наука и образование</a>
-              </li>
-            </ul>
-            <ul className="login">
-              <li className="login-item">
-                <a href="#" className="login-link">Войти</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
       <main className="main">
         <section className="headline">
           <div className="headline-img">
@@ -94,7 +66,9 @@ const first = () => {
           </div>
         </section>
       </main>
-      <footer className="footer">
+
+      <Footer />
+      {/* <footer className="footer">
         <div className="container">
           <div className="info-about-us">
             <div className="contacts">
@@ -108,7 +82,7 @@ const first = () => {
             </div>
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 };

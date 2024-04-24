@@ -1,25 +1,4 @@
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-ul {
-    margin: 0;
-    padding: 10px;
-    list-style: none;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
-    background-color: #011208;
-    font-size: 17px;
-    font-weight: 400;
-    color: #FFFFFF;
-}
-
-.header {
+/* .header {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.75);
     padding: 0;
@@ -27,22 +6,22 @@ body {
     color: #FFFFFF;
     font-size: 14px;
     line-height: 10px;
-}
+} */
 
-.container {
+/* .container {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0;
     overflow: hidden;
-}
+} */
 
-.nav {
+/* .nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
-.menu {
+/* .menu {
     display: flex;
     margin: 5px;
 }
@@ -54,7 +33,7 @@ body {
 
 .login {
     margin: 15px;
-}
+} */
 
 .main {
     margin: 0 auto;
@@ -274,7 +253,7 @@ body {
     margin: 0 15px 0 0;
 }
 
-.footer {
+/* .footer {
     display: inline-block;
     width: 100%;
     background-color: #011208;
@@ -298,29 +277,20 @@ body {
 
 .tcontacts {
     font-size: 18px;
-    padding: 0;
-    width: 300px;
-    padding: 15px 0 0 0;
 }
 
 .phone {
     font-size: 15px;
-    padding: 0;
-    width: 300px;
 }
 
 .username1 {
     font-size: 15px;
-    padding: 0;
 }
 
 .tsocialsites {
     font-size: 18px;
-    padding: 15px 0 0 0;
-    width: 300px;
 }
 
 .username2 {
     font-size: 15px;
-    padding: 0;
-}
+} */
