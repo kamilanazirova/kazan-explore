@@ -18,7 +18,7 @@ const Transport = () => {
       <Header />
       <main className="main">
         <div className="part1">
-          <div className="text">
+          <div>
             <Title image={transport_icon} title="Транспорт и инфраструктура" alt="иконка транспорт" />
 
             <p>Наиболее развитая сеть в городе – <b>автобусная</b>. Она обеспечивает беспересадочные перевозки пассажиров между всеми районами города.</p>
