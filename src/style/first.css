@@ -1,39 +1,4 @@
-/* .header {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 0;
-    margin: 0;
-    color: #FFFFFF;
-    font-size: 14px;
-    line-height: 10px;
-} */
 
-/* .container {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0;
-    overflow: hidden;
-} */
-
-/* .nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} */
-
-/* .menu {
-    display: flex;
-    margin: 5px;
-}
-
-.menu-item {
-    padding: 0 9px;
-    line-height: 1em;
-}
-
-.login {
-    margin: 15px;
-} */
 
 .main {
     margin: 0 auto;
@@ -67,78 +32,6 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.overlay {
-    position: absolute;
-    top: 50%;
-    /* разместить плашку по вертикали по центру */
-    left: 50%;
-    /* разместить плашку по горизонтали по центру */
-    transform: translate(-50%, -50%);
-    /* Центрирование плашки */
-    width: 1000px;
-    height: 500px;
-    top: 600px;
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 40px;
-    padding: 60px;
-    backdrop-filter: blur(2px);
-}
-
-.text-container {
-    margin-top: 20%;
-    color: white;
-    font-size: 50px;
-}
-
-.title {
-    padding: 0;
-    font-size: 70px;
-    margin: 30px 0;
-}
-
-.overlay-btn1 {
-    position: absolute;
-    top: 400px;
-    width: max-content;
-    left: 45px;
-    border: 2px solid white;
-    background-color: rgb(255, 255, 255);
-    padding: 10px 10px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.overlay-btn2 {
-    position: absolute;
-    top: 400px;
-    width: max-content;
-    left: 230px;
-    border: 2px solid white;
-    background-color: transparent;
-    padding: 10px 10px;
-    border-radius: 15px;
-    text-align: center;
-}
-
-.like {
-    position: absolute;
-    top: 394px;
-    left: 470px;
-    padding: 10px 10px;
-    text-align: center;
-}
-
-.headline-btn1 {
-    color: #000000;
-}
-
-.text-about-kazan {
-    font-size: 25px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
 }
 
 .menu-link-here {
@@ -237,7 +130,7 @@
 
 .tnews {
     position: absolute;
-    top: 1520px;
+    top: 1490px;
     font-size: 50px;
     font-weight: bolder;
     margin: 0;
@@ -253,44 +146,3 @@
     margin: 0 15px 0 0;
 }
 
-/* .footer {
-    display: inline-block;
-    width: 100%;
-    background-color: #011208;
-    color: #FFFFFF;
-    box-shadow: inset 0 1px #FFFFFF;
-}
-
-.contacts {
-    float: left;
-    display: block;
-    width: 300px;
-    margin: 2px;
-}
-
-.socialsites {
-    float: left;
-    display: block;
-    width: 300px;
-    margin: 2px;
-}
-
-.tcontacts {
-    font-size: 18px;
-}
-
-.phone {
-    font-size: 15px;
-}
-
-.username1 {
-    font-size: 15px;
-}
-
-.tsocialsites {
-    font-size: 18px;
-}
-
-.username2 {
-    font-size: 15px;
-} */
