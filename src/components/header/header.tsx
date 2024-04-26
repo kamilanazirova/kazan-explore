@@ -3,7 +3,8 @@ import React from "react";
 import './header.styled';
 
 import logo from '../../assets/logo.svg'
-import { HeaderBlock, ImgLogo, MenuLink, StyledLogin, StyledMenu, StyledNav } from "./header.styled";
+import { HeaderBlock, ImgLogo, MenuLink, StyledLogin, StyledMenu, StyledNav, OverlayLogin } from "./header.styled";
+import { Overlay } from "../overlay";
 
 const navList = [
   //{ title: "Home", href: "#01" },
@@ -28,9 +29,11 @@ export function Header() {
             </li>
           ))}
         </StyledMenu>
+        <OverlayLogin>
         <StyledLogin>
           <a href="#" className="login-link">Войти</a>
         </StyledLogin>
+        </OverlayLogin>
       </StyledNav>
     </HeaderBlock>
   );
