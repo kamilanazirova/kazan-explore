@@ -1,46 +1,16 @@
-.img-sport {
-    margin: 11px 0;
-}
-
-.h1 {
-    display: flex;
-    align-items: flex-start;
-
-}
-
-
 .main {
     margin: 0 auto;
     max-width: 1200px;
     padding: 0;
 }
 
-
-.wrapper {
-    margin: 40px auto;
-    display: flex;
-    background-color: #D9D9D9;
-    color:#000000;
-    border-radius: 15px;
-    max-width: 1000px;
-}
-
 .text {
-margin: 4px 0 0 0  ;
+    background-color: rgba(76, 76, 76, 0.373);
+    padding: 1px;
+    border-radius: 2%;
 }
 
-.body-text {
-    font-size: 15px;
-    margin-top: 0;
-}
-
-.imgs {
-    display: flex;
-    align-items: center;
-    margin: 14px 14px 6px 10px;
-}
-
-.line {
-    margin: 0 14px;
-    background-color: #000000;
+.sport-arenas-img {
+    width: 100%;
+    margin: 50px 0;
 }
