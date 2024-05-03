@@ -5,18 +5,17 @@ import Transport  from './pages/transport'
 import Sport from './pages/sport'
 
 import './style/first.css'
-//import './style/transport.css'
-//import './style/sport.css'
+import './style/transport.css'
+import './style/sport.css'
 import './style/main.css'
 
 
 const App = () => {
   return (
     <>
-    <First/>
+    <Sport/>
     </>
   );
 };
 
 export default App;
-

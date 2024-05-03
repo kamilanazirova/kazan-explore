@@ -1,29 +1,99 @@
 import React from "react";
 
 import sport_icon from '../assets/icons/sport_icon.svg'
-import akbars_logo from '../assets/sport/akbars_logo.png'
-import akbars_img from '../assets/sport/akbars_img.png'
-import hockey_dinamo_logo from '../assets/sport/hockey_dinamo_logo.png'
-import hockey_dinamo_img from '../assets/sport/hockey_dinamo_img.png'
-import rubin_logo from '../assets/sport/rubin_logo.png'
-import rubin_img from '../assets/sport/rubin_img.png'
-import unics_logo from '../assets/sport/unics_logo.png'
-import unics_img from '../assets/sport/unics_img.png'
-import kazanochka_logo from '../assets/sport/kazanochka_logo.png'
-import kazanochka_img from '../assets/sport/kazanochka_img.png'
-import zenit_logo from '../assets/sport/zenit_logo.png'
-import zenit_img from '../assets/sport/zenit_img.png'
-import vol_dinamo_logo from '../assets/sport/vol_dinamo_logo.png'
-import vol_dinamo_img from '../assets/sport/vol_dinamo_img.png'
-import waterpolo_logo from '../assets/sport/waterpolo_logo.png'
-import waterpolo_img from '../assets/sport/waterpolo_img.png'
-
-
-import line from '../assets/sport/line.png'
+import sport_arenas from '../assets/sport/sport_arenas.png'
 
 import { Header } from "../components/header";
 import { Title } from "../components/title";
+import { SpoortCard } from "../components/sport-card";
 import { Footer } from "../components/footer"
+
+const data = [
+    {
+        id: Math.random().toString(),
+        type: "Баскетбол",
+        title: "УНИКС ",
+        text: "Баскетбольный клуб УНИКС — российский мужской баскетбольный клуб. Основан в 1991 году. Представляет город Казань, столицу Республики Татарстан. Выступает в Профессиональной баскетбольной лиге. «УНИКС» расшифровывается как «Университет — Культура — Спорт».",
+        logo: "unics_logo",
+        logo_alt: "Логотип УНИКСа",
+        image: "unics_img",
+        img_alt: "Фотография игроков УНИКСа с певым чемпионским кубком единой Лиги ВТБ",
+        link: "https://www.unics.ru/",
+    },
+    {
+        id: Math.random().toString(),
+        title: "Казаночка ",
+        text: "Казаночка участвуюет в женской баскетбольной суперлиге и представляет город Казань на национальном уровне. «Казаночка» играет важную роль в развитии женского баскетбола в регионе и активно соревнуется на международной арене.",
+        logo: "kazanochka_logo",
+        logo_alt: "Логотип спортивного клуба Казаночка",
+        image: "kazanochka_img",
+        img_alt: "Фотография игроков Казаночки",
+        link: "https://bckazanochka.ru/",
+    },
+    {
+        id: Math.random().toString(),
+        type: "Хоккей",
+        title: "Ак Барс ",
+        text: "Хоккейный клуб «Ак Барс» из Казани — это один из наиболее известных и успешных профессиональных хоккейных клубов в России. Он был основан в 1956 году и является членом Континентальной Хоккейной Лиги (КХЛ), самой престижной лиги в России и одной из сильнейших в мире.",
+        logo: "akbars_logo",
+        logo_alt: "Логотип Ак Барса",
+        image: "akbars_img",
+        img_alt: "Фотография игроков Ак Барса",
+        link: "https://www.ak-bars.ru/",
+    }, {
+        id: Math.random().toString(),
+        title: "Динамо-Ак Барс ",
+        text: "«Динамо-Казань» — команда по хоккею с мячом из Казани. Играет в суперлиге чемпионата России. Действующий чемпион России.",
+        logo: "hockey_dinamo_logo",
+        logo_alt: "Логотип Динамо-Казань",
+        image: "hockey_dinamo_img",
+        img_alt: "Фотография игроков Динамо-Казань",
+        link: "https://hcdinamo-kazan.ru/",
+    },
+    {
+        id: Math.random().toString(),
+        type: "Футбол",
+        title: "Рубин ",
+        text: "«Рубин» (тат. Рубин Казан футбол төркеме) — российский футбольный клуб из Казани. Один из ведущих российских футбольных клубов второй половины 2000-х годов. Ведёт свою историю с 1936 года, но официальной датой основания считается 1958 год.",
+        logo: "rubin_logo",
+        logo_alt: "Логотип Рубина",
+        image: "rubin_img",
+        img_alt: "Фотография игроков Рубина",
+        link: "https://www.rubin-kazan.ru/",
+    },
+    {
+        id: Math.random().toString(),
+        type: "Волейбол",
+        title: "Зенит-Казань ",
+        text: "«Зенит» (Казань) — российский мужской волейбольный клуб. Основан в 2000 году, до 2004 года назывался «Динамо», с 2005 по июнь 2008 года — «Динамо-Таттрансгаз». 4-кратный чемпион России, 3-кратный обладатель Кубка России, победитель Лиги чемпионов сезонов 2007/08 и 2011/12 годов. Основные цвета: бело-синие.",
+        logo: "zenit_logo",
+        logo_alt: "Логотип Зенита",
+        image: "zenit_img",
+        img_alt: "Фотография игроков Зенита",
+        link: "https://zenit-kazan.com/",
+    }, {
+        id: Math.random().toString(),
+        title: "Динамо-Ак Барс ",
+        text: "«Динамо-Казань» Казань (до 2008 — «Казаночка») — российский женский волейбольный клуб.",
+        logo: "vol_dinamo_logo",
+        logo_alt: "Логотип Динамо-Казань",
+        image: "vol_dinamo_img",
+        img_alt: "Фотография игроков Динамо-Казань",
+        link: "https://dinamo-kazan.com/",
+    },
+    {
+        id: Math.random().toString(),
+        type: "Водное поло",
+        title: "Синтез ",
+        text: "Толчком развития водного поло в Казани стало строительство первого в Республике 50-ти метрового плавательного бассейна «Оргсинтез», закончившееся в 1973 году. Именно на базе бассейна «Оргсинтез» и была создана взрослая команда «Синтез», добившаяся права играть в первой группе чемпионата РСФСР.",
+        logo: "waterpolo_logo",
+        logo_alt: "Логотип Синтеза",
+        image: "waterpolo_img",
+        img_alt: "Фотография игроков Синтеза",
+        link: "https://www.sintez-kazan.ru/index.php/ru/",
+    },
+
+];
 
 const Sport = () => {
     return (
@@ -31,140 +101,33 @@ const Sport = () => {
             <Header />
             <main className="main">
                 <Title image={sport_icon} title="Спорт и развлечения" alt="спортивная иконка" />
-
-                <p> Казань является одним из самых развитых в спортивном плане городов России, а также одним из лидеров по числу побед в различных видах спорта.</p>
-
-                <h2> Спортивные команды и клубы Казани </h2>
-                <h3>Баскетбол</h3>
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Баскетбольный клуб УНИКС Казань</h3>
-                            <p className="body-text">Баскетбольный клуб УНИКС — российский мужской баскетбольный клуб. Основан в 1991 году. Представляет город Казань, столицу Республики Татарстан. Выступает в Профессиональной баскетбольной лиге.
-                                «УНИКС» расшифровывается как «Университет — Культура — Спорт».</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={unics_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={unics_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
+                <div className="text">
+                    <h2>КАЗАНЬ - СПОРТИВНАЯ СТОЛИЦА РОССИИ</h2>
+                    <p> Республики Татарстан, является одним из самых развитых в спортивном плане городов России, а также одним из лидеров по числу побед в различных видах спорта. </p>
+                    <p>В 2020 году в Казани состоятся первые в истории спортивные игры стран Содружества независимых государств (СНГ).  Впервые в истории существования стран СНГ пройдет подобного рода спортивное соревнование, которое объединит их все.  По инициативе Министерства спорта РФ и по поручению Президента РФ  В.В.  Путина Министерство спорта РТ  (совместно с федеральным спортивным ведомством) подготовили  проект, который был утвержден  на правительственной комиссии. Соревнования пройдут в олимпийский год, к тому же в рамках празднования 100-летия ТАССР.  Сроки проведения соревнований — 20-27 августа 2020 года.  На Играх выступят сборные России, Азербайджана, Армении, Белоруссии, Казахстана, Кыргызстана, Молдовы, Таджикистана, Туркменистана, Узбекистана и Украины. </p>
+                    <p>В программе соревнований: дзюдо, самбо, пляжный волейбол, пляжный гандбол, мини-футбол, бокс, тайский бокс, шахматы, танцевальный спорт, фехтование, каратэ, гиревой спорт, армрестлинг, мас-реслинг, спортивная борьба, борьба на поясах (корэш), легкая атлетика и баскетбол (3х3).</p>
+                    <p>Казани удаётся удивительным образом сочетать в себе исторические традиции и современность, удобства мегаполиса и гостеприимную атмосферу.  Но одни из самых главных достижений столицы Татарстана – это крупные спортивные мероприятия, регулярно проводимые на территории города. Ни в одном городе России нет такого количества монументальных и современных спортивных объектов.</p>
+                    <p>Толчком к развитию спортивной инфраструктуры столицы Татарстана стала Универсиада 2013 года. Это было первое соревнование мирового уровня для Казани.
+                        Казанская Универсиада была признана лучшей за всю историю проведения студенческих игр. Об этом заявил президент Международной федерации студенческого спорта Клод-Луи Гальен.
+                        Город развернул масштабную стройку, не уступающую в размерах подготовке к Олимпиаде 2014 года в Сочи. Буквально на глазах жителей выросли новый стадион «Казань-Арена»,  Дворец единоборств «Ак Барс» и Дворец водных видов спорта, в котором проводили соревнования по плаванию, прыжкам в воду, синхронному плаванию и водному поло. Успех Универсиады позволил Казани принимать ещё более масштабные мероприятия. После проведения Всемирных студенческих игр Казань обладает всей необходимой инфраструктурой для проведения будущих спортивных мегасобытий.</p>
                 </div>
-
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Баскетбольный клуб Казаночка</h3>
-                            <p className="body-text">Казаночка участвуюет в женской баскетбольной суперлиге и представляет город Казань на национальном уровне. "Казаночка" играет важную роль в развитии женского баскетбола в регионе и активно соревнуется на международной арене.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={kazanochka_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={kazanochka_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-                
-                
-                <h3>Хоккей</h3>
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Хокейный клуб Ак Барс Казань</h3>
-                            <p className="body-text"> Хоккейный клуб "Ак Барс" из Казани — это один из наиболее известных и успешных профессиональных хоккейных клубов в России. Он был основан в 1956 году и является членом Континентальной Хоккейной Лиги (КХЛ), самой престижной лиги в России и одной из сильнейших в мире.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={akbars_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={akbars_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Хоккейный клуб Динамо-Казань</h3>
-                            <p className="body-text"> «Динамо-Казань» — команда по хоккею с мячом из Казани. Играет в суперлиге чемпионата России. Действующий чемпион России.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={hockey_dinamo_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={hockey_dinamo_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
-
-                <h3>Футбол</h3>
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Футбольный клуб Рубин Казань</h3>
-                            <p className="body-text"> «Рубин» (тат. Рубин Казан футбол төркеме) — российский футбольный клуб из Казани. Один из ведущих российских футбольных клубов второй половины 2000-х годов. Ведёт свою историю с 1936 года, но официальной датой основания считается 1958 год. Двукратный чемпион России 2008 и 2009 годов. Обладатель Кубка Содружества 2010 и Суперкубка России 2010.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={rubin_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={rubin_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
-
-                
-
-
-
-                <h3>Волейбол</h3>
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Волейбольный клуб Зенит Казань</h3>
-                            <p className="body-text">«Зенит» (Казань) — российский мужской волейбольный клуб. Основан в 2000 году, до 2004 года назывался «Динамо», с 2005 по июнь 2008 года — «Динамо-Таттрансгаз». 4-кратный чемпион России, 3-кратный обладатель Кубка России, победитель Лиги чемпионов сезонов 2007/08 и 2011/12 годов. Основные цвета: бело-синие.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={zenit_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={zenit_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Волейбольный клуб Динамо-Казань</h3>
-                            <p className="body-text">«Динамо-Казань» Казань (до 2008 — «Казаночка») — российский женский волейбольный клуб.</p>
-                        </div>
-                        <div className="imgs">
-                            <img src={vol_dinamo_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={vol_dinamo_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
-                <h3>Водное поло</h3>
-                <div className="card">
-                    <div className="wrapper">
-                        <div className="text">
-                            <h3>Водное поло</h3>
-                            <p className="body-text">Толчком развития водного поло в Казани стало строительство первого в Республике 50-ти метрового плавательного бассейна «Оргсинтез», закончившееся в 1973 году. Именно на базе бассейна «Оргсинтез» и была создана взрослая команда «Синтез», добившаяся права играть в первой группе чемпионата РСФСР. </p>
-                        </div>
-                        <div className="imgs">
-                            <img src={waterpolo_logo} className="logo-akbars" alt="карта маршрутов" />
-                            <img src={line} className="line" />
-                            <img src={waterpolo_img} className="img-akbars" alt="карта маршрутов" />
-                        </div>
-                    </div>
-                </div>
-
+                <h1> Спортивные команды и клубы Казани </h1>
+                {data.map((item) => (
+                    <SpoortCard
+                        type={item.type}
+                        title={item.title}
+                        text={item.text}
+                        logo={item.logo}
+                        logo_alt={item.logo_alt}
+                        image={item.image}
+                        img_alt={item.img_alt}
+                        link={item.link}
+                    >
+                    </SpoortCard>
+                ))}
             </main>
-
-
+            <img src={sport_arenas} className="sport-arenas-img" alt="Фоторгафия различных спортивных арен Казани" />
             <Footer />
-            
         </>
     );
 };

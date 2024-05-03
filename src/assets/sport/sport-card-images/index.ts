@@ -1,0 +1,16 @@
+export { default as akbars_logo } from './akbars_logo.png';
+export { default as akbars_img } from './akbars_img.png';
+export { default as hockey_dinamo_logo } from './hockey_dinamo_logo.png';
+export { default as hockey_dinamo_img } from './/hockey_dinamo_img.png';
+export { default as rubin_logo } from './rubin_logo.png';
+export { default as rubin_img } from './rubin_img.png';
+export { default as unics_logo } from './unics_logo.png';
+export { default as unics_img } from './unics_img.png';
+export { default as kazanochka_logo } from './kazanochka_logo.png';
+export { default as kazanochka_img } from './kazanochka_img.png';
+export { default as zenit_logo } from './zenit_logo.png';
+export { default as zenit_img } from './zenit_img.png';
+export { default as vol_dinamo_logo } from './vol_dinamo_logo.png';
+export { default as vol_dinamo_img } from './vol_dinamo_img.png';
+export { default as waterpolo_logo } from './waterpolo_logo.png';
+export { default as waterpolo_img } from './waterpolo_img.png';
