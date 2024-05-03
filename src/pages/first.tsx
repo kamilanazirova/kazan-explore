@@ -48,7 +48,6 @@ const first = () => {
           />
         </section>
       </main>
-
       <Footer />
     </>
   );
