@@ -7,7 +7,6 @@ import { Footer } from "../components/footer";
 import { Overlay } from "../components/overlay";
 import { Weather } from "../components/weather";
 import { News } from "../components/news";
-import { Link } from "../components/link";
 
 const first = () => {
   return (
@@ -34,7 +33,7 @@ const first = () => {
           <News
             image="new1"
             link="https://realty.ria.ru/20240305/apartamenty-1931291477.html"
-            text="На фабрике Алафузова в Казани построят культурный центр и апартаменты"
+            text="На фабрике Алафузова в Казани построят культурный центр и апартаменты "
           />
           <News
             image="new2"

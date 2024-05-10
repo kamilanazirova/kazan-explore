@@ -46,4 +46,5 @@ export const MenuLink = styled.a`
 
 export const ImgLogo = styled.img`
     margin-left: 30px;
+    margin: 4px 0 4px 30px;
 `;

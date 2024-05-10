@@ -1,13 +1,7 @@
-.main {
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 0;
-}
-
 .text {
-    background-color: rgba(76, 76, 76, 0.373);
+    background-color: rgba(68, 68, 68, 0.163);
     padding: 1px;
-    border-radius: 2%;
+    border-radius: 15px;
 }
 
 .sport-arenas-img {
