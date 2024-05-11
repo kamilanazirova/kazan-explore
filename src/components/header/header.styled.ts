@@ -22,7 +22,9 @@ export const StyledNav = styled.nav`
 export const StyledMenu = styled.ul`
     display: flex;
     margin: 0 auto
-    margin: 20px 0;    
+    margin: 20px 0;   
+    padding: 0 12px;
+    line-height: 1em; 
 `;
 
 export const OverlayLogin = styled.div`
@@ -39,7 +41,7 @@ export const StyledLogin = styled.li`
     margin: 8.5px 19px;
 `;
 
-export const MenuLink = styled.a`
+export const MenuLi = styled.li`
     padding: 0 12px;
     line-height: 1em;
 `;
