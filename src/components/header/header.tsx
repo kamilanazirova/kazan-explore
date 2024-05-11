@@ -1,38 +1,63 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 import './header.styled';
 
 import logo from '../../assets/logo.svg'
-import { HeaderBlock, ImgLogo, MenuLink, StyledLogin, StyledMenu, StyledNav, OverlayLogin } from "./header.styled";
-import { Overlay } from "../overlay";
+import { HeaderBlock, ImgLogo, MenuLi, StyledLogin, StyledMenu, StyledNav, OverlayLogin } from "./header.styled";
+import { URLs } from "../../__data__/urls";
 
-const navList = [
-  //{ title: "Home", href: "#01" },
-  { title: "Интересные места", href: "#02" },
-  { title: "Транспорт и инфраструктура", href: "#03" },
-  { title: "Спорт и развлечения", href: "#04" },
-  { title: "История и культура", href: "#05" },
-  { title: "Наука и образование", href: "#06" },
-];
+const nav = {
+  places: { title: "Интересные места", href: URLs.ui.places },
+  transport: { title: "Транспорт и инфраструктура", href: URLs.ui.transport },
+  sport: { title: "Спорт и развлечения", href: URLs.ui.sport },
+  history: { title: "История и культура", href: URLs.ui.history },
+  education: { title: "Наука и образование", href: URLs.ui.education },
+}
 
 export function Header() {
   return (
     <HeaderBlock>
       <StyledNav>
-        <a className="logo">
+        <a href="/kazan-explore">
           <ImgLogo src={logo} alt="логотип сайта" />
         </a>
         <StyledMenu>
-          {navList.map((element, index) => (
-            <li key={element.href}>
-              <MenuLink href={element.href}>{element.title}</MenuLink>
-            </li>
-          ))}
+          {URLs.ui.places && (<MenuLi>
+            <Link
+              to={nav.places.href}>{nav.places.title}
+            </Link>
+          </MenuLi>
+          )}
+          {URLs.ui.transport && (<MenuLi>
+            <Link
+              to={nav.transport.href}>{nav.transport.title}
+            </Link>
+          </MenuLi>
+          )}
+          {URLs.ui.sport && (<MenuLi>
+            <Link
+              to={nav.sport.href}>{nav.sport.title}
+            </Link>
+          </MenuLi>
+          )}
+          {URLs.ui.history && (<MenuLi>
+            <Link
+              to={nav.history.href}>{nav.history.title}
+            </Link>
+          </MenuLi>
+          )}
+          {URLs.ui.education && (<MenuLi>
+            <Link
+              to={nav.education.href}>{nav.education.title}
+            </Link>
+          </MenuLi>
+          )}
         </StyledMenu>
         <OverlayLogin>
-        <StyledLogin>
-          <a href="#" className="login-link">Войти</a>
-        </StyledLogin>
+          <StyledLogin>
+            <Link to="login" className="login-link">Войти</Link>
+          </StyledLogin>
         </OverlayLogin>
       </StyledNav>
     </HeaderBlock>
