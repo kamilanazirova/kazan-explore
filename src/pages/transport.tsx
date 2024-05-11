@@ -4,13 +4,12 @@ import transport_icon from '../assets/icons/transport_icon.svg'
 import bus from '../assets/transport/bus.png'
 import map from '../assets/transport/map.png'
 
+import bus_numbers from '../__stubs__/bus-numbers.json'
+import tral_numbers from '../__stubs__/tral-numbers.json'
 import { Header } from "../components/header";
 import { Title } from "../components/title";
 import { Button } from "../components/button";
 import { Footer } from "../components/footer";
-
-const bus_numbers = [1, 2, 4, 5, 6, 9, 10, '10a', 11, 15, 18, 22, 23, 25, 28, '28a', 29, 30, 31, 33, 34, 35, '35a', 36, '36a', 37, 40, 42, 43, 45, 46, 47, 49, 53, 54, 55, 56, 60, 62, 63, 68, 70, 71, 72, 74, 75, 77, 78, 84, '84a', 88, 89, '89a', 90, 91, 93, 94];
-const tral_numbers = [1, 2, 3, 5, 6, 7, 8, 9, 12, 13];
 
 const Transport = () => {
   return (
@@ -28,6 +27,7 @@ const Transport = () => {
             <p><b>Метрополитен</b> г. Казани – современный, высококомфортабельный и скоростной вид транспорта. Поезда,
               оснащенные
               новейшими системами автоматики, позволяют на высоком уровне обслуживать пассажиров.</p>
+            <p>Казань также обладает различными туристическими объектами, такими как пешеходные улицы, парки и набережные, которые часто становятся популярными местами для прогулок и отдыха.</p>
           </div>
           <div className="img-transport">
             <img src={bus} alt="фотография автобуса изнутри" className="img1" />
