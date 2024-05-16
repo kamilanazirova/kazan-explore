@@ -9,6 +9,7 @@ import './style/first.css'
 import './style/transport.css'
 import './style/sport.css'
 import './style/education.css'
+import './style/login.css'
 
 const App = () => {
   return (
