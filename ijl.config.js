@@ -14,7 +14,9 @@ module.exports = {
     "kazan-explore.transport": "/transport",
     "kazan-explore.sport": "/sport",
     "kazan-explore.history": "/history",
-    "kazan-explore.education": "/education"
+    "kazan-explore.education": "/education",
+    "kazan-explore.entrance": "/entrance",
+    "kazan-explore.registration": "/registration"
   },
   features: {
     'kazan-explore': {
