@@ -2,18 +2,19 @@ import React from "react";
 
 import sport_icon from '../assets/icons/sport_icon.svg'
 import sport_arenas from '../assets/sport/sport_arenas.png'
-
 import data from '../__stubs__/sport-data.json'
+
 import { Header } from "../components/header";
 import { Title } from "../components/title";
 import { SpoortCard } from "../components/sport-card";
 import { Footer } from "../components/footer"
+import { Wrapper } from "../global-styles";
 
 const Sport = () => {
     return (
         <>
             <Header />
-            <main className="main">
+            <Wrapper>
                 <Title image={sport_icon} title="Спорт и развлечения" alt="спортивная иконка" />
                 <div className="text">
                     <h2>Казань - спортивная столица России</h2>
@@ -42,8 +43,8 @@ const Sport = () => {
                         Казанская Универсиада была признана лучшей за всю историю проведения студенческих игр. Об этом заявил президент Международной федерации студенческого спорта Клод-Луи Гальен.
                         Город развернул масштабную стройку, не уступающую в размерах подготовке к Олимпиаде 2014 года в Сочи. Буквально на глазах жителей выросли новый стадион «Казань-Арена»,  Дворец единоборств «Ак Барс» и Дворец водных видов спорта, в котором проводили соревнования по плаванию, прыжкам в воду, синхронному плаванию и водному поло. Успех Универсиады позволил Казани принимать ещё более масштабные мероприятия. После проведения Всемирных студенческих игр Казань обладает всей необходимой инфраструктурой для проведения будущих спортивных мегасобытий.</p>
                 </div>
-            </main>
-            <img src={sport_arenas} className="sport-arenas-img" alt="Фоторгафия различных спортивных арен Казани" />
+            </Wrapper>
+            <img src={sport_arenas} className="collage-full-width" alt="Фоторгафия различных спортивных арен Казани" />
             <Footer />
         </>
     );
