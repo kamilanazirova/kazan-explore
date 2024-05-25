@@ -5,14 +5,15 @@ import interesting_logo from '../assets/places/LibraryOutline.png'
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Place } from "../components/place"
+import { Wrapper } from "../global-styles";
+import { Title } from "../components/title";
 
-const places = () => {
+const Places = () => {
     return (
         <>
         <Header/>
-        <main className = "main1">
-            <img src={interesting_logo} alt="interesting logo" className="interesting-logo"/>
-            <h1 className = "headline">Интересные места</h1>
+        <Wrapper>
+            <Title image={interesting_logo} title="Интересные места" alt="interesting logo"/>
             <p className = "main-text">Ежегодно Казань посещает более 2 млн туристов, 
             которые стремятся увидеть самые интересные места города. Сейчас мы расскажем о них.</p>
             <h2 className = "activity-name">Достопримечательности</h2>
@@ -67,10 +68,10 @@ const places = () => {
             head = "Палома Кантина"
             text = "«Палома Кантина» — это мексиканское кафе. Его открыли основатели петербургского бара El Copitas, который попал в мировой рейтинг The World’s 50 Best Bars. Если в Казани вы почувствуете себя одиноко, захотите ярких красок, вам сюда."
             />
-        </main>
+        </Wrapper>
         <Footer/>
         </>
     );
 };
 
-export default places;
+export default Places;

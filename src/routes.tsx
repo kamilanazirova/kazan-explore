@@ -12,12 +12,13 @@ import Entrance from './pages/login/entrance';
 import Registration from './pages/login/registration';
 
 import { ErrorBoundary } from './components/error-boundary';
+import Places from './pages/places';
 
 export const PageRoutes = () => (
     <ErrorBoundary>
         <Routes>
             <Route path={URLs.baseUrl} element={<First />} />
-            {/*URLs.ui.places && <Route path={URLs.ui.places} element={<Places />} />*/}
+            {URLs.ui.places && <Route path={URLs.ui.places} element={<Places />} />}
             {URLs.ui.transport && <Route path={URLs.ui.transport} element={<Transport />} />}
             {URLs.ui.sport && <Route path={URLs.ui.sport} element={<Sport />} />}
             {URLs.ui.history && <Route path={URLs.ui.history} element={<History />} />}
