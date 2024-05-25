@@ -1,8 +1,7 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import sport_icon from '../assets/icons/sport_icon.svg'
 import sport_arenas from '../assets/sport/sport_arenas.png'
-import data from '../__stubs__/sport-data.json'
 
 import { Header } from "../components/header";
 import { Title } from "../components/title";
@@ -11,6 +10,12 @@ import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 
 const Sport = () => {
+
+    const [sportCard, setSportCard] = useState(null)
+    useEffect(() => {
+      fetch('/api/getBus').then((response) => response.json()).then((data) => setSportCard(data))
+    }, [])
+
     return (
         <>
             <Header />
@@ -22,7 +27,7 @@ const Sport = () => {
                     <p> И это вполне заслужено: в городе проходили Универсиада, Чемпионат мира FINA по водным видам спорта, матчи Кубка конфедераций FIFA, Чемпионата мира по футболу и другое. Все эти события способствовали спортивному обустройству города и развитию инфраструктуры в сфере спорта.</p>
                 </div>
                 <h1> Спортивные команды и клубы Казани </h1>
-                {data.map((item, index) => (
+                {sportCard.map((item, index) => (
                     <SpoortCard key={index}
                         type={item.type}
                         title={item.title}
