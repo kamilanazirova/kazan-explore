@@ -1,18 +1,19 @@
 import React from "react";
 
-import kazan from '../assets/kazan.webp'
+import kazan from '../assets/first/kazan.webp'
 
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Overlay } from "../components/overlay";
 import { Weather } from "../components/weather";
 import { News } from "../components/news";
+import { Wrapper } from "../global-styles";
 
 const first = () => {
   return (
     <>
       <Header/>
-      <main className="main">
+      <Wrapper>
         <section className="headline">
           <div className="headline-img">
             <img src={kazan} alt="Казань" className="headline-image" />
@@ -46,7 +47,7 @@ const first = () => {
             text="Казань закрыла Игры будущего "
           />
         </section>
-      </main>
+      </Wrapper>
       <Footer />
     </>
   );
