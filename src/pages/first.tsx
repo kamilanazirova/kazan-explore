@@ -1,6 +1,6 @@
 import React from "react";
 
-import kazan from '../assets/kazan.png'
+import kazan from '../assets/kazan.webp'
 
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
