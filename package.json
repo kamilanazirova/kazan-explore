@@ -15,10 +15,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "@emotion/react": "^11.1.5",
         "@emotion/styled": "^11.11.5",
         "@ijl/cli": "^5.1.0",
         "@types/react": "^18.2.79",
         "@types/react-dom": "^18.2.25",
+        "eslint-plugin-react": "^7.34.1",
         "express": "^4.19.2",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -26,6 +28,8 @@
         "typescript": "^5.4.5"
     },
     "devDependencies": {
-        "eslint": "^9.3.0"
+        "eslint": "8.57.0",
+        "globals": "^15.3.0",
+        "typescript-eslint": "^7.10.0"
     }
 }
