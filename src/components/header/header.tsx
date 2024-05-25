@@ -56,7 +56,7 @@ export function Header() {
         </StyledMenu>
         <OverlayLogin>
           <StyledLogin>
-            <Link to="login" className="login-link">Войти</Link>
+            <Link to={URLs.ui.entrance} className="login-link">Войти</Link>
           </StyledLogin>
         </OverlayLogin>
       </StyledNav>
