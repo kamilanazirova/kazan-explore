@@ -1,23 +1,9 @@
 import React from "react";
 
-import logo from '../assets/logo.png'
 import interesting_logo from '../assets/places/LibraryOutline.png'
-import kremlin from '../assets/places/kremlin.png'
-import zoopark from '../assets/places/зоопарк.png'
-import paloma from '../assets/places/палома.png'
-import park from '../assets/places/парк.png'
-import opera from '../assets/places/театр оперы.png'
-import tinchurina from '../assets/places/театр тинчурина.png'
-import tubetey from '../assets/places/тюбетей.png'
-import cyrc from '../assets/places/цирк.png'
-import akiyat from '../assets/places/экият.png'
-import kulsharif from '../assets/places/kul-sharif.png'
-import more from '../assets/places/more.png'
-import suumbike from '../assets/places/suumbike.png'
 
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
-import { Link } from "../components/link";
 import { Place } from "../components/place"
 
 const places = () => {

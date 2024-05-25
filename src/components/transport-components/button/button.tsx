@@ -9,8 +9,8 @@ export function Button({ numbers, type }) {
     return (
         <BottonWrapper>
             <TransportType>{ type }</TransportType>
-            {numbers.map((number) => (
-                <StyledButton>
+            {numbers.map((number, index) => (
+                <StyledButton key={index}>
                     <Link to="" >
                         {`№${number}`}
                     </Link>

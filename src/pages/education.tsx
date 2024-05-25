@@ -4,7 +4,6 @@ import science_icon from '../assets/icons/science_icon.svg'
 
 import { Header } from "../components/header";
 import { Title } from "../components/title";
-import { Button } from "../components/transport-components/button";
 import { Footer } from "../components/footer";
 import { Kfu } from "../components/kfu";
 import { Education } from "../components/card-education";

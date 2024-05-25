@@ -2,14 +2,13 @@ import React from "react";
 
 import './info-image.styled';
 import { Wrapper, WrapperImage, WrapperText } from "./info-image.styled";
-import { idText } from "typescript";
 
 export const InformationImage = ({ text, image, alt}) => (
     <Wrapper>
         <WrapperText>
-            {text.map((number) =>
+            {text.map((number, index) =>
             (
-                <p>{number}</p>
+                <p key={index}>{number}</p>
             ))
             }
         </WrapperText>
@@ -19,3 +18,4 @@ export const InformationImage = ({ text, image, alt}) => (
     </Wrapper>
 
 );
+  
