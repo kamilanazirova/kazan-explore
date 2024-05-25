@@ -1,5 +1,6 @@
 import { getNavigationsValue } from '@ijl/cli';
 import { generatePath } from 'react-router-dom';
+import Registration from '../pages/login/registration';
 
 const baseUrl = getNavigationsValue('kazan-explore.master');
 
@@ -11,7 +12,6 @@ export const URLs = {
     sport: getNavigationsValue('kazan-explore.sport') && `${baseUrl}${getNavigationsValue('kazan-explore.sport')}`,
     history: getNavigationsValue('kazan-explore.history') && `${baseUrl}${getNavigationsValue('kazan-explore.history')}`,
     education: getNavigationsValue('kazan-explore.education') && `${baseUrl}${getNavigationsValue('kazan-explore.education')}`,
-
     entrance: getNavigationsValue('kazan-explore.entrance') && `${baseUrl}${getNavigationsValue('kazan-explore.entrance')}`,
     registration: getNavigationsValue('kazan-explore.registration') && `${baseUrl}${getNavigationsValue('kazan-explore.registration')}`,
     /* charDetail: {

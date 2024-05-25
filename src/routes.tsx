@@ -8,10 +8,10 @@ import Transport from './pages/transport'
 import Sport from './pages/sport'
 import History from './pages/history';
 import Education from './pages/education'
-
-import {ErrorBoundary} from './components/error-boundary';
 import Entrance from './pages/login/entrance';
 import Registration from './pages/login/registration';
+
+import { ErrorBoundary } from './components/error-boundary';
 
 export const PageRoutes = () => (
     <ErrorBoundary>

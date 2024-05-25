@@ -1,6 +1,6 @@
 import React from "react";
 
-import { newsimg } from "../../assets/news"
+import { newsimg } from "../../assets/first/news"
 import { Link } from "../link";
 
 import { Container, Photo } from "./news.styled";

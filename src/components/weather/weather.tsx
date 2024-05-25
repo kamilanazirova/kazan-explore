@@ -2,8 +2,8 @@ import React from "react";
 
 import './weather.styled';
 
-import sun from '../../assets/sun.png'
-import moon from '../../assets/moon.png'
+import sun from '../../assets/first/sun.png'
+import moon from '../../assets/first/moon.png'
 
 import { StyledWeather, IconSun, Head, BodyTime, BodyTemp, IconMoon, BodyState, BodyFeel } from "./weather.styled";
 
