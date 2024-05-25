@@ -11,9 +11,9 @@ import { InformationImage } from "../components/info-plus-image/info-image";
 import { Wrapper } from "../global-styles";
 
 const Transport = () => {
-  const [bus, setBus] = useState(null)
+  const [busNumbers, setBusNumbers] = useState(null)
   useEffect(() => {
-    fetch('/api/getBus').then((response) => response.json()).then((data) => setBus(data))
+    fetch('/api/getBus').then((response) => response.json()).then((data) => setBusNumbers(data))
   }, [])
 
   const [tral, setTral] = useState(null)
@@ -41,7 +41,7 @@ const Transport = () => {
         />
 
         <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
-        <Button type="Автобусы" numbers={bus} />
+        <Button type="Автобусы" numbers={busNumbers} />
         <Button type="Троллейбусы" numbers={tral} />
       </Wrapper>
       <Footer />
