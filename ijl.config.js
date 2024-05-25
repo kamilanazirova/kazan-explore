@@ -10,11 +10,11 @@ module.exports = {
   /* use https://kc.admin.inno-js.ru/ to create config, navigations and features */
   navigations: {
     "kazan-explore.master": "/kazan-explore",
-    "kazan-explore.places": "/places",
-    "kazan-explore.transport": "/transport",
-    "kazan-explore.sport": "/sport",
-    "kazan-explore.history": "/history",
-    "kazan-explore.education": "/education",
+    "kazan-explore.places": "/interesting-places",
+    "kazan-explore.transport": "/transport-and-infrastructure",
+    "kazan-explore.sport": "/sport-and-entertainment",
+    "kazan-explore.history": "/history-and-culture",
+    "kazan-explore.education": "/science-and-education",
     "kazan-explore.entrance": "/entrance",
     "kazan-explore.registration": "/registration"
   },

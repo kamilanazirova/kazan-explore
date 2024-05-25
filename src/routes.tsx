@@ -13,7 +13,6 @@ import Registration from './pages/login/registration';
 
 import { ErrorBoundary } from './components/error-boundary';
 
-
 export const PageRoutes = () => (
     <ErrorBoundary>
         <Routes>
