@@ -2,7 +2,7 @@ import React from "react";
 
 import './overlay.styled';
 
-import like from '../../assets/like.png'
+import like from '../../assets/first/like.png'
 import { StyledOverlay, Icon, Head, Body, Button1, Button2 } from "./overlay.styled";
 import { Link } from "../link";
 
