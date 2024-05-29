@@ -20,7 +20,7 @@ const Registration = () => {
                         <br />
                         <InputField className="input-field" type="password" name="password" placeholder="Подтвердите пароль" />
                         <br />
-                        <Link to="">
+                        <Link to={URLs.baseUrl}>
                             <EnterField className="enter-field" type="submit" value="Зарегистрироваться" />
                         </Link>
                         <br />
