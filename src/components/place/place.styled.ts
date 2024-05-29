@@ -5,8 +5,8 @@ export const Container = styled.div`
     position: inherit;
     height: 570px;
     width: 330px;
-    margin-top: 15px;
-    margin-left: 40px;
+    margin: 10px 20px;
+    margin-bottom: 40px;
     background-color: #D9D9D9;
     border-radius: 30px;
 `;
@@ -35,5 +35,3 @@ export const Text = styled.p`
     padding: 10px, 10px, 10px, 10px;
     vertical-align: middle;
 `;
-
-
