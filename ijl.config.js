@@ -16,7 +16,8 @@ module.exports = {
     "kazan-explore.history": "/history-and-culture",
     "kazan-explore.education": "/science-and-education",
     "kazan-explore.entrance": "/entrance",
-    "kazan-explore.registration": "/registration"
+    "kazan-explore.registration": "/registration",
+    "kazan-explore.trip.number": "/transport-and-infrastructure/trip/:id"
   },
   features: {
     'kazan-explore': {
