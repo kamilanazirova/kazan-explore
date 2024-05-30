@@ -4,7 +4,7 @@ import { education } from "../../assets/education"
 
 import { Container, Photo, Head, Text } from "./card-education.styled";
 
-export const Education = ({  
+export const EducationCard = ({  
     image, 
     head,
     text}) => (
