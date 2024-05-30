@@ -4,8 +4,8 @@ import './button.styled';
 import { BottonWrapper, StyledButton, TransportType } from "./button.styled";
 import { Link } from "react-router-dom";
 import { URLs } from "../../../__data__/urls";
-import { Map } from "../../transport-components/map";
-import map from '../../../assets/transport/trips/1.png'
+/* import { Map } from "../../transport-components/map";
+import map from '../../../assets/transport/trips/1.png' */
 
 
 export function Button({ numbers, type }) {
@@ -20,7 +20,7 @@ export function Button({ numbers, type }) {
                 </StyledButton>
             ))
             }
-            <Map index="" image={map} />
+            {/* <Map index="" image={map} /> */}
         </BottonWrapper >
     );
 }
