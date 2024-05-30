@@ -20,5 +20,11 @@ router.get('/getInfoAboutKFU', (request, response) => {
     response.send(require('../education/info-about-kfu.json'))
 })
 
+
+
+router.get('/getEvents', (request, response) => {
+    response.send(require('../transport/events-calendar.json'))
+})
+
 module.exports = router;
 
