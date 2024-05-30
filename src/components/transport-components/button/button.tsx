@@ -14,7 +14,7 @@ export function Button({ numbers, type }) {
             <TransportType>{type}</TransportType>
             {numbers.map((number, index) => (
                 <StyledButton key={index}>
-                    <Link to={URLs.tripNumber.getUrl(number)} >
+                    <Link to={URLs.ui.tripNumber.getUrl(number)} >
                         {`№${number}`}
                     </Link>
                 </StyledButton>

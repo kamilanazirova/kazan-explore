@@ -5,12 +5,13 @@ import { InformationImage } from "../info-plus-image/info-image";
 
 import kfu from '../../assets/education/kfu.png'
 import kfu_icon from '../../assets/icons/kfu_icon.svg'
+import { URLs } from "../../__data__/urls";
 
 export function Kfu() {
 
-  const [info, setInfo] = useState(null)
+  const [info, setInfo] = useState([])
   useEffect(() => {
-    fetch('/api/getBus').then((response) => response.json()).then((data) => setInfo(data))
+    fetch(`${URLs.api.main}/getInfoAboutKFU`).then((response) => response.json()).then((data) => setInfo(data))
   }, [])
 
 

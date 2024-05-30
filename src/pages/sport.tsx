@@ -9,15 +9,15 @@ import { SpoortCard } from "../components/sport-card";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
-
-import sportInfo from '../../stubs/json/sport-data.json'
+import { URLs } from "../__data__/urls";
 
 const Sport = () => {
 
-    /* const [sportCard, setSportCard] = useState(null)
+    const [sportCard, setSportCard] = useState([])
     useEffect(() => {
-        fetch('/api/getBus').then((response) => response.json()).then((data) => setSportCard(data))
-    }, []) */
+        fetch(`${URLs.api.main}/getSportData`).then((response) => response.json()).then((data) => setSportCard(data))
+    }, [])
+
 
     return (
         <>
@@ -32,7 +32,7 @@ const Sport = () => {
                     </div>
                     <h1> Спортивные команды и клубы Казани </h1>
                     <ErrorBoundary>
-                        {sportInfo.map((item, index) => (
+                        {sportCard.map((item, index) => (
                             <SpoortCard key={index}
                                 type={item.type}
                                 title={item.title}

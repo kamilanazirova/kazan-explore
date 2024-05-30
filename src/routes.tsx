@@ -27,7 +27,7 @@ export const PageRoutes = () => (
             {URLs.ui.entrance && <Route path={URLs.ui.entrance} element={<Entrance />} />}
             {URLs.ui.registration && <Route path={URLs.ui.registration} element={<Registration />} />}
 
-            {URLs.tripNumber.url && <Route path={URLs.tripNumber.url} element={<Transport />} />}
+            {URLs.ui.tripNumber.url && <Route path={URLs.ui.tripNumber.url} element={<Transport />} />}
 
             <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>

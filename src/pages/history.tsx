@@ -8,21 +8,15 @@ import { Title } from "../components/title";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
+import { URLs } from "../__data__/urls";
 
 const History = () => {
-
-    const [events, setEvents] = useState()
-    useEffect(() => {
-        fetch('/api/getEvents').then((response) => response.json()).then((data) => setEvents(data))
-    }, [])
-
     return (
         <>
             <Header />
             <Wrapper>
                 <Title image={history_icon} title="История и культура" alt="спортивная иконка" />
                 <ErrorBoundary>
-                <p> { events }</p>
                 <div className="text">
                     <p>Казань является одним из крупнейших культурных центров России, сохраняя классические достижения, а также способствуя развитию современных, авангардных направлений во многих областях культуры. Столицу Татарстана традиционно называют «мультикультурной», подразумевая взаимовыгодное обогащение мирно сосуществующих русской и татарской культур.</p>
                 </div>

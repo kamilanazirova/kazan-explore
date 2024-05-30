@@ -25,6 +25,6 @@ module.exports = {
     },
   },
   config: {
-    key: 'value'
+    "kazan-explore.api": "/api"
   }
 }
