@@ -10,6 +10,7 @@ import { Button } from "../components/transport-components/button";
 import { InformationImage } from "../components/info-plus-image/info-image";
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
+import YandexMap from "../components/yandex-map/yandex-map";
 
 const Transport = () => {
   const [busNumbers, setBusNumbers] = useState()
@@ -49,6 +50,7 @@ const Transport = () => {
             <Button type="Автобусы" numbers={busNumbers} />
             <Button type="Троллейбусы" numbers={tral} />
           </ErrorBoundary>
+          <YandexMap />
         </ErrorBoundary>
       </Wrapper>
       <Footer />

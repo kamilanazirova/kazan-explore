@@ -7,8 +7,8 @@ import { Footer } from "../components/footer";
 import { Place } from "../components/place"
 import { Wrapper } from "../global-styles";
 import { Title } from "../components/title";
-import { YMaps, Map, Placemark } from 'react-yandex-maps';
-
+/* import { YMaps, Map, Placemark } from 'react-yandex-maps';
+ */
 
 const Places = () => {
   return (
@@ -70,13 +70,13 @@ const Places = () => {
           head="Палома Кантина"
           text="«Палома Кантина» — это мексиканское кафе. Его открыли основатели петербургского бара El Copitas, который попал в мировой рейтинг The World’s 50 Best Bars. Если в Казани вы почувствуете себя одиноко, захотите ярких красок, вам сюда."
         />
-        <YMaps>
+{/*         <YMaps>
           <div style={{ display: 'flex', justifyContent: 'center', paddingTop: '50px' }}>
             <Map defaultState={{ center: [55.797557, 49.107295], zoom: 9 }} style={{ width: '800px', height: '600px' }}>
               <Placemark geometry={[55.797557, 49.107295]} />
             </Map>
           </div>
-        </YMaps>
+        </YMaps> */}
 
       </Wrapper>
       <Footer />
