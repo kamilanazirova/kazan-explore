@@ -9,19 +9,20 @@ import { Footer } from "../components/footer";
 import { Button } from "../components/transport-components/button";
 import { InformationImage } from "../components/info-plus-image/info-image";
 import { Wrapper } from "../global-styles";
+import { ErrorBoundary } from "../components/error-boundary";
 
 const Transport = () => {
-  const [busNumbers, setBusNumbers] = useState(null)
+  const [busNumbers, setBusNumbers] = useState()
   useEffect(() => {
     fetch('/api/getBus').then((response) => response.json()).then((data) => setBusNumbers(data))
   }, [])
 
-  const [tral, setTral] = useState(null)
+  const [tral, setTral] = useState()
   useEffect(() => {
     fetch('/api/getTral').then((response) => response.json()).then((data) => setTral(data))
   }, [])
 
-  const [info, setInfo] = useState(null)
+  const [info, setInfo] = useState()
   useEffect(() => {
     fetch('/api/getInfoAboutTransportPage').then((response) => response.json()).then((data) => setInfo(data))
   }, [])
@@ -30,19 +31,25 @@ const Transport = () => {
     <>
       <Header />
       <Wrapper>
-        <Title
-          image={transport_icon}
-          title="Транспорт и инфраструктура"
-          alt="иконка транспорт" />
-        <InformationImage
-          text={info}
-          image={bus}
-          alt="Фотография автобуса изнутри"
-        />
+        <ErrorBoundary>
 
-        <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
-        <Button type="Автобусы" numbers={busNumbers} />
-        <Button type="Троллейбусы" numbers={tral} />
+          {<Title
+            image={transport_icon}
+            title="Транспорт и инфраструктура"
+            alt="иконка транспорт" />}
+          <ErrorBoundary>
+            {<InformationImage
+              text={info}
+              image={bus}
+              alt="Фотография автобуса изнутри"
+            />}
+          </ErrorBoundary>
+          <ErrorBoundary>
+            <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
+            <Button type="Автобусы" numbers={busNumbers} />
+            <Button type="Троллейбусы" numbers={tral} />
+          </ErrorBoundary>
+        </ErrorBoundary>
       </Wrapper>
       <Footer />
     </>

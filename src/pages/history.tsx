@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import history_icon from '../assets/icons/history_icon.svg'
 import collage from '../assets/history/collage.png'
@@ -7,13 +7,22 @@ import { Header } from "../components/header";
 import { Title } from "../components/title";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
+import { ErrorBoundary } from "../components/error-boundary";
 
 const History = () => {
+
+    const [events, setEvents] = useState()
+    useEffect(() => {
+        fetch('/api/getEvents').then((response) => response.json()).then((data) => setEvents(data))
+    }, [])
+
     return (
         <>
             <Header />
             <Wrapper>
+                <ErrorBoundary>
                 <Title image={history_icon} title="История и культура" alt="спортивная иконка" />
+                <p> { events }</p>
                 <div className="text">
                     <p>Казань является одним из крупнейших культурных центров России, сохраняя классические достижения, а также способствуя развитию современных, авангардных направлений во многих областях культуры. Столицу Татарстана традиционно называют «мультикультурной», подразумевая взаимовыгодное обогащение мирно сосуществующих русской и татарской культур.</p>
                 </div>
@@ -25,7 +34,7 @@ const History = () => {
                     <p>В республике проживают народы с разным историческим прошлым и культурными традициями. Сочетание по крайней мере трёх типов культурных взаимовлияний (тюркского, славяно-русского и финно-угорского) определяет уникальность этих мест, своеобразие культурных и исторических ценностей.</p>
                     <p>С Татарстаном связаны судьбы многих выдающихся деятелей культуры: певца Фёдора Шаляпина, писателей Льва Толстого, Сергея Аксакова и Максима Горького, Василия Аксёнова, поэтов Евгения Боратынского, Гавриила Державина, Марины Цветаевой и Никиты Заболоцкого, художников Ивана Шишкина и Николая Фешина. Классик татарской поэзии Габдулла Тукай, поэт-герой Муса Джалиль, композиторы Фарид Яруллин, Салих Сайдашев, Назиб Жиганов, София Губайдулина и многие другие составили славу татарской культуры.</p>
                 </div>
-
+                </ErrorBoundary>
             </Wrapper>
             <img src={collage} className="collage-full-width" alt="Различные исторические фотографии татар в начиональном костюме" />
             <Footer />
