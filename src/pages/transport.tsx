@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 
-import transport_icon from '../assets/icons/transport_icon.svg'
-import bus from '../assets/transport/bus.png'
+import transport_icon from '../../assets/icons/transport_icon.svg'
+import bus from '../../assets/transport/bus.png'
 
+import { Wrapper } from "../global-styles";
 import { Header } from "../components/header";
 import { Title } from "../components/title";
 import { Footer } from "../components/footer";
 import { Button } from "../components/transport-components/button";
 import { InformationImage } from "../components/info-plus-image/info-image";
-import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
 import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
+import { Events } from "../components/transport-components/events";
+import { TableEvents } from "../components/transport-components/events/events.styled";
 
 const Transport = () => {
   const [busNumbers, setBusNumbers] = useState([])
@@ -29,9 +31,9 @@ const Transport = () => {
     fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
   }, [])
 
-  const [events, setEvents] = useState()
+  const [event, setEvent] = useState([])
   useEffect(() => {
-      fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvents(data))
+    fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
   }, [])
 
   return (
@@ -55,9 +57,27 @@ const Transport = () => {
             <Button type="Троллейбусы" numbers={tral} />
           </ErrorBoundary>
           <ErrorBoundary>
-          <YandexMap />
+            <YandexMap />
           </ErrorBoundary>
         </ErrorBoundary>
+
+        <h1>Календарь культурных и общественных событий</h1>
+        <TableEvents>
+            <tr>
+                <td width="350">Название</td>
+                <td width="500">Описание</td>
+                <td width="350">Место проведения</td>
+            </tr>
+        </TableEvents>
+        {event.map((item, index) => (
+          <Events key={index}
+            month={item.month}
+            name={item.name}
+            body={item.body}
+            place={item.place}
+          >
+          </Events>
+        ))}
       </Wrapper>
       <Footer />
     </>
