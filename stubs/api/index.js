@@ -26,5 +26,9 @@ router.get('/getEvents', (request, response) => {
     response.send(require('../json/transport/events-calendar.json'))
 })
 
+router.get('/getPlacesData', (request, response) => {
+    response.send(require('../json/places/places-data.json'))
+})
+
 module.exports = router;
 
