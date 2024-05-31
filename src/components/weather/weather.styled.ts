@@ -21,24 +21,12 @@ export const Head = styled.p`
     padding: 0;
 `;
 
-export const BodyTime = styled.p`
-    margin: 0 0 0 115px;
-    font-size: 15px;
-    padding: 0;
-`;
 
 export const BodyTemp = styled.p` 
     float: left;
     display: block;
-    margin: -5px 0 0 120px;
+    margin: -5px 0 0 0;
     font-size: 50px;
-`;
-
-export const IconMoon = styled.img`
-    float: left;
-    display: block;
-    margin: 11px 0 0 15px;
-    font-size: 20px;
 `;
 
 export const BodyState = styled.p`
