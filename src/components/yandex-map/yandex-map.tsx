@@ -48,7 +48,7 @@ const YandexMap: React.FC = () => {
       </form>
 
       <YMaps query={{ lang: 'en_US' }}>
-        <div style={{ width: '100%', height: '400px' }}>
+        <div style={{ marginTop: '50px', width: '1200px', height: '500px' }}>
           <Map 
             defaultState={{ center: [55.798551, 49.106324], zoom: 12 }} 
             width="100%" 
