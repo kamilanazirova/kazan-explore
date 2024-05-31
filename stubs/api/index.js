@@ -20,10 +20,16 @@ router.get('/getInfoAboutKFU', (request, response) => {
     response.send(require('../json/education/info-about-kfu.json'))
 })
 
-
-
 router.get('/getEvents', (request, response) => {
     response.send(require('../json/transport/events-calendar.json'))
+})
+
+router.get('/getInfoAboutKazan', (request, response) => {
+    response.send(require('../json/first/info-about-kazan/success.json'))
+})
+
+router.get('/getNews', (request, response) => {
+    response.send(require('../json/first/news/success.json'))
 })
 
 module.exports = router;
