@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 
 import logo from '../../assets/logo.svg'
 
@@ -19,23 +19,9 @@ const nav = {
   }
 
 export function HeaderLinks({ isOpen }) {
-  const onMainPage = location.pathname === "/kazan-explore";
-  const { currentUser, setCurrentUser } = useContext(LoginContext);
-/*   const [ myCardUrl, setMyCardUrl ] = useState(nav.card.href);
- */
+  const { currentUser } = useContext(LoginContext);
+
   const isAuth = !!currentUser;
-
-  const onLogOut = () => {
-    setCurrentUser(null);
-  }
-
-  /* useEffect(() => {
-    if(currentUser && currentUser.cardId) {
-      setMyCardUrl(URLs.ui.cardDetailEdit.getUrl(currentUser.cardId));
-    }
-  }, [currentUser]); */
-  
- 
 
   return (
     <StyledNav isOpen={isOpen}>

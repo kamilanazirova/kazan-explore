@@ -14,7 +14,6 @@ import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
 import { Events } from "../components/transport-components/events";
 import { TableEvents } from "../components/transport-components/events/events.styled";
-import { Placemark, YMaps, Map } from "react-yandex-maps";
 
 const Transport = () => {
   const [busNumbers, setBusNumbers] = useState([])

@@ -36,4 +36,4 @@ export function Burger ({ onHeaderLinksToggle }) {
       </BackgroundDiv>
     </>
   );
-};
+}
