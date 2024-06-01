@@ -17,6 +17,7 @@ module.exports = {
     "kazan-explore.education": "/science-and-education",
     "kazan-explore.entrance": "/entrance",
     "kazan-explore.registration": "/registration",
+    "kazan-explore.recover": "/recover",
     "kazan-explore.trip.number": "/transport-and-infrastructure/trip/:id"
   },
   features: {

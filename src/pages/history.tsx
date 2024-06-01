@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import history_icon from '../assets/icons/history_icon.svg'
 import collage from '../assets/history/collage.png'
@@ -8,7 +8,6 @@ import { Title } from "../components/title";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
-import { URLs } from "../__data__/urls";
 
 const History = () => {
     return (

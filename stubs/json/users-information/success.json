@@ -1,0 +1,29 @@
+{
+    "data": [
+      {
+        "name": "Kamila",
+        "email": "kamila@gmail.com",
+        "password": "qwerty"
+      },
+      {
+        "name": "Liliya",
+        "email": "liliya@mail.ru",
+        "password": "12121"
+      },
+      {
+        "name": "Guzel",
+        "email": "guzel@gmail.com",
+        "password": "12345"
+      },
+      {
+        "name": "Labeyrie",
+        "email": "superlu@unics.ru",
+        "password": "qwertyqwe"
+      },
+      {
+        "name": "Ismael Bako",
+        "email": "bako@unics.ru",
+        "password": "21"
+      }
+    ]
+  }
