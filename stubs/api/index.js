@@ -1,8 +1,58 @@
 const router = require('express').Router();
+const loginMiddleware = require('../middleware/login-middleware');
+
+// Login
+router.post('/entrance', (request, response) => {
+    const { email, password } = request.body.entranceData;
+   
+    try {
+     const users = require('../json/users-information/success.json');
+     const user = users.data.find(user => user.email === email && user.password === password);
+   
+     if (!user) {
+       return response.status(401).send('Неверные учетные данные'); 
+     } 
+   
+     const responseObject = {
+       email: user.email,
+     }
+   
+     if (user.cardId){
+       responseObject.cardId = user.cardId || "";
+     }
+     return response.json(responseObject);
+    } catch (error) {
+       console.error('Ошибка чтения файла:', error);
+       response.status(500).send('Внутренняя ошибка сервера');
+    }
+   })
+   
+   router.post('/registration', async (request, response) => {
+     const { email, password, confirmPassword } = request.body.registerData;
+   
+     try {
+         if (password !== confirmPassword) {
+             return response.status(400).send('Пароли не совпадают!');
+         }
+         const users = require('../json/users-information/success.json');
+   
+         const existingUser = users.data.find(user => user.email === email);
+   
+         if (existingUser) {
+             return response.status(400).send('Пользователь с такой почтой уже существует!');
+         }
+   
+         return response.json({ email: email});
+     } catch (error) {
+         console.error('Ошибка регистрации пользователя:', error);
+         response.status(500).send('Внутренняя ошибка сервера');
+     }
+   });
+
 
 // Sport page
 router.get('/getSportData', (request, response) => {
-    response.send(require('../json/sport-data.json'))
+    response.send(require('../json/sport/sport-data.json'))
 })
 
 // Places page

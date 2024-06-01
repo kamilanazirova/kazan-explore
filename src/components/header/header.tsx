@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import './header.styled';
 
 import logo from '../../assets/logo.svg'
-import { HeaderBlock, ImgLogo, MenuLi, StyledLogin, StyledMenu, StyledNav, OverlayLogin } from "./header.styled";
+import { HeaderBlock, ImgLogo, MenuLi, StyledLogin, StyledMenu, OverlayLogin } from "./header.styled";
+import { LoginContext  } from '../../context/login-context';
 import { URLs } from "../../__data__/urls";
+import { HeaderLinks } from '../header-links';
+import { Burger } from './burger';
 
 const nav = {
   places: { title: "Интересные места", href: URLs.ui.places },
@@ -16,50 +19,16 @@ const nav = {
 }
 
 export function Header() {
+  const [isHeaderLinksOpen, setIsHeaderLinksOpen] = useState(false);
+
+  const handleHeaderLinksToggle = () => {
+    setIsHeaderLinksOpen(!isHeaderLinksOpen);
+  };
+
   return (
     <HeaderBlock>
-      <StyledNav>
-        <a href="/kazan-explore">
-          <ImgLogo src={logo} alt="логотип сайта" />
-        </a>
-        <StyledMenu>
-          {URLs.ui.places && (<MenuLi>
-            <Link
-              to={nav.places.href}>{nav.places.title}
-            </Link>
-          </MenuLi>
-          )}
-          {URLs.ui.transport && (<MenuLi>
-            <Link
-              to={nav.transport.href}>{nav.transport.title}
-            </Link>
-          </MenuLi>
-          )}
-          {URLs.ui.sport && (<MenuLi>
-            <Link
-              to={nav.sport.href}>{nav.sport.title}
-            </Link>
-          </MenuLi>
-          )}
-          {URLs.ui.history && (<MenuLi>
-            <Link
-              to={nav.history.href}>{nav.history.title}
-            </Link>
-          </MenuLi>
-          )}
-          {URLs.ui.education && (<MenuLi>
-            <Link
-              to={nav.education.href}>{nav.education.title}
-            </Link>
-          </MenuLi>
-          )}
-        </StyledMenu>
-        <OverlayLogin>
-          <StyledLogin>
-            <Link to={URLs.ui.entrance}>Войти</Link>
-          </StyledLogin>
-        </OverlayLogin>
-      </StyledNav>
+        <HeaderLinks isOpen={isHeaderLinksOpen} />
+        <Burger onHeaderLinksToggle={handleHeaderLinksToggle} />
     </HeaderBlock>
   );
 }

@@ -15,6 +15,4 @@ const App = () => {
   );
 };
 
-App.displayName = "App-22";
-
 export default App;
