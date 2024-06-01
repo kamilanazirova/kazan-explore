@@ -1,8 +1,7 @@
 const router = require('express').Router();
-//const loginMiddleware = require('../middleware/login-middleware');
+
 
 // First page
-
 router.get('/getInfoAboutKazan', (request, response) => {
     response.send(require('../json/first/info-about-kazan/success.json'))
 })

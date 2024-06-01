@@ -17,19 +17,20 @@ import { Events } from "../components/transport-components/events";
 import { TableEvents } from "../components/transport-components/events/events.styled";
 
 const Transport = () => {
+  
   const [busNumbers, setBusNumbers] = useState([])
   useEffect(() => {
     fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data))
   }, [])
 
-  const [tral, setTral] = useState([])
+  const [tralNumbers, setTralNumbers] = useState([])
   useEffect(() => {
-    fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTral(data))
+    fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTralNumbers(data))
   }, [])
 
-  const [scedule, seyShedule] = useState([])
+  const [scedule, setShedule] = useState([])
   useEffect(() => {
-    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setTral(data))
+    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setShedule(data))
   }, [])
   
 
@@ -66,7 +67,7 @@ const Transport = () => {
             />}
             <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
             <Button type="Автобусы" numbers={busNumbers} />
-            <Button type="Троллейбусы" numbers={tral} />
+            <Button type="Троллейбусы" numbers={tralNumbers} />
           </ErrorBoundary>
 
           <ErrorBoundary>
