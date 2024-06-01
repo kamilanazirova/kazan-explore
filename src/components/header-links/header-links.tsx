@@ -19,9 +19,13 @@ const nav = {
   }
 
 export function HeaderLinks({ isOpen }) {
-  const { currentUser } = useContext(LoginContext);
+  const { currentUser, setCurrentUser } = useContext(LoginContext);
 
   const isAuth = !!currentUser;
+
+  const onLogOut = () => {
+    setCurrentUser(null);
+  }
 
   return (
     <StyledNav isOpen={isOpen}>
@@ -63,8 +67,8 @@ export function HeaderLinks({ isOpen }) {
         
         <OverlayLogin>
           <StyledLogin>
-            {isAuth&&<Link to={URLs.ui.entrance}>Войти</Link>}
-            {!isAuth&&<Link to={URLs.ui.entrance}>Выйти</Link>}
+            {!isAuth&&<Link to={URLs.ui.entrance}>Войти</Link>}
+            {isAuth&&<Link onClick={onLogOut} to={URLs.ui.entrance}>Выйти</Link>}
           </StyledLogin>
         </OverlayLogin>
 
