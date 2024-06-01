@@ -1,5 +1,15 @@
 const router = require('express').Router();
-const loginMiddleware = require('../middleware/login-middleware');
+//const loginMiddleware = require('../middleware/login-middleware');
+
+// First page
+
+router.get('/getInfoAboutKazan', (request, response) => {
+    response.send(require('../json/first/info-about-kazan/success.json'))
+})
+
+router.get('/getNews', (request, response) => {
+    response.send(require('../json/first/news/success.json'))
+})
 
 // Sport page
 router.get('/getSportData', (request, response) => {
@@ -30,6 +40,10 @@ router.get('/getEvents', (request, response) => {
 
 router.get('/getTripSchedule', (request, response) => {
     response.send(require('../json/transport/trip-schedule/success.json'))
+})
+
+router.get('/getInfoAboutInstitutions', (request, response) => {
+    response.send(require('../json/transport/info-about-institutions.json'))
 })
 
 // Education page
@@ -85,7 +99,4 @@ router.post('/entrance', (request, response) => {
      }
    });
 
-
-
 module.exports = router;
-

@@ -1,17 +1,18 @@
 import React from "react";
 
 import { newsimg } from "../../assets/first/news"
-import { Link } from "../link";
 
-import { Container, Photo } from "./news.styled";
+import { Container, Photo, Title, Text, Info } from "./news.styled";
 
 export const News = ({  
     image, 
-    link,
+    title,
     text}) => (
   <Container>
-
     <Photo src={newsimg[image]}/>
-    <Link href={link}>{text}</Link>
+    <Info>
+    <Title>{title}</Title>
+    <Text>{text}</Text>
+    </Info>
   </Container>
 );

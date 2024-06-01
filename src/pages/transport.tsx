@@ -12,6 +12,7 @@ import { InformationImage } from "../components/info-plus-image/info-image";
 import { ErrorBoundary } from "../components/error-boundary";
 import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
+
 import { Events } from "../components/transport-components/events";
 import { TableEvents } from "../components/transport-components/events/events.styled";
 
@@ -40,6 +41,11 @@ const Transport = () => {
   const [event, setEvent] = useState([])
   useEffect(() => {
     fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
+  }, [])
+
+  const [infoIns, setInfoIns] = useState()
+  useEffect(() => {
+      fetch(`${URLs.api.main}/getInfoIns`).then((response) => response.json()).then((data) => setInfoIns(data))
   }, [])
 
   return (

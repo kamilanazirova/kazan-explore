@@ -14,4 +14,5 @@ declare module '*.webp' {
 declare module 'ymaps' {
     const ymaps: any;
     export default ymaps;
+
 }
