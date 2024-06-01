@@ -33,6 +33,7 @@
     },
     "devDependencies": {
         "eslint": "8.57.0",
+        "file-loader": "^6.2.0",
         "globals": "^15.3.0",
         "typescript-eslint": "^7.10.0"
     }

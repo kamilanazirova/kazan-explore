@@ -12,6 +12,7 @@ import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
 import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
+import { InfjIns } from "../components/info-about-institutions/info-ins";
 
 const Transport = () => {
   const [busNumbers, setBusNumbers] = useState([])
@@ -32,6 +33,11 @@ const Transport = () => {
   const [events, setEvents] = useState()
   useEffect(() => {
       fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvents(data))
+  }, [])
+
+  const [infoIns, setInfoIns] = useState()
+  useEffect(() => {
+      fetch(`${URLs.api.main}/getInfoIns`).then((response) => response.json()).then((data) => setInfoIns(data))
   }, [])
 
   return (

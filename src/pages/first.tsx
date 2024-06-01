@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import kazan from '../assets/first/kazan.webp'
+import kazan from '../assets/first/kazan.webp';
+import kazann from '../assets/first/kazann.png'
+
 
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
@@ -30,8 +32,8 @@ const first = () => {
         <section className="information">
           <div className="info">
             <div className="video">
-              <video controls className="kazan-video">Казань с высоты птичьего полета</video>
-              <p className="about-video">Видео, снятое с высоты птичьего полета над Казанью представляет захватывающий панорамный обзор города, раскрывая его красоту и архитектурное многообразие.</p>
+            <img src={kazann} alt="Казань с высоты птичьего полёта" className="kazan-video" />
+              <p className="about-video">Фото, снятое с высоты птичьего полета над Казанью представляет захватывающий панорамный обзор города, раскрывая его красоту и архитектурное многообразие.</p>
             </div>
             <Weather/>
           </div>

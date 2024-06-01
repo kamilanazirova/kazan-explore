@@ -32,5 +32,9 @@ router.get('/getNews', (request, response) => {
     response.send(require('../json/first/news/success.json'))
 })
 
+router.get('/getInfoAboutInstitutions', (request, response) => {
+    response.send(require('../json/transport/info-about-institutions.json'))
+})
+
 module.exports = router;
 
