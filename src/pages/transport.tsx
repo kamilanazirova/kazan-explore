@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import transport_icon from '../../assets/icons/transport_icon.svg'
-import bus from '../../assets/transport/bus.png'
+import transport_icon from '../assets/icons/transport_icon.svg'
+import bus from '../assets/transport/bus.png'
 
 import { Wrapper } from "../global-styles";
 import { Header } from "../components/header";
@@ -14,6 +14,7 @@ import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
 import { Events } from "../components/transport-components/events";
 import { TableEvents } from "../components/transport-components/events/events.styled";
+import { Placemark, YMaps, Map } from "react-yandex-maps";
 
 const Transport = () => {
   const [busNumbers, setBusNumbers] = useState([])
@@ -56,18 +57,22 @@ const Transport = () => {
             <Button type="Автобусы" numbers={busNumbers} />
             <Button type="Троллейбусы" numbers={tral} />
           </ErrorBoundary>
+
           <ErrorBoundary>
             <YandexMap />
           </ErrorBoundary>
+
         </ErrorBoundary>
 
         <h1>Календарь культурных и общественных событий</h1>
         <TableEvents>
+          <tbody>
             <tr>
-                <td width="350">Название</td>
-                <td width="500">Описание</td>
-                <td width="350">Место проведения</td>
+              <td width="350">Название</td>
+              <td width="500">Описание</td>
+              <td width="350">Место проведения</td>
             </tr>
+          </tbody>
         </TableEvents>
         {event.map((item, index) => (
           <Events key={index}

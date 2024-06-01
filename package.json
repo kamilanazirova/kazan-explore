@@ -29,7 +29,8 @@
         "react-leaflet": "^4.2.1",
         "react-router-dom": "^6.23.1",
         "react-yandex-maps": "^4.6.0",
-        "typescript": "^5.4.5"
+        "typescript": "^5.4.5",
+        "ymaps": "^0.2.1"
     },
     "devDependencies": {
         "eslint": "8.57.0",

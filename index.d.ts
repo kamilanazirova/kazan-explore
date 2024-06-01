@@ -10,3 +10,8 @@ declare module '*.webp' {
     let path: string;
     export default path;
 }
+
+declare module 'ymaps' {
+    const ymaps: any;
+    export default ymaps;
+}

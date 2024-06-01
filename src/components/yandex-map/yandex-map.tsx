@@ -1,65 +1,39 @@
-import React, { useState } from 'react';
-import { YMaps, Map, Polyline  } from 'react-yandex-maps';
+// src/YandexMap.js
+import React from 'react';
+import { YMaps, Map, RoutePanel } from 'react-yandex-maps';
+import { MapWrapper } from './ymaps.styled';
 
-const YandexMap: React.FC = () => {
-  const [mapInstance, setMapInstance] = useState<any>(null);
-  const [startPoint, setStartPoint] = useState<string>('');
-  const [endPoint, setEndPoint] = useState<string>('');
-  const [route, setRoute] = useState<any>(null);
+const center = [55.797557, 49.107295];
+const api = '6dd153f0-0ff6-4bf8-958b-36727c8743ef';
 
-  const handleRouteBuild = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!mapInstance) return;
-
-    const geocode = async (address: string) => {
-      const res = await mapInstance?.geocode(address);
-      const coords = res.geoObjects.get(0).geometry.getCoordinates();
-      return coords;
-    };
-
-    try {
-      const startCoords = await geocode(startPoint);
-      const endCoords = await geocode(endPoint);
-      const multiRoute = new mapInstance.multiRouter.MultiRoute({
-        referencePoints: [startCoords, endCoords],
-        params: { results: 1 }
-      }, { boundsAutoApply: true });
-
-      setRoute(multiRoute);
-      mapInstance.geoObjects.removeAll();
-      mapInstance.geoObjects.add(multiRoute);
-    } catch (error) {
-      console.error('Error building route:', error);
-    }
-  };
-
+const YandexMap = () => {
   return (
-    <div>
-      <form onSubmit={handleRouteBuild}>
-        <div>
-          <label>Start Point: </label>
-          <input type="text" value={startPoint} onChange={(e) => setStartPoint(e.target.value)} />
-        </div>
-        <div>
-          <label>End Point: </label>
-          <input type="text" value={endPoint} onChange={(e) => setEndPoint(e.target.value)} />
-        </div>
-        <button type="submit">Build Route</button>
-      </form>
-
-      <YMaps query={{ lang: 'en_US' }}>
-        <div style={{ marginTop: '50px', width: '1200px', height: '500px' }}>
-          <Map 
-            defaultState={{ center: [55.798551, 49.106324], zoom: 12 }} 
-            width="100%" 
-            height="400px" 
-            instanceRef={setMapInstance}
-          >
-            {route && <Polyline geometry={route.geometry.getCoordinates()} options={{ strokeColor: '#000', strokeWidth: 4 }} />}
-          </Map>
-        </div>
-      </YMaps>
-    </div>
+    <YMaps query={{ apikey: api }}>
+        <MapWrapper>
+        <Map
+          defaultState={{ center, zoom: 12 }}
+          width="100%"
+          height="100%"
+        >
+          <RoutePanel
+            options={{ float: 'right' }}
+            defaultRoute={{ from: '', to: '' }}
+            instanceRef={(ref) => {
+              if (ref) {
+                ref.routePanel.state.set({
+                  fromEnabled: true,
+                  from: '',
+                  to: '',
+                });
+                ref.routePanel.options.set({
+                  types: { auto: true, masstransit: true },
+                });
+              }
+            }}
+          />
+        </Map>
+        </MapWrapper>
+    </YMaps>
   );
 };
 
