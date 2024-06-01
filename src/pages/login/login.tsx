@@ -30,10 +30,11 @@ const Login = () => {
         confirmPassword: ''
     });
 
-    const handleEntranceSubmit = (e) => {
+    const handleEntranceSubmit = async (e) => {
         e.preventDefault();
+
         try {
-            fetch(`${URLs.api.main}/entrance`, {
+            const response = await fetch(`${URLs.api.main}/entrance`, {
                 method: 'POST',
                 body: JSON.stringify({
                     entranceData: entranceData
@@ -41,34 +42,33 @@ const Login = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
-                .then((response) => {
-                    if (!response.ok) {
-                        return response.text().then((errorMessage) => {
-                            alert(errorMessage);
-                            throw new Error(errorMessage);
-                        });
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    setCurrentUser({ email: data.email, cardId: data.cardId });
-                    location.replace(`${URLs.baseUrl}`);
-                })
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                alert(errorMessage);
+                throw new Error(errorMessage);
+            }
+
+            const data = await response.json();
+            setCurrentUser({ email: data.email, cardId: data.cardId });
+            location.replace(`${URLs.baseUrl}`);
+
         } catch (error) {
             console.error('Ошибка при входе:', error);
             alert('Ошибка при входе');
         }
     };
 
-    const handleRegisterSubmit = (e) => {
+    const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
             alert('Пароли не совпадают');
             return;
         }
+
         try {
-            fetch(`${URLs.api.main}/registration`, {
+            const response = await fetch(`${URLs.api.main}/registration`, {
                 method: 'POST',
                 body: JSON.stringify({
                     registerData: registerData
@@ -76,24 +76,23 @@ const Login = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            })
-                .then((response) => {
-                    if (!response.ok) {
-                        return response.text().then((errorMessage) => {
-                            alert(errorMessage);
-                            throw new Error(errorMessage);
-                        });
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    setCurrentUser({ email: data.email, cardId: "" });
-                    location.replace(`${URLs.baseUrl}`);
-                })
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                alert(errorMessage);
+                throw new Error(errorMessage);
+            }
+
+            const data = await response.json();
+            setCurrentUser({ email: data.email, cardId: "" });
+            location.replace(`${URLs.baseUrl}`);
         } catch (error) {
             console.error('Ошибка при регистрации:', error);
+            alert('Ошибка при регистрации');
         }
     };
+
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -101,22 +100,46 @@ const Login = () => {
             setEntranceData({ ...entranceData, [name]: value });
         } else if (currentLocation === 'registration') {
             setRegisterData({ ...registerData, [name]: value });
-        }
-        else if (currentLocation === 'recover') {
+        } else if (currentLocation === 'recover') {
             setRegisterData({ ...registerData, [name]: value });
         }
     };
 
-    const handleRecoverSubmit = (e) => {
+
+    const handleRecoverSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
             alert('Пароли не совпадают');
             return;
         }
-        alert('Пароль восстановлен');
-        setCurrentUser({ email: registerData.email, cardId: "" });
-        location.replace(`${URLs.baseUrl}`);
-    }
+
+        try {
+            // Предположим, что восстановление пароля также требует запроса на сервер
+            const response = await fetch(`${URLs.api.main}/recover`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    registerData: registerData
+                }),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                const errorMessage = await response.text();
+                alert(errorMessage);
+                throw new Error(errorMessage);
+            }
+
+            alert('Пароль восстановлен');
+            setCurrentUser({ email: registerData.email, cardId: "" });
+            location.replace(`${URLs.baseUrl}`);
+        } catch (error) {
+            console.error('Ошибка при восстановлении пароля:', error);
+            alert('Ошибка при восстановлении пароля');
+        }
+    };
+
 
     return (
         <>
