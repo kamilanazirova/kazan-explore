@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import interesting_logo from '../assets/places/LibraryOutline.png'
+
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Place } from "../components/place"
@@ -9,13 +10,15 @@ import { Title } from "../components/title";
 import { ErrorBoundary } from "../components/error-boundary";
 import { URLs } from "../__data__/urls";
 import { MapWithMarkers } from "../components/map-with-markers";
-import { ReviewModal } from "../components/review";
+
+import { URLs } from "../__data__/urls";
 
 const Places = () => {
   const [placesData, setPlacesData] = useState([])
-    useEffect(() => {
-        fetch(`${URLs.api.main}/getPlacesData`).then((response) => response.json()).then((data) => setPlacesData(data))
-    }, []);
+  useEffect(() => {
+    fetch(`${URLs.api.main}/getPlacesData`).then((response) => response.json()).then((data) => setPlacesData(data))
+  }, [])
+
   return (
     <>
       <Header />

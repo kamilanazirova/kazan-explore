@@ -1,18 +1,16 @@
-// @es-lint-ignore-file
+/* eslint-disable */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import App from './app';
+import LoginProvider from './context/login-context';
 
-const DefaultComponent = () => <App />;
-DefaultComponent.displayName = "DefaultComponent";
-
-export default DefaultComponent;
+export default () => <LoginProvider><App/></LoginProvider>;
 
 let rootElement: ReactDOM.Root;
 
 export const mount = (Component, element = document.getElementById('app')) => {
-  rootElement = ReactDOM.createRoot(element);
+  const rootElement = ReactDOM.createRoot(element);
   rootElement.render(<Component />);
 
   if (module.hot) {
@@ -23,7 +21,5 @@ export const mount = (Component, element = document.getElementById('app')) => {
 };
 
 export const unmount = () => {
-  if (rootElement) {
     rootElement.unmount();
-  }
 };
