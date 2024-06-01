@@ -1,0 +1,120 @@
+[
+    {
+        "id": "1",
+        "from": "Речной порт", 
+        "to": "жилой массив Дербышки",
+        "route_length": "18,03 км",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "5:24",
+                "departure_for_the_last_flight_A": "22:32",
+                "departure_for_the_last_flight_B": "21:27",
+                "motion_interval": {
+                    "morning": "6,9 мин", 
+                    "evening": "7,3 мин"
+                }
+            },
+            "on_the_weekend": {
+                "start_of_movement": "5:30",
+                "departure_for_the_last_flight_A": "22:44",
+                "departure_for_the_last_flight_B": "21:55",
+                "motion_interval": " 7,5"
+            }
+        }
+    },
+    {
+        "id": "2",
+        "from": "Станция метро «Аметьево»", 
+        "to": "ул.Привокзальная",
+        "route_length": "20,9 км",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "5:40",
+                "departure_for_the_last_flight_A": "21:54",
+                "departure_for_the_last_flight_B": "21:01",
+                "motion_interval": "8,5 мин"
+            },
+            "on_the_weekend": {
+                "start_of_movement": "5:40",
+                "departure_for_the_last_flight_A": "21:34",
+                "departure_for_the_last_flight_B": "20:32",
+                "motion_interval": "9 мин"
+            }
+        }
+    },
+    {
+        "id": "900",
+        "route_length": "",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": {
+                    "morning": "", 
+                    "evening": ""
+                }
+            },
+            "on_the_weekend": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            }
+        }
+    },
+    {
+        "id": "4",
+        "route_length": "",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            },
+            "on_the_weekend": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            }
+        }
+    },
+    {
+        "id": "5",
+        "route_length": "",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            },
+            "on_the_weekend": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            }
+        }
+    },
+    {
+        "id": "6",
+        "route_length": "",
+        "operating_mode": {
+            "weekdays": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            },
+            "on_the_weekend": {
+                "start_of_movement": "",
+                "departure_for_the_last_flight_A": "",
+                "departure_for_the_last_flight_B": "",
+                "motion_interval": ""
+            }
+        }
+    }
+]

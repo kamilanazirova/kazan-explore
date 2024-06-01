@@ -26,6 +26,12 @@ const Transport = () => {
     fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTral(data))
   }, [])
 
+  const [scedule, seyShedule] = useState([])
+  useEffect(() => {
+    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setTral(data))
+  }, [])
+  
+
   const [info, setInfo] = useState([])
   useEffect(() => {
     fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
