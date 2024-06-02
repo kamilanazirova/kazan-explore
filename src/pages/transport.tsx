@@ -76,7 +76,7 @@ const Transport = () => {
                 </>
               )}
             </ErrorBoundary>
-            <Button onBusClick={handleBusClick} type="Троллейбусы" numbers={tralNumbers} />
+            {/* <Button onBusClick={handleBusClick} type="Троллейбусы" numbers={tralNumbers} /> */}
           </ErrorBoundary>
 
           <ErrorBoundary>
