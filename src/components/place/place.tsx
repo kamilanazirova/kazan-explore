@@ -19,7 +19,21 @@ export const Place = ({ type, image, head, text, componentKey }) => {
                 <Photo src={places[image]} />
                 <Head>{head}</Head>
                 <Text>{text}</Text>
-                <button onClick={() => setIsModalOpen(true)}>Оставить отзыв</button>
+                <button
+                onClick={() => setIsModalOpen(true)}
+                style={{
+                    borderRadius: '20px', // Округление углов в пикселях
+                    backgroundColor: '#CCCCCC', // Серый фон
+                    border: '1px solid black', // Черные границы
+                    color: 'black', // Черный текст
+                    fontWeight: 'bold', // Жирный текст
+                    padding: '10px 20px', // Отступы внутри кнопки
+                    cursor: 'pointer', // Изменение курсора при наведении
+                    marginLeft: '80px', // Отступ слева
+                }}
+                >
+                Оставить отзыв
+                </button>
                 <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleReviewSubmit} reviews={reviews} componentKey={componentKey} />
             </Container>
         </>

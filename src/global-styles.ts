@@ -111,7 +111,7 @@ export const globalStyles = css`
         width: 100%;
         height: auto;
         background-color: #011208;
-        padding: 150px 70px 15px;
+        padding: 150px 0px 15px;
         color: #FFFFFF;
         font-size: 20px;
         line-height: 1.5;
@@ -191,7 +191,7 @@ export const globalStyles = css`
         width: 100%;
         height: auto;
         background-color: #011208;
-        padding: 150px 70px 35px;
+        padding: 150px 0px 35px;
         color: #FFFFFF;
         font-size: 20px;
         line-height: 1.5;
@@ -199,7 +199,7 @@ export const globalStyles = css`
     
     .tnews {
         position: absolute;
-        top: 1490px;
+        top: 1550px;
         font-size: 50px;
         font-weight: bolder;
         margin: 0;
