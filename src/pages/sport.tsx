@@ -18,7 +18,6 @@ const Sport = () => {
         fetch(`${URLs.api.main}/getSportData`).then((response) => response.json()).then((data) => setSportCard(data))
     }, [])
 
-
     return (
         <>
             <Header />

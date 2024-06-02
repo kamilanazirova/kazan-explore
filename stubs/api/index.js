@@ -41,10 +41,6 @@ router.get('/getTripSchedule', (request, response) => {
     response.send(require('../json/transport/trip-schedule/success.json'))
 })
 
-router.get('/getInfoAboutInstitutions', (request, response) => {
-    response.send(require('../json/transport/info-about-institutions.json'))
-})
-
 // Education page
 router.get('/getInfoAboutKFU', (request, response) => {
     response.send(require('../json/education/info-about-kfu.json'))

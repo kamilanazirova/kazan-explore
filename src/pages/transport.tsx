@@ -25,7 +25,6 @@ const Transport = () => {
   const [schedule, setSchedule] = useState([]);
   const [info, setInfo] = useState([]);
   const [event, setEvent] = useState([]);
-  const [infoIns, setInfoIns] = useState()
   const [selectedBus, setSelectedBus] = useState(null);
 
   useEffect(() => {
@@ -34,7 +33,6 @@ const Transport = () => {
     fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setSchedule(data))
     fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
     fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
-    fetch(`${URLs.api.main}/getInfoIns`).then((response) => response.json()).then((data) => setInfoIns(data))
   }, []);
 
   const handleBusClick = (busNumber) => {
