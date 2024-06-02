@@ -33,24 +33,24 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, compo
     onChange={(e) => setNewReview(e.target.value)}
     placeholder="Напишите отзыв"
     style={{
-        width: '80%', // Ширина текстовой области
-        height: '50px', // Высота текстовой области
-        borderRadius: '10px', // Скругление углов в пикселях
-        padding: '10px', // Отступы внутри текстовой области
-        resize: 'none', // Отключение возможности изменения размеров текстовой области пользователем
-        marginLeft: '10px', // Отступ слева
+        width: '80%', 
+        height: '50px', 
+        borderRadius: '10px',
+        padding: '10px', 
+        resize: 'none', 
+        marginLeft: '10px', 
     }}
 />
       <button
     style={{
-        borderRadius: '10px', // Округление углов в пикселях
-        backgroundColor: '#CCCCCC', // Светло-серый фон по умолчанию
-        border: '1px solid black', // Черные границы
-        color: 'black', // Черный текст
-        fontWeight: 'bold', // Жирный текст
-        padding: '10px 20px', // Отступы внутри кнопки
-        cursor: 'pointer', // Изменение курсора при наведении
-        marginLeft: '10px', // Отступ слева
+        borderRadius: '10px', 
+        backgroundColor: '#CCCCCC', 
+        border: '1px solid black',
+        color: 'black', 
+        fontWeight: 'bold', 
+        padding: '10px 20px', 
+        cursor: 'pointer', 
+        marginLeft: '10px', 
     }}
     onClick={handleReviewSubmit}
 >
@@ -58,14 +58,14 @@ export const ReviewModal: React.FC<ReviewModalProps> = ({ isOpen, onClose, compo
 </button>
 <button
     style={{
-        borderRadius: '10px', // Округление углов в пикселях
-        backgroundColor: '#CCCCCC', // Светло-серый фон по умолчанию
-        border: '1px solid black', // Черные границы
-        color: 'black', // Черный текст
-        fontWeight: 'bold', // Жирный текст
-        padding: '10px 20px', // Отступы внутри кнопки
-        cursor: 'pointer', // Изменение курсора при наведении
-        margin: '10px', // Отступы вокруг кнопки
+        borderRadius: '10px', 
+        backgroundColor: '#CCCCCC', 
+        border: '1px solid black',
+        color: 'black', 
+        fontWeight: 'bold', 
+        padding: '10px 20px',
+        cursor: 'pointer', 
+        margin: '10px', 
     }}
     onClick={onClose}
 >
