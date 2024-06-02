@@ -30,7 +30,7 @@ export const BodyTemp = styled.p`
 `;
 
 export const BodyState = styled.p`
-    margin: 10px 0 0 255px;
+    margin: 10px 0 0 215px;
     font-size: 20px;
     color: #dddddd;
     padding: 0;
@@ -38,7 +38,7 @@ export const BodyState = styled.p`
 
 export const BodyFeel = styled.p`
     display: block;
-    margin: 0 0 0 255px;
+    margin: 0 0 0 215px;
     font-size: 15px;
     color: #dddddd;
     padding: 0;
