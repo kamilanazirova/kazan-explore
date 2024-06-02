@@ -14,47 +14,38 @@ import YandexMap from "../components/yandex-map/yandex-map";
 import { URLs } from "../__data__/urls";
 
 import { Events } from "../components/transport-components/events";
-import { TableEvents } from "../components/transport-components/events/events.styled";
+import { TableEvents, Table, Th  } from "../components/transport-components/events/events.styled";
+import { Schedule } from "../components/transport-components/schedule";
 
 const Transport = () => {
-  
-  const [busNumbers, setBusNumbers] = useState([])
-  useEffect(() => {
-    fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data))
-  }, [])
+  const currentLocation = location.pathname.split('/').pop();
 
-  const [tralNumbers, setTralNumbers] = useState([])
-  useEffect(() => {
-    fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTralNumbers(data))
-  }, [])
-
-  const [scedule, setShedule] = useState([])
-  useEffect(() => {
-    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setShedule(data))
-  }, [])
-  
-
-  const [info, setInfo] = useState([])
-  useEffect(() => {
-    fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
-  }, [])
-
-  const [event, setEvent] = useState([])
-  useEffect(() => {
-    fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
-  }, [])
-
+  const [busNumbers, setBusNumbers] = useState([]);
+  const [tralNumbers, setTralNumbers] = useState([]);
+  const [schedule, setSchedule] = useState([]);
+  const [info, setInfo] = useState([]);
+  const [event, setEvent] = useState([]);
   const [infoIns, setInfoIns] = useState()
+  const [selectedBus, setSelectedBus] = useState(null);
+
   useEffect(() => {
-      fetch(`${URLs.api.main}/getInfoIns`).then((response) => response.json()).then((data) => setInfoIns(data))
-  }, [])
+    fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data));
+    fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTralNumbers(data));
+    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setSchedule(data))
+    fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
+    fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
+    fetch(`${URLs.api.main}/getInfoIns`).then((response) => response.json()).then((data) => setInfoIns(data))
+  }, []);
+
+  const handleBusClick = (busNumber) => {
+    setSelectedBus(busNumber);
+  };
 
   return (
     <>
       <Header />
       <Wrapper>
         <ErrorBoundary>
-
           {<Title
             image={transport_icon}
             title="Транспорт и инфраструктура"
@@ -65,9 +56,27 @@ const Transport = () => {
               image={bus}
               alt="Фотография автобуса изнутри"
             />}
-            <h2>Нажмите на интересующий маршрут, чтобы увидеть его схему движения</h2>
-            <Button type="Автобусы" numbers={busNumbers} />
-            <Button type="Троллейбусы" numbers={tralNumbers} />
+            <h2>Нажмите на интересующий маршрут, чтобы увидеть его расписание</h2>
+            <Button onBusClick={handleBusClick} type="Автобусы" numbers={busNumbers} />
+            <ErrorBoundary>
+              {selectedBus && (
+                <>
+                  {schedule
+                    .filter(item => item.id == selectedBus)
+                    .map((item, index) => (
+                      <Schedule key={index}
+                        id={item.id}
+                        from={item.from}
+                        to={item.to}
+                        route_length={item.route_length}
+                        operating_mode_weekdays={item.operating_mode_weekdays}
+                        operating_mode_weekend={item.operating_mode_weekend}
+                      />
+                    ))}
+                </>
+              )}
+            </ErrorBoundary>
+            <Button onBusClick={handleBusClick} type="Троллейбусы" numbers={tralNumbers} />
           </ErrorBoundary>
 
           <ErrorBoundary>
@@ -77,15 +86,15 @@ const Transport = () => {
         </ErrorBoundary>
 
         <h1>Календарь культурных и общественных событий</h1>
-        <TableEvents>
-          <tbody>
+        <Table>
+          <thead>
             <tr>
-              <td width="350">Название</td>
-              <td width="500">Описание</td>
-              <td width="350">Место проведения</td>
+              <Th>Название</Th>
+              <Th>Описание</Th>
+              <Th>Место проведения</Th>
             </tr>
-          </tbody>
-        </TableEvents>
+          </thead>
+        </Table>
         {event.map((item, index) => (
           <Events key={index}
             month={item.month}

@@ -8,15 +8,15 @@ import { URLs } from "../../../__data__/urls";
 import map from '../../../assets/transport/trips/1.png' */
 
 
-export function Button({ numbers, type }) {
+export function Button({ numbers, type, onBusClick }) {
     return (
         <BottonWrapper>
             <TransportType>{type}</TransportType>
             {numbers.map((number, index) => (
-                <StyledButton key={index}>
-                    <Link to={URLs.ui.tripNumber.getUrl(number)} >
+                <StyledButton  onClick={() => onBusClick(number)} key={index}>
+                    {/* <Link to={URLs.ui.tripNumber.getUrl(number)} > */}
                         {`№${number}`}
-                    </Link>
+                    {/* </Link> */}
                 </StyledButton>
             ))
             }
