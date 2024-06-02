@@ -2,7 +2,7 @@ import React from "react";
 
 import './events.styled';
 import { Wrapper } from "../../../global-styles";
-import { TableEvents } from "./events.styled";
+import { TableEvents, Td } from "./events.styled";
 
 export const Events = ({
     month,
@@ -11,14 +11,16 @@ export const Events = ({
     place
 }) => (
     <>
-        {month && (<h2>{month}</h2>)}
+        {month && (<h3>{month}</h3>)}
         <Wrapper>
             <TableEvents>
-                <tr>
-                    <td width="300">{name}</td>
-                    <td width="500">{body}</td>
-                    <td width="400">{place}</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <Td width="400">{name}</Td>
+                        <Td width="400">{body}</Td>
+                        <Td width="400">{place}</Td>
+                    </tr>
+                </tbody>
             </TableEvents>
         </Wrapper>
     </>
