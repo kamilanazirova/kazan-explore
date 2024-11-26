@@ -9,7 +9,16 @@ module.exports = {
   },
   /* use https://admin.bro-js.ru/ to create config, navigations and features */
   navigations: {
-    "kazan-explore.main": "/kazan-explore",
+    "kazan-explore.master": "/kazan-explore",
+    //"kazan-explore.places": "/interesting-places",
+    "kazan-explore.transport": "/transport-and-infrastructure",
+    "kazan-explore.sport": "/sport-and-entertainment",
+    "kazan-explore.history": "/history-and-culture",
+    "kazan-explore.education": "/science-and-education",
+    "kazan-explore.entrance": "/entrance",
+    "kazan-explore.registration": "/registration",
+    "kazan-explore.recover": "/recover",
+    "kazan-explore.trip.number": "/transport-and-infrastructure/trip/:id"
   },
   features: {
     "kazan-explore": {
