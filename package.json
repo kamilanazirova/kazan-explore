@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "brojs server --port=8099 --with-open-browser",
-        "build": "npm run clean && brojs build --dev",
+        "build": "webpack",
         "build:prod": "npm run clean && brojs build",
         "clean": "rimraf dist",
         "eslint": "npx eslint src"
@@ -15,7 +15,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@brojs/cli": "^1.0.0",
+        "@brojs/cli": "^1.6.3",
         "@emotion/react": "^11.1.5",
         "@emotion/styled": "^11.11.5",
         "@ijl/cli": "^5.1.0",

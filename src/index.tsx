@@ -1,25 +1,25 @@
-/* eslint-disable */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react/display-name */
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+  
 import App from './app';
-import LoginProvider from './context/login-context';
-
-export default () => <LoginProvider><App/></LoginProvider>;
-
-let rootElement: ReactDOM.Root;
-
+  
+export default () => <App/>;
+  
+let rootElement: ReactDOM.Root
+  
 export const mount = (Component, element = document.getElementById('app')) => {
-  const rootElement = ReactDOM.createRoot(element);
-  rootElement.render(<Component />);
+  rootElement = ReactDOM.createRoot(element);
+  rootElement.render(<Component/>);
 
-  if (module.hot) {
-    module.hot.accept('./app', () => {
-      rootElement.render(<Component />);
-    });
+  if(module.hot) {
+      module.hot.accept('./app', ()=> {
+        rootElement.render(<Component/>);
+      })
   }
 };
 
 export const unmount = () => {
-    rootElement.unmount();
+  rootElement.unmount();
 };
