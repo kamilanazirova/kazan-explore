@@ -14,7 +14,6 @@ export const HeaderBlock = styled.header`
 
 export const StyledMenu = styled.ul`
     display: flex;
-    margin: 0 auto
     margin: 20px 0;   
     padding: 0 12px;
     line-height: 1em; 

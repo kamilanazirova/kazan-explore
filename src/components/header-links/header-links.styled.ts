@@ -3,11 +3,12 @@ import { css } from "@emotion/react";
 
 export const StyledNav = styled.nav`
     display: flex;
-    pudding: 0 20px;
+    padding: 0 20px;
     align-items: center;
     justify-content: space-between;
     @media(max-width: 540px) {
       display: ${(props: { isOpen: boolean }) => (props.isOpen ? 'flex' : 'none')};
+    }
 `;
 
 const Link = styled.a`
@@ -79,7 +80,7 @@ export const FavouritesLink = styled(Link) <{
 
 export const StyledMenu = styled.ul`
     display: flex;
-    margin: 0 auto
+    margin: 0 auto;
     margin: 20px 0;   
     padding: 0 12px;
     line-height: 1em; 
@@ -87,7 +88,7 @@ export const StyledMenu = styled.ul`
 
 export const OverlayLogin = styled.div`
     background-color: #ffffff; 
-    padding: 2;
+    padding: 2px;
     margin: 0 15px;
     color: #000000;
     border-radius: 10px;

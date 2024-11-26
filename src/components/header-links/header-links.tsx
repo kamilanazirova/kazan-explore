@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 
 import logo from '../../assets/logo.svg'
 
@@ -20,12 +20,14 @@ const nav = {
 
 export function HeaderLinks({ isOpen }) {
   const { currentUser, setCurrentUser } = useContext(LoginContext);
-
-  const isAuth = !!currentUser;
-
+  const [ isAuth, setAuth ] = useState(false);
   const onLogOut = () => {
     setCurrentUser(null);
   }
+
+  useEffect(()=>
+    setAuth(currentUser!==null), 
+  [currentUser])
 
   return (
     <StyledNav isOpen={isOpen}>

@@ -9,9 +9,8 @@ import { LoginContext } from "../../context/login-context";
 interface contextUser {
     currentUser: {
         email: string;
-        cardId: string;
     };
-    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string, cardId: string }>>;
+    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string}>>;
 }
 
 const Login = () => {
@@ -34,7 +33,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch(`${URLs.api.main}/entrance`, {
+            fetch(`${URLs.api.main}/entrance`, {
                 method: 'POST',
                 body: JSON.stringify({
                     entranceData: entranceData
@@ -42,17 +41,19 @@ const Login = () => {
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                alert(errorMessage);
-                throw new Error(errorMessage);
+            })
+            .then((response)=>{
+                if (!response.ok) {
+                return response.text().then((errorMessage)=>{
+                    alert(errorMessage);
+                    throw new Error(errorMessage);})
             }
-
-            const data = await response.json();
-            setCurrentUser({ email: data.email, cardId: data.cardId });
-            location.replace(`${URLs.baseUrl}`);
+                return response.json();
+            })
+            .then((data) => {
+                setCurrentUser({ email: data.email});
+                location.replace(`${URLs.baseUrl}`);
+            })
 
         } catch (error) {
             console.error('Ошибка при входе:', error);
@@ -85,7 +86,7 @@ const Login = () => {
             }
 
             const data = await response.json();
-            setCurrentUser({ email: data.email, cardId: "" });
+            setCurrentUser({ email: data.email});
             location.replace(`${URLs.baseUrl}`);
         } catch (error) {
             console.error('Ошибка при регистрации:', error);
@@ -132,7 +133,7 @@ const Login = () => {
             }
 
             alert('Пароль восстановлен');
-            setCurrentUser({ email: registerData.email, cardId: "" });
+            setCurrentUser({ email: registerData.email});
             location.replace(`${URLs.baseUrl}`);
         } catch (error) {
             console.error('Ошибка при восстановлении пароля:', error);

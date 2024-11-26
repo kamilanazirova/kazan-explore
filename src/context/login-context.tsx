@@ -3,9 +3,8 @@ import React, { createContext, useState, useEffect } from 'react';
 interface contextUser {
   currentUser: {
     email: string;
-    cardId: string;
   };
-  setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string, cardId: string }>>;
+  setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string}>>;
 }
 export const LoginContext = createContext<contextUser>({
   currentUser: null,
@@ -16,18 +15,19 @@ const LoginProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    const storedData = JSON.parse(window.localStorage.getItem('currentUser'));
+    const storedData = JSON.parse(window.localStorage.getItem('user'));
     if (storedData) {
-      setCurrentUser({ email: storedData.email, cardId: storedData.cardId});
+      setCurrentUser({ email: storedData.email});
     }
   }, []);
 
   useEffect(() => {
+    console.log("local stogage, user: ", currentUser);
     if(!currentUser) {
-        window.localStorage.removeItem('currentUser');
+        window.localStorage.removeItem('user');
     }
     else {
-      window.localStorage.setItem('currentUser', JSON.stringify({email: currentUser.email, cardId: currentUser.cardId}));
+      window.localStorage.setItem('user', JSON.stringify({email: currentUser.email}));
     }
   }, [currentUser]);
 

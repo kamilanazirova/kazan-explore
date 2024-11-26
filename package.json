@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "brojs server --port=8099 --with-open-browser",
-        "build": "webpack",
+        "build": "npm run clean && brojs build --dev",
         "build:prod": "npm run clean && brojs build",
         "clean": "rimraf dist",
         "eslint": "npx eslint src"
@@ -32,6 +32,8 @@
         "react-router-dom": "^6.23.1",
         "react-yandex-maps": "^4.6.0",
         "typescript": "^5.4.5",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4",
         "ymaps": "^0.2.1"
     },
     "devDependencies": {
