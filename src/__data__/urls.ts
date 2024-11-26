@@ -1,23 +1,23 @@
-import { getNavigationsValue, getConfigValue } from '@ijl/cli';
+import { getNavigationValue, getConfigValue } from '@brojs/cli';
 import { generatePath } from 'react-router-dom';
 
-const baseUrl = getNavigationsValue('kazan-explore.master');
+const baseUrl = getNavigationValue('kazan-explore.master');
 
 export const URLs = {
   baseUrl,
   ui: {
-    places: getNavigationsValue('kazan-explore.places') && `${baseUrl}${getNavigationsValue('kazan-explore.places')}`,
-    transport: getNavigationsValue('kazan-explore.transport') && `${baseUrl}${getNavigationsValue('kazan-explore.transport')}`,
-    sport: getNavigationsValue('kazan-explore.sport') && `${baseUrl}${getNavigationsValue('kazan-explore.sport')}`,
-    history: getNavigationsValue('kazan-explore.history') && `${baseUrl}${getNavigationsValue('kazan-explore.history')}`,
-    education: getNavigationsValue('kazan-explore.education') && `${baseUrl}${getNavigationsValue('kazan-explore.education')}`,
-    entrance: getNavigationsValue('kazan-explore.entrance') && `${baseUrl}${getNavigationsValue('kazan-explore.entrance')}`,
-    registration: getNavigationsValue('kazan-explore.registration') && `${baseUrl}${getNavigationsValue('kazan-explore.registration')}`,
-    recover: getNavigationsValue('kazan-explore.recover') && `${baseUrl}${getNavigationsValue('kazan-explore.recover')}`,
+    places: getNavigationValue('kazan-explore.places') && `${baseUrl}${getNavigationValue('kazan-explore.places')}`,
+    transport: getNavigationValue('kazan-explore.transport') && `${baseUrl}${getNavigationValue('kazan-explore.transport')}`,
+    sport: getNavigationValue('kazan-explore.sport') && `${baseUrl}${getNavigationValue('kazan-explore.sport')}`,
+    history: getNavigationValue('kazan-explore.history') && `${baseUrl}${getNavigationValue('kazan-explore.history')}`,
+    education: getNavigationValue('kazan-explore.education') && `${baseUrl}${getNavigationValue('kazan-explore.education')}`,
+    entrance: getNavigationValue('kazan-explore.entrance') && `${baseUrl}${getNavigationValue('kazan-explore.entrance')}`,
+    registration: getNavigationValue('kazan-explore.registration') && `${baseUrl}${getNavigationValue('kazan-explore.registration')}`,
+    recover: getNavigationValue('kazan-explore.recover') && `${baseUrl}${getNavigationValue('kazan-explore.recover')}`,
     tripNumber: {
-      url: `${baseUrl}${getNavigationsValue('kazan-explore.trip.number')}`,
-      on: Boolean(getNavigationsValue('kazan-explore.trip.number')),
-      getUrl: (id: number) => generatePath(`${baseUrl}${getNavigationsValue('kazan-explore.trip.number')}`, { id })
+      url: `${baseUrl}${getNavigationValue('kazan-explore.trip.number')}`,
+      on: Boolean(getNavigationValue('kazan-explore.trip.number')),
+      getUrl: (id: number) => generatePath(`${baseUrl}${getNavigationValue('kazan-explore.trip.number')}`, { id })
     },
   },
   api: {
