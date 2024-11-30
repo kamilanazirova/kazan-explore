@@ -62,9 +62,6 @@ router.post('/entrance', (request, response) => {
        email: user.email,
      }
    
-     if (user.cardId){
-       responseObject.cardId = user.cardId || "";
-     }
      return response.json(responseObject);
     } catch (error) {
        console.error('Ошибка чтения файла:', error);
