@@ -22,7 +22,6 @@ const LoginProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    console.log("local stogage, user: ", currentUser);
     if(!currentUser) {
         window.localStorage.removeItem('user');
     }

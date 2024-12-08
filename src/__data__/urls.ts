@@ -14,6 +14,11 @@ export const URLs = {
     entrance: getNavigationValue('kazan-explore.entrance') && `${baseUrl}${getNavigationValue('kazan-explore.entrance')}`,
     registration: getNavigationValue('kazan-explore.registration') && `${baseUrl}${getNavigationValue('kazan-explore.registration')}`,
     recover: getNavigationValue('kazan-explore.recover') && `${baseUrl}${getNavigationValue('kazan-explore.recover')}`,
+    profile: {
+      url: `${baseUrl}${getNavigationValue('kazan-explore.profile')}`,
+      on: getNavigationValue('kazan-explore.profile'),
+      getUrl: (userId: string) => generatePath(`${baseUrl}${getNavigationValue('kazan-explore.profile')}`, {userId})
+    },
     tripNumber: {
       url: `${baseUrl}${getNavigationValue('kazan-explore.trip.number')}`,
       on: Boolean(getNavigationValue('kazan-explore.trip.number')),
