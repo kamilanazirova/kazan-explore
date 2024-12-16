@@ -26,8 +26,16 @@ const kazanTheme = createTheme({
           },
         },
       },
-    },
-  },
+    }, 
+  }
 });
+
+declare module '@mui/material/Avatar' {
+  interface AvatarPropsVariantOverrides {
+      small: true;
+      medium: true;
+      large: true;
+  }
+}
 
 export default kazanTheme;

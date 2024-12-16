@@ -1,11 +1,3 @@
-export type BaseResponse<Data> = {
-    success: true
-    body?: Data
-} | {
-    success: false
-    error: string
-}
-
 export type NewsData = {
   id: string;
   image: string;
