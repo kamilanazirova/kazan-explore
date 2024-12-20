@@ -16,10 +16,7 @@ export const URLs = {
     profile: {
       url: `${baseUrl}/profile/:userId`,
       on: Boolean(getNavigationValue('kazan-explore.profile')),
-      getUrl: (userId: string) => {
-        console.log('userId:', userId);
-        return generatePath(`${baseUrl}/profile/:userId`, { userId });
-      }
+      getUrl: (userId: string) => generatePath(`${baseUrl}/profile/:userId`, { userId })
     },
     tripNumber: {
       url: `${baseUrl}${getNavigationValue('kazan-explore.trip.number')}`,
