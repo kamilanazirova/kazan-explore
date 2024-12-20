@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { NewsData, PlaceData, SportData } from '../model/common'
+import { InfoData, BusData, TrulData, TripScheduleData, EventsData } from '../model/transport'
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
