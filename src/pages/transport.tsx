@@ -16,6 +16,7 @@ import { URLs } from "../__data__/urls";
 import { Events } from "../components/transport-components/events";
 import { TableEvents, Table, Th  } from "../components/transport-components/events/events.styled";
 import { Schedule } from "../components/transport-components/schedule";
+import { mainApi } from "../__data__/service/main-api";
 
 const Transport = () => {
   const currentLocation = location.pathname.split('/').pop();
@@ -26,9 +27,10 @@ const Transport = () => {
   const [info, setInfo] = useState([]);
   const [event, setEvent] = useState([]);
   const [selectedBus, setSelectedBus] = useState(null);
+  const { isFetching, isLoading, data: busData, error } = mainApi.useBusDataQuery()
 
   useEffect(() => {
-    fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data));
+    // fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data));
     fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTralNumbers(data));
     fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setSchedule(data))
     fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
@@ -55,7 +57,7 @@ const Transport = () => {
               alt="Фотография автобуса изнутри"
             />}
             <h2>Нажмите на интересующий маршрут, чтобы увидеть его расписание</h2>
-            <Button onBusClick={handleBusClick} type="Автобусы" numbers={busNumbers} />
+            <Button onBusClick={handleBusClick} type="Автобусы" numbers={busData} />
             <ErrorBoundary>
               {selectedBus && (
                 <>

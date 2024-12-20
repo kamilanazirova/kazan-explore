@@ -12,7 +12,7 @@ export function Button({ numbers, type, onBusClick }) {
     return (
         <BottonWrapper>
             <TransportType>{type}</TransportType>
-            {numbers.map((number, index) => (
+            {numbers?.map((number, index) => (
                 <StyledButton  onClick={() => onBusClick(number)} key={index}>
                     {/* <Link to={URLs.ui.tripNumber.getUrl(number)} > */}
                         {`№${number}`}
