@@ -20,14 +20,18 @@ const nav = {
 
 export function HeaderLinks({ isOpen }) {
   const { currentUser, setCurrentUser } = useContext(LoginContext);
-  const [ isAuth, setAuth ] = useState(false);
+  const [isAuth, setAuth] = useState(false);
   const onLogOut = () => {
     setCurrentUser(null);
   }
 
-  useEffect(() =>
-    setAuth(currentUser !== null),
-    [currentUser])
+  useEffect(() => {
+    if (currentUser && currentUser.email) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }, [currentUser]);
 
   return (
     <StyledNav isOpen={isOpen}>
@@ -76,8 +80,8 @@ export function HeaderLinks({ isOpen }) {
         )}
       </OverlayLogin>
       {URLs.ui.profile && isAuth &&
-        <Link to={URLs.ui.profile.getUrl('testUser')}>
-          <UserAvatar email={currentUser?.email} variant="small"/>
+        <Link to={URLs.ui.profile.getUrl(`${currentUser.email}`)}>
+          <UserAvatar email={currentUser.email} variant="small" />
         </Link>
       }
     </StyledNav>

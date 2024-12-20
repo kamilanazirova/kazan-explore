@@ -1,6 +1,5 @@
 import { getNavigationValue, getConfigValue } from '@brojs/cli';
 import { generatePath } from 'react-router-dom';
-
 const baseUrl = getNavigationValue('kazan-explore.master');
 
 export const URLs = {
@@ -15,9 +14,12 @@ export const URLs = {
     registration: getNavigationValue('kazan-explore.registration') && `${baseUrl}${getNavigationValue('kazan-explore.registration')}`,
     recover: getNavigationValue('kazan-explore.recover') && `${baseUrl}${getNavigationValue('kazan-explore.recover')}`,
     profile: {
-      url: `${baseUrl}${getNavigationValue('kazan-explore.profile')}`,
+      url: `${baseUrl}/profile/:userId`,
       on: Boolean(getNavigationValue('kazan-explore.profile')),
-      getUrl: (userId: string) => generatePath(`${baseUrl}${getNavigationValue('kazan-explore.profile')}`, {userId})
+      getUrl: (userId: string) => {
+        console.log('userId:', userId);
+        return generatePath(`${baseUrl}/profile/:userId`, { userId });
+      }
     },
     tripNumber: {
       url: `${baseUrl}${getNavigationValue('kazan-explore.trip.number')}`,
