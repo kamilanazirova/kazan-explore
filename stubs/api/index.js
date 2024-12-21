@@ -12,7 +12,7 @@ router.get('/getNews', (request, response) => {
 
 // Sport page
 router.get('/getSportData', (request, response) => {
-    response.send(require('../json/sport/sport-data.json'))
+    response.send(require('../json/sport-list/success.json'))
 })
 
 // Places page
