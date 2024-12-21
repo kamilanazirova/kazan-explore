@@ -5,95 +5,78 @@ import { Wrapper } from "../../global-styles";
 import { URLs } from "../../__data__/urls";
 import { Enter, EnterField, EntranceState, Form, FormLabel, FormLink, InputField } from "./login.styled";
 import { LoginContext } from "../../context/login-context";
+import { mainApi } from "../../__data__/service/main-api";
+import { LoginData, RegisterData } from "../../__data__/model/common";
+import { CircularProgress } from "@mui/material"
 
 interface contextUser {
     currentUser: {
         email: string;
     };
-    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string}>>;
+    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string }>>;
 }
 
 const Login = () => {
     const currentLocation = location.pathname.split('/').pop();
-    const { setCurrentUser } = useContext<contextUser>(LoginContext)
-
-    const [entranceData, setEntranceData] = useState({
+    const { setCurrentUser } = useContext<contextUser>(LoginContext);
+    const [entranceData, setEntranceData] = useState<LoginData>({
         email: '',
         password: ''
     });
-
-    const [registerData, setRegisterData] = useState({
+    const [registerData, setRegisterData] = useState<RegisterData>({
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
     });
+    const [getUserFromLogin, { isLoading: isLoginLoading }] = mainApi.useGetUserFromLoginMutation();
+    const [getUserFromRegister, { isLoading: isRegisterLoading }] = mainApi.useGetUserFromRegisterMutation();
+    const [getUserFromRecover, { isLoading: isRecoverLoading }] = mainApi.useGetUserFromRecoverMutation();
 
     const handleEntranceSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            fetch(`${URLs.api.main}/entrance`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    entranceData: entranceData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then((response)=>{
-                if (!response.ok) {
-                return response.text().then((errorMessage)=>{
-                    alert(errorMessage);
-                    throw new Error(errorMessage);})
-            }
-                return response.json();
-            })
-            .then((data) => {
-                setCurrentUser({ email: data.email});
-                location.replace(`${URLs.baseUrl}`);
-            })
-
-        } catch (error) {
+            await getUserFromLogin(entranceData).unwrap()
+                .then((userData) => {
+                    setCurrentUser({ email: userData.email });
+                    location.replace(`${URLs.baseUrl}`);
+                })
+                .catch((error) => {
+                    alert(error.text);
+                    console.log(error.text)
+                })
+        }
+        catch (error) {
             console.error('Ошибка при входе:', error);
-            alert('Ошибка при входе');
+            alert(`Ошибка при входе: ${error}`);
         }
     };
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
+
         if (registerData.password !== registerData.confirmPassword) {
             alert('Пароли не совпадают');
             return;
         }
 
         try {
-            const response = await fetch(`${URLs.api.main}/registration`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    registerData: registerData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                alert(errorMessage);
-                throw new Error(errorMessage);
-            }
-
-            const data = await response.json();
-            setCurrentUser({ email: data.email});
-            location.replace(`${URLs.baseUrl}`);
-        } catch (error) {
+            await getUserFromRegister(registerData).unwrap()
+                .then((userData) => {
+                    setCurrentUser({ email: userData.email });
+                    location.replace(`${URLs.baseUrl}`);
+                })
+                .catch((error) => {
+                    alert(error.text);
+                    console.log(error.text)
+                })
+        }
+        catch (error) {
             console.error('Ошибка при регистрации:', error);
             alert('Ошибка при регистрации');
         }
     };
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -106,7 +89,6 @@ const Login = () => {
         }
     };
 
-
     const handleRecoverSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
@@ -115,32 +97,20 @@ const Login = () => {
         }
 
         try {
-            // Предположим, что восстановление пароля также требует запроса на сервер
-            const response = await fetch(`${URLs.api.main}/recover`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    registerData: registerData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                alert(errorMessage);
-                throw new Error(errorMessage);
-            }
-
-            alert('Пароль восстановлен');
-            setCurrentUser({ email: registerData.email});
-            location.replace(`${URLs.baseUrl}`);
+            await getUserFromRecover(registerData).unwrap()
+                .then((userData) => {
+                    setCurrentUser({ email: userData.email });
+                    location.replace(`${URLs.baseUrl}`);
+                })
+                .catch((error) => {
+                    alert(error.text);
+                    console.log(error.text)
+                })
         } catch (error) {
             console.error('Ошибка при восстановлении пароля:', error);
             alert('Ошибка при восстановлении пароля');
         }
     };
-
 
     return (
         <>
@@ -162,10 +132,9 @@ const Login = () => {
                             name="password"
                             placeholder="Введите пароль"
                             value={entranceData.password} onChange={handleInputChange} />
-
                         <Enter>
-                            <EnterField type="submit">Войти</EnterField>
-                        </Enter>
+                            {!isLoginLoading && <EnterField type="submit">Войти</EnterField>}
+                            {isLoginLoading && <CircularProgress />}</Enter>
                         <Enter>
                             Нет аккаунта? <FormLink href={URLs.ui.registration}> Зарегистрироваться</FormLink>
                         </Enter>
@@ -203,9 +172,9 @@ const Login = () => {
                             name="confirmPassword"
                             placeholder="Введите пароль"
                             value={registerData.confirmPassword} onChange={handleInputChange} />
-
                         <Enter>
-                            <EnterField type="submit" onSubmit={handleRegisterSubmit}>Зарегистрироваться</EnterField>
+                            {!isRegisterLoading && <EnterField type="submit">Зарегистрироваться</EnterField>}
+                            {isRegisterLoading && <CircularProgress />}
                         </Enter>
                         <Enter>
                             Уже есть аккаунт? <FormLink href={URLs.ui.entrance}>Войти</FormLink>
@@ -234,9 +203,10 @@ const Login = () => {
                             name="confirmPassword"
                             placeholder="Введите пароль"
                             value={registerData.confirmPassword} onChange={handleInputChange} />
-
-
-                        <EnterField type="submit" onSubmit={handleRecoverSubmit}>Установить новый пароль</EnterField>
+                        <Enter>
+                            {!isRecoverLoading && <EnterField type="submit">Установить новый пароль</EnterField>}
+                            {isRecoverLoading && <CircularProgress />}
+                        </Enter>
                         <Enter>
                             Уже есть аккаунт? <FormLink href={URLs.ui.entrance}>Войти</FormLink>
                         </Enter>
