@@ -20,10 +20,10 @@ import { mainApi } from "../__data__/service/main-api";
 const Transport = () => {
 
   const [selectedBus, setSelectedBus] = useState(null);
-  const { isFetching, isLoading, data: busData, error } = mainApi.useBusDataQuery()
-  const {  data: tripScheduleData } = mainApi.useTripScheduleDataQuery()
-  const {  data: eventsData } = mainApi.useEventsDataQuery()
-  const {  data: infoTransportData } = mainApi.useInfoTransportDataQuery()
+  const { data: busData } = mainApi.useBusDataQuery()
+  const { data: tripScheduleData } = mainApi.useTripScheduleDataQuery()
+  const { data: eventsData } = mainApi.useEventsDataQuery()
+  const { data: infoTransportData } = mainApi.useInfoTransportDataQuery()
 
   const handleBusClick = (busNumber) => {
     setSelectedBus(busNumber);
