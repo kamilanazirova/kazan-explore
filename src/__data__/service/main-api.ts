@@ -7,9 +7,13 @@ const apiUrl = URLs.api.main
 export const mainApi = createApi({
   reducerPath: 'main-api',
   baseQuery: fetchBaseQuery({ baseUrl: apiUrl }),
-  tagTypes: ['NewsData', 'SportData', 'PlaceData', 'InfoTransportData', 'BusData', 'TralData', 'TripScheduleData', 'EventsData'],
+  tagTypes: ['InfoAboutKzanData', 'NewsData', 'SportData', 'PlaceData', 'InfoTransportData', 'BusData', 'TralData', 'TripScheduleData', 'EventsData'],
   endpoints: (builder) => ({
     // main page
+    infoFirstData: builder.query<string[], void>({
+      providesTags: ['InfoAboutKzanData'],
+      query: () => '/getInfoAboutKazan',
+    }),
     newsList: builder.query<NewsData[], void>({
       providesTags: ['NewsData'],
       query: () => '/getNews',
