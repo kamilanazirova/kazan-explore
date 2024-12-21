@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import transport_icon from '../assets/icons/transport_icon.svg'
 import bus from '../assets/transport/bus.png'
@@ -11,31 +11,19 @@ import { Button } from "../components/transport-components/button";
 import { InformationImage } from "../components/info-plus-image/info-image";
 import { ErrorBoundary } from "../components/error-boundary";
 import YandexMap from "../components/yandex-map/yandex-map";
-import { URLs } from "../__data__/urls";
 
 import { Events } from "../components/transport-components/events";
-import { TableEvents, Table, Th  } from "../components/transport-components/events/events.styled";
+import { Table, Th  } from "../components/transport-components/events/events.styled";
 import { Schedule } from "../components/transport-components/schedule";
 import { mainApi } from "../__data__/service/main-api";
 
 const Transport = () => {
-  const currentLocation = location.pathname.split('/').pop();
 
-  const [busNumbers, setBusNumbers] = useState([]);
-  const [tralNumbers, setTralNumbers] = useState([]);
-  const [schedule, setSchedule] = useState([]);
-  const [info, setInfo] = useState([]);
-  const [event, setEvent] = useState([]);
   const [selectedBus, setSelectedBus] = useState(null);
-  const { isFetching, isLoading, data: busData, error } = mainApi.useBusDataQuery()
-
-  useEffect(() => {
-    // fetch(`${URLs.api.main}/getBus`).then((response) => response.json()).then((data) => setBusNumbers(data));
-    fetch(`${URLs.api.main}/getTral`).then((response) => response.json()).then((data) => setTralNumbers(data));
-    fetch(`${URLs.api.main}//getTripSchedule`).then((response) => response.json()).then((data) => setSchedule(data))
-    fetch(`${URLs.api.main}/getInfoAboutTransportPage`).then((response) => response.json()).then((data) => setInfo(data))
-    fetch(`${URLs.api.main}/getEvents`).then((response) => response.json()).then((data) => setEvent(data))
-  }, []);
+  const { data: busData } = mainApi.useBusDataQuery()
+  const { data: tripScheduleData } = mainApi.useTripScheduleDataQuery()
+  const { data: eventsData } = mainApi.useEventsDataQuery()
+  const { data: infoTransportData } = mainApi.useInfoTransportDataQuery()
 
   const handleBusClick = (busNumber) => {
     setSelectedBus(busNumber);
@@ -52,7 +40,7 @@ const Transport = () => {
             alt="иконка транспорт" />}
           <ErrorBoundary>
             {<InformationImage
-              text={info}
+              text={infoTransportData}
               image={bus}
               alt="Фотография автобуса изнутри"
             />}
@@ -61,9 +49,9 @@ const Transport = () => {
             <ErrorBoundary>
               {selectedBus && (
                 <>
-                  {schedule
+                  {tripScheduleData
                     .filter(item => item.id == selectedBus)
-                    .map((item, index) => (
+                    ?.map((item, index) => (
                       <Schedule key={index}
                         id={item.id}
                         from={item.from}
@@ -76,7 +64,6 @@ const Transport = () => {
                 </>
               )}
             </ErrorBoundary>
-            {/* <Button onBusClick={handleBusClick} type="Троллейбусы" numbers={tralNumbers} /> */}
           </ErrorBoundary>
 
           <ErrorBoundary>
@@ -95,7 +82,7 @@ const Transport = () => {
             </tr>
           </thead>
         </Table>
-        {event.map((item, index) => (
+        {eventsData?.map((item, index) => (
           <Events key={index}
             month={item.month}
             name={item.name}

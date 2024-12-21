@@ -12,7 +12,7 @@ router.get('/getNews', (request, response) => {
 
 // Sport page
 router.get('/getSportData', (request, response) => {
-    response.send(require('../json/sport/sport-data.json'))
+    response.send(require('../json/sport-list/success.json'))
 })
 
 // Places page
@@ -22,19 +22,19 @@ router.get('/getPlacesData', (request, response) => {
 
 // Transport page
 router.get('/getInfoAboutTransportPage', (request, response) => {
-    response.send(require('../json/transport/info-about-page.json'))
+    response.send(require('../json/transport/info-about-page/success.json'))
 })
 
 router.get('/getBus', (request, response) => {
-    response.send(require('../json/transport/bus-numbers.json'))
+    response.send(require('../json/transport/bus-numbers/success.json'))
 })
 
 router.get('/getTral', (request, response) => {
-    response.send(require('../json/transport/tral-numbers.json'))
+    response.send(require('../json/transport/tral-numbers/success.json'))
 })
 
 router.get('/getEvents', (request, response) => {
-    response.send(require('../json/transport/events-calendar.json'))
+    response.send(require('../json/transport/events-calendar/success.json'))
 })
 
 router.get('/getTripSchedule', (request, response) => {

@@ -9,14 +9,11 @@ import { SpoortCard } from "../components/sport-card";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
-import { URLs } from "../__data__/urls";
+import { mainApi } from "../__data__/service/main-api";
 
 const Sport = () => {
 
-    const [sportCard, setSportCard] = useState([])
-    useEffect(() => {
-        fetch(`${URLs.api.main}/getSportData`).then((response) => response.json()).then((data) => setSportCard(data))
-    }, [])
+    const { isFetching, isLoading, data: sportsList, error } = mainApi.useSportsListQuery()
 
     return (
         <>
@@ -31,7 +28,7 @@ const Sport = () => {
                     </div>
                     <h1> Спортивные команды и клубы Казани </h1>
                     <ErrorBoundary>
-                        {sportCard.map((item, index) => (
+                        {sportsList?.map((item, index) => (
                             <SpoortCard key={index}
                                 type={item.type}
                                 title={item.title}

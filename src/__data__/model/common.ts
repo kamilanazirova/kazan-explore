@@ -24,3 +24,19 @@ export type SportData = {
   img_alt: string;
   link: string;
 }
+
+export type TripScheduleData = {
+  id: string;
+  from: string;
+  to: string;
+  route_length: string;
+  operating_mode_weekdays: string;
+  operating_mode_weekend: string;
+}
+
+export type EventsData = {
+  month: string;
+  name: string;
+  body: string;
+  place: string;
+}
