@@ -1,0 +1,16 @@
+{
+    "welcome": "Welcome",
+    "exploreKazan": "Explore Kazan",
+    "header": {
+        "places": "Interesting places",
+        "transport": "Transport and infrastructure",
+        "sport": "Sports and entertainment",
+        "history": "History and culture",
+        "education": "Science and education",
+        "login": "Login",
+        "logout": "Log out"
+    },
+    "transport": {
+        "tittle": "Transport and infrastructure"
+    }
+}
