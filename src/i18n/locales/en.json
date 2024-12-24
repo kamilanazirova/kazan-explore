@@ -10,7 +10,16 @@
         "login": "Login",
         "logout": "Log out"
     },
+    "main": {
+        "chakchak" : "Buy chakchak",
+        "uchpuchmak": "Try uchpuchmak",
+        "under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity."
+    },
     "transport": {
         "tittle": "Transport and infrastructure"
+    },
+    "footer": {
+        "tcontacts": "Contact information",
+        "tsocialsites": "We are on social networks"
     }
 }
