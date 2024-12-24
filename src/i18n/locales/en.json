@@ -1,0 +1,39 @@
+{
+    "welcome": "Welcome",
+    "exploreKazan": "Explore Kazan",
+    "header": {
+        "places": "Interesting places",
+        "transport": "Transport and infrastructure",
+        "sport": "Sports and entertainment",
+        "history": "History and culture",
+        "education": "Science and education",
+        "login": "Login",
+        "logout": "Log out"
+    },
+    "main": {
+        "chakchak": "Buy chakchak",
+        "uchpuchmak": "Try uchpuchmak",
+        "under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity."
+    },
+    "places": {
+        "title": "Interesting Places",
+        "info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
+        "review": "Leave a review"
+    },
+    "transport": {
+        "title": "Transport and Infrastructure",
+        "click_on_the_route": "Click on the route of interest to see its schedule",
+        "type": "Buses",
+        "schedule": "Route",
+        "route_length": "Route length",
+        "operating_mode": "Operating mode"
+    },
+    "sport": {
+        "title": "Sports and Entertainment",
+        "list_title": "Sports Teams and Clubs of Kazan"
+    },
+    "footer": {
+        "tcontacts": "Contact information",
+        "tsocialsites": "We are on social networks"
+    }
+}

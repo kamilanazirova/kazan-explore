@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
   
 import App from './app';
 import LoginContext from './context/login-context';
+import './i18n'; // Подключение i18next
 
 export default () => <LoginContext><App/></LoginContext>;
   

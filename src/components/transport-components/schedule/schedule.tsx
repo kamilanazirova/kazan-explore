@@ -1,6 +1,8 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import { Wrapper, Text, H3 } from "./schedule.styled";
+
 
 export const Schedule = ({
     id,
@@ -9,15 +11,18 @@ export const Schedule = ({
     route_length,
     operating_mode_weekdays,
     operating_mode_weekend
-}) => (
+}) => {
+    const { t } = useTranslation()
 
-    <Wrapper>
-        <Text>
-            <H3>Маршрут №{id} ({from} — {to})</H3>
-            <p>Протяженность маршрута — {route_length}</p>
-            <p>Режим работы:</p>
-            <p>{operating_mode_weekdays}</p>
-            <p>{operating_mode_weekend}</p>
-        </Text>
-    </Wrapper>
-);
+    return (
+        <Wrapper>
+            <Text>
+                <H3>{t('transport.schedule')} №{id} ({from} — {to})</H3>
+                <p>{t('transport.route_length')} — {route_length}</p>
+                <p>{t('transport.operating_mode')}:</p>
+                <p>{operating_mode_weekdays}</p>
+                <p>{operating_mode_weekend}</p>
+            </Text>
+        </Wrapper>
+    );
+};

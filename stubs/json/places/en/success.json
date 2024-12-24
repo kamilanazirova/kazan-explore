@@ -1,0 +1,78 @@
+[
+    {
+        "id": "1",
+        "type": "Sights",
+        "image": "kremlin",
+        "head": "Kremlin",
+        "text": "The construction of the fortress continued from the 10th to the 16th century. After Kazan was conquered by Ivan the Terrible in 1552, the Tatar Kremlin was destroyed. On its site, Pskov architects built massive white stone walls, leaving only a few fragments of the old structure. In the 18th century, the Kremlin lost its military significance but remained an administrative and cultural center of the Volga region for a long time."
+    },
+    {
+        "id": "2",
+        "image": "kulsharif",
+        "head": "Kul Sharif Mosque",
+        "text": "This is one of Kazan's landmarks. Moreover, Kul Sharif is also the main Juma Mosque of Tatarstan. Its construction began in 1996 to restore an important architectural relic of the Kazan Khanate, destroyed by Ivan the Terrible's troops in 1552. The mosque was named in honor of the last imam of Kazan, Kul Sharif."
+    },
+    {
+        "id": "3",
+        "image": "suumbike",
+        "head": "Suyumbike Tower",
+        "text": "The structure was first mentioned in documents in 1703, but there is no exact information about its construction date or the origin of its name. According to one version, it was a watchtower because its top provides a good view of the surroundings as well as the Kazanka and Volga rivers."
+    },
+    {
+        "id": "4",
+        "type": "Active leisure",
+        "image": "cyrc",
+        "head": "Kazan Circus",
+        "text": "One of the striking monuments of Soviet modernism. From afar, the circus building resembles a flying saucer. This 'cosmic' shape was achieved after a major reconstruction in 1967. Avant-garde architectural and engineering solutions were used for its construction."
+    },
+    {
+        "id": "5",
+        "image": "park",
+        "head": "URAM Extreme Park",
+        "text": "URAM is the largest extreme park in Russia, consisting of two parts - open and indoor. The outdoor section, which combines professional extreme zones and walking areas, opened in the summer of 2020 and has become one of the most popular public spaces in Kazan, as well as a place where athletes prepared for world-class competitions, such as the Tokyo Olympics."
+    },
+    {
+        "id": "6", 
+        "image": "zoo",
+        "head": "Zambezi River Zoo",
+        "text": "The Zambezi River Zoo in Kazan is one of the oldest zoological gardens in Europe. It offers an exciting journey into the world of animals and plants. This unique place allows visitors to enjoy the richness of flora and fauna. It features diverse exhibits, including animals from various continents, from exotic species to local inhabitants."
+    },
+    {
+        "id": "7",
+        "type": "Theatres and museums",
+        "head": "Ekiyat Puppet Theater",
+        "text": "The Ekiyat Puppet Theater in Kazan represents a unique combination of traditional and contemporary art. It is known for its vibrant performances that attract the attention of both children and adults. Located in the city center, it has become an integral part of the region's cultural life.",
+        "image": "akiyat"
+    },
+    {
+        "id": "8",
+        "head": "Opera and Ballet Theater",
+        "text": "The Opera and Ballet Theater in Kazan is the pinnacle of musical and theatrical art in the region. It allows audiences to enjoy high-class opera performances and magnificent ballet shows that leave unforgettable impressions.",
+        "image": "opera"
+    },
+    {
+        "id": "9",
+        "head": "K. Tinchurin Theater",
+        "text": "The Tinchurin Theater embodies the traditions of classical art, offering audiences a wide range of performances, from dramas and comedies to musicals and ballets. The history of the K. Tinchurin Theater spans decades of art and cultural heritage.",
+        "image": "tinchurina"
+    },
+    {
+        "id": "10",
+        "type": "Food and drinks",
+        "head": "Tubetey",
+        "text": "Tubetey is a cozy establishment in Kazan offering visitors a wide selection of Tatar cuisine dishes in an atmosphere of hospitality and comfort. Here, you can enjoy Tatar dishes such as chak-chak, kebabs, manti, and more.",
+        "image": "tubetey"
+    },
+    {
+        "id": "11",
+        "head": "MORE & MORE",
+        "text": "This restaurant specializes in seafood and fish. The More & More restaurant is a conceptual project by ALBA GROUP with a focus on seafood and wine. By Kazan standards, the place is expensive, but the dishes and ingredients justify the cost.",
+        "image": "more"
+    },
+    {
+        "id": "12",
+        "head": "Paloma Cantina",
+        "text": "Paloma Cantina is a Mexican cafe. It was opened by the founders of the St. Petersburg bar El Copitas, which was included in the global ranking of The World’s 50 Best Bars. If you feel lonely in Kazan or want bright colors, this is the place to go.",
+        "image": "paloma"
+    }
+]
