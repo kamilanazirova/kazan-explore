@@ -1,0 +1,450 @@
+[
+    {
+        "id": "1",
+        "from": "River Port",
+        "to": "Derbyshki Residential Area",
+        "route_length": "18.03 km",
+        "operating_mode_weekdays": "Weekdays: Start of service — 5:24. Last trip departure A — 22:32. Last trip departure B — 21:27. Interval: morning — 6.9 min, evening — 7.3 min.",
+        "operating_mode_weekend": "Weekends: Start of service — 5:30. Last trip departure A — 22:44. Last trip departure B — 21:55. Interval — 7.5 min."
+    },
+    {
+        "id": "2",
+        "from": "Ametyevo Metro Station",
+        "to": "Privokzalnaya Street",
+        "route_length": "20.9 km",
+        "operating_mode_weekdays": "Weekdays: Start of service — 5:40. Last trip departure A — 21:54. Last trip departure B — 21:01. Interval — 8.5 min.",
+        "operating_mode_weekend": "Weekends: Start of service — 5:40. Last trip departure A — 21:34. Last trip departure B — 20:32. Interval — 9 min."
+    },
+    {
+        "id": "4",
+        "from": "Ferma-2 Residential Area",
+        "to": "Novaya Sosnovka Residential Area",
+        "route_length": "24.59 km",
+        "operating_mode_weekdays": "Weekdays: Start of service — 5:30. Last trip departure A — 21:02. Last trip departure B — 20:50. Interval — 14.8 min.",
+        "operating_mode_weekend": "Weekends: Start of service — 5:30. Last trip departure A — 21:07. Last trip departure B — 21:20. Interval — 22 min."
+    },
+    {
+        "id": "5",
+        "from": "TSUM",
+        "to": "Khalitova Street",
+        "route_length": "27.42 km",
+        "operating_mode_weekdays": "Weekdays: Start of service — 5:43. Last trip departure A — 22:05. Last trip departure B — 20:45. Interval: morning — 6.7 min, evening — 7 min.",
+        "operating_mode_weekend": "Weekends: Start of service — 5:31. Last trip departure A — 22:15. Last trip departure B — 21:03. Interval — 7.6 min."
+    },
+    {
+        "id": "6",
+        "from": "River Port",
+        "to": "Northern Residential Area",
+        "route_length": "20.9 km",
+        "operating_mode_weekdays": "Weekdays: Start of service — 5:00. Last trip departure A — 22:24. Last trip departure B — 21:32. Interval — 7.8 min.",
+        "operating_mode_weekend": "Weekends: Start of service — 5:45. Last trip departure A — 22:07. Last trip departure B — 21:20. Interval — 8.4 min."
+    },
+    {
+        "id": "9",
+        "from": "Derbyski Residential Area",
+        "to": "Aki Residential Area",
+        "route_length": "4.52 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last departure A — 19:10. Last departure B — 19:40.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 19:10. Last departure B — 19:40."
+    },
+    {
+        "id": "10",
+        "from": "Serova Street",
+        "to": "Academician Gubkin Street (Ring)",
+        "route_length": "15.3 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:20. Last departure A — 22:12. Last departure B — 23:04. Interval 5.7 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 21:30. Last departure B — 22:30. Interval 7.1 min."
+    },
+    {
+        "id": "10a",
+        "from": "Serova Street",
+        "to": "Academician Gubkin Street (Ring)",
+        "route_length": "14.82 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:19. Last departure A — 21:52. Last departure B — 22:23. Interval 5.9 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 21:55. Last departure B — 22:25. Interval 7.2 min."
+    },
+    {
+        "id": "11",
+        "from": "Derbyski Residential Area",
+        "to": "Malye Derbyski Residential Area",
+        "route_length": "10.56 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last departure A — 18:45. Last departure B — 19:10.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 18:45. Last departure B — 19:10."
+    },
+    {
+        "id": "15",
+        "from": "Health Combine",
+        "to": "Adoratsky Street",
+        "route_length": "10.38 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Last departure A — 22:51. Last departure B — 22:22. Interval 6 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 22:50. Last departure B — 22:30. Interval 7 min."
+    },
+    {
+        "id": "18",
+        "from": "Severopolusnaya Street",
+        "to": "Duslyk Alley",
+        "route_length": "31.41 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 4:50. Last departure A — 22:01. Last departure B — 20:20. Interval 8.5 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:40. Last departure A — 21:58. Last departure B — 20:14. Interval 10.2 min."
+    },
+    {
+        "id": "22",
+        "from": "Mozhayskogo Street",
+        "to": "Ferma-2 Residential Area",
+        "route_length": "24.45 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Last departure A — 21:38. Last departure B — 20:34. Interval: morning 7.1 min, evening 7.4 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:40. Last departure A — 21:19. Last departure B — 20:01. Interval 10.1 min."
+    },
+    {
+        "id": "23",
+        "from": "R.Yakhina Street",
+        "to": "Mirny Residential Area",
+        "route_length": "13.58 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:20. Last departure A — 22:11. Last departure B — 21:40. Interval: morning 12.9 min, evening 15.1 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:20. Last departure A — 21:05. Last departure B — 21:13. Interval 15 min."
+    },
+    {
+        "id": "25",
+        "from": "Technical Street",
+        "to": "Derbyski Residential Area",
+        "route_length": "20.66 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Last departure A — 19:30. Last departure B — 18:30. Interval 13.2 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:10. Last departure A — 18:10. Last departure B — 17:50. Interval 20 min."
+    },
+    {
+        "id": "28",
+        "from": "CPC and Park",
+        "to": "Korolenko Street (Ring)",
+        "route_length": "8.81 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last departure A — 21:45. Last departure B — 22:02. Interval 7.6 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 21:38. Last departure B — 22:01. Interval 15 min."
+    },
+    {
+        "id": "28a",
+        "from": "Chekhov Market",
+        "to": "Korolenko Street (Ring)",
+        "route_length": "10.74 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last departure A — 21:30. Last departure B — 22:01. Interval 8 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 21:30. Last departure B — 22:01. Interval 15 min."
+    },
+    {
+        "id": "29",
+        "from": "Construction Institute",
+        "to": "Gudovantseva Street",
+        "route_length": "17.23 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Last departure A — 22:30. Last departure B — 21:40. Interval 7.2 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last departure A — 22:30. Last departure B — 21:40. Interval 9.2 min."
+    },
+    {
+        "id": "30",
+        "from": "Pereulok Duslyk",
+        "to": "Lagernaya Station",
+        "route_length": "27.05 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 4:38. Last A trip departure — 21:24. Last B trip departure — 22:40. Interval: morning 6.6 min, evening 6.8 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 5:01. Last A trip departure — 20:56. Last B trip departure — 22:18. Interval 8.1 min."
+    },
+    {
+        "id": "31",
+        "from": "IKEA Store",
+        "to": "Old Pobeditovo Residential Area",
+        "route_length": "29.48 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:15. Last A trip departure — 22:10. Last B trip departure — 21:46. Interval: morning 6.6 min, evening 6.8 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 5:30. Last A trip departure — 22:10. Last B trip departure — 21:51. Interval 8 min."
+    },
+    {
+        "id": "33",
+        "from": "Leninskaya St.",
+        "to": "Ferma-2 Residential Area",
+        "route_length": "99999",
+        "operating_mode_weekdays": "88888",
+        "operating_mode_weekend": "99999"
+    },
+    {
+        "id": "34",
+        "from": "Ferma-2 Residential Area",
+        "to": "Said-Galeev Cultural Center",
+        "route_length": "25.39 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:25. Last A trip departure — 18:51. Last B trip departure — 19:59. Interval 14.8 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 6:00. Last A trip departure — 17:44. Last B trip departure — 18:48. Interval 17.5 min."
+    },
+    {
+        "id": "35",
+        "from": "G.Tukay Square Metro Station",
+        "to": "Gavrilova St. (ring road)",
+        "route_length": "14.33 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last A trip departure — 22:26. Last B trip departure — 21:35. Interval 7 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 6:00. Last A trip departure — 22:15. Last B trip departure — 21:21. Interval 9.4 min."
+    },
+    {
+        "id": "35a",
+        "from": "G.Tukay Square Metro Station",
+        "to": "Car Market (ring road)",
+        "route_length": "14.06 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last A trip departure — 22:37. Last B trip departure — 21:45. Interval morning 6.4 min, evening 6.9 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 6:00. Last A trip departure — 22:20. Last B trip departure — 21:30. Interval 9 min."
+    },
+    {
+        "id": "36",
+        "from": "Clothing Market",
+        "to": "Osinovo",
+        "route_length": "29.9 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:14. Last A trip departure — 21:42. Last B trip departure — 20:28. Interval: morning 6.8 min, evening 7.1 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 5:30. Last A trip departure — 21:41. Last B trip departure — 20:21. Interval 11 min."
+    },
+    {
+        "id": "36a",
+        "from": "Zalesny Residential Area",
+        "to": "Novonikolaevsky",
+        "route_length": "14.98 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last A trip departure — 19:00. Last B trip departure — 19:15.",
+        "operating_mode_weekend": "Weekend: start of movement — 6:00. Last A trip departure — 19:00. Last B trip departure — 19:15."
+    },
+    {
+        "id": "37",
+        "from": "Ferma-2 Residential Area",
+        "to": "Sukhaya Reka Residential Area",
+        "route_length": "30.26 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 4:58. Last A trip departure — 21:47. Last B trip departure — 21:32. Interval 10 min.",
+        "operating_mode_weekend": "Weekend: start of movement — 5:30. Last A trip departure — 21:48. Last B trip departure — 20:54. Interval 13.7 min."
+    },
+    {
+        "id": "40",
+        "from": "Gavrilova St.",
+        "to": "Ak Bars Cafe",
+        "route_length": "19.5 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last A trip departure — 20:00. Last B trip departure — 20:55.",
+        "operating_mode_weekend": "Weekend: start of movement — 6:00. Last A trip departure — 20:00. Last B trip departure — 20:00."
+    },
+    {
+        "id": "42",
+        "from": "Lenin Cultural Center",
+        "to": "Borisoglebsk Residential Area",
+        "route_length": "8.56 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00. Last A trip departure — 19:10. Last B trip departure — 19:40.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last A trip departure — 19:10. Last B trip departure — 19:40."
+    },
+    {
+        "id": "43",
+        "from": "Khimicheskaya St.",
+        "to": "Tekhnicheskaya St.",
+        "route_length": "27.37 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:00. Last A trip departure — 21:45. Last B trip departure — 21:45. Interval — 7.9 minutes.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:12. Last A trip departure — 20:32. Last B trip departure — 22:02. Interval — 11.3 minutes."
+    },
+    {
+        "id": "45",
+        "from": "Ferma-2 Residential Area",
+        "to": "Su Anasy",
+        "route_length": "39.28 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 4:57. Last A trip departure — 22:01. Last B trip departure — 22:17. Interval in the morning — 7.1 minutes, in the evening — 7.9 minutes.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:00. Last A trip departure — 21:46. Last B trip departure — 22:00. Interval — 7.6 minutes."
+    },
+    {
+        "id": "46",
+        "from": "Dubrava Eco-Park",
+        "to": "Sanatorium",
+        "route_length": "41.42 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:20. Last A trip departure — 22:19. Last B trip departure — 21:46. Interval — 7.1 minutes.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:45. Last A trip departure — 22:01. Last B trip departure — 22:01. Interval — 8.1 minutes."
+    },
+    {
+        "id": "47",
+        "from": "Batyrshina St.",
+        "to": "Universiade Village",
+        "route_length": "20.67 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Last A trip departure — 21:48. Last B trip departure — 22:51. Interval — 6.6 minutes.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Last A trip departure — 21:18. Last B trip departure — 22:20. Interval — 8.2 minutes."
+    },
+    {
+        "id": "49",
+        "from": "Clothing Market",
+        "to": "Lagernaya Station",
+        "route_length": "21.52 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Departure of the last trip A — 20:48. Departure of the last trip B — 19:48. Morning interval — 8.3 min, evening interval — 8.9 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Departure of the last trip A — 20:43. Departure of the last trip B — 19:50. Interval — 11.4 min."
+    },
+    {
+        "id": "53",
+        "from": "River Port",
+        "to": "Leningradskaya Street",
+        "route_length": "16.73 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Departure of the last trip A — 22:10. Departure of the last trip B — 21:14. Interval — 9.1 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:20. Departure of the last trip A — 21:41. Departure of the last trip B — 20:47. Interval — 12.4 min."
+    },
+    {
+        "id": "54",
+        "from": "River Port",
+        "to": "Gavrilov Street",
+        "route_length": "13.14 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:30. Departure of the last trip A — 22:26. Departure of the last trip B — 21:41. Interval — 5.6 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Departure of the last trip A — 22:20. Departure of the last trip B — 21:35. Interval — 9.1 min."
+    },
+    {
+        "id": "55",
+        "from": "39th Quarter",
+        "to": "Residential Complex «Forest Town»",
+        "route_length": "22.22 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:35. Departure of the last trip A — 22:02. Departure of the last trip B — 22:22. Interval — 8.7 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00. Departure of the last trip A — 22:02. Departure of the last trip B — 22:02. Interval — 15 min."
+    },
+    {
+        "id": "56",
+        "from": "R.Yakhin Street",
+        "to": "Petrovsky Residential Area",
+        "route_length": "17.10 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:40. Departure of the last trip A — 21:30. Departure of the last trip B — 20:46.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:50. Departure of the last trip A — 18:11. Departure of the last trip B — 19:05."
+    },
+    {
+        "id": "60",
+        "from": "Khimicheskaya St.",
+        "to": "Residential Area Derbeshki",
+        "route_length": "26.62 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:15 AM. Last trip A departs at 10:15 PM. Last trip B departs at 9:08 PM. Morning interval: 7.7 min, evening interval: 8.5 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:15 AM. Last trip A departs at 9:55 PM. Last trip B departs at 8:43 PM. Interval: 8.2 min."
+    },
+    {
+        "id": "62",
+        "from": "DVVS",
+        "to": "Residential Complex 'Salavat Kupere'",
+        "route_length": "29.33 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:00 AM. Last trip A departs at 9:00 PM. Last trip B departs at 9:19 PM. Interval: 12.5 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:30 AM. Last trip A departs at 9:06 PM. Last trip B departs at 8:06 PM. Interval: 12 min."
+    },
+    {
+        "id": "63",
+        "from": "Komissar Gabishhev St.",
+        "to": "Residential Area Levchenko",
+        "route_length": "30.90 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:45 AM. Last trip A departs at 9:20 PM. Last trip B departs at 10:41 PM. Interval: 8.6 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00 AM. Last trip A departs at 8:56 PM. Last trip B departs at 10:26 PM. Interval: 11.5 min."
+    },
+    {
+        "id": "68",
+        "from": "Railway Station",
+        "to": "Iman St.",
+        "route_length": "20.87 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:00 AM. Last trip A departs at 9:47 PM. Last trip B departs at 8:46 PM. Interval: 10 min.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:00 AM. Last trip A departs at 9:14 PM. Last trip B departs at 8:15 PM. Interval: 12.5 min."
+    },
+    {
+        "id": "70",
+        "from": "Chekhov Market",
+        "to": "Residential Complex 'Vesna'",
+        "route_length": "11.09 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:50 AM. Last trip A departs at 9:30 PM. Last trip B departs at 9:00 PM.",
+        "operating_mode_weekend": "Weekends: start of movement — 5:50 AM. Last trip A departs at 9:21 PM. Last trip B departs at 8:39 PM."
+    },
+    {
+        "id": "71",
+        "from": "City Clinical Hospital No. 5",
+        "to": "Residential Area Konstantinovka",
+        "route_length": "17.29 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 6:00 AM. Last trip A departs at 9:35 PM. Last trip B departs at 8:53 PM.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:00 AM. Last trip A departs at 9:30 PM. Last trip B departs at 8:45 PM."
+    },
+    {
+        "id": "72",
+        "from": "Vakhitov Square",
+        "to": "Prophylactic Center",
+        "route_length": "27.33 km",
+        "operating_mode_weekdays": "Weekdays: start of movement — 5:40 AM. Last trip A departs at 10:25 PM. Last trip B departs at 9:59 PM.",
+        "operating_mode_weekend": "Weekends: start of movement — 6:10 AM. Last trip A departs at 8:45 PM. Last trip B departs at 8:14 PM."
+    },
+    {
+        "id": "74",
+        "from": "DVVS",
+        "to": "10th Microdistrict",
+        "route_length": "22.39 km",
+        "operating_mode_weekdays": "Weekdays: start time — 6:00 AM. Last departure A — 9:47 PM. Last departure B — 8:45 PM.",
+        "operating_mode_weekend": "Weekends: start time — 6:00 AM. Last departure A — 9:40 PM. Last departure B — 8:38 PM."
+    },
+    {
+        "id": "75",
+        "from": "Health Complex",
+        "to": "Universal-2",
+        "route_length": "11.60 km",
+        "operating_mode_weekdays": "Weekdays: start time — 5:40 AM. Last departure A — 10:25 PM. Last departure B — 9:59 PM.",
+        "operating_mode_weekend": "Weekends: start time — 6:10 AM. Last departure A — 8:45 PM. Last departure B — 8:14 PM."
+    },
+    {
+        "id": "77",
+        "from": "Duslyk Lane",
+        "to": "Oil Depot",
+        "route_length": "28.10 km",
+        "operating_mode_weekdays": "Weekdays: start time — 4:45 AM. Last departure A — 7:23 PM. Last departure B — 8:20 PM.",
+        "operating_mode_weekend": "Weekends: start time — 5:00 AM. Last departure A — 7:03 PM. Last departure B — 8:22 PM."
+    },
+    {
+        "id": "78",
+        "from": "Volgogradskaya Street",
+        "to": "Krutushka Residential Area",
+        "route_length": "18.74 km",
+        "operating_mode_weekdays": "Weekdays: start time — 6:00 AM. Last departure A — 7:35 PM. Last departure B — 8:20 PM.",
+        "operating_mode_weekend": "Weekends: start time — 6:00 AM. Last departure A — 7:35 PM. Last departure B — 8:20 PM."
+    },
+    {
+        "id": "84",
+        "from": "Khalitov Street",
+        "to": "Chebaksa Residential Area",
+        "route_length": "15.32 km",
+        "operating_mode_weekdays": "Weekdays: start time — 6:15 AM. Last departure A — 5:10 PM. Last departure B — 6:00 PM.",
+        "operating_mode_weekend": "Weekends: start time — 6:15 AM. Last departure A — 5:10 PM. Last departure B — 6:00 PM."
+    },
+    {
+        "id": "84a",
+        "from": "Khalitov Street",
+        "to": "Chebaksa Residential Area",
+        "route_length": "17.48 km",
+        "operating_mode_weekdays": "Weekdays: start time — 6:15 AM. Last departure A — 5:10 PM. Last departure B — 6:00 PM.",
+        "operating_mode_weekend": "Weekends: start time — 6:15 AM. Last departure A — 5:10 PM. Last departure B — 6:00 PM."
+    },
+    {
+        "id": "88",
+        "from": "Derbyshki Residential Area",
+        "to": "Kulseitovo Residential Area",
+        "route_length": "9.69 km",
+        "operating_mode_weekdays": "Weekdays: start time — 5:30 AM. Last departure A — 10:05 PM. Last departure B — 8:57 PM. Morning interval 7.4 min, evening interval 7.7 min.",
+        "operating_mode_weekend": "Weekends: start time — 5:30 AM. Last departure A — 9:30 PM. Last departure B — 8:00 PM. Interval 9.4 min."
+    },
+    {
+        "id": "89",
+        "from": "Akademika Sakharova Street",
+        "to": "Gudovantseva Street",
+        "route_length": "27.98 km",
+        "operating_mode_weekdays": "Weekdays: start of operation — 5:18. Last departure for Route A — 22:13. Last departure for Route B — 21:04. Interval — 7.3 min.",
+        "operating_mode_weekend": "Weekends: start of operation — 5:30. Last departure for Route A — 22:11. Last departure for Route B — 20:40. Interval — 9.1 min."
+    },
+    {
+        "id": "90",
+        "from": "«G.Tukay Square» Metro Station",
+        "to": "Kuyuki",
+        "route_length": "22.02 km",
+        "operating_mode_weekdays": "Weekdays: start of operation — 5:30. Last departure for Route A — 21:10. Last departure for Route B — 20:13. Interval — 13.8 min.",
+        "operating_mode_weekend": "Weekends: start of operation — 5:45. Last departure for Route A — 21:10. Last departure for Route B — 20:04. Interval — 19 min."
+    },
+    {
+        "id": "91",
+        "from": "TSUM",
+        "to": "Vysokaya Gora (ARZ)",
+        "route_length": "26.71 km",
+        "operating_mode_weekdays": "Weekdays: start of operation — 5:30. Last departure for Route A — 22:05. Last departure for Route B — 20:57. Interval — morning: 7.4 min, evening: 7.7 min.",
+        "operating_mode_weekend": "Weekends: start of operation — 5:30. Last departure for Route A — 21:30. Last departure for Route B — 20:00. Interval — 9.4 min."
+    },
+    {
+        "id": "93",
+        "from": "Lenin Cultural Center",
+        "to": "Bernovyye Kovaly Village",
+        "route_length": "21.20 km",
+        "operating_mode_weekdays": "Weekdays: start of operation — 6:00. Last departure for Route A — 18:10. Last departure for Route B — 18:55.",
+        "operating_mode_weekend": "Weekends: start of operation — 6:00. Last departure for Route A — 16:30. Last departure for Route B — 17:15."
+    },
+    {
+        "id": "94",
+        "from": "Dubravnaya",
+        "to": "Privolny Residential Area",
+        "route_length": "6.65 km",
+        "operating_mode_weekdays": "Weekdays: start of operation — 6:00. Last departure for Route A — 19:30. Last departure for Route B — 20:00.",
+        "operating_mode_weekend": "Weekends: start of operation — 6:00. Last departure for Route A — 19:30. Last departure for Route B — 20:00."
+    }
+]
