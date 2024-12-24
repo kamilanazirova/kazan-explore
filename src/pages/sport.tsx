@@ -27,17 +27,17 @@ const Sport = () => {
         <>
             <Header />
             <Wrapper>
-                <Title image={sport_icon} title={t('sport.tittle')} alt="спортивная иконка" />
+                <Title image={sport_icon} title={t('sport.title')} alt="спортивная иконка" />
                 <ErrorBoundary>
                     <div className="text">
-                        <h2>{sportFirstTextData.tittle}</h2>
+                        <h2>{sportFirstTextData.title}</h2>
                         <div className="descriptions">
                             {sportFirstTextData.descriptions.map((description: string, index: number) => (
                                 <p key={index}>{description}</p>
                             ))}
                         </div>
                     </div>
-                    <h1> {t('sport.list_tittle')} </h1>
+                    <h1> {t('sport.list_title')} </h1>
                     <ErrorBoundary>
                         {sportsList?.map((item, index) => (
                             <SpoortCard key={index}

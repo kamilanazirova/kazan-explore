@@ -48,9 +48,12 @@ export const mainApi = createApi({
     }),
 
     // transport page
-    infoTransportData: builder.query<string[], void>({
+    infoTransportData: builder.query<any, void>({
       providesTags: ['InfoTransportData'],
-      query: () => '/getInfoAboutTransportPage',
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru'; 
+        return `/getInfoAboutTransportPage?lang=${language}`; 
+      },
     }),
     busData: builder.query<string[], void>({
       providesTags: ['BusData'],
@@ -58,7 +61,10 @@ export const mainApi = createApi({
     }),
     tripScheduleData: builder.query<TripScheduleData[], void>({
       providesTags: ['TripScheduleData'],
-      query: () => '/getTripSchedule',
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getTripSchedule?lang=${language}`;
+      },
     }),
     eventsData: builder.query<EventsData[], void>({
       providesTags: ['EventsData'],
@@ -76,15 +82,15 @@ export const mainApi = createApi({
     sportFirstTextData: builder.query<any, void>({
       providesTags: ['SportFirstTextData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Текущий язык или русский по умолчанию
-        return `/getFirstText?lang=${language}`; // Передача языка через параметры
+        const language = localStorage.getItem('i18nextLng') || 'ru'; 
+        return `/getFirstText?lang=${language}`; 
       },
     }),
     sportSecondTextData: builder.query<any, void>({
       providesTags: ['SportSecondTextData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Текущий язык или русский по умолчанию
-        return `/getSecondText?lang=${language}`; // Передача языка через параметры
+        const language = localStorage.getItem('i18nextLng') || 'ru'; 
+        return `/getSecondText?lang=${language}`;
       },
     }),
   }),

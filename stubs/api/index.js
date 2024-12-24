@@ -14,7 +14,7 @@ router.get('/getInfoAboutKazan', (request, response) => {
 });
 
 router.get('/getNews', (request, response) => {
-    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    const lang = request.query.lang || 'ru'; 
     try {
         const data = require(`../json/first/news/${lang}/success.json`);
         response.send(data);
@@ -36,18 +36,18 @@ router.get('/getFirstText', (request, response) => {
 });
 
 router.get('/getSecondText', (request, response) => {
-    const lang = request.query.lang || 'ru'; // Получаем язык из параметров
+    const lang = request.query.lang || 'ru'; 
     try {
-        const data = require('../json/sport/second-text/success.json'); // Загружаем JSON
-        const translatedData = data[lang] || data['ru']; // Берём перевод или дефолтный
+        const data = require('../json/sport/second-text/success.json');
+        const translatedData = data[lang] || data['ru']; 
         response.send(translatedData);
     } catch (error) {
-        response.status(404).send({ message: 'Language not found' }); // Обработка ошибки
+        response.status(404).send({ message: 'Language not found' }); 
     }
 });
 
 router.get('/getSportData', (request, response) => {
-    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    const lang = request.query.lang || 'ru'; 
     try {
         const data = require(`../json/sport/sport-list/${lang}/success.json`);
         response.send(data);
@@ -58,7 +58,7 @@ router.get('/getSportData', (request, response) => {
 
 // Places page
 router.get('/getPlacesData', (request, response) => {
-    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    const lang = request.query.lang || 'ru';
     try {
         const data = require(`../json/places/${lang}/success.json`);
         response.send(data);
@@ -69,8 +69,14 @@ router.get('/getPlacesData', (request, response) => {
 
 // Transport page
 router.get('/getInfoAboutTransportPage', (request, response) => {
-    response.send(require('../json/transport/info-about-page/success.json'))
-})
+    const lang = request.query.lang || 'ru'; 
+    try {
+        const data = require('../json/transport/info-about-page/success.json');
+        const translatedData = data[lang] || data['ru']; 
+        response.send(translatedData);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' }); 
+    }})
 
 router.get('/getBus', (request, response) => {
     response.send(require('../json/transport/bus-numbers/success.json'))
@@ -85,7 +91,13 @@ router.get('/getEvents', (request, response) => {
 })
 
 router.get('/getTripSchedule', (request, response) => {
-    response.send(require('../json/transport/trip-schedule/success.json'))
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require(`../json/transport/trip-schedule/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
 })
 
 // Education page

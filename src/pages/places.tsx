@@ -19,7 +19,7 @@ const Places = () => {
     <>
       <Header />
       <Wrapper>
-        <Title image={interesting_logo} title={t('places.tittle')} alt="interesting logo" />
+        <Title image={interesting_logo} title={t('places.title')} alt="interesting logo" />
         <h3>{t('places.info')}</h3>
         <ErrorBoundary>
           {placesList?.map((item, index) => (

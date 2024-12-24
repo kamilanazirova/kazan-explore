@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 import transport_icon from '../assets/icons/transport_icon.svg'
 import bus from '../assets/transport/bus.png'
@@ -13,11 +14,12 @@ import { ErrorBoundary } from "../components/error-boundary";
 import YandexMap from "../components/yandex-map/yandex-map";
 
 import { Events } from "../components/transport-components/events";
-import { Table, Th  } from "../components/transport-components/events/events.styled";
+import { Table, Th } from "../components/transport-components/events/events.styled";
 import { Schedule } from "../components/transport-components/schedule";
 import { mainApi } from "../__data__/service/main-api";
 
 const Transport = () => {
+  const { t } = useTranslation()
 
   const [selectedBus, setSelectedBus] = useState(null);
   const { data: busData } = mainApi.useBusDataQuery()
@@ -36,16 +38,18 @@ const Transport = () => {
         <ErrorBoundary>
           {<Title
             image={transport_icon}
-            title="Транспорт и инфраструктура"
+            title={t('transport.title')}
             alt="иконка транспорт" />}
           <ErrorBoundary>
-            {<InformationImage
-              text={infoTransportData}
-              image={bus}
-              alt="Фотография автобуса изнутри"
-            />}
-            <h2>Нажмите на интересующий маршрут, чтобы увидеть его расписание</h2>
-            <Button onBusClick={handleBusClick} type="Автобусы" numbers={busData} />
+            <ErrorBoundary>
+              {<InformationImage
+                text={infoTransportData?.descriptions}
+                image={bus}
+                alt="Фотография автобуса изнутри"
+              />}
+            </ErrorBoundary>
+            <h2>{t('transport.click_on_the_route')}</h2>
+            <Button onBusClick={handleBusClick} type={t('transport.type')} numbers={busData} />
             <ErrorBoundary>
               {selectedBus && (
                 <>
