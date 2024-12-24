@@ -23,17 +23,11 @@ export const mainApi = createApi({
     'EventsData',
   ],
   endpoints: (builder) => ({
-    // main page
     infoFirstData: builder.query<any, void>({
       providesTags: ['InfoAboutKzanData'],
-      queryFn: async () => {
-        const response = await fetch(`${apiUrl}/getInfoAboutKazan`);
-        const data = await response.json();
-        // Получаем текущий язык
-        const language = i18n.language;
-        // Проверяем, есть ли переводы для текущего языка
-        const translatedData = data[language] || data['ru'];
-        return { data: translatedData };
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
+        return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
       },
     }),
     newsList: builder.query<NewsData[], void>({
@@ -81,24 +75,17 @@ export const mainApi = createApi({
     }),
     sportFirstTextData: builder.query<any, void>({
       providesTags: ['SportFirstTextData'],
-      queryFn: async () => {
-        const response = await fetch(`${apiUrl}/getFirstText`);
-        const data = await response.json();
-        const language = i18n.language;
-        const translatedData = data[language] || data['ru'];
-        return { data: translatedData };
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru'; // Текущий язык или русский по умолчанию
+        return `/getFirstText?lang=${language}`; // Передача языка через параметры
       },
     }),
     sportSecondTextData: builder.query<any, void>({
       providesTags: ['SportSecondTextData'],
-      queryFn: async () => {
-        const response = await fetch(`${apiUrl}/getSecondText`);
-        const data = await response.json();
-        const language = i18n.language;
-        const translatedData = data[language] || data['ru'];
-        return { data: translatedData };
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru'; // Текущий язык или русский по умолчанию
+        return `/getSecondText?lang=${language}`; // Передача языка через параметры
       },
     }),
   }),
 })
-

@@ -3,8 +3,15 @@ const router = require('express').Router();
 
 // First page
 router.get('/getInfoAboutKazan', (request, response) => {
-    response.send(require('../json/first/info-about-kazan/success.json'))
-})
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    try {
+        const data = require('../json/first/info-about-kazan/success.json'); // Загружаем весь JSON
+        const translatedData = data[lang] || data['ru']; // Выбираем перевод по языку или дефолтный
+        response.send(translatedData); // Отправляем перевод клиенту
+    } catch (error) {
+        response.status(500).send({ message: 'Internal server error' }); // Ошибка в случае проблем с JSON
+    }
+});
 
 router.get('/getNews', (request, response) => {
     const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
@@ -18,8 +25,27 @@ router.get('/getNews', (request, response) => {
 
 // Sport page
 router.get('/getFirstText', (request, response) => {
-    response.send(require('../json/sport/first-text/success.json'))
-})
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров
+    try {
+        const data = require('../json/sport/first-text/success.json'); // Загружаем JSON
+        const translatedData = data[lang] || data['ru']; // Берём перевод или дефолтный
+        response.send(translatedData);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' }); // Обработка ошибки
+    }
+});
+
+router.get('/getSecondText', (request, response) => {
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров
+    try {
+        const data = require('../json/sport/second-text/success.json'); // Загружаем JSON
+        const translatedData = data[lang] || data['ru']; // Берём перевод или дефолтный
+        response.send(translatedData);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' }); // Обработка ошибки
+    }
+});
+
 router.get('/getSportData', (request, response) => {
     const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
     try {
@@ -28,9 +54,6 @@ router.get('/getSportData', (request, response) => {
     } catch (error) {
         response.status(404).send({ message: 'Language not found' });
     }
-})
-router.get('/getSecondText', (request, response) => {
-    response.send(require('../json/sport/second-text/success.json'))
 })
 
 // Places page
