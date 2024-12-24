@@ -25,6 +25,7 @@ export const URLs = {
     },
   },
   api: {
-    main:getConfigValue('kazan-explore.api')
+    main: getConfigValue('kazan-explore.api'),
+    users: getConfigValue('kazan-explore.users.api')
   },
 }

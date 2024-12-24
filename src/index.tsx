@@ -4,9 +4,8 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
   
 import App from './app';
-import LoginContext from './context/login-context';
 
-export default () => <LoginContext><App/></LoginContext>;
+export default () => <App/>;
   
 let rootElement: ReactDOM.Root
   

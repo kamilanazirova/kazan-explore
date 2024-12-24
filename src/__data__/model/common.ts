@@ -42,7 +42,9 @@ export type EventsData = {
 }
 
 export type UserData = {
+  name: string;
   email: string;
+  token: string;
 }
 
 export type LoginData = {
@@ -54,11 +56,9 @@ export type RegisterData = {
   name: string;
   email: string;
   password: string;
-  confirmPassword: string;
 }
 
 export type RecoverUserData = {
   email: string;
   password: string;
-  confirmPassword: string;
 }

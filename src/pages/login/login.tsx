@@ -1,55 +1,42 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 import { Header } from "../../components/header";
-import { Wrapper } from "../../global-styles";
-import { URLs } from "../../__data__/urls";
-import { Enter, EnterField, EntranceState, Form, FormLabel, FormLink, InputField } from "./login.styled";
-import { LoginContext } from "../../context/login-context";
-import { mainApi } from "../../__data__/service/main-api";
-import { LoginData, RegisterData } from "../../__data__/model/common";
 import { CircularProgress } from "@mui/material"
+import { Wrapper } from "../../global-styles";
+import { Enter, EnterField, EntranceState, Form, FormLabel, FormLink, InputField } from "./login.styled";
 
-interface contextUser {
-    currentUser: {
-        email: string;
-    };
-    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string }>>;
-}
+import { usersApi } from "../../__data__/service/users-api";
+import { LoginData } from "../../__data__/model/common";
+import { URLs } from "../../__data__/urls";
+import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
     const currentLocation = location.pathname.split('/').pop();
-    const { setCurrentUser } = useContext<contextUser>(LoginContext);
+    const { saveUser } = useUser();
     const [entranceData, setEntranceData] = useState<LoginData>({
         email: '',
         password: ''
     });
-    const [registerData, setRegisterData] = useState<RegisterData>({
+    const [registerData, setRegisterData] = useState({
         name: '',
         email: '',
         password: '',
         confirmPassword: '',
     });
-    const [getUserFromLogin, { isLoading: isLoginLoading }] = mainApi.useGetUserFromLoginMutation();
-    const [getUserFromRegister, { isLoading: isRegisterLoading }] = mainApi.useGetUserFromRegisterMutation();
-    const [getUserFromRecover, { isLoading: isRecoverLoading }] = mainApi.useGetUserFromRecoverMutation();
+    const [getUserFromLogin, { isLoading: isLoginLoading }] = usersApi.useGetUserFromLoginMutation();
+    const [getUserFromRegister, { isLoading: isRegisterLoading }] = usersApi.useGetUserFromRegisterMutation();
+    const [getUserFromRecover, { isLoading: isRecoverLoading }] = usersApi.useGetUserFromRecoverMutation();
 
     const handleEntranceSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            await getUserFromLogin(entranceData).unwrap()
-                .then((userData) => {
-                    setCurrentUser({ email: userData.email });
-                    location.replace(`${URLs.baseUrl}`);
-                })
-                .catch((error) => {
-                    alert(error.text);
-                    console.log(error.text)
-                })
-        }
-        catch (error) {
+            const data = await getUserFromLogin(entranceData).unwrap();
+            saveUser(data);
+            location.replace(`${URLs.baseUrl}`);
+        } catch (error) {
+            alert(error.message || 'Ошибка при входе');
             console.error('Ошибка при входе:', error);
-            alert(`Ошибка при входе: ${error}`);
         }
     };
 
@@ -62,19 +49,16 @@ const Login = () => {
         }
 
         try {
-            await getUserFromRegister(registerData).unwrap()
-                .then((userData) => {
-                    setCurrentUser({ email: userData.email });
-                    location.replace(`${URLs.baseUrl}`);
-                })
-                .catch((error) => {
-                    alert(error.text);
-                    console.log(error.text)
-                })
-        }
-        catch (error) {
+            const data = await getUserFromRegister({
+                name: registerData.name,
+                email: registerData.email,
+                password: registerData.password
+            }).unwrap();
+            saveUser(data);
+            location.replace(`${URLs.baseUrl}`);
+        } catch (error) {
             console.error('Ошибка при регистрации:', error);
-            alert('Ошибка при регистрации');
+            alert(error.message || 'Ошибка при регистрации');
         }
     };
 
@@ -97,9 +81,12 @@ const Login = () => {
         }
 
         try {
-            await getUserFromRecover(registerData).unwrap()
-                .then((userData) => {
-                    setCurrentUser({ email: userData.email });
+            await getUserFromRecover({
+                email: registerData.email,
+                password: registerData.password
+            }).unwrap()
+                .then((data) => {
+                    saveUser(data);
                     location.replace(`${URLs.baseUrl}`);
                 })
                 .catch((error) => {
@@ -138,9 +125,9 @@ const Login = () => {
                         <Enter>
                             Нет аккаунта? <FormLink href={URLs.ui.registration}> Зарегистрироваться</FormLink>
                         </Enter>
-                        <Enter>
+                        {URLs.ui.recover && <Enter>
                             Забыли пароль? <FormLink href={URLs.ui.recover}>Восстановить</FormLink>
-                        </Enter>
+                        </Enter>}
                     </Form>}
 
                 {currentLocation === 'registration' &&

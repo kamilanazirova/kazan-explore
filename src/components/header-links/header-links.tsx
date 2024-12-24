@@ -1,14 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import logo from '../../assets/logo.svg'
 
 import { StyledNav } from './header-links.styled';
 
 import { URLs } from "../../__data__/urls";
-import { LoginContext } from '../../context/login-context';
 import { Link } from 'react-router-dom';
 import { ImgLogo, MenuLi, OverlayLogin, StyledLogin, StyledMenu } from './header-links.styled';
 import { UserAvatar } from '../user-avatar';
+import { useUser } from '../../hooks/useUser';
 
 const nav = {
   places: { title: "Интересные места", href: URLs.ui.places },
@@ -19,19 +19,20 @@ const nav = {
 }
 
 export function HeaderLinks({ isOpen }) {
-  const { currentUser, setCurrentUser } = useContext(LoginContext);
   const [isAuth, setAuth] = useState(false);
+  const { user, removeUser } = useUser();
+
   const onLogOut = () => {
-    setCurrentUser(null);
+    removeUser();
   }
 
   useEffect(() => {
-    if (currentUser && currentUser.email) {
+    if (user && user.email) {
       setAuth(true);
     } else {
       setAuth(false);
     }
-  }, [currentUser]);
+  }, [user]);
 
   return (
     <StyledNav isOpen={isOpen}>
@@ -79,9 +80,9 @@ export function HeaderLinks({ isOpen }) {
           </StyledLogin>
         )}
       </OverlayLogin>
-      {URLs.ui.profile && isAuth &&
-        <Link to={URLs.ui.profile.getUrl(`${currentUser.email}`)}>
-          <UserAvatar email={currentUser.email} variant="small" />
+      {URLs.ui.profile.on && isAuth &&
+        <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
+          <UserAvatar name={user.name} variant="small" />
         </Link>
       }
     </StyledNav>

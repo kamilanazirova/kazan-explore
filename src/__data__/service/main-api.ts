@@ -49,36 +49,6 @@ export const mainApi = createApi({
       providesTags: ['SportData'],
       query: () => '/getSportData',
     }),
-
-    // login
-    getUserFromLogin: builder.mutation<UserData, LoginData>({
-      invalidatesTags: ['UserData'],
-      query: (loginData) => ({
-        url: '/entrance',
-        method: 'POST',
-        body: {entranceData: {email: loginData.email, password: loginData.password}}
-      })
-    }),
-    // register
-    getUserFromRegister: builder.mutation<UserData, RegisterData>({
-      invalidatesTags: ['UserData'],
-      query: (registerData) => ({
-        url: '/registration',
-        method: 'POST',
-        body: {registerData: {email: registerData.email, password: registerData.password, 
-          confirmPassword: registerData.confirmPassword}}
-      })
-    }),
-    // recover
-    getUserFromRecover: builder.mutation<UserData, RecoverUserData>({
-      invalidatesTags: ['UserData'],
-      query: (recoverData) => ({
-        url: '/recover',
-        method: 'POST',
-        body: {recoverData: {email: recoverData.email, password: recoverData.password, 
-          confirmPassword: recoverData.confirmPassword}}
-      })
-    })
   }),
 })
 
