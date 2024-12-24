@@ -7,10 +7,19 @@ router.get('/getInfoAboutKazan', (request, response) => {
 })
 
 router.get('/getNews', (request, response) => {
-    response.send(require('../json/first/news/success.json'))
+    const lang = request.query.lang || 'en'; // Получаем язык из параметров запроса
+    try {
+        const data = require(`../json/first/news/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
 })
 
 // Sport page
+router.get('/getSportInfo', (request, response) => {
+    response.send(require('../json/sport/info/success.json'))
+})
 router.get('/getSportData', (request, response) => {
     response.send(require('../json/sport-list/success.json'))
 })

@@ -10,34 +10,46 @@ export const LanguageSwitcher = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng); // Меняем язык
+    localStorage.setItem("i18nextLng", lng); // Сохраняем выбранный язык в localStorage
   };
 
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-      <DropdownToggle tag="span" data-toggle="dropdown" aria-expanded={dropdownOpen}>
+       <DropdownToggle tag="span" data-toggle="dropdown" aria-expanded={dropdownOpen}>
         {/* Показываем флаг в зависимости от языка */}
-        {i18n.language === 'tt' ? (
-          <img src={tatarstanFlag} alt="Tatarstan flag" width={25} height={15} /> // Для татарского языка показываем изображение флага
+        {i18n.language === "tt" ? (
+          <img
+            src={tatarstanFlag}
+            alt="Tatarstan flag"
+            width={25}
+            height={15}
+          />
         ) : (
-          <Flag code={i18n.language === 'ru' ? 'RU' : 'GB'} width={25} height={25} /> // Для русского и английского - флаг по коду
+          <Flag
+            code={i18n.language === "ru" ? "RU" : "GB"}
+            width={25}
+            height={25}
+          />
         )}
       </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem onClick={() => changeLanguage('ru')}>
+        <DropdownItem onClick={() => changeLanguage("ru")}>
           <Flag code="RU" width={25} height={25} /> Русский
         </DropdownItem>
-        <DropdownItem onClick={() => changeLanguage('en')}>
+        <DropdownItem onClick={() => changeLanguage("en")}>
           <Flag code="GB" width={25} height={25} /> English
         </DropdownItem>
-        <DropdownItem onClick={() => changeLanguage('tt')}>
-        <img 
-            src={tatarstanFlag} 
-            alt="Tatarstan flag" 
-            width={25} 
-            height={15} 
-          /> Татарча        </DropdownItem>
+        <DropdownItem onClick={() => changeLanguage("tt")}>
+          <img
+            src={tatarstanFlag}
+            alt="Tatarstan flag"
+            width={25}
+            height={15}
+          />{" "}
+          Татарча
+        </DropdownItem>
       </DropdownMenu>
     </Dropdown>
   );

@@ -48,7 +48,7 @@ export function HeaderLinks({ isOpen }) {
         {URLs.ui.entrance && (
           <StyledLogin>
             {!isAuth ? (
-              <Link to={URLs.ui.entrance}>{t('header.logit')}</Link>
+              <Link to={URLs.ui.entrance}>{t('header.login')}</Link>
             ) : (
               <Link onClick={onLogOut} to={URLs.ui.entrance}>{t('header.logout')}</Link>
             )}

@@ -1,5 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { NewsData, PlaceData, SportData, TripScheduleData, EventsData } from '../model/common'
+import i18n from 'i18next';
+
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
@@ -7,17 +9,39 @@ const apiUrl = URLs.api.main
 export const mainApi = createApi({
   reducerPath: 'main-api',
   baseQuery: fetchBaseQuery({ baseUrl: apiUrl }),
-  tagTypes: ['InfoAboutKzanData', 'NewsData', 'SportData', 'PlaceData', 'InfoTransportData', 'BusData', 'TralData', 'TripScheduleData', 'EventsData'],
+  tagTypes: [
+    'InfoAboutKzanData',
+    'NewsData',
+    'SportList',
+    'SportInfo',
+    'PlaceData',
+    'InfoTransportData',
+    'BusData',
+    'TralData',
+    'TripScheduleData',
+    'EventsData',
+  ],
   endpoints: (builder) => ({
     // main page
-    infoFirstData: builder.query<string[], void>({
+    infoFirstData: builder.query<any, void>({
       providesTags: ['InfoAboutKzanData'],
-      query: () => '/getInfoAboutKazan',
+      queryFn: async () => {
+        const response = await fetch(`${apiUrl}/getInfoAboutKazan`);
+        const data = await response.json();
+        // Получаем текущий язык
+        const language = i18n.language ;
+        // Проверяем, есть ли переводы для текущего языка
+        const translatedData = data[language] || data['ru'];
+        return { data: translatedData };
+      },
     }),
     newsList: builder.query<NewsData[], void>({
       providesTags: ['NewsData'],
-      query: () => '/getNews',
-    }),
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'tt'; // Берём текущий язык
+        return `/getNews?lang=${language}`; // Передаём язык как параметр
+      }, 
+    }),   
 
     // places page
     placesList: builder.query<PlaceData[], void>({
@@ -45,7 +69,7 @@ export const mainApi = createApi({
 
     // sport page
     sportsList: builder.query<SportData[], void>({
-      providesTags: ['SportData'],
+      providesTags: ['SportList'],
       query: () => '/getSportData',
     }),
   }),
