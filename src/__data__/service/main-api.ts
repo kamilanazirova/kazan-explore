@@ -12,8 +12,9 @@ export const mainApi = createApi({
   tagTypes: [
     'InfoAboutKzanData',
     'NewsData',
-    'SportList',
-    'SportInfo',
+    'SportsList',
+    'SportFirstTextData',
+    'SportSecondTextData',
     'PlaceData',
     'InfoTransportData',
     'BusData',
@@ -29,7 +30,7 @@ export const mainApi = createApi({
         const response = await fetch(`${apiUrl}/getInfoAboutKazan`);
         const data = await response.json();
         // Получаем текущий язык
-        const language = i18n.language ;
+        const language = i18n.language;
         // Проверяем, есть ли переводы для текущего языка
         const translatedData = data[language] || data['ru'];
         return { data: translatedData };
@@ -38,15 +39,18 @@ export const mainApi = createApi({
     newsList: builder.query<NewsData[], void>({
       providesTags: ['NewsData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'tt'; // Берём текущий язык
+        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
         return `/getNews?lang=${language}`; // Передаём язык как параметр
-      }, 
-    }),   
+      },
+    }),
 
     // places page
     placesList: builder.query<PlaceData[], void>({
       providesTags: ['PlaceData'],
-      query: () => '/getPlacesData',
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getPlacesData?lang=${language}`;
+      },
     }),
 
     // transport page
@@ -69,8 +73,31 @@ export const mainApi = createApi({
 
     // sport page
     sportsList: builder.query<SportData[], void>({
-      providesTags: ['SportList'],
-      query: () => '/getSportData',
+      providesTags: ['SportsList'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getSportData?lang=${language}`;
+      },
+    }),
+    sportFirstTextData: builder.query<any, void>({
+      providesTags: ['SportFirstTextData'],
+      queryFn: async () => {
+        const response = await fetch(`${apiUrl}/getFirstText`);
+        const data = await response.json();
+        const language = i18n.language;
+        const translatedData = data[language] || data['ru'];
+        return { data: translatedData };
+      },
+    }),
+    sportSecondTextData: builder.query<any, void>({
+      providesTags: ['SportSecondTextData'],
+      queryFn: async () => {
+        const response = await fetch(`${apiUrl}/getSecondText`);
+        const data = await response.json();
+        const language = i18n.language;
+        const translatedData = data[language] || data['ru'];
+        return { data: translatedData };
+      },
     }),
   }),
 })

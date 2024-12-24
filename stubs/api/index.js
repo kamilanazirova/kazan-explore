@@ -7,7 +7,7 @@ router.get('/getInfoAboutKazan', (request, response) => {
 })
 
 router.get('/getNews', (request, response) => {
-    const lang = request.query.lang || 'en'; // Получаем язык из параметров запроса
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
     try {
         const data = require(`../json/first/news/${lang}/success.json`);
         response.send(data);
@@ -17,16 +17,31 @@ router.get('/getNews', (request, response) => {
 })
 
 // Sport page
-router.get('/getSportInfo', (request, response) => {
-    response.send(require('../json/sport/info/success.json'))
+router.get('/getFirstText', (request, response) => {
+    response.send(require('../json/sport/first-text/success.json'))
 })
 router.get('/getSportData', (request, response) => {
-    response.send(require('../json/sport-list/success.json'))
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    try {
+        const data = require(`../json/sport/sport-list/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+router.get('/getSecondText', (request, response) => {
+    response.send(require('../json/sport/second-text/success.json'))
 })
 
 // Places page
 router.get('/getPlacesData', (request, response) => {
-    response.send(require('../json/places/places-data.json'))
+    const lang = request.query.lang || 'ru'; // Получаем язык из параметров запроса
+    try {
+        const data = require(`../json/places/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
 })
 
 // Transport page

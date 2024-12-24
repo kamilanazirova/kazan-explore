@@ -15,9 +15,18 @@
         "uchpuchmak": "Try uchpuchmak",
         "under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity."
     },
+    "places": {
+        "title": "Interesting Places",
+        "info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
+        "review": "Leave a review"
+    },    
     "transport": {
         "tittle": "Transport and infrastructure"
     },
+    "sport": {
+        "tittle": "Sports and Entertainment",
+        "list_tittle": "Sports Teams and Clubs of Kazan"
+    },    
     "footer": {
         "tcontacts": "Contact information",
         "tsocialsites": "We are on social networks"
