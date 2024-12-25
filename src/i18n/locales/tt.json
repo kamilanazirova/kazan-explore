@@ -1,5 +1,28 @@
 {
-    "error": "Нәрсәдер дөрес булмаган.",
+    "error": {
+        "boundary": "Нәрсәдер дөрес эшләмәде.",
+        "login_error": "Керү хатасы:",
+        "registration_error": "Теркәү хатасы:",
+        "recovery_error": "Парольне тергезү хатасы:",
+        "passwords_do_not_match": "Парольләр туры килми",
+        "password_restored": "Пароль тергезелде"
+    },
+    "login": {
+        "entrance": "Керү",
+        "registration": "Теркәү",
+        "recovery": "Парольне тергезү",
+        "login": "Логин",
+        "password": "Пароль",
+        "repeat_password": "Парольне кабатлагыз",
+        "create_a_new_password": "Яңа пароль уйлап табыгыз",
+        "set_a_new_password": "Яңа пароль куегыз",
+        "entrance_bitton": "Керергә",
+        "no_account": "Аккаунт юкмы?",
+        "forgete_password": "Парольне оныттыгызмы?",
+        "go_to_registration": "Теркәү",
+        "go_to_recovery": "Тергезү",
+        "name": "Исем"
+    },
     "header": {
         "places": "Кызыклы урыннар",
         "transport": "Транспорт һәм инфраструктура",

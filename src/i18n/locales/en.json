@@ -1,5 +1,28 @@
 {
-    "error": "Something went wrong.",
+    "error": {
+        "boundary": "Something went wrong.",
+        "login_error": "Login error:",
+        "registration_error": "Registration error:",
+        "recovery_error": "Password recovery error:",
+        "passwords_do_not_match": "Passwords do not match",
+        "password_restored": "Password restored"
+    },
+    "login": {
+        "entrance": "Login",
+        "registration": "Registration",
+        "recovery": "Password Recovery",
+        "login": "Login",
+        "password": "Password",
+        "repeat_password": "Repeat Password",
+        "create_a_new_password": "Create a New Password",
+        "set_a_new_password": "Set a New Password",
+        "entrance_bitton": "Log In",
+        "no_account": "Don't have an account?",
+        "forgete_password": "Forgot password?",
+        "go_to_registration": "Sign Up",
+        "go_to_recovery": "Recover",
+        "name": "Name"
+    },
     "header": {
         "places": "Interesting places",
         "transport": "Transport and infrastructure",

@@ -1,5 +1,28 @@
 {
-    "error": "Что-то пошло не так.",
+    "error": {
+        "boundary": "Что-то пошло не так.",
+        "login_error:": "Ошибка при входе:",
+        "registration_error": "Ошибка при регистрации:",
+        "recovery_error": "Ошибка при восстановлении пароля:",
+        "passwords_do_not_match": "Пароли не совпадают",
+        "password_restored": "Пароль восстановлен"
+    },
+    "login": {
+        "entrance": "Вход",
+        "registration": "Регистрация",
+        "recovery": "Восстановление пароля",
+        "login": "Логин",
+        "password": "Пароль",
+        "repeat_password": "Повторите пароль",
+        "create_a_new_password": "Придумайте новый пароль",
+        "set_a_new_password": "Установить новый пароль",
+        "entrance_bitton": "Войти",
+        "no_account": "Нет аккаунта?",
+        "forgete_password": "Забыли пароль?",
+        "go_to_registration": "Зарегистрироваться",
+        "go_to_recovery": "Восстановить",
+        "name": "Имя"
+    },
     "header": {
         "places": "Интересные места",
         "transport": "Транспорт и инфраструктура",
