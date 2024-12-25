@@ -33,7 +33,7 @@ export const mainApi = createApi({
         return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
       },
     }),
-    newsList: builder.query<NewsData[], void>({
+    newsList: builder.query<any, void>({
       providesTags: ['NewsData'],
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
