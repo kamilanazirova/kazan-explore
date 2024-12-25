@@ -1,6 +1,5 @@
 {
-    "welcome": "Welcome",
-    "exploreKazan": "Explore Kazan",
+    "error": "Something went wrong.",
     "header": {
         "places": "Interesting places",
         "transport": "Transport and infrastructure",
