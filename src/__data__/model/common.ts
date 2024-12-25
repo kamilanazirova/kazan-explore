@@ -40,3 +40,9 @@ export type EventsData = {
   body: string;
   place: string;
 }
+
+export type EducationData = {
+  image: string;
+  title: string;
+  text: string;
+}

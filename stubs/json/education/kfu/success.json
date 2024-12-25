@@ -1,18 +1,21 @@
 {
   "ru": {
-    "descriptions": [
+    "title": "Kазанский федеральный университет",
+    "description": [
       "Казанский (Приволжский) федеральный университет (полное наименование — федеральное государственное автономное образовательное учреждение высшего образования «Казанский (Приволжский) федеральный университет», тат. Казан (Идел буе) федераль университеты) — высшее учебное заведение в Казани, один из старейших российских университетов (основан в 1804 году) и один из десяти федеральных университетов (с 2010 года).",
       "В состав университетского учебно-научного комплекса входят научная библиотека, научно-исследовательские институты химии, математики и механики, 7 музеев, ботанический сад, астрономические обсерватории, центр информационных технологий, издательство, центр и лаборатория оперативной полиграфии, культурно-спортивный комплекс, спортивно-оздоровительный лагерь и другие подразделения."
     ]
   },
   "en": {
-    "descriptions": [
+    "title": "Kazan Federal University",
+    "description": [
       "Kazan (Volga Region) Federal University (full name - Federal State Autonomous Educational Institution of Higher Education 'Kazan (Volga Region) Federal University') is a higher educational institution in Kazan, one of the oldest Russian universities (founded in 1804) and one of the ten federal universities (since 2010).",
       "The university's educational and research complex includes a scientific library, research institutes of chemistry, mathematics, and mechanics, 7 museums, a botanical garden, astronomical observatories, an information technology center, a publishing house, a center and laboratory for operational printing, a cultural and sports complex, a sports and recreation camp, and other divisions."
     ]
   },
   "tt": {
-    "descriptions": [
+    "title": "Казан Федераль Университеты",
+    "description": [
       "Казан (Идел буе) федераль университеты (тулы исеме — Казан (Идел буе) федераль университеты) Казан шәһәрендә урнашкан. Ул 1804 елда нигезләнгән, Россиянең иң борынгы университетларының берсе һәм 2010 елдан бирле ун федераль университетларның берсе булып тора.",
       "Университетның уку-укыту һәм фәнни комплексына фәнни китапханә, химия, математика һәм механика буенча фәнни-тикшеренү институтлары, 7 музей, ботаник бакча, астрономия обсерваторияләре, мәгълүмат технологияләре үзәге, нәшрият, оператив полиграфия үзәге һәм лабораториясе, мәдәни-спорт комплексы, спорт-сәламәтләндерү лагере һәм башка бүлекләр керә."
     ]

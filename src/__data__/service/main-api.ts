@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData } from '../model/common'
+import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData } from '../model/common'
 import i18n from 'i18next';
 
 import { URLs } from '../urls'
@@ -10,7 +10,7 @@ export const mainApi = createApi({
   reducerPath: 'main-api',
   baseQuery: fetchBaseQuery({ baseUrl: apiUrl }),
   tagTypes: [
-    'InfoAboutKzanData',
+    'InfoAboutKazanData',
     'NewsData',
     'SportsList',
     'SportFirstTextData',
@@ -21,10 +21,13 @@ export const mainApi = createApi({
     'TralData',
     'TripScheduleData',
     'EventsData',
+    'EducationText',
+    'EducationList',
+    'KfuData',
   ],
   endpoints: (builder) => ({
     infoFirstData: builder.query<any, void>({
-      providesTags: ['InfoAboutKzanData'],
+      providesTags: ['InfoAboutKazanData'],
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
         return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
@@ -91,6 +94,31 @@ export const mainApi = createApi({
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru'; 
         return `/getSecondText?lang=${language}`;
+      },
+    }),
+
+    // history page
+
+    // education page
+    educationText: builder.query<any, void>({
+      providesTags: ['EducationText'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutEducation?lang=${language}`;
+      },
+    }),
+    educationList: builder.query<EducationData[], void>({
+      providesTags: ['EducationList'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getEducationList?lang=${language}`;
+      },
+    }),
+    kfuList: builder.query<any, void>({
+      providesTags: ['KfuData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutKFU?lang=${language}`;
       },
     }),
   }),

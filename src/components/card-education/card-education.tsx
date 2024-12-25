@@ -6,10 +6,10 @@ import { Container, Photo, Head, Text } from "./card-education.styled";
 
 export const EducationCard = ({  
     image, 
-    head,
+    title,
     text}) => (
     <Container>
-        <Head>{head}</Head>
+        <Head>{title}</Head>
         <Text>{text}</Text>
         <Photo src = {education[image]}/>
     </Container>  
