@@ -36,6 +36,19 @@
         "login": "Керегез",
         "logout": "Чык"
     },
+    "profile": {
+        "title": "Шәхси кабинет",
+        "test_names": {
+            "city_history": "Шәһәр тарихы",
+            "districts": "Районнарны белү",
+            "tatar_language": "Татар теле",
+            "key_rate": "Төп ставка"
+        },
+        "result": "Нәтиҗә:",
+        "results_title": "Тест нәтиҗәләре",
+        "no_tests_yet": "Сез әле тестлар үтмәдегез.",
+        "new_test": "Яңа тест үтәргә"
+    },
     "main": {
         "chakchak": "Чак-чәк сатып алыгыз",
         "uchpuchmak": "Очпочмакны кулланып карагыз",

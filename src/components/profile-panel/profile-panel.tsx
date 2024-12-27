@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import {
     Box,
@@ -12,21 +13,23 @@ import { TestResultsList } from "../../components/test-results-list";
 import { ResultsLabel } from "./styled";
 import { ProfileInfo } from "../profile-info";
 
-const kazanTests = [
-    { name: "История города", score: 85 },
-    { name: "Знание районов", score: 92 },
-    { name: "Татарский", score: 200 },
-    { name: "Ключевая ставка", score: 5 }
-];
-
 const ProfilePanel = () => {
+    const { t } = useTranslation()
+
+    const kazanTests = [
+        { name: t('profile.test_names.city_history'), score: 85 },
+        { name: t('profile.test_names.districts'), score: 92 },
+        { name: t('profile.test_names.tatar_language'), score: 200 },
+        { name: t('profile.test_names.key_rate'), score: 5 }
+    ];
+
     return (
         <Container maxWidth="sm" sx={{ mt: 8, minWidth: "320px" }}>
             <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
                 <ProfileInfo />
                 <Divider />
                 <ResultsLabel>
-                    Результаты тестов
+                    {t('profile.results_title')} {/* Перевод "Результаты тестов" */}
                 </ResultsLabel>
 
                 {kazanTests?.length > 0 && (
@@ -34,13 +37,13 @@ const ProfilePanel = () => {
                 )}
                 {(!kazanTests || kazanTests.length === 0) && (
                     <Typography variant="body2" color="text.secondary">
-                        Вы еще не проходили тесты.
+                        {t('profile.no_tests_yet')} {/* Перевод "Вы еще не проходили тесты." */}
                     </Typography>
                 )}
 
                 <Box mt={1} textAlign="center">
                     <Button variant="contained" color="primary">
-                        Пройти новый тест
+                        {t('profile.new_test')} {/* Перевод "Пройти новый тест" */}
                     </Button>
                 </Box>
             </Paper>

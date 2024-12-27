@@ -38,15 +38,14 @@
     },
     "profile": {
         "title": "Личный кабинет",
-        "test_names": [
-            {
-                "city_history": "История города",
-                "districts": "Знание районов",
-                "tatar_language": "Татарский",
-                "key_rate": "Ключевая ставка"
-            }
-        ],
-        "results": "Результаты тестов",
+        "test_names": {
+            "city_history": "История города",
+            "districts": "Знание районов",
+            "tatar_language": "Татарский",
+            "key_rate": "Ключевая ставка"
+        },
+        "result": "Результат:",
+        "results_title": "Результаты тестов",
         "no_tests_yet": "Вы еще не проходили тесты.",
         "new_test": "Пройти новый тест"
     },

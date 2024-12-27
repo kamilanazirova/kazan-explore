@@ -35,7 +35,20 @@
         "education": "Science and education",
         "login": "Login",
         "logout": "Log out"
-    },   
+    },
+    "profile": {
+        "title": "Profile",
+        "test_names": {
+            "city_history": "City History",
+            "districts": "Knowledge of Districts",
+            "tatar_language": "Tatar Language",
+            "key_rate": "Key Rate"
+        },
+        "result": "Result:",
+        "results_title": "Test Results",
+        "no_tests_yet": "You have not taken any tests yet.",
+        "new_test": "Take a New Test"
+    },
     "main": {
         "chakchak": "Buy chakchak",
         "uchpuchmak": "Try uchpuchmak",
