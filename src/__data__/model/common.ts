@@ -46,3 +46,9 @@ export type EducationData = {
   title: string;
   text: string;
 }
+
+export type HistoryTextData = {
+  image: string;
+  title: string;
+  text: string;
+}

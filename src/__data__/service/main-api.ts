@@ -21,6 +21,8 @@ export const mainApi = createApi({
     'TralData',
     'TripScheduleData',
     'EventsData',
+    'HistoryText',
+    'HistoryList',
     'EducationText',
     'EducationList',
     'KfuData',
@@ -98,6 +100,20 @@ export const mainApi = createApi({
     }),
 
     // history page
+    historyText: builder.query<any, void>({
+      providesTags: ['HistoryText'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getHistoryText?lang=${language}`;
+      },
+    }),
+    historyList: builder.query<any, void>({
+      providesTags: ['HistoryList'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getHistoryList?lang=${language}`;
+      },
+    }),
 
     // education page
     educationText: builder.query<any, void>({

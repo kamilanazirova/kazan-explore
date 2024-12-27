@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import history_icon from '../assets/icons/history_icon.svg'
 import collage from '../assets/history/collage.png'
@@ -8,25 +9,43 @@ import { Title } from "../components/title";
 import { Footer } from "../components/footer"
 import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
+import { mainApi } from "../__data__/service/main-api";
+import { HistoryList } from "../components/hostory-list";
 
 const History = () => {
+    const { t } = useTranslation()
+
+    const { data: historyText, } = mainApi.useHistoryTextQuery()
+    const { data: historyList, } = mainApi.useHistoryListQuery()
+
+
     return (
         <>
             <Header />
             <Wrapper>
-                <Title image={history_icon} title="История и культура" alt="спортивная иконка" />
+                <Title image={history_icon} title={t('history.title')} alt="спортивная иконка" />
                 <ErrorBoundary>
-                <div className="text">
-                    <p>Казань является одним из крупнейших культурных центров России, сохраняя классические достижения, а также способствуя развитию современных, авангардных направлений во многих областях культуры. Столицу Татарстана традиционно называют «мультикультурной», подразумевая взаимовыгодное обогащение мирно сосуществующих русской и татарской культур.</p>
-                </div>
-                <h2>История возникновения Казани</h2>
-                <h3>Официальной датой основания Казани считается 1005 год</h3>
-                <p>Город возник на Волге, на пересечении торговых маршрутов между Востоком и Западом.</p>
-                <h2>Культура</h2>
-                <div className="text">
-                    <p>В республике проживают народы с разным историческим прошлым и культурными традициями. Сочетание по крайней мере трёх типов культурных взаимовлияний (тюркского, славяно-русского и финно-угорского) определяет уникальность этих мест, своеобразие культурных и исторических ценностей.</p>
-                    <p>С Татарстаном связаны судьбы многих выдающихся деятелей культуры: певца Фёдора Шаляпина, писателей Льва Толстого, Сергея Аксакова и Максима Горького, Василия Аксёнова, поэтов Евгения Боратынского, Гавриила Державина, Марины Цветаевой и Никиты Заболоцкого, художников Ивана Шишкина и Николая Фешина. Классик татарской поэзии Габдулла Тукай, поэт-герой Муса Джалиль, композиторы Фарид Яруллин, Салих Сайдашев, Назиб Жиганов, София Губайдулина и многие другие составили славу татарской культуры.</p>
-                </div>
+                    <div className="text">
+                        <p>{historyText?.first}</p>
+                    </div>
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    {historyList?.map((item, index) => (
+                        <HistoryList
+                            key={index}
+                            head={item.head}
+                            title={item.title}
+                            content={item.content}
+                        />
+                    ))}
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    <h2>{historyText?.second.head}</h2>
+                    <div className="text">
+                        <p>{historyText?.second.body.map((body: string, index: number) => (
+                            <p key={index}>{body}</p>))}
+                        </p>
+                    </div>
                 </ErrorBoundary>
             </Wrapper>
             <img src={collage} className="collage-full-width" alt="Различные исторические фотографии татар в начиональном костюме" />

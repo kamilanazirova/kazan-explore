@@ -101,6 +101,26 @@ router.get('/getTripSchedule', (request, response) => {
     }
 })
 
+// History page
+router.get('/getHistoryText', (request, response) => {
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require(`../json/history/text/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+router.get('/getHistoryList', (request, response) => {
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require(`../json/history/list/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+
 // Education page
 router.get('/getInfoAboutEducation', (request, response) => {
     const lang = request.query.lang || 'ru';
