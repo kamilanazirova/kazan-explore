@@ -1,37 +1,36 @@
 import React, { createContext, useState, useEffect } from 'react';
+import { UserData } from '../__data__/model/common';
 
-interface contextUser {
-  currentUser: {
-    email: string;
-  };
-  setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string}>>;
+interface UserContext {
+  currentUser: UserData
+  setCurrentUser: React.Dispatch<React.SetStateAction<UserData>>;
 }
-export const LoginContext = createContext<contextUser>({
+export const LoginContext = createContext<UserContext>({
   currentUser: null,
   setCurrentUser: () => null
 });
 
 const LoginProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     const storedData = JSON.parse(window.localStorage.getItem('user'));
     if (storedData) {
-      setCurrentUser({ email: storedData.email});
+      setUserData(storedData);
     }
   }, []);
 
   useEffect(() => {
-    if(!currentUser) {
-        window.localStorage.removeItem('user');
+    if (!userData) {
+      window.localStorage.removeItem('user');
     }
     else {
-      window.localStorage.setItem('user', JSON.stringify({email: currentUser.email}));
+      window.localStorage.setItem('user', userData);
     }
-  }, [currentUser]);
+  }, [userData]);
 
   return (
-    <LoginContext.Provider value={{ currentUser, setCurrentUser }}>
+    <LoginContext.Provider value={{ currentUser: userData, setCurrentUser: setUserData }}>
       {children}
     </LoginContext.Provider>
   );

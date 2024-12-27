@@ -6,7 +6,7 @@ import { Wrapper, WrapperImage, WrapperText } from "./info-image.styled";
 export const InformationImage = ({ text, image, alt}) => (
     <Wrapper>
         <WrapperText>
-            {text.map((number, index) =>
+            {text?.map((number, index) =>
             (
                 <p key={index}>{number}</p>
             ))

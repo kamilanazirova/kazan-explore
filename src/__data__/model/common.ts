@@ -40,3 +40,37 @@ export type EventsData = {
   body: string;
   place: string;
 }
+
+export type EducationData = {
+  image: string;
+  title: string;
+  text: string;
+}
+
+export type HistoryTextData = {
+  image: string;
+  title: string;
+  text: string;
+}
+
+export type UserData = {
+  name: string;
+  email: string;
+  token: string;
+}
+
+export type LoginData = {
+  email: string;
+  password: string;
+}
+
+export type RegisterData = {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export type RecoverUserData = {
+  email: string;
+  password: string;
+}

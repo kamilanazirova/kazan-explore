@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { places } from "../../assets/places";
 import { Container, Photo, Head, Text } from "./place.styled";
 import { ReviewModal } from "../review";
+import { useTranslation } from 'react-i18next';
 
 export const Place = ({ type, image, head, text, componentKey }) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -11,6 +12,8 @@ export const Place = ({ type, image, head, text, componentKey }) => {
         setReviews([...reviews, review]);
         localStorage.setItem(`reviews_${componentKey}`, JSON.stringify([...reviews, review]));
     };
+
+    const { t } = useTranslation()
 
     return (
         <>
@@ -32,7 +35,7 @@ export const Place = ({ type, image, head, text, componentKey }) => {
                     marginLeft: '80px', // Отступ слева
                 }}
                 >
-                Оставить отзыв
+                {t('places.review')}
                 </button>
                 <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleReviewSubmit} reviews={reviews} componentKey={componentKey} />
             </Container>

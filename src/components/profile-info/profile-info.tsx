@@ -1,30 +1,26 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useTranslation } from 'react-i18next';
 
-import { Box, Typography } from "@mui/material";
 import { UserAvatar } from "../user-avatar";
-
-import { LoginContext } from "../../context/login-context";
+import { useUser } from "../../hooks/useUser";
+import { InfoTextBox, StyledEmail, InfoLabel, InfoTitle, UserInfoBox } from "./styled";
 
 const ProfileInfo = () => {
-    const { currentUser } = useContext(LoginContext);
+    const { t } = useTranslation()
+
+    const { user } = useUser();
 
     return (
-        <Box display="flex" alignItems="center" mb={2}>
-        <UserAvatar email={currentUser?.email} variant={'medium'} />
-        <Box>
-            <Typography variant="body1"
-                color="text.secondary">
-                Личный кабинет
-            </Typography>
-            <Typography
-                variant="h6" fontWeight="bold"
-                display="flex"
-                alignItems="center"
-            >
-                {currentUser?.email}
-            </Typography>
-        </Box>
-    </Box>
+        <UserInfoBox>
+            <UserAvatar name={user?.name} variant="medium" />
+            <InfoTextBox>
+                <InfoLabel>{t('profile.title')}</InfoLabel>
+                <InfoTitle variant="h6">
+                    {user?.name}
+                    <StyledEmail variant="body2">{`(${user?.email})`}</StyledEmail>
+                </InfoTitle>
+            </InfoTextBox>
+        </UserInfoBox>
     );
 }
 

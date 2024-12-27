@@ -43,6 +43,7 @@ export const EnterField = styled.button`
     border-color: #D9D9D9;
     background-color: #005710;
     color: #ebebeb;
+    cursor: pointer;
 `;
 
 export const CreateAccount = styled.input`

@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import interesting_logo from '../assets/places/LibraryOutline.png'
 import { Header } from "../components/header";
@@ -11,17 +12,17 @@ import { MapWithMarkers } from "../components/map-with-markers";
 import { mainApi } from "../__data__/service/main-api";
 
 const Places = () => {
-  const { data: placesData } = mainApi.usePlacesListQuery();
-  
+  const { data: placesList } = mainApi.usePlacesListQuery();
+  const { t } = useTranslation()
+
   return (
     <>
       <Header />
       <Wrapper>
-        <Title image={interesting_logo} title="Интересные места" alt="interesting logo" />
-        <h3>Ежегодно Казань посещает более 2 млн туристов,
-          которые стремятся увидеть самые интересные места города. Сейчас мы расскажем о них.</h3>
+        <Title image={interesting_logo} title={t('places.title')} alt="interesting logo" />
+        <h3>{t('places.info')}</h3>
         <ErrorBoundary>
-          {placesData?.map((item, index) => (
+          {placesList?.map((item, index) => (
             <Place key={index}
               type={item.type}
               head={item.head}

@@ -28,5 +28,6 @@ module.exports = {
   },
   config: {
     "kazan-explore.api": "/api",
+    "kazan-explore.users.api": "https://antd-table-v2-backend.onrender.com/api"
   },
 };

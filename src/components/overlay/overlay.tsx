@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useTranslation } from 'react-i18next';
 
 import './overlay.styled';
 
@@ -8,26 +9,21 @@ import { Link } from "../link";
 import { mainApi } from "../../__data__/service/main-api";
 
 export function Overlay() {
-    const { isFetching, isLoading, data: infoFirstData, error } = mainApi.useInfoFirstDataQuery()
-
-    /* const [infoAboutKazan, setInfoAboutKazan] = useState([])
-    useEffect(() => {
-        fetch(`${URLs.api.main}/getInfoAboutKazan`).then((response) => response.json()).then((data) => setInfoAboutKazan(data))
-    }, []) */
-
-    return(
+    
+    const { t } = useTranslation()
+    const { data: infoFirstData } = mainApi.useInfoFirstDataQuery();
+ 
+    return (
         <StyledOverlay>
-            <Icon className='like' src={like} alt="Поставить лайк городу Казань"/>
+            <Icon className='like' src={like} alt="Поставить лайк городу Казань" />
             <Head className="title">Explore Kazan</Head>
-            <Body className="text-about-kazan">{infoFirstData}</Body>
+            <Body className="text-about-kazan">{infoFirstData?.description}</Body>
             <Button1>
-                <Link href="https://2chak.ru/">Купить чак-чак </Link>
+                <Link href="https://2chak.ru/">{t('main.chakchak')}</Link>
             </Button1>
             <Button2>
-                <Link href="https://tubatay.com/">Попробовать өчпочмак </Link>
+                <Link href="https://tubatay.com/">{t('main.uchpuchmak')}</Link>
             </Button2>
         </StyledOverlay>
     )
 }
-
-

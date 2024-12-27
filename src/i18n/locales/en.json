@@ -1,0 +1,85 @@
+{
+    "error": {
+        "boundary": "Something went wrong.",
+        "login_error": "Login error:",
+        "registration_error": "Registration error:",
+        "recovery_error": "Password recovery error:",
+        "passwords_do_not_match": "Passwords do not match",
+        "password_restored": "Password restored"
+    },
+    "login": {
+        "entrance": "Login",
+        "registration": "Registration",
+        "recovery": "Password Recovery",
+        "login": "Login",
+        "password": "Password",
+        "repeat_password": "Repeat Password",
+        "create_a_new_password": "Create a New Password",
+        "set_a_new_password": "Set a New Password",
+        "entrance_botton": "Log In",
+        "no_account": "Don't have an account?",
+        "forgete_password": "Forgot password?",
+        "go_to_registration": "Sign Up",
+        "go_to_recovery": "Recover",
+        "name": "Name",
+        "already_have_account": "Already have an account?",
+        "enter_name": "Enter your name",
+        "enter_email": "Enter your email",
+        "enter_password": "Enter your password"
+    },
+    "header": {
+        "places": "Interesting places",
+        "transport": "Transport and infrastructure",
+        "sport": "Sports and entertainment",
+        "history": "History and culture",
+        "education": "Science and education",
+        "login": "Login",
+        "logout": "Log out"
+    },
+    "profile": {
+        "title": "Profile",
+        "test_names": {
+            "city_history": "City History",
+            "districts": "Knowledge of Districts",
+            "tatar_language": "Tatar Language",
+            "key_rate": "Key Rate"
+        },
+        "result": "Result:",
+        "results_title": "Test Results",
+        "no_tests_yet": "You have not taken any tests yet.",
+        "new_test": "Take a New Test"
+    },
+    "main": {
+        "chakchak": "Buy chakchak",
+        "uchpuchmak": "Try uchpuchmak",
+        "under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity.",
+        "newsTitle": "News in Kazan"
+    },
+    "places": {
+        "title": "Interesting Places",
+        "info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
+        "review": "Leave a review"
+    },
+    "transport": {
+        "title": "Transport and Infrastructure",
+        "click_on_the_route": "Click on the route of interest to see its schedule",
+        "type": "Buses",
+        "schedule": "Route",
+        "route_length": "Route length",
+        "operating_mode": "Operating mode"
+    },
+    "sport": {
+        "title": "Sports and Entertainment",
+        "list_title": "Sports Teams and Clubs of Kazan"
+    },
+    "history": {
+        "title": "History and culture"
+    },
+    "education": {
+        "title": "Science and Education"
+    },
+    "footer": {
+        "tcontacts": "Contact information",
+        "tsocialsites": "We are on social networks"
+    }
+}
