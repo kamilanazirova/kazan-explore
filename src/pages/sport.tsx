@@ -32,7 +32,7 @@ const Sport = () => {
                     <div className="text">
                         <h2>{sportFirstTextData.title}</h2>
                         <div className="descriptions">
-                            {sportFirstTextData.descriptions.map((description: string, index: number) => (
+                            {sportFirstTextData?.descriptions.map((description: string, index: number) => (
                                 <p key={index}>{description}</p>
                             ))}
                         </div>
@@ -55,7 +55,7 @@ const Sport = () => {
                     </ErrorBoundary>
                     <div className="text">
                         <div className="descriptions">
-                            {sportSecondTextData.descriptions.map((description: string, index: number) => (
+                            {sportSecondTextData?.descriptions.map((description: string, index: number) => (
                                 <p key={index}>{description}</p>
                             ))}
                         </div>
