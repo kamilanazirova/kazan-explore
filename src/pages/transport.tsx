@@ -76,7 +76,7 @@ const Transport = () => {
 
         </ErrorBoundary>
 
-        <h1>Календарь культурных и общественных событий</h1>
+        {/* <h1>Календарь культурных и общественных событий</h1>
         <Table>
           <thead>
             <tr>
@@ -94,7 +94,7 @@ const Transport = () => {
             place={item.place}
           >
           </Events>
-        ))}
+        ))} */}
       </Wrapper>
       <Footer />
     </>

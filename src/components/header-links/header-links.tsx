@@ -27,6 +27,8 @@ const nav = {
 };
 
 export function HeaderLinks({ isOpen }) {
+  const { t } = useTranslation()
+
   const [isAuth, setAuth] = useState(false);
   const { user, removeUser } = useUser();
 
