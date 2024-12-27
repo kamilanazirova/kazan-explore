@@ -2,13 +2,20 @@ import React, { useState, useEffect } from 'react';
 
 import logo from '../../assets/logo.svg'
 
-import { StyledNav } from './header-links.styled';
-
 import { URLs } from "../../__data__/urls";
 import { Link } from 'react-router-dom';
-import { ImgLogo, MenuLi, OverlayLogin, StyledLogin, StyledMenu } from './header-links.styled';
+import {
+  ImgLogo,
+  MenuLi,
+  OverlayLogin,
+  StyledLogin,
+  StyledMenu,
+  MenuIconButton,
+  StyledNav
+} from './header-links.styled';
 import { UserAvatar } from '../user-avatar';
 import { useUser } from '../../hooks/useUser';
+import { Tooltip } from '@mui/material';
 
 const nav = {
   places: { title: "Интересные места", href: URLs.ui.places },
@@ -81,9 +88,13 @@ export function HeaderLinks({ isOpen }) {
         )}
       </OverlayLogin>
       {URLs.ui.profile.on && isAuth &&
-        <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
-          <UserAvatar name={user.name} variant="small" />
-        </Link>
+        <Tooltip title="Профиль">
+          <MenuIconButton>
+            <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
+              <UserAvatar name={user.name} variant="small" />
+            </Link>
+          </MenuIconButton>
+        </Tooltip>
       }
     </StyledNav>
   );
