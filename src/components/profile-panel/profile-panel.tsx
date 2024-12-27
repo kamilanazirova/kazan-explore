@@ -21,7 +21,7 @@ const kazanTests = [
 
 const ProfilePanel = () => {
     return (
-        <Container maxWidth="sm" sx={{ mt: 8 }}>
+        <Container maxWidth="sm" sx={{ mt: 8, minWidth: "320px" }}>
             <Paper elevation={3} sx={{ p: 4, borderRadius: 2 }}>
                 <ProfileInfo />
                 <Divider />

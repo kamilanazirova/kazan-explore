@@ -52,3 +52,25 @@ export type HistoryTextData = {
   title: string;
   text: string;
 }
+
+export type UserData = {
+  name: string;
+  email: string;
+  token: string;
+}
+
+export type LoginData = {
+  email: string;
+  password: string;
+}
+
+export type RegisterData = {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export type RecoverUserData = {
+  email: string;
+  password: string;
+}

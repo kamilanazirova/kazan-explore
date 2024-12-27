@@ -1,12 +1,22 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import logo from '../../assets/logo.svg';
-import { StyledNav, ImgLogo, MenuLi, OverlayLogin, StyledLogin, StyledMenu } from './header-links.styled';
+import logo from '../../assets/logo.svg'
 import { URLs } from "../../__data__/urls";
-import { LoginContext } from '../../context/login-context';
 import { Link } from 'react-router-dom';
+import {
+  ImgLogo,
+  MenuLi,
+  OverlayLogin,
+  StyledLogin,
+  StyledMenu,
+  MenuIconButton,
+  StyledNav
+} from './header-links.styled';
 import { UserAvatar } from '../user-avatar';
+import { useUser } from '../../hooks/useUser';
+import { Tooltip } from '@mui/material';
 import { LanguageSwitcher } from '../translate/translate'; 
+
 
 const nav = {
   places: { key: 'header.places', href: URLs.ui.places },
@@ -17,17 +27,22 @@ const nav = {
 };
 
 export function HeaderLinks({ isOpen }) {
-  const { currentUser, setCurrentUser } = useContext(LoginContext);
   const [isAuth, setAuth] = useState(false);
-  const onLogOut = () => {
-    setCurrentUser(null);
-  };
+  const { user, removeUser } = useUser();
 
-  const { t } = useTranslation()
+  const onLogOut = () => {
+    const { t } = useTranslation()
+
+    removeUser();
+  }
 
   useEffect(() => {
-    setAuth(currentUser && !!currentUser.email);
-  }, [currentUser]);
+    if (user && user.email) {
+      setAuth(true);
+    } else {
+      setAuth(false);
+    }
+  }, [user]);
 
   return (
     <StyledNav isOpen={isOpen}>
@@ -57,11 +72,15 @@ export function HeaderLinks({ isOpen }) {
       </OverlayLogin>
       <LanguageSwitcher />
 
-      {URLs.ui.profile && isAuth && (
-        <Link to={URLs.ui.profile.getUrl(`${currentUser.email}`)}>
-          <UserAvatar email={currentUser.email} variant="small" />
-        </Link>
-      )}
+      {URLs.ui.profile.on && isAuth &&
+        <Tooltip title="Профиль">
+          <MenuIconButton>
+            <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
+              <UserAvatar name={user.name} variant="small" />
+            </Link>
+          </MenuIconButton>
+        </Tooltip>
+      }
     </StyledNav>
   );
 }

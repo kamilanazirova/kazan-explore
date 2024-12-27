@@ -1,103 +1,68 @@
-import React, { useState, useContext } from "react";
-import { useTranslation } from 'react-i18next';
+import React, { useState } from "react";
 
 import { Header } from "../../components/header";
+import { CircularProgress } from "@mui/material"
 import { Wrapper } from "../../global-styles";
-import { URLs } from "../../__data__/urls";
 import { Enter, EnterField, EntranceState, Form, FormLabel, FormLink, InputField } from "./login.styled";
-import { LoginContext } from "../../context/login-context";
-
-interface contextUser {
-    currentUser: {
-        email: string;
-    };
-    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string }>>;
-}
+import { useTranslation } from 'react-i18next';
+import { usersApi } from "../../__data__/service/users-api";
+import { LoginData } from "../../__data__/model/common";
+import { URLs } from "../../__data__/urls";
+import { useUser } from "../../hooks/useUser";
 
 const Login = () => {
     const { t } = useTranslation()
 
     const currentLocation = location.pathname.split('/').pop();
-    const { setCurrentUser } = useContext<contextUser>(LoginContext)
-
-    const [entranceData, setEntranceData] = useState({
+    const { saveUser } = useUser();
+    const [entranceData, setEntranceData] = useState<LoginData>({
         email: '',
         password: ''
     });
-
     const [registerData, setRegisterData] = useState({
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
     });
+    const [getUserFromLogin, { isLoading: isLoginLoading }] = usersApi.useGetUserFromLoginMutation();
+    const [getUserFromRegister, { isLoading: isRegisterLoading }] = usersApi.useGetUserFromRegisterMutation();
+    const [getUserFromRecover, { isLoading: isRecoverLoading }] = usersApi.useGetUserFromRecoverMutation();
 
     const handleEntranceSubmit = async (e) => {
         e.preventDefault();
 
         try {
-            fetch(`${URLs.api.main}/entrance`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    entranceData: entranceData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-                .then((response) => {
-                    if (!response.ok) {
-                        return response.text().then((errorMessage) => {
-                            alert(errorMessage);
-                            throw new Error(errorMessage);
-                        })
-                    }
-                    return response.json();
-                })
-                .then((data) => {
-                    setCurrentUser({ email: data.email });
-                    location.replace(`${URLs.baseUrl}`);
-                })
-
+            const data = await getUserFromLogin(entranceData).unwrap();
+            saveUser(data);
+            location.replace(`${URLs.baseUrl}`);
         } catch (error) {
+            alert(error.message || t('error.login_error'));
             console.error(t('error.login_error'), error);
-            alert(t('error.login_error'));
         }
     };
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
+
         if (registerData.password !== registerData.confirmPassword) {
             alert(t('error.passwords_do_not_match'));
             return;
         }
 
         try {
-            const response = await fetch(`${URLs.api.main}/registration`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    registerData: registerData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                alert(errorMessage);
-                throw new Error(errorMessage);
-            }
-
-            const data = await response.json();
-            setCurrentUser({ email: data.email });
+            const data = await getUserFromRegister({
+                name: registerData.name,
+                email: registerData.email,
+                password: registerData.password
+            }).unwrap();
+            saveUser(data);
             location.replace(`${URLs.baseUrl}`);
         } catch (error) {
             console.error(t('error.registration_error'), error);
-            alert(t('error.registration_error'));
+            alert(error.message || t('error.registration_error'));
         }
     };
-
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -110,7 +75,6 @@ const Login = () => {
         }
     };
 
-
     const handleRecoverSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
@@ -119,32 +83,23 @@ const Login = () => {
         }
 
         try {
-            // Предположим, что восстановление пароля также требует запроса на сервер
-            const response = await fetch(`${URLs.api.main}/recover`, {
-                method: 'POST',
-                body: JSON.stringify({
-                    registerData: registerData
-                }),
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
-
-            if (!response.ok) {
-                const errorMessage = await response.text();
-                alert(errorMessage);
-                throw new Error(errorMessage);
-            }
-
-            alert(t('error.password_restored'));
-            setCurrentUser({ email: registerData.email });
-            location.replace(`${URLs.baseUrl}`);
+            await getUserFromRecover({
+                email: registerData.email,
+                password: registerData.password
+            }).unwrap()
+                .then((data) => {
+                    saveUser(data);
+                    location.replace(`${URLs.baseUrl}`);
+                })
+                .catch((error) => {
+                    alert(error.text);
+                    console.log(error.text)
+                })
         } catch (error) {
             console.error(t('error.recovery_error'), error);
             alert(t('error.recovery_error'));
         }
     };
-
 
     return (
         <>
@@ -166,16 +121,15 @@ const Login = () => {
                             name="password"
                             placeholder={t('login.enter_password')}
                             value={entranceData.password} onChange={handleInputChange} />
-
                         <Enter>
-                            <EnterField type="submit">{t('login.entrance_botton')}</EnterField>
-                        </Enter>
+                            {!isLoginLoading && <EnterField type="submit">{t('login.entrance_botton')}</EnterField>}
+                            {isLoginLoading && <CircularProgress />}</Enter>
                         <Enter>
                             {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
                         </Enter>
-                        <Enter>
+                        {URLs.ui.recover && <Enter>
                             {t('login.forgete_password')} <FormLink href={URLs.ui.recover}>{t('login.go_to_recovery')}</FormLink>
-                        </Enter>
+                        </Enter>}
                     </Form>}
 
                 {currentLocation === 'registration' &&
@@ -207,9 +161,9 @@ const Login = () => {
                             name="confirmPassword"
                             placeholder={t('login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange} />
-
                         <Enter>
-                            <EnterField type="submit" onSubmit={handleRegisterSubmit}>{t('login.go_to_registration')}</EnterField>
+                            {!isRegisterLoading && <EnterField type="submit">{t('login.go_to_registration')}</EnterField>}
+                            {isRegisterLoading && <CircularProgress />}
                         </Enter>
                         <Enter>
                             {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
@@ -238,9 +192,10 @@ const Login = () => {
                             name="confirmPassword"
                             placeholder={t('login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange} />
-
-
-                        <EnterField type="submit" onSubmit={handleRecoverSubmit}>{t('login.set_a_new_password')}</EnterField>
+                        <Enter>
+                            {!isRecoverLoading && <EnterField type="submit">{t('login.set_a_new_password')}</EnterField>}
+                            {isRecoverLoading && <CircularProgress />}
+                        </Enter>
                         <Enter>
                         {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
                         </Enter>

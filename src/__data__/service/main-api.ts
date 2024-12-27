@@ -1,7 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData } from '../model/common'
+import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData } from '../model/common'
 import i18n from 'i18next';
-
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
@@ -26,6 +25,7 @@ export const mainApi = createApi({
     'EducationText',
     'EducationList',
     'KfuData',
+    'UserData'
   ],
   endpoints: (builder) => ({
     infoFirstData: builder.query<any, void>({
