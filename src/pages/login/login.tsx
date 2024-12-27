@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useTranslation } from 'react-i18next';
 
 import { Header } from "../../components/header";
 import { Wrapper } from "../../global-styles";
@@ -10,10 +11,12 @@ interface contextUser {
     currentUser: {
         email: string;
     };
-    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string}>>;
+    setCurrentUser: React.Dispatch<React.SetStateAction<{ email: string }>>;
 }
 
 const Login = () => {
+    const { t } = useTranslation()
+
     const currentLocation = location.pathname.split('/').pop();
     const { setCurrentUser } = useContext<contextUser>(LoginContext)
 
@@ -42,29 +45,30 @@ const Login = () => {
                     'Content-Type': 'application/json'
                 }
             })
-            .then((response)=>{
-                if (!response.ok) {
-                return response.text().then((errorMessage)=>{
-                    alert(errorMessage);
-                    throw new Error(errorMessage);})
-            }
-                return response.json();
-            })
-            .then((data) => {
-                setCurrentUser({ email: data.email});
-                location.replace(`${URLs.baseUrl}`);
-            })
+                .then((response) => {
+                    if (!response.ok) {
+                        return response.text().then((errorMessage) => {
+                            alert(errorMessage);
+                            throw new Error(errorMessage);
+                        })
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    setCurrentUser({ email: data.email });
+                    location.replace(`${URLs.baseUrl}`);
+                })
 
         } catch (error) {
-            console.error('Ошибка при входе:', error);
-            alert('Ошибка при входе');
+            console.error(t('error.login_error'), error);
+            alert(t('error.login_error'));
         }
     };
 
     const handleRegisterSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
-            alert('Пароли не совпадают');
+            alert(t('error.passwords_do_not_match'));
             return;
         }
 
@@ -86,11 +90,11 @@ const Login = () => {
             }
 
             const data = await response.json();
-            setCurrentUser({ email: data.email});
+            setCurrentUser({ email: data.email });
             location.replace(`${URLs.baseUrl}`);
         } catch (error) {
-            console.error('Ошибка при регистрации:', error);
-            alert('Ошибка при регистрации');
+            console.error(t('error.registration_error'), error);
+            alert(t('error.registration_error'));
         }
     };
 
@@ -110,7 +114,7 @@ const Login = () => {
     const handleRecoverSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
-            alert('Пароли не совпадают');
+            alert(t('error.passwords_do_not_match'));
             return;
         }
 
@@ -132,12 +136,12 @@ const Login = () => {
                 throw new Error(errorMessage);
             }
 
-            alert('Пароль восстановлен');
-            setCurrentUser({ email: registerData.email});
+            alert(t('error.password_restored'));
+            setCurrentUser({ email: registerData.email });
             location.replace(`${URLs.baseUrl}`);
         } catch (error) {
-            console.error('Ошибка при восстановлении пароля:', error);
-            alert('Ошибка при восстановлении пароля');
+            console.error(t('error.recovery_error'), error);
+            alert(t('error.recovery_error'));
         }
     };
 
@@ -148,97 +152,97 @@ const Login = () => {
             <Wrapper>
                 {currentLocation === 'entrance' &&
                     <Form onSubmit={handleEntranceSubmit}>
-                        <EntranceState>Вход</EntranceState>
+                        <EntranceState>{t('login.entrance')}</EntranceState>
 
-                        <FormLabel>Логин</FormLabel>
+                        <FormLabel>{t('login.login')}</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder="Введите email"
+                            placeholder={t('login.enter_email')}
                             value={entranceData.email} onChange={handleInputChange}
                         />
 
-                        <FormLabel>Пароль</FormLabel>
+                        <FormLabel>{t('login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder="Введите пароль"
+                            placeholder={t('login.enter_password')}
                             value={entranceData.password} onChange={handleInputChange} />
 
                         <Enter>
-                            <EnterField type="submit">Войти</EnterField>
+                            <EnterField type="submit">{t('login.entrance_botton')}</EnterField>
                         </Enter>
                         <Enter>
-                            Нет аккаунта? <FormLink href={URLs.ui.registration}> Зарегистрироваться</FormLink>
+                            {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
                         </Enter>
                         <Enter>
-                            Забыли пароль? <FormLink href={URLs.ui.recover}>Восстановить</FormLink>
+                            {t('login.forgete_password')} <FormLink href={URLs.ui.recover}>{t('login.go_to_recovery')}</FormLink>
                         </Enter>
                     </Form>}
 
                 {currentLocation === 'registration' &&
                     <Form onSubmit={handleRegisterSubmit}>
 
-                        <EntranceState>Регистрация</EntranceState>
-                        <FormLabel>Имя</FormLabel>
+                        <EntranceState>{t('login.registration')}</EntranceState>
+                        <FormLabel>{t('login.name')}</FormLabel>
                         <InputField type="text"
                             name="name"
-                            placeholder="Введите имя"
+                            placeholder={t('login.enter_name')}
                             value={registerData.name} onChange={handleInputChange}
                         />
 
                         <FormLabel>Email</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder="Введите email"
+                            placeholder={t('login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
                         />
 
-                        <FormLabel>Пароль</FormLabel>
+                        <FormLabel>{t('login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder="Введите пароль"
+                            placeholder={t('login.enter_password')}
                             value={registerData.password} onChange={handleInputChange} />
 
-                        <FormLabel>Повторите пароль</FormLabel>
+                        <FormLabel>{t('login.repeat_password')}</FormLabel>
                         <InputField type="password"
                             name="confirmPassword"
-                            placeholder="Введите пароль"
+                            placeholder={t('login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange} />
 
                         <Enter>
-                            <EnterField type="submit" onSubmit={handleRegisterSubmit}>Зарегистрироваться</EnterField>
+                            <EnterField type="submit" onSubmit={handleRegisterSubmit}>{t('login.go_to_registration')}</EnterField>
                         </Enter>
                         <Enter>
-                            Уже есть аккаунт? <FormLink href={URLs.ui.entrance}>Войти</FormLink>
+                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
                         </Enter>
                     </Form>}
 
                 {currentLocation === 'recover' &&
                     <Form onSubmit={handleRecoverSubmit}>
-                        <EntranceState>Восстановление пароля</EntranceState>
+                        <EntranceState>{t('login.recovery')}</EntranceState>
 
                         <FormLabel>Email</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder="Введите email"
+                            placeholder={t('login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
                         />
 
-                        <FormLabel>Придумайте новый пароль</FormLabel>
+                        <FormLabel>{t('login.create_a_new_password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder="Введите пароль"
+                            placeholder={t('login.enter_password')}
                             value={registerData.password} onChange={handleInputChange} />
 
-                        <FormLabel>Повторите пароль</FormLabel>
+                        <FormLabel>{t('login.repeat_password')}</FormLabel>
                         <InputField type="password"
                             name="confirmPassword"
-                            placeholder="Введите пароль"
+                            placeholder={t('login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange} />
 
 
-                        <EnterField type="submit" onSubmit={handleRecoverSubmit}>Установить новый пароль</EnterField>
+                        <EnterField type="submit" onSubmit={handleRecoverSubmit}>{t('login.set_a_new_password')}</EnterField>
                         <Enter>
-                            Уже есть аккаунт? <FormLink href={URLs.ui.entrance}>Войти</FormLink>
+                        {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
                         </Enter>
                     </Form>}
             </Wrapper>

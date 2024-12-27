@@ -16,12 +16,16 @@
         "repeat_password": "Повторите пароль",
         "create_a_new_password": "Придумайте новый пароль",
         "set_a_new_password": "Установить новый пароль",
-        "entrance_bitton": "Войти",
+        "entrance_botton": "Войти",
         "no_account": "Нет аккаунта?",
         "forgete_password": "Забыли пароль?",
         "go_to_registration": "Зарегистрироваться",
         "go_to_recovery": "Восстановить",
-        "name": "Имя"
+        "name": "Имя",
+        "already_have_account": "Уже есть аккаунт?",
+        "enter_name": "Введите имя",
+        "enter_email": "Введите email",
+        "enter_password": "Введите пароль"
     },
     "header": {
         "places": "Интересные места",

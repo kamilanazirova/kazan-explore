@@ -16,12 +16,16 @@
         "repeat_password": "Repeat Password",
         "create_a_new_password": "Create a New Password",
         "set_a_new_password": "Set a New Password",
-        "entrance_bitton": "Log In",
+        "entrance_botton": "Log In",
         "no_account": "Don't have an account?",
         "forgete_password": "Forgot password?",
         "go_to_registration": "Sign Up",
         "go_to_recovery": "Recover",
-        "name": "Name"
+        "name": "Name",
+        "already_have_account": "Already have an account?",
+        "enter_name": "Enter your name",
+        "enter_email": "Enter your email",
+        "enter_password": "Enter your password"
     },
     "header": {
         "places": "Interesting places",
