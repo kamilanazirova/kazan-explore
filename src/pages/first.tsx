@@ -39,7 +39,7 @@ const first = () => {
           </div>
         </section>
         <section className="news">
-          <p className="tnews">{t('newsTitle.title')}</p> {/* Заголовок локализован через i18n */}
+          <p className="tnews">{t('main.newsTitle')}</p> {/* Заголовок локализован через i18n */}
           {newsList?.map((item, index) => (
             <News
               key={index}
