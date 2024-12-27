@@ -23,6 +23,7 @@ export const InfoTitle = styled(Typography)(({ theme }) => ({
     alignItems: 'center',
     fontWeight: 700,
     color: theme.palette.text.primary,
+    flexWrap: 'wrap',
 }));
 
 export const StyledEmail = styled(Typography)(({ theme }) => ({
@@ -34,4 +35,5 @@ export const StyledEmail = styled(Typography)(({ theme }) => ({
 export const InfoLabel = styled(Typography)(({ theme }) => ({
     color: theme.palette.text.secondary,
     variant: 'body2',
+    flexWrap: 'wrap',
 }));
