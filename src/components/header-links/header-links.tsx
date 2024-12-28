@@ -33,8 +33,6 @@ export function HeaderLinks({ isOpen }) {
   const { user, removeUser } = useUser();
 
   const onLogOut = () => {
-    const { t } = useTranslation()
-
     removeUser();
   }
 
