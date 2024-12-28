@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/language-context'; // Используем контекст
 import Flag from 'react-world-flags';
 import tatarstanFlag from '../../assets/flags/tatarstan.png';
 import {
