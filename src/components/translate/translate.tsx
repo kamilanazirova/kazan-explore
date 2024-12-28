@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
+  const { language, changeLanguage } = useLanguage();
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
 
@@ -23,9 +23,9 @@ export const LanguageSwitcher = () => {
     setAnchorEl(null);
   };
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('i18nextLng', lng);
+  const handleLanguageChange = (lng: string) => {
+    changeLanguage(lng); // Меняем язык через контекст
+    localStorage.setItem("i18nextLng", lng); // Сохраняем в localStorage
     handleClose();
   };
 
@@ -33,10 +33,10 @@ export const LanguageSwitcher = () => {
     <Box>
       <Tooltip title="Выбрать язык">
         <IconButton onClick={handleOpen} size="large">
-          {i18n.language === 'tt' ? (
+          {language === 'tt' ? (
             <img src={tatarstanFlag} alt="Tatarstan flag" width={25} height={15} />
           ) : (
-            <Flag code={i18n.language === 'ru' ? 'RU' : 'GB'} width={25} height={25} />
+            <Flag code={language === 'ru' ? 'RU' : 'GB'} width={25} height={25} />
           )}
         </IconButton>
       </Tooltip>
@@ -48,13 +48,13 @@ export const LanguageSwitcher = () => {
         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
         disableScrollLock
       >
-        <MenuItem onClick={() => changeLanguage('ru')}>
+        <MenuItem onClick={() => handleLanguageChange('ru')}>
           <Flag code="RU" width={25} height={25} style={{ marginRight: 8 }} /> Русский
         </MenuItem>
-        <MenuItem onClick={() => changeLanguage('en')}>
+        <MenuItem onClick={() => handleLanguageChange('en')}>
           <Flag code="GB" width={25} height={25} style={{ marginRight: 8 }} /> English
         </MenuItem>
-        <MenuItem onClick={() => changeLanguage('tt')}>
+        <MenuItem onClick={() => handleLanguageChange('tt')}>
           <img src={tatarstanFlag} alt="Tatarstan flag" width={25} height={15} style={{ marginRight: 8 }} /> Татарча
         </MenuItem>
       </Menu>
