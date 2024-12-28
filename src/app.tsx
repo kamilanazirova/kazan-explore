@@ -9,15 +9,18 @@ import { globalStyles } from './global-styles';
 import kazanTheme from './theme'
 import { ThemeProvider } from '@mui/material'
 import { PageRoutes } from './routes';
+import { LanguageProvider } from './context/language-context';
 
 const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <Global styles={globalStyles} />
-        <ThemeProvider theme={kazanTheme}>
-          <PageRoutes />
-        </ThemeProvider>
+        <LanguageProvider>
+          <Global styles={globalStyles} />
+          <ThemeProvider theme={kazanTheme}>
+            <PageRoutes />
+          </ThemeProvider>
+        </LanguageProvider>
       </BrowserRouter>
     </Provider>
   );
