@@ -16,7 +16,7 @@
         "repeat_password": "Repeat Password",
         "create_a_new_password": "Create a New Password",
         "set_a_new_password": "Set a New Password",
-        "entrance_botton": "Log In",
+        "entrance_button": "Log In",
         "no_account": "Don't have an account?",
         "forgete_password": "Forgot password?",
         "go_to_registration": "Sign Up",
@@ -70,7 +70,24 @@
     },
     "sport": {
         "title": "Sports and Entertainment",
-        "list_title": "Sports Teams and Clubs of Kazan"
+        "list_title": "Sports Teams and Clubs of Kazan",
+        "quiz": {
+            "welcome_to_quiz_text": "Welcome to the quiz!",
+            "intro_img_alt": "Introductory image",
+            "start_quiz_button": "Start quiz",
+            "question": "Question",
+            "next_button": "Next",
+            "finish_button": "Finish",
+            "take_test": "Take the test",
+            "your_result": "Your result:",
+            "correct_answers": "You answered correctly {{score}} out of {{total}} questions.",
+            "super_fan": "You're a true expert in Kazan sports! You have excellent knowledge of the team. Keep it up!",
+            "good_fan": "Great! You're almost an expert. Just a little more and you'll know everything!",
+            "average_fan": "Not bad! You know the team, but there's room to grow. Keep learning more!",
+            "try_again": "It seems you need to learn a bit more about the team. Try again — you'll do better next time!",
+            "result_image_alt": "Result",
+            "close_button": "Close"
+        }
     },
     "history": {
         "title": "History and culture"

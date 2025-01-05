@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 import {
   Button,
   Typography,
@@ -20,6 +21,8 @@ import {
 } from "./styled";
 
 const QuizContent = ({ questions, onFinish, introText, introImage }) => {
+  const { t } = useTranslation()
+
   const [isIntroVisible, setIsIntroVisible] = useState(true);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
@@ -55,17 +58,17 @@ const QuizContent = ({ questions, onFinish, introText, introImage }) => {
       {isIntroVisible ? (
         <div style={introContainer}>
           <Typography variant="h4" gutterBottom sx={introTypography}>
-            {introText || "Добро пожаловать в викторину!"}
+            {introText || t('sport.quiz.welcome_to_quiz_text')}
           </Typography>
           {introImage && (
             <img
               src={SportQuizImages[introImage]}
-              alt="Вступительное изображение"
+              alt={t('sport.quiz.intro_img_alt')}
               style={introImageStyle}
             />
           )}
           <Button variant="contained" sx={startButtonStyle} onClick={handleStartQuiz}>
-            Начать тест
+            {t('sport.quiz.start_quiz_button')}
           </Button>
         </div>
       ) : (
@@ -75,7 +78,7 @@ const QuizContent = ({ questions, onFinish, introText, introImage }) => {
             {questions[currentQuestion].image_url && (
               <img
                 src={SportQuizImages[questions[currentQuestion].image_url]}
-                alt={`Вопрос ${currentQuestion + 1}`}
+                alt={`${t('sport.quiz.question')} ${currentQuestion + 1}`}
                 style={quizImageStyle}
               />
             )}
@@ -86,7 +89,7 @@ const QuizContent = ({ questions, onFinish, introText, introImage }) => {
                 onChange={handleOptionChange}
               >
                 <Typography variant="h6" sx={progress} gutterBottom>
-                  Вопрос {currentQuestion + 1} из {questions.length}
+                  {t('sport.quiz.question')} {currentQuestion + 1} / {questions.length}
                 </Typography>
                 {questions[currentQuestion].options.map((option, index) => (
                   <FormControlLabel
@@ -116,7 +119,7 @@ const QuizContent = ({ questions, onFinish, introText, introImage }) => {
               sx={nextButtonStyle}
               onClick={handleNext}
             >
-              {currentQuestion + 1 < questions.length ? "Следующий" : "Завершить"}
+              {currentQuestion + 1 < questions.length ? t('sport.quiz.next_button') : t('sport.quiz.finish_button')}
             </Button>
           )}
         </div>
