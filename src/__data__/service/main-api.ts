@@ -14,6 +14,7 @@ export const mainApi = createApi({
     'SportsList',
     'SportFirstTextData',
     'SportSecondTextData',
+    'SportQuizData',
     'PlaceData',
     'InfoTransportData',
     'BusData',
@@ -96,6 +97,13 @@ export const mainApi = createApi({
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru'; 
         return `/getSecondText?lang=${language}`;
+      },
+    }),
+    sportQuiz: builder.query<any, void>({
+      providesTags: ['SportQuizData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getSportQuiz?lang=${language}`;
       },
     }),
 

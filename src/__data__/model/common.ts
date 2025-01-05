@@ -15,6 +15,7 @@ export type PlaceData = {
 
 export type SportData = {
   id: string;
+  sport: string;
   type: string;
   title: string;
   text: string;

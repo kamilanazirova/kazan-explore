@@ -17,7 +17,6 @@ const Sport = () => {
 
     const { data: sportsList } = mainApi.useSportsListQuery()
     const { data: sportSecondTextData } = mainApi.useSportSecondTextDataQuery()
-
     const { data: sportFirstTextData, isLoading, error } = mainApi.useSportFirstTextDataQuery();
 
     if (isLoading) return <p>Loading...</p>;
@@ -41,6 +40,7 @@ const Sport = () => {
                     <ErrorBoundary>
                         {sportsList?.map((item, index) => (
                             <SpoortCard key={index}
+                                sport={item.sport}
                                 type={item.type}
                                 title={item.title}
                                 text={item.text}

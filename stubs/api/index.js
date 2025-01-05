@@ -56,6 +56,16 @@ router.get('/getSportData', (request, response) => {
     }
 })
 
+router.get('/getSportQuiz', (request, response) => {
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require(`../json/sport/quiz/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+
 // Places page
 router.get('/getPlacesData', (request, response) => {
     const lang = request.query.lang || 'ru';
