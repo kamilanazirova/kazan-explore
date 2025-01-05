@@ -122,7 +122,7 @@ const Login = () => {
                             placeholder={t('login.enter_password')}
                             value={entranceData.password} onChange={handleInputChange} />
                         <Enter>
-                            {!isLoginLoading && <EnterField type="submit">{t('login.entrance_botton')}</EnterField>}
+                            {!isLoginLoading && <EnterField type="submit">{t('login.entrance_button')}</EnterField>}
                             {isLoginLoading && <CircularProgress />}</Enter>
                         <Enter>
                             {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
@@ -166,7 +166,7 @@ const Login = () => {
                             {isRegisterLoading && <CircularProgress />}
                         </Enter>
                         <Enter>
-                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
+                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
                         </Enter>
                     </Form>}
 
@@ -197,7 +197,7 @@ const Login = () => {
                             {isRecoverLoading && <CircularProgress />}
                         </Enter>
                         <Enter>
-                        {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_botton')}</FormLink>
+                        {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
                         </Enter>
                     </Form>}
             </Wrapper>

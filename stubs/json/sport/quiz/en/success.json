@@ -1,0 +1,792 @@
+{
+    "basketball": {
+        "intro_text": "Let's see how well you know UNICS!",
+        "intro_image": "intro_basket",
+        "questions": [
+            {
+                "question": "In which year was the UNICS basketball club founded?",
+                "options": [
+                    "1988",
+                    "1991",
+                    "1995",
+                    "2000"
+                ],
+                "correct_answer": "1991",
+                "image_url": "b_one"
+            },
+            {
+                "question": "What does \"UNICS\" stand for?",
+                "options": [
+                    "University, Innovations, Sports",
+                    "University, Culture, Sports",
+                    "University Kazan Sports",
+                    "Unique Sports"
+                ],
+                "correct_answer": "University, Culture, Sports",
+                "image_url": "b_two"
+            },
+            {
+                "question": "What are the main colors of the uniform?",
+                "options": [
+                    "Red and white",
+                    "Green and white",
+                    "Blue and yellow",
+                    "Black and gold"
+                ],
+                "correct_answer": "Green and white",
+                "image_url": "b_three"
+            },
+            {
+                "question": "What is the name of UNICS's home arena?",
+                "options": [
+                    "Tatneft Arena",
+                    "Central Stadium",
+                    "Basket-Hall",
+                    "Kazan Arena"
+                ],
+                "correct_answer": "Basket-Hall",
+                "image_url": "b_four"
+            },
+            {
+                "question": "In which year did UNICS win the EuroCup?",
+                "options": [
+                    "2009",
+                    "2011",
+                    "2013",
+                    "2015"
+                ],
+                "correct_answer": "2011",
+                "image_url": "b_five"
+            },
+            {
+                "question": "Which famous American player, who became the Euroleague top scorer, did UNICS sign?",
+                "options": [
+                    "Michael Jordan",
+                    "Keith Langford",
+                    "LeBron James",
+                    "Curtis Jerrells"
+                ],
+                "correct_answer": "Keith Langford",
+                "image_url": "b_six"
+            },
+            {
+                "question": "How many seats does UNICS's home arena, Basket-Hall, hold?",
+                "options": [
+                    "3000",
+                    "5000",
+                    "7000",
+                    "10000"
+                ],
+                "correct_answer": "7000",
+                "image_url": "b_seven"
+            },
+            {
+                "question": "Who was the head coach of UNICS when the club won the EuroCup?",
+                "options": [
+                    "Dimitris Itoudis",
+                    "Evgeny Pashutin",
+                    "Zoran Lukic",
+                    "Andrei Kirilenko"
+                ],
+                "correct_answer": "Evgeny Pashutin",
+                "image_url": "b_eight"
+            },
+            {
+                "question": "Who is UNICS's traditional biggest rival in the VTB United League?",
+                "options": [
+                    "CSKA Moscow",
+                    "Lokomotiv-Kuban",
+                    "Zenit Saint Petersburg",
+                    "Nizhny Novgorod"
+                ],
+                "correct_answer": "CSKA Moscow",
+                "image_url": "b_nine"
+            },
+            {
+                "question": "Which trophy has UNICS not won yet?",
+                "options": [
+                    "VTB United League",
+                    "Russian Cup",
+                    "Euroleague",
+                    "EuroCup"
+                ],
+                "correct_answer": "Euroleague",
+                "image_url": "b_ten"
+            },
+            {
+                "question": "Who is the head coach of UNICS in the 2024/2025 season?",
+                "options": [
+                    "Alexander Volkov",
+                    "Velimir Perasovic",
+                    "Andrey Maltsov",
+                    "Dimitris Priftis"
+                ],
+                "correct_answer": "Velimir Perasovic",
+                "image_url": "b_eleven"
+            },
+            {
+                "question": "Which team was UNICS's opponent in the EuroCup 2011 final?",
+                "options": [
+                    "Real Madrid",
+                    "Caja Laboral",
+                    "Lokomotiv-Kuban",
+                    "Crvena Zvezda"
+                ],
+                "correct_answer": "Caja Laboral",
+                "image_url": "b_twelve"
+            },
+            {
+                "question": "Since which year has UNICS participated in the Euroleague?",
+                "options": [
+                    "2005",
+                    "2008",
+                    "2010",
+                    "2011"
+                ],
+                "correct_answer": "2011",
+                "image_url": "b_thirteen"
+            },
+            {
+                "question": "Which title is considered the greatest achievement of UNICS on the international stage?",
+                "options": [
+                    "Euroleague Champion",
+                    "EuroCup Champion",
+                    "VTB United League Winner",
+                    "Russian Cup Winner"
+                ],
+                "correct_answer": "EuroCup Champion",
+                "image_url": "b_fourteen"
+            },
+            {
+                "question": "Which UNICS star has twice been the top scorer of the EuroCup?",
+                "options": [
+                    "Keith Langford",
+                    "Alexey Shved",
+                    "Nando De Colo",
+                    "Artem Parakhovsky"
+                ],
+                "correct_answer": "Keith Langford",
+                "image_url": "b_fifteen"
+            },
+            {
+                "question": "How many times has UNICS won the Russian Cup?",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "correct_answer": "3",
+                "image_url": "b_sixteen"
+            },
+            {
+                "question": "What place did UNICS take in the VTB United League in the 2020/2021 season?",
+                "options": [
+                    "1st",
+                    "2nd",
+                    "3rd",
+                    "4th"
+                ],
+                "correct_answer": "2nd",
+                "image_url": "b_seventeen"
+            },
+            {
+                "question": "In which year did UNICS win the VTB United League for the first time?",
+                "options": [
+                    "2009",
+                    "2011",
+                    "2015",
+                    "2023"
+                ],
+                "correct_answer": "2023",
+                "image_url": "b_eighteen"
+            },
+            {
+                "question": "And now the most important question. How many of White's teeth did Labeyrie knock out in the VTB United League final? 😁",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "It's not funny anymore."
+                ],
+                "correct_answer": "4",
+                "image_url": "b_nineteen"
+            }
+        ]
+    },
+    "hockey": {
+        "intro_text": "Let's find out how well you know Ak Bars!",
+        "intro_image": "intro_hockey",
+        "questions": [
+            {
+                "question": "In which year was the Ak Bars hockey club founded?",
+                "options": [
+                    "1946",
+                    "1956",
+                    "1960",
+                    "1990"
+                ],
+                "correct_answer": "1956",
+                "image_url": "h_one"
+            },
+            {
+                "question": "What does the name \"Ak Bars\" mean?",
+                "options": [
+                    "White snow leopard",
+                    "Strong snow leopard",
+                    "Fierce snow leopard",
+                    "Ice snow leopard"
+                ],
+                "correct_answer": "White snow leopard",
+                "image_url": "h_two"
+            },
+            {
+                "question": "What colors are traditionally used in Ak Bars' uniform?",
+                "options": [
+                    "Red, green, and white",
+                    "Blue, white, and black",
+                    "Yellow, black, and white",
+                    "Red, black, and white"
+                ],
+                "correct_answer": "Red, green, and white",
+                "image_url": "h_three"
+            },
+            {
+                "question": "Which arena does Ak Bars play at?",
+                "options": [
+                    "Basket-Hall",
+                    "Tatneft Arena",
+                    "Central Stadium",
+                    "Kazan Arena"
+                ],
+                "correct_answer": "Tatneft Arena",
+                "image_url": "h_four"
+            },
+            {
+                "question": "How many times has Ak Bars become the KHL champion?",
+                "options": [
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "correct_answer": "3",
+                "image_url": "h_five"
+            },
+            {
+                "question": "In which season did Ak Bars win the Gagarin Cup for the first time?",
+                "options": [
+                    "2008/2009",
+                    "2009/2010",
+                    "2010/2011",
+                    "2011/2012"
+                ],
+                "correct_answer": "2008/2009",
+                "image_url": "h_six"
+            },
+            {
+                "question": "Which Ak Bars player is one of the club's top scorers of all time?",
+                "options": [
+                    "Alexander Radulov",
+                    "Danis Zaripov",
+                    "Alexey Morozov",
+                    "Evgeni Malkin"
+                ],
+                "correct_answer": "Danis Zaripov",
+                "image_url": "h_seven"
+            },
+            {
+                "question": "Who is Ak Bars' rival in the Green Derby?",
+                "options": [
+                    "Salavat Yulaev",
+                    "Metallurg Magnitogorsk",
+                    "Avangard Omsk",
+                    "CSKA Moscow"
+                ],
+                "correct_answer": "Salavat Yulaev",
+                "image_url": "h_eight"
+            },
+            {
+                "question": "What is the mascot of the Ak Bars hockey club?",
+                "options": [
+                    "White tiger",
+                    "Lion",
+                    "Snow leopard",
+                    "Bear"
+                ],
+                "correct_answer": "Snow leopard",
+                "image_url": "h_nine"
+            },
+            {
+                "question": "Who was the head coach of Ak Bars in the 2023/2024 season?",
+                "options": [
+                    "Dmitry Kvartalnov",
+                    "Zinetula Bilyaletdinov",
+                    "Andrei Skabelka",
+                    "Valery Bragin"
+                ],
+                "correct_answer": "Zinetula Bilyaletdinov",
+                "image_url": "h_ten"
+            },
+            {
+                "question": "How many times did Ak Bars win the Russian Championship before the KHL was created?",
+                "options": [
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                "correct_answer": "2",
+                "image_url": "h_eleven"
+            },
+            {
+                "question": "Which of the following players did not play for Ak Bars?",
+                "options": [
+                    "Ilya Nikulin",
+                    "Sergey Mozyaikin",
+                    "Alexey Tereshchenko",
+                    "Nikita Zaitsev"
+                ],
+                "correct_answer": "Sergey Mozyaikin",
+                "image_url": "h_twelve"
+            },
+            {
+                "question": "Which team was Ak Bars' opponent in the 2018 Gagarin Cup final?",
+                "options": [
+                    "Avangard Omsk",
+                    "Salavat Yulaev",
+                    "CSKA Moscow",
+                    "SKA St. Petersburg"
+                ],
+                "correct_answer": "CSKA Moscow",
+                "image_url": "h_thirteen"
+            },
+            {
+                "question": "Who holds the record for most games played for Ak Bars?",
+                "options": [
+                    "Danis Zaripov",
+                    "Ilya Nikulin",
+                    "Alexey Morozov",
+                    "Viktor Tikhonov"
+                ],
+                "correct_answer": "Ilya Nikulin",
+                "image_url": "h_fourteen"
+            },
+            {
+                "question": "Which coach led Ak Bars to their first KHL championship?",
+                "options": [
+                    "Zinetula Bilyaletdinov",
+                    "Vladimir Krikunov",
+                    "Dmitry Kvartalnov",
+                    "Alexander Medvedev"
+                ],
+                "correct_answer": "Zinetula Bilyaletdinov",
+                "image_url": "h_fifteen"
+            },
+            {
+                "question": "What nickname do Ak Bars fans give to their team?",
+                "options": [
+                    "White Bars",
+                    "Green Machines",
+                    "Kazan Bars",
+                    "Green Army"
+                ],
+                "correct_answer": "Green Army",
+                "image_url": "h_sixteen"
+            }
+        ]
+    },
+    "football": {
+        "intro_text": "Let's find out how well you know Rubin!",
+        "intro_image": "intro_football",
+        "questions": [
+            {
+                "question": "In which year was Rubin football club founded?",
+                "options": [
+                    "1936",
+                    "1958",
+                    "1964",
+                    "1972"
+                ],
+                "correct_answer": "1958",
+                "image_url": "f_one"
+            },
+            {
+                "question": "What colors are traditionally used in Rubin's kit?",
+                "options": [
+                    "Red and white",
+                    "Green and white",
+                    "Red and green",
+                    "Yellow and blue"
+                ],
+                "correct_answer": "Red and green",
+                "image_url": "f_two"
+            },
+            {
+                "question": "What is the home stadium of FC Rubin?",
+                "options": [
+                    "Kazan Arena",
+                    "Central Stadium",
+                    "Tatneft Arena",
+                    "Ak Bars Arena"
+                ],
+                "correct_answer": "Ak Bars Arena",
+                "image_url": "f_three"
+            },
+            {
+                "question": "In which year did Rubin first become the Russian champion?",
+                "options": [
+                    "2006",
+                    "2008",
+                    "2009",
+                    "2010"
+                ],
+                "correct_answer": "2008",
+                "image_url": "f_four"
+            },
+            {
+                "question": "How many times has FC Rubin become the Russian champion?",
+                "options": [
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                "correct_answer": "2",
+                "image_url": "f_five"
+            },
+            {
+                "question": "Who was the head coach of Rubin during their first championship in 2008?",
+                "options": [
+                    "Guus Hiddink",
+                    "Kurban Berdyev",
+                    "Yuri Semin",
+                    "Valery Karpin"
+                ],
+                "correct_answer": "Kurban Berdyev",
+                "image_url": "f_six"
+            },
+            {
+                "question": "What was the score when Rubin defeated Barcelona in their famous Champions League win in 2009?",
+                "options": [
+                    "2:1",
+                    "1:0",
+                    "3:0",
+                    "3:1"
+                ],
+                "correct_answer": "2:1",
+                "image_url": "f_seven"
+            },
+            {
+                "question": "Which player became Rubin's top scorer in the 2009/2010 season?",
+                "options": [
+                    "Alexander Bukharov",
+                    "Salomon Rondon",
+                    "Gökdeniz Karadeniz",
+                    "Sergey Semak"
+                ],
+                "correct_answer": "Alexander Bukharov",
+                "image_url": "f_eight"
+            },
+            {
+                "question": "What position did Rubin finish in their debut season in the UEFA Champions League group stage?",
+                "options": [
+                    "1st",
+                    "2nd",
+                    "3rd",
+                    "4th"
+                ],
+                "correct_answer": "3rd",
+                "image_url": "f_nine"
+            },
+            {
+                "question": "Who became Rubin's captain in the 2023/2024 season?",
+                "options": [
+                    "Ilzat Akhmetov",
+                    "Oleg Danchenko",
+                    "Andres Pankov",
+                    "Dmitry Tarasov"
+                ],
+                "correct_answer": "Ilzat Akhmetov",
+                "image_url": "f_ten"
+            },
+            {
+                "question": "Which Russian coach made his debut as Rubin's head coach after Kurban Berdyev's departure?",
+                "options": [
+                    "Sergey Semak",
+                    "Roman Sharonov",
+                    "Viktor Goncharenko",
+                    "Alexander Borodyuk"
+                ],
+                "correct_answer": "Roman Sharonov",
+                "image_url": "f_eleven"
+            },
+            {
+                "question": "In which tournament did Rubin defeat Atletico Madrid in 2012?",
+                "options": [
+                    "Europa League",
+                    "UEFA Super Cup",
+                    "Intertoto Cup",
+                    "Russian Cup"
+                ],
+                "correct_answer": "Europa League",
+                "image_url": "f_twelve"
+            },
+            {
+                "question": "What is Rubin's greatest achievement in European competitions?",
+                "options": [
+                    "Europa League Semi-final",
+                    "Champions League Quarter-final",
+                    "Europa League Quarter-final",
+                    "Champions League Group Stage"
+                ],
+                "correct_answer": "Europa League Quarter-final",
+                "image_url": "f_thirteen"
+            },
+            {
+                "question": "Which Rubin player scored a magnificent goal from the center of the field against Barcelona?",
+                "options": [
+                    "Gökdeniz Karadeniz",
+                    "Roman Eremenko",
+                    "Alexander Ryazantsev",
+                    "Alexander Bukharov"
+                ],
+                "correct_answer": "Alexander Ryazantsev",
+                "image_url": "f_fourteen"
+            },
+            {
+                "question": "Who became Rubin's top scorer in the club's history?",
+                "options": [
+                    "Alexander Bukharov",
+                    "Salomon Rondon",
+                    "Gökdeniz Karadeniz",
+                    "Sergey Semak"
+                ],
+                "correct_answer": "Gökdeniz Karadeniz",
+                "image_url": "f_fifteen"
+            },
+            {
+                "question": "Which club became Rubin's main rival in the 2010s?",
+                "options": [
+                    "Zenit",
+                    "Spartak",
+                    "Lokomotiv",
+                    "CSKA"
+                ],
+                "correct_answer": "Zenit",
+                "image_url": "f_sixteen"
+            }
+        ]
+    },
+    "volleyball": {
+        "intro_text": "Let's find out how well you know volleyball teams Zenit-Kazan and Dynamo-Ak Bars!",
+        "intro_image": "intro_volleyball",
+        "questions": [
+            {
+                "question": "In which year was the volleyball club Zenit-Kazan founded?",
+                "options": [
+                    "2000",
+                    "2003",
+                    "2007",
+                    "2010"
+                ],
+                "correct_answer": "2000",
+                "image_url": "v_one"
+            },
+            {
+                "question": "How many times has Zenit-Kazan won the Champions League?",
+                "options": [
+                    "4",
+                    "5",
+                    "6",
+                    "7"
+                ],
+                "correct_answer": "6",
+                "image_url": "v_two"
+            },
+            {
+                "question": "Who is the most decorated player in the history of Zenit-Kazan?",
+                "options": [
+                    "Maxim Mikhaylov",
+                    "Wilfredo Leon",
+                    "Alexey Verbov",
+                    "Matthew Anderson"
+                ],
+                "correct_answer": "Maxim Mikhaylov",
+                "image_url": "v_three"
+            },
+            {
+                "question": "What is the home arena of Zenit-Kazan?",
+                "options": [
+                    "Tatneft Arena",
+                    "Basket-Hall",
+                    "Saint Petersburg Volleyball Center",
+                    "Kazan Arena"
+                ],
+                "correct_answer": "Saint Petersburg Volleyball Center",
+                "image_url": "v_four"
+            },
+            {
+                "question": "Who was the head coach of Zenit-Kazan during their dominance in the 2010s?",
+                "options": [
+                    "Alexey Verbov",
+                    "Vladimir Alekno",
+                    "Dante Amaral",
+                    "Mikhail Likhachev"
+                ],
+                "correct_answer": "Vladimir Alekno",
+                "image_url": "v_five"
+            },
+            {
+                "question": "What colors are used in Zenit-Kazan's uniform?",
+                "options": [
+                    "Blue and white",
+                    "Blue and silver",
+                    "Green and white",
+                    "Red and blue"
+                ],
+                "correct_answer": "Blue and white",
+                "image_url": "v_six"
+            },
+            {
+                "question": "In which year did Zenit-Kazan win their first Russian championship?",
+                "options": [
+                    "2005",
+                    "2007",
+                    "2009",
+                    "2011"
+                ],
+                "correct_answer": "2007",
+                "image_url": "v_seven"
+            },
+            {
+                "question": "When was the women's team Dynamo-Ak Bars founded?",
+                "options": [
+                    "2002",
+                    "2007",
+                    "2012",
+                    "2015"
+                ],
+                "correct_answer": "2002",
+                "image_url": "v_eight"
+            },
+            {
+                "question": "What is the most significant achievement of Dynamo-Ak Bars?",
+                "options": [
+                    "Victory in the Champions League",
+                    "Victory in the Russian Championship",
+                    "Victory in the Russian Cup",
+                    "Victory in the CEV Cup"
+                ],
+                "correct_answer": "Victory in the Russian Championship",
+                "image_url": "v_nine"
+            },
+            {
+                "question": "In which year did the women's team Dynamo-Ak Bars win their first Russian Cup?",
+                "options": [
+                    "2008",
+                    "2010",
+                    "2012",
+                    "2014"
+                ],
+                "correct_answer": "2010",
+                "image_url": "v_ten"
+            },
+            {
+                "question": "How many times has the women's team Dynamo-Ak Bars won the Russian Championship?",
+                "options": [
+                    "5",
+                    "2",
+                    "7",
+                    "4"
+                ],
+                "correct_answer": "7",
+                "image_url": "v_eleven"
+            },
+            {
+                "question": "Which of these volleyball stars played for Zenit-Kazan?",
+                "options": [
+                    "Wilfredo Leon",
+                    "Matey Kazijski",
+                    "Giba",
+                    "Trevor Clevery"
+                ],
+                "correct_answer": "Wilfredo Leon",
+                "image_url": "v_twelve"
+            }
+        ]
+    },
+    "water-polo": {
+        "intro_text": "Let's find out how well you know 'Sintez'!",
+        "intro_image": "intro_water_polo",
+        "questions": [
+            {
+                "question": "In which year was the water polo club Sintez founded?",
+                "options": [
+                    "1974",
+                    "1980",
+                    "1985",
+                    "1991"
+                ],
+                "correct_answer": "1974",
+                "image_url": "w_one"
+            },
+            {
+                "question": "How many times has Sintez won the Russian water polo championship?",
+                "options": [
+                    "5",
+                    "8",
+                    "10",
+                    "12"
+                ],
+                "correct_answer": "10",
+                "image_url": "w_two"
+            },
+            {
+                "question": "In which year did Sintez win the European Water Polo League Cup (LEN Trophy)?",
+                "options": [
+                    "2005",
+                    "2007",
+                    "2010",
+                    "2012"
+                ],
+                "correct_answer": "2007",
+                "image_url": "w_three"
+            },
+            {
+                "question": "How many players are there from one team in the water polo game at the same time?",
+                "options": [
+                    "5",
+                    "6",
+                    "7",
+                    "8"
+                ],
+                "correct_answer": "7",
+                "image_url": "w_four"
+            },
+            {
+                "question": "What is the standard length of a water polo pool?",
+                "options": [
+                    "20 meters",
+                    "25 meters",
+                    "30 meters",
+                    "50 meters"
+                ],
+                "correct_answer": "30 meters",
+                "image_url": "w_five"
+            },
+            {
+                "question": "Which team is Sintez's main rival in Russia?",
+                "options": [
+                    "Spartak Volgograd",
+                    "Dynamo Moscow",
+                    "Lokomotiv Krasnodar",
+                    "Zenit St. Petersburg"
+                ],
+                "correct_answer": "Spartak Volgograd",
+                "image_url": "w_six"
+            }
+        ]
+    }
+}
