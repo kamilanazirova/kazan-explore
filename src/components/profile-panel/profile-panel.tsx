@@ -29,7 +29,7 @@ const ProfilePanel = () => {
                 <ProfileInfo />
                 <Divider />
                 <ResultsLabel>
-                    {t('profile.results_title')} {/* Перевод "Результаты тестов" */}
+                    {t('profile.results_title')}
                 </ResultsLabel>
 
                 {kazanTests?.length > 0 && (
@@ -37,13 +37,13 @@ const ProfilePanel = () => {
                 )}
                 {(!kazanTests || kazanTests.length === 0) && (
                     <Typography variant="body2" color="text.secondary">
-                        {t('profile.no_tests_yet')} {/* Перевод "Вы еще не проходили тесты." */}
+                        {t('profile.no_tests_yet')}
                     </Typography>
                 )}
-
+                <Divider sx={{mt: 2}}/>
                 <Box mt={1} textAlign="center">
                     <Button variant="contained" color="primary">
-                        {t('profile.new_test')} {/* Перевод "Пройти новый тест" */}
+                        {t('profile.new_test')}
                     </Button>
                 </Box>
             </Paper>
