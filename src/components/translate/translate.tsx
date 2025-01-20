@@ -46,7 +46,6 @@ export const LanguageSwitcher = () => {
         onClose={handleClose}
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         transformOrigin={{ vertical: 'top', horizontal: 'center' }}
-        disableScrollLock
       >
         <MenuItem onClick={() => handleLanguageChange('ru')}>
           <Flag code="RU" width={25} height={25} style={{ marginRight: 8 }} /> Русский

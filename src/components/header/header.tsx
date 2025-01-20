@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import './header.styled';
-
 import { HeaderBlock } from "./header.styled";
 import { HeaderLinks } from '../header-links';
 import { Burger } from './burger';
