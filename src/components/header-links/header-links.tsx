@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import logo from '../../assets/logo.svg'
 import { URLs } from "../../__data__/urls";
@@ -6,16 +6,11 @@ import { Link } from 'react-router-dom';
 import {
   ImgLogo,
   MenuLi,
-  OverlayLogin,
-  StyledLogin,
   StyledMenu,
-  MenuIconButton,
   StyledNav
 } from './header-links.styled';
-import { UserAvatar } from '../user-avatar';
-import { useUser } from '../../hooks/useUser';
-import { Tooltip } from '@mui/material';
-import { LanguageSwitcher } from '../translate/translate'; 
+import { LanguageSwitcher } from '../translate/translate';
+import { AccountMenu } from '../account-menu';
 
 
 const nav = {
@@ -28,21 +23,6 @@ const nav = {
 
 export function HeaderLinks({ isOpen }) {
   const { t } = useTranslation()
-
-  const [isAuth, setAuth] = useState(false);
-  const { user, removeUser } = useUser();
-
-  const onLogOut = () => {
-    removeUser();
-  }
-
-  useEffect(() => {
-    if (user && user.email) {
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
-  }, [user]);
 
   return (
     <StyledNav isOpen={isOpen}>
@@ -58,29 +38,8 @@ export function HeaderLinks({ isOpen }) {
           </MenuLi>
         ))}
       </StyledMenu>
-
-      <OverlayLogin>
-        {URLs.ui.entrance && (
-          <StyledLogin>
-            {!isAuth ? (
-              <Link to={URLs.ui.entrance}>{t('header.login')}</Link>
-            ) : (
-              <Link onClick={onLogOut} to={URLs.ui.entrance}>{t('header.logout')}</Link>
-            )}
-          </StyledLogin>
-        )}
-      </OverlayLogin>
       <LanguageSwitcher />
-
-      {URLs.ui.profile.on && isAuth &&
-        <Tooltip title="Профиль">
-          <MenuIconButton>
-            <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
-              <UserAvatar name={user.name} variant="small" />
-            </Link>
-          </MenuIconButton>
-        </Tooltip>
-      }
+      <AccountMenu/>
     </StyledNav>
   );
 }

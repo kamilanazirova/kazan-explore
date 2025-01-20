@@ -12,6 +12,8 @@ import {
 import { TestResultsList } from "../../components/test-results-list";
 import { ResultsLabel } from "./styled";
 import { ProfileInfo } from "../profile-info";
+import { URLs } from "../../__data__/urls";
+import { Link } from "react-router-dom";
 
 const ProfilePanel = () => {
     const { t } = useTranslation()
@@ -40,11 +42,13 @@ const ProfilePanel = () => {
                         {t('profile.no_tests_yet')}
                     </Typography>
                 )}
-                <Divider sx={{mt: 2}}/>
+                <Divider sx={{ mt: 2 }} />
                 <Box mt={1} textAlign="center">
-                    <Button variant="contained" color="primary">
-                        {t('profile.new_test')}
-                    </Button>
+                    <Link to={URLs.ui.sport}>
+                        <Button variant="contained" color="primary">
+                            {t('profile.new_test')}
+                        </Button>
+                    </Link>
                 </Box>
             </Paper>
         </Container>

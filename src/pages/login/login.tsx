@@ -114,13 +114,16 @@ const Login = () => {
                             name="email"
                             placeholder={t('login.enter_email')}
                             value={entranceData.email} onChange={handleInputChange}
+                            disabled={isLoginLoading}
                         />
 
                         <FormLabel>{t('login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
                             placeholder={t('login.enter_password')}
-                            value={entranceData.password} onChange={handleInputChange} />
+                            value={entranceData.password} onChange={handleInputChange} 
+                            disabled={isLoginLoading}
+                        />
                         <Enter>
                             {!isLoginLoading && <EnterField type="submit">{t('login.entrance_button')}</EnterField>}
                             {isLoginLoading && <CircularProgress />}</Enter>
@@ -141,6 +144,7 @@ const Login = () => {
                             name="name"
                             placeholder={t('login.enter_name')}
                             value={registerData.name} onChange={handleInputChange}
+                            disabled={isRegisterLoading}
                         />
 
                         <FormLabel>Email</FormLabel>
@@ -148,19 +152,24 @@ const Login = () => {
                             name="email"
                             placeholder={t('login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
+                            disabled={isRegisterLoading}
                         />
 
                         <FormLabel>{t('login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
                             placeholder={t('login.enter_password')}
-                            value={registerData.password} onChange={handleInputChange} />
+                            value={registerData.password} onChange={handleInputChange}
+                            disabled={isRegisterLoading}
+                        />
 
                         <FormLabel>{t('login.repeat_password')}</FormLabel>
                         <InputField type="password"
                             name="confirmPassword"
                             placeholder={t('login.enter_password')}
-                            value={registerData.confirmPassword} onChange={handleInputChange} />
+                            value={registerData.confirmPassword} onChange={handleInputChange}
+                            disabled={isRegisterLoading}
+                        />
                         <Enter>
                             {!isRegisterLoading && <EnterField type="submit">{t('login.go_to_registration')}</EnterField>}
                             {isRegisterLoading && <CircularProgress />}
@@ -179,6 +188,7 @@ const Login = () => {
                             name="email"
                             placeholder={t('login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
+                            disabled={isRecoverLoading}
                         />
 
                         <FormLabel>{t('login.create_a_new_password')}</FormLabel>
@@ -191,7 +201,9 @@ const Login = () => {
                         <InputField type="password"
                             name="confirmPassword"
                             placeholder={t('login.enter_password')}
-                            value={registerData.confirmPassword} onChange={handleInputChange} />
+                            value={registerData.confirmPassword} onChange={handleInputChange}
+                            disabled={isRecoverLoading}
+                        />
                         <Enter>
                             {!isRecoverLoading && <EnterField type="submit">{t('login.set_a_new_password')}</EnterField>}
                             {isRecoverLoading && <CircularProgress />}

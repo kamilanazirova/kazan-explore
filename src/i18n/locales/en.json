@@ -34,7 +34,8 @@
         "history": "History and culture",
         "education": "Science and education",
         "login": "Login",
-        "logout": "Log out"
+        "logout": "Log out",
+        "profile": "Profile"
     },
     "profile": {
         "title": "Profile",
@@ -47,7 +48,8 @@
         "result": "Result:",
         "results_title": "Test Results",
         "no_tests_yet": "You have not taken any tests yet.",
-        "new_test": "Take a New Test"
+        "new_test": "Take a New Test",
+        "show_more": "Show more"
     },
     "main": {
         "chakchak": "Buy chakchak",
