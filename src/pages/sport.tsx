@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 
 import sport_icon from '../assets/icons/sport_icon.svg'
-import sport_arenas from '../assets/sport/sport_arenas.png'
+import sport_arenas from '../assets/sport/sport_arenas.webp'
 
 import { Header } from "../components/header";
 import { Title } from "../components/title";

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 import transport_icon from '../assets/icons/transport_icon.svg'
-import bus from '../assets/transport/bus.png'
+import bus from '../assets/transport/bus.webp'
 
 import { Wrapper } from "../global-styles";
 import { Header } from "../components/header";
