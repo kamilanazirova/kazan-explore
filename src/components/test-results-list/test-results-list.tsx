@@ -18,12 +18,12 @@ const TestResultsList = ({ testResults }) => {
     return (
         <>
             <List sx={{ pt: 0, pb: 0 }}>
-                {testResults.slice(0, visibleCount).map((test, index) => (
+                {testResults.slice(0, visibleCount).map((item, index) => (
                     <React.Fragment key={index}>
                         <ListItem>
                             <ListItemText
-                                primary={test.name}
-                                secondary={`${t('profile.result')} ${test.score}%`}
+                                primary={t(`profile.quizIds.${item.quizId}`, { defaultValue: item.quizId })}
+                                secondary={`${t('profile.result')} ${item.result}%`}
                             />
                         </ListItem>
                         {(index < Math.min(visibleCount, testResults.length) - 1) &&

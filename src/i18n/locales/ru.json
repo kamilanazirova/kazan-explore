@@ -39,11 +39,12 @@
     },
     "profile": {
         "title": "Личный кабинет",
-        "test_names": {
-            "city_history": "История города",
-            "districts": "Знание районов",
-            "tatar_language": "Татарский",
-            "key_rate": "Ключевая ставка"
+        "quizIds": {
+            "basketball": "Баскетбол",
+            "hockey": "Xоккей",
+            "football": "Футбол",
+            "volleyball": "Воллейбол",
+            "water-polo": "Водное поло"
         },
         "result": "Результат:",
         "results_title": "Результаты тестов",

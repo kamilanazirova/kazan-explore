@@ -39,11 +39,12 @@
     },
     "profile": {
         "title": "Шәхси кабинет",
-        "test_names": {
-            "city_history": "Шәһәр тарихы",
-            "districts": "Районнарны белү",
-            "tatar_language": "Татар теле",
-            "key_rate": "Төп ставка"
+        "quizIds": {
+            "basketball": "Баскетбол",
+            "hockey": "Хоккей",
+            "football": "Футбол",
+            "volleyball": "Волейбол",
+            "water-polo": "Су полосы"
         },
         "result": "Нәтиҗә:",
         "results_title": "Тест нәтиҗәләре",

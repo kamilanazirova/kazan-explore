@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData } from '../model/common'
+import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData, QuizResultData } from '../model/common'
 import i18n from 'i18next';
 import { URLs } from '../urls'
 
@@ -26,7 +26,8 @@ export const mainApi = createApi({
     'EducationText',
     'EducationList',
     'KfuData',
-    'UserData'
+    'UserData',
+    'QuizResultData'
   ],
   endpoints: (builder) => ({
     infoFirstData: builder.query<any, void>({
@@ -144,6 +145,18 @@ export const mainApi = createApi({
         const language = localStorage.getItem('i18nextLng') || 'ru';
         return `/getInfoAboutKFU?lang=${language}`;
       },
+    }),
+    quizResults: builder.query<QuizResultData[], string>({
+      providesTags: ['QuizResultData'],
+      query: (userId) => `/getQuizResults/${userId}`,
+    }),
+    saveQuizResult: builder.mutation<void, { userId: string; quizId: string; result: number }>({
+      invalidatesTags: ['QuizResultData'],
+      query: (data) => ({
+        url: '/addQuizResult',
+        method: 'POST',
+        body: data,
+      }),
     }),
   }),
 })

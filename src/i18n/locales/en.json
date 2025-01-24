@@ -39,11 +39,12 @@
     },
     "profile": {
         "title": "Profile",
-        "test_names": {
-            "city_history": "City History",
-            "districts": "Knowledge of Districts",
-            "tatar_language": "Tatar Language",
-            "key_rate": "Key Rate"
+        "quizIds": {
+            "basketball": "Basketball",
+            "hockey": "Hockey",
+            "football": "Football",
+            "volleyball": "Volleyball",
+            "water-polo": "Water polo"
         },
         "result": "Result:",
         "results_title": "Test Results",
