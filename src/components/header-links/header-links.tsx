@@ -19,6 +19,7 @@ const nav = {
   sport: { key: 'header.sport', href: URLs.ui.sport },
   history: { key: 'header.history', href: URLs.ui.history },
   education: { key: 'header.education', href: URLs.ui.education },
+  selector: { key: 'header.selector', href: URLs.ui.selector }
 };
 
 export function HeaderLinks({ isOpen }) {

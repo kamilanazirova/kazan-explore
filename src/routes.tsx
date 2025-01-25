@@ -8,6 +8,7 @@ import Transport from './pages/transport'
 import Sport from './pages/sport'
 import History from './pages/history';
 import Education from './pages/education'
+import Selector from './pages/selector'
 import Profile from './pages/profile/profile';
 
 import { ErrorBoundary } from './components/error-boundary';
@@ -23,8 +24,12 @@ export const PageRoutes = () => (
             <Route path={URLs.ui.sport} element={<Sport />} />
             <Route path={URLs.ui.history} element={<History />} />
             <Route path={URLs.ui.education} element={<Education />} />
-            <Route path={URLs.ui.profile.url} element={<Profile/>}/>
+    
+            
+            <Route path={URLs.ui.selector} element={<Selector />} />
 
+
+            <Route path={URLs.ui.profile.url} element={<Profile/>}/>
             <Route path={URLs.ui.entrance} element={<Login />} />
             <Route path={URLs.ui.registration} element={<Login />} />
             <Route path={URLs.ui.recover} element={<Login />} />

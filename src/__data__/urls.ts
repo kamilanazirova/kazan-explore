@@ -10,6 +10,11 @@ export const URLs = {
     sport: getNavigationValue('kazan-explore.sport') && `${baseUrl}${getNavigationValue('kazan-explore.sport')}`,
     history: getNavigationValue('kazan-explore.history') && `${baseUrl}${getNavigationValue('kazan-explore.history')}`,
     education: getNavigationValue('kazan-explore.education') && `${baseUrl}${getNavigationValue('kazan-explore.education')}`,
+    
+
+    selector : getNavigationValue('kazan-explore.selector') && `${baseUrl}${getNavigationValue('kazan-explore.selector')}`,
+   
+
     entrance: getNavigationValue('kazan-explore.entrance') && `${baseUrl}${getNavigationValue('kazan-explore.entrance')}`,
     registration: getNavigationValue('kazan-explore.registration') && `${baseUrl}${getNavigationValue('kazan-explore.registration')}`,
     recover: getNavigationValue('kazan-explore.recover') && `${baseUrl}${getNavigationValue('kazan-explore.recover')}`,
