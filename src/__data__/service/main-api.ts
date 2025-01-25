@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData, QuizResultData } from '../model/common'
-import i18n from 'i18next';
+import { PlaceData, SportData, TripScheduleData, EventsData, EducationData, QuizResultData } from '../model/common'
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
@@ -33,15 +32,15 @@ export const mainApi = createApi({
     infoFirstData: builder.query<any, void>({
       providesTags: ['InfoAboutKazanData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutKazan?lang=${language}`;
       },
     }),
     newsList: builder.query<any, void>({
       providesTags: ['NewsData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getNews?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getNews?lang=${language}`;
       },
     }),
 

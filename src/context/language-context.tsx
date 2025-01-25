@@ -1,28 +1,46 @@
 import React, { createContext, useState, useContext, ReactNode } from "react";
 import { useTranslation } from "react-i18next";
+import { useDispatch } from "react-redux";
+import { mainApi } from "../__data__/service/main-api";
 
-// Тип для контекста
 interface LanguageContextType {
   language: string;
   changeLanguage: (lng: string) => void;
 }
 
-// Тип для пропсов компонента LanguageProvider
 interface LanguageProviderProps {
   children: ReactNode;
 }
 
-// Создаем контекст
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-// Провайдер контекста
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
+  const dispatch = useDispatch();
 
   const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng);  // меняем язык через i18next
-    setLanguage(lng);  // обновляем состояние языка
+    i18n.changeLanguage(lng);
+    setLanguage(lng);
+    dispatch(mainApi.util.invalidateTags([
+      'InfoAboutKazanData',
+      'NewsData',
+      'SportsList',
+      'SportFirstTextData',
+      'SportSecondTextData',
+      'SportQuizData',
+      'PlaceData',
+      'InfoTransportData',
+      'TralData',
+      'TripScheduleData',
+      'HistoryText',
+      'HistoryList',
+      'EducationText',
+      'EducationList',
+      'KfuData',
+      'UserData',
+      'QuizResultData'
+    ]))
   };
 
   return (
@@ -32,7 +50,6 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   );
 };
 
-// Хук для использования контекста
 export const useLanguage = (): LanguageContextType => {
   const context = useContext(LanguageContext);
   if (!context) {
