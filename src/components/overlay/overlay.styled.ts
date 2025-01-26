@@ -21,40 +21,33 @@ export const Head = styled.h1`
 `;
 
 export const Button1 = styled.div`
-    position: absolute;
-    top: 400px;
-    width: max-content;
-    left: 45px;
-    border: 2px solid white;
-    background-color: rgb(255, 255, 255);
-    padding: 10px 10px;
-    border-radius: 15px;
-    text-align: center;
-    margin: 20px 0;
-    color: #000000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  background-color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: #000000;
+  white-space: nowrap;
+  margin-top: 50px;
+  margin-right: 20px;
 `;
 
-export const Button2 = styled.div` 
-    position: absolute;
-    top: 400px;
-    width: max-content;
-    left: 250px;
-    border: 2px solid white;
-    background-color: transparent;
-    padding: 10px 10px;
-    border-radius: 15px;
-    text-align: center;
-    margin: 20px 0;
-    color: #ffffff;
-`;
-
-export const Icon = styled.img`
-    position: absolute;
-    top: 396px;
-    left: 530px;
-    padding: 10px 10px;
-    text-align: center;
-    margin: 20px 0;
+export const Button2 = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid white;
+  background-color: transparent;
+  padding: 10px 20px;
+  border-radius: 15px;
+  text-align: center;
+  color: #ffffff;
+  white-space: nowrap;
+  margin-top: 50px;
+  margin-right: 20px;
 `;
 
 export const Body = styled.p`
