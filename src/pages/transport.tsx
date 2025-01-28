@@ -38,7 +38,7 @@ const Transport = () => {
         <ErrorBoundary>
           {<Title
             image={transport_icon}
-            title={t('transport.title')}
+            title={t('kazan-explore.transport.title')}
             alt="иконка транспорт" />}
           <ErrorBoundary>
             <ErrorBoundary>
@@ -48,8 +48,8 @@ const Transport = () => {
                 alt="Фотография автобуса изнутри"
               />}
             </ErrorBoundary>
-            <h2>{t('transport.click_on_the_route')}</h2>
-            <Button onBusClick={handleBusClick} type={t('transport.type')} numbers={busData} />
+            <h2>{t('kazan-explore.transport.click_on_the_route')}</h2>
+            <Button onBusClick={handleBusClick} type={t('kazan-explore.transport.type')} numbers={busData} />
             <ErrorBoundary>
               {selectedBus && (
                 <>

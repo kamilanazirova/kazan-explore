@@ -26,7 +26,7 @@ const Sport = () => {
         <>
             <Header />
             <Wrapper>
-                <Title image={sport_icon} title={t('sport.title')} alt="спортивная иконка" />
+                <Title image={sport_icon} title={t('kazan-explore.sport.title')} alt="спортивная иконка" />
                 <ErrorBoundary>
                     <div className="text">
                         <h2>{sportFirstTextData.title}</h2>
@@ -36,7 +36,7 @@ const Sport = () => {
                             ))}
                         </div>
                     </div>
-                    <h1> {t('sport.list_title')} </h1>
+                    <h1> {t('kazan-explore.sport.list_title')} </h1>
                     <ErrorBoundary>
                         {sportsList?.map((item, index) => (
                             <SpoortCard key={index}

@@ -44,13 +44,13 @@ export const AccountMenu = () => {
             {URLs.ui.entrance && !isAuth && (
                 <OverlayLogin>
                     <StyledLogin>
-                        <Link to={URLs.ui.entrance}>{t('header.login')}</Link>
+                        <Link to={URLs.ui.entrance}>{t('kazan-explore.header.login')}</Link>
                     </StyledLogin>
                 </OverlayLogin>
             )}
             {URLs.ui.profile.on && isAuth && (
                 <>
-                    <Tooltip title={t('header.profile')}>
+                    <Tooltip title={t('kazan-explore.header.profile')}>
                         <MenuIconButton onClick={handleMenuOpen}>
                             <UserAvatar name={user?.name} variant="small" />
                         </MenuIconButton>
@@ -62,7 +62,7 @@ export const AccountMenu = () => {
                         onClose={handleMenuClose}
                     >
                         <MenuItem onClick={handleMenuClose}>
-                            <Link to={URLs.ui.profile.getUrl(`${user?.email}`)}>{t('header.profile')}</Link>
+                            <Link to={URLs.ui.profile.getUrl(`${user?.email}`)}>{t('kazan-explore.header.profile')}</Link>
                         </MenuItem>
                         <MenuItem
                             onClick={() => {
@@ -70,7 +70,7 @@ export const AccountMenu = () => {
                                 handleMenuClose();
                             }}
                         >
-                            {t('header.logout')}
+                            {t('kazan-explore.header.logout')}
                         </MenuItem>
                     </StyledMenu>
                 </>

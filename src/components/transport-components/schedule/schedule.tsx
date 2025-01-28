@@ -17,9 +17,9 @@ export const Schedule = ({
     return (
         <Wrapper>
             <Text>
-                <H3>{t('transport.schedule')} №{id} ({from} — {to})</H3>
-                <p>{t('transport.route_length')} — {route_length}</p>
-                <p>{t('transport.operating_mode')}:</p>
+                <H3>{t('kazan-explore.transport.schedule')} №{id} ({from} — {to})</H3>
+                <p>{t('kazan-explore.transport.route_length')} — {route_length}</p>
+                <p>{t('kazan-explore.transport.operating_mode')}:</p>
                 <p>{operating_mode_weekdays}</p>
                 <p>{operating_mode_weekend}</p>
             </Text>

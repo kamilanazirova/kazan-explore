@@ -19,8 +19,8 @@ const Places = () => {
     <>
       <Header />
       <Wrapper>
-        <Title image={interesting_logo} title={t('places.title')} alt="interesting logo" />
-        <h3>{t('places.info')}</h3>
+        <Title image={interesting_logo} title={t('kazan-explore.places.title')} alt="interesting logo" />
+        <h3>{t('kazan-explore.places.info')}</h3>
         <ErrorBoundary>
           {placesList?.map((item, index) => (
             <Place key={index}
