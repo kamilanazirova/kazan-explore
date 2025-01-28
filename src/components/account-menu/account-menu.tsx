@@ -61,9 +61,11 @@ export const AccountMenu = () => {
                         open={Boolean(anchorEl)}
                         onClose={handleMenuClose}
                     >
-                        <MenuItem onClick={handleMenuClose}>
-                            <Link to={URLs.ui.profile.getUrl(`${user?.email}`)}>{t('kazan-explore.header.profile')}</Link>
-                        </MenuItem>
+                        {URLs.ui.profile.on &&
+                            <MenuItem onClick={handleMenuClose}>
+                                <Link to={URLs.ui.profile.getUrl(`${user?.email}`)}>{t('kazan-explore.header.profile')}</Link>
+                            </MenuItem>
+                        }
                         <MenuItem
                             onClick={() => {
                                 onLogOut();
