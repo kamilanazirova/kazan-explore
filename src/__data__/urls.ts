@@ -1,6 +1,8 @@
-import { getNavigationValue, getConfigValue } from '@brojs/cli';
+import { getNavigationValue, getConfigValue, getFeatures } from '@brojs/cli';
 import { generatePath } from 'react-router-dom';
+
 const baseUrl = getNavigationValue('kazan-explore.master');
+const getKazanExploreFeatures = () => getFeatures('kazan-explore');
 
 export const URLs = {
   baseUrl,
@@ -28,4 +30,9 @@ export const URLs = {
     main: getConfigValue('kazan-explore.api'),
     users: getConfigValue('kazan-explore.users.api')
   },
+  features: {
+    quizzes: {
+      results: getKazanExploreFeatures()?.['quiz.results']
+    }
+  }
 }

@@ -24,6 +24,7 @@ module.exports = {
   features: {
     "kazan-explore": {
       // add your features here in the format [featureName]: { value: string }
+      "quiz.results": true
     },
   },
   config: {

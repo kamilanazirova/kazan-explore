@@ -25,18 +25,17 @@ const ProfilePanel = () => {
     const { isLoading, data: quizResults, isError } = mainApi.useQuizResultsQuery(user?._id)
 
     const renderQuizData = () => {
+        console.log(URLs.features.quizzes.results);
         if (isLoading) {
             return <CircularProgress size={'30px'} sx={{ ml:3.5, mt:1, mb:1, justifySelf: 'center' }} />;
         }
 
-        if (quizResults?.length > 0) {
-            return <TestResultsList testResults={quizResults} />;
+        if (isError || !URLs.features.quizzes.results) {
+            return <Lottie animationData={require('src/assets/profile/ghost_error.json')} />;
         }
 
-        if (isError) {
-            return (
-                <Lottie animationData={require('src/assets/profile/ghost_error.json')} />
-            )
+        if (quizResults?.length > 0) {
+            return <TestResultsList testResults={quizResults} />;
         }
 
         return (
