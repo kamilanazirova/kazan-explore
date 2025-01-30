@@ -26,7 +26,7 @@ const ProfilePanel = () => {
 
     const renderQuizData = () => {
         if (isLoading) {
-            return <CircularProgress sx={{ justifyContent: 'center' }} />;
+            return <CircularProgress size={'30px'} sx={{ ml:3.5, mt:1, mb:1, justifySelf: 'center' }} />;
         }
 
         if (quizResults?.length > 0) {

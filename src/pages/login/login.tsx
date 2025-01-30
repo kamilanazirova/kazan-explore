@@ -9,6 +9,7 @@ import { usersApi } from "../../__data__/service/users-api";
 import { LoginData } from "../../__data__/model/common";
 import { URLs } from "../../__data__/urls";
 import { useUser } from "../../hooks/useUser";
+import { mainApi } from "../../__data__/service/main-api";
 
 const Login = () => {
     const { t } = useTranslation()
@@ -28,14 +29,21 @@ const Login = () => {
     const [getUserFromLogin, { isLoading: isLoginLoading }] = usersApi.useGetUserFromLoginMutation();
     const [getUserFromRegister, { isLoading: isRegisterLoading }] = usersApi.useGetUserFromRegisterMutation();
     const [getUserFromRecover, { isLoading: isRecoverLoading }] = usersApi.useGetUserFromRecoverMutation();
+    const [setUserFromResponse] = mainApi.useSetUserMutation();
 
     const handleEntranceSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const data = await getUserFromLogin(entranceData).unwrap();
-            saveUser(data);
-            location.replace(`${URLs.baseUrl}`);
+            try {
+                const user = await setUserFromResponse(data).unwrap();
+                saveUser(user);
+                location.replace(`${URLs.baseUrl}`);
+            }
+            catch (error) {
+                console.error(error);
+            }
         } catch (error) {
             alert(error.message || t('error.login_error'));
             console.error(t('error.login_error'), error);
@@ -56,8 +64,13 @@ const Login = () => {
                 email: registerData.email,
                 password: registerData.password
             }).unwrap();
-            saveUser(data);
-            location.replace(`${URLs.baseUrl}`);
+            try {
+                const user = await setUserFromResponse(data).unwrap(); 
+                saveUser(user);
+                location.replace(`${URLs.baseUrl}`);
+            } catch (error) {
+                console.error(error);
+            }
         } catch (error) {
             console.error(t('error.registration_error'), error);
             alert(error.message || t('error.registration_error'));
@@ -121,15 +134,16 @@ const Login = () => {
                         <InputField type="password"
                             name="password"
                             placeholder={t('login.enter_password')}
-                            value={entranceData.password} onChange={handleInputChange} 
+                            value={entranceData.password} onChange={handleInputChange}
                             disabled={isLoginLoading}
                         />
                         <Enter>
                             {!isLoginLoading && <EnterField type="submit">{t('login.entrance_button')}</EnterField>}
-                            {isLoginLoading && <CircularProgress />}</Enter>
-                        <Enter>
-                            {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
+                            {isLoginLoading && <CircularProgress />}
                         </Enter>
+                        {URLs.ui.registration && <Enter>
+                            {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
+                        </Enter>}
                         {URLs.ui.recover && <Enter>
                             {t('login.forgete_password')} <FormLink href={URLs.ui.recover}>{t('login.go_to_recovery')}</FormLink>
                         </Enter>}
@@ -174,9 +188,9 @@ const Login = () => {
                             {!isRegisterLoading && <EnterField type="submit">{t('login.go_to_registration')}</EnterField>}
                             {isRegisterLoading && <CircularProgress />}
                         </Enter>
-                        <Enter>
+                        {URLs.ui.entrance && <Enter>
                             {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
-                        </Enter>
+                        </Enter>}
                     </Form>}
 
                 {currentLocation === 'recover' &&
@@ -208,9 +222,9 @@ const Login = () => {
                             {!isRecoverLoading && <EnterField type="submit">{t('login.set_a_new_password')}</EnterField>}
                             {isRecoverLoading && <CircularProgress />}
                         </Enter>
-                        <Enter>
-                        {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
-                        </Enter>
+                        {URLs.ui.entrance && <Enter>
+                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
+                        </Enter>}
                     </Form>}
             </Wrapper>
         </>
