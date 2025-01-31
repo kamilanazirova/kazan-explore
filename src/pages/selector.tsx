@@ -10,6 +10,7 @@ import { Title } from "../components/title";
 import { ErrorBoundary } from "../components/error-boundary";
 import { MapWithMarkers } from "../components/map-with-markers";
 import { mainApi } from "../__data__/service/main-api";
+import { Place } from "../components/place";
 
 // Styled components
 const PageContainer = styled.div`
@@ -115,6 +116,7 @@ const Selector_old = () => {
 
 // Component
 const Selector = () => {
+  const { data: placesList } = mainApi.usePlacesListQuery();
   const [query, setQuery] = useState("");
   const [cards, setCards] = useState([]);
 
@@ -170,14 +172,18 @@ const Selector = () => {
       </MapSection>
 
       {cards.length > 0 && (
-        <CardContainer>
-          {cards.map((card) => (
-            <Card key={card.id}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </Card>
+        <ErrorBoundary>
+          {placesList?.map((item, index) => (
+            <Place key={index}
+              type={item.type}
+              head={item.head}
+              text={item.text}
+              image={item.image}
+              componentKey={item.id}
+            >
+            </Place>
           ))}
-        </CardContainer>
+        </ErrorBoundary>
       )}
     </PageContainer>
   );
