@@ -1,85 +1,89 @@
 {
-    "error": {
-        "boundary": "Что-то пошло не так.",
-        "login_error:": "Ошибка при входе:",
-        "registration_error": "Ошибка при регистрации:",
-        "recovery_error": "Ошибка при восстановлении пароля:",
-        "passwords_do_not_match": "Пароли не совпадают",
-        "password_restored": "Пароль восстановлен"
-    },
-    "login": {
-        "entrance": "Вход",
-        "registration": "Регистрация",
-        "recovery": "Восстановление пароля",
-        "login": "Логин",
-        "password": "Пароль",
-        "repeat_password": "Повторите пароль",
-        "create_a_new_password": "Придумайте новый пароль",
-        "set_a_new_password": "Установить новый пароль",
-        "entrance_botton": "Войти",
-        "no_account": "Нет аккаунта?",
-        "forgete_password": "Забыли пароль?",
-        "go_to_registration": "Зарегистрироваться",
-        "go_to_recovery": "Восстановить",
-        "name": "Имя",
-        "already_have_account": "Уже есть аккаунт?",
-        "enter_name": "Введите имя",
-        "enter_email": "Введите email",
-        "enter_password": "Введите пароль"
-    },
-    "header": {
-        "places": "Интересные места",
-        "transport": "Транспорт и инфраструктура",
-        "sport": "Спорт и развлечения",
-        "history": "История и культура",
-        "education": "Наука и образование",
-        "login": "Вход",
-        "logout": "Выход"
-    },
-    "profile": {
-        "title": "Личный кабинет",
-        "test_names": {
-            "city_history": "История города",
-            "districts": "Знание районов",
-            "tatar_language": "Татарский",
-            "key_rate": "Ключевая ставка"
-        },
-        "result": "Результат:",
-        "results_title": "Результаты тестов",
-        "no_tests_yet": "Вы еще не проходили тесты.",
-        "new_test": "Пройти новый тест"
-    },
-    "main": {
-        "chakchak": "Купить чак-чак",
-        "uchpuchmak": "Попробовать өчпочмак",
-        "under_video": "Фото, снятое с высоты птичьего полета над Казанью представляет захватывающий панорамный обзор города, раскрывая его красоту и архитектурное многообразие.",
-        "newsTitle": "Новости в Казани"
-    },
-    "places": {
-        "title": "Интересные места",
-        "info": "Ежегодно Казань посещает более 2 млн туристов, которые стремятся увидеть самые интересные места города. Сейчас мы расскажем о них.",
-        "rewiew": "Оставить отзыв"
-    },
-    "transport": {
-        "title": "Транспорт и инфраструктура",
-        "click_on_the_route ": "Нажмите на интересующий маршрут, чтобы увидеть его расписание",
-        "type": "Автобусы",
-        "schedule": "Маршрут",
-        "route_length": "Протяженность маршрута",
-        "operating_mode": "Режим работы"
-    },
-    "sport": {
-        "title": "Спорт и развлечения",
-        "list_title": "Спортивные команды и клубы Казани"
-    },
-    "history": {
-        "title": "История и культура"
-    },
-    "education": {
-        "title": "Наука и образование"
-    },
-    "footer": {
-        "tcontacts": "Контактная информация",
-        "tsocialsites": "Мы в социальных сетях"
-    }
+    "kazan-explore.error.boundary": "Что-то пошло не так.",
+    "kazan-explore.error.login_error": "Ошибка при входе:",
+    "kazan-explore.error.registration_error": "Ошибка при регистрации:",
+    "kazan-explore.error.recovery_error": "Ошибка при восстановлении пароля:",
+    "kazan-explore.error.passwords_do_not_match": "Пароли не совпадают",
+    "kazan-explore.error.password_restored": "Пароль восстановлен",
+    
+    "kazan-explore.login.entrance": "Вход",
+    "kazan-explore.login.registration": "Регистрация",
+    "kazan-explore.login.recovery": "Восстановление пароля",
+    "kazan-explore.login.login": "Логин",
+    "kazan-explore.login.password": "Пароль",
+    "kazan-explore.login.repeat_password": "Повторите пароль",
+    "kazan-explore.login.create_a_new_password": "Придумайте новый пароль",
+    "kazan-explore.login.set_a_new_password": "Установить новый пароль",
+    "kazan-explore.login.entrance_button": "Войти",
+    "kazan-explore.login.no_account": "Нет аккаунта?",
+    "kazan-explore.login.forgete_password": "Забыли пароль?",
+    "kazan-explore.login.go_to_registration": "Зарегистрироваться",
+    "kazan-explore.login.go_to_recovery": "Восстановить",
+    "kazan-explore.login.name": "Имя",
+    "kazan-explore.login.already_have_account": "Уже есть аккаунт?",
+    "kazan-explore.login.enter_name": "Введите имя",
+    "kazan-explore.login.enter_email": "Введите email",
+    "kazan-explore.login.enter_password": "Введите пароль",
+    
+    "kazan-explore.header.places": "Интересные места",
+    "kazan-explore.header.transport": "Транспорт и инфраструктура",
+    "kazan-explore.header.sport": "Спорт и развлечения",
+    "kazan-explore.header.history": "История и культура",
+    "kazan-explore.header.education": "Наука и образование",
+    "kazan-explore.header.login": "Вход",
+    "kazan-explore.header.logout": "Выход",
+    "kazan-explore.header.profile": "Профиль",
+    
+    "kazan-explore.profile.title": "Личный кабинет",
+    "kazan-explore.profile.quizIds.basketball": "Баскетбол",
+    "kazan-explore.profile.quizIds.hockey": "Хоккей",
+    "kazan-explore.profile.quizIds.football": "Футбол",
+    "kazan-explore.profile.quizIds.volleyball": "Воллейбол",
+    "kazan-explore.profile.quizIds.water-polo": "Водное поло",
+    "kazan-explore.profile.result": "Результат:",
+    "kazan-explore.profile.results_title": "Результаты тестов",
+    "kazan-explore.profile.no_tests_yet": "Вы еще не проходили тесты.",
+    "kazan-explore.profile.new_test": "Пройти новый тест",
+    "kazan-explore.profile.show_more": "Показать ещё",
+    
+    "kazan-explore.main.chakchak": "Купить чак-чак",
+    "kazan-explore.main.uchpuchmak": "Попробовать өчпочмак",
+    "kazan-explore.main.under_video": "Фото, снятое с высоты птичьего полета над Казанью представляет захватывающий панорамный обзор города, раскрывая его красоту и архитектурное многообразие.",
+    "kazan-explore.main.newsTitle": "Новости в Казани",
+    
+    "kazan-explore.places.title": "Интересные места",
+    "kazan-explore.places.info": "Ежегодно Казань посещает более 2 млн туристов, которые стремятся увидеть самые интересные места города. Сейчас мы расскажем о них.",
+    "kazan-explore.places.review": "Оставить отзыв",
+    
+    "kazan-explore.transport.title": "Транспорт и инфраструктура",
+    "kazan-explore.transport.click_on_the_route": "Нажмите на интересующий маршрут, чтобы увидеть его расписание",
+    "kazan-explore.transport.type": "Автобусы",
+    "kazan-explore.transport.schedule": "Маршрут",
+    "kazan-explore.transport.route_length": "Протяженность маршрута",
+    "kazan-explore.transport.operating_mode": "Режим работы",
+    
+    "kazan-explore.sport.title": "Спорт и развлечения",
+    "kazan-explore.sport.list_title": "Спортивные команды и клубы Казани",
+    "kazan-explore.sport.quiz.welcome_to_quiz_text": "Добро пожаловать в викторину!",
+    "kazan-explore.sport.quiz.intro_img_alt": "Вступительное изображение",
+    "kazan-explore.sport.quiz.start_quiz_button": "Начать тест",
+    "kazan-explore.sport.quiz.question": "Вопрос",
+    "kazan-explore.sport.quiz.next_button": "Следующий",
+    "kazan-explore.sport.quiz.finish_button": "Завершить",
+    "kazan-explore.sport.quiz.take_test": "Пройти тест",
+    "kazan-explore.sport.quiz.your_result": "Ваш результат:",
+    "kazan-explore.sport.quiz.correct_answers": "Вы ответили правильно на {{score}} из {{total}} вопросов.",
+    "kazan-explore.sport.quiz.super_fan": "Вы настоящий знаток казанского спорта! У вас отличные знания о команде. Так держать!",
+    "kazan-explore.sport.quiz.good_fan": "Отлично! Вы почти эксперт. Еще чуть-чуть, и вы будете знать всё!",
+    "kazan-explore.sport.quiz.average_fan": "Неплохо! Вы знаете команду, но есть куда расти. Продолжайте узнавать больше!",
+    "kazan-explore.sport.quiz.try_again": "Похоже, вам стоит немного больше узнать о команде. Попробуйте еще раз — вы точно справитесь лучше!",
+    "kazan-explore.sport.quiz.result_image_alt": "Результат",
+    "kazan-explore.sport.quiz.close_button": "Закрыть",
+    
+    "kazan-explore.history.title": "История и культура",
+    
+    "kazan-explore.education.title": "Наука и образование",
+    
+    "kazan-explore.footer.tcontacts": "Контактная информация",
+    "kazan-explore.footer.tsocialsites": "Мы в социальных сетях"
 }
