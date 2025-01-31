@@ -15,6 +15,7 @@ module.exports = {
     "kazan-explore.sport": "/sport-and-entertainment",
     "kazan-explore.history": "/history-and-culture",
     "kazan-explore.education": "/science-and-education",
+    "kazan-explore.selector": "/ai-help-selector",
     "kazan-explore.entrance": "/entrance",
     "kazan-explore.registration": "/registration",
     "kazan-explore.recover": "/recover",

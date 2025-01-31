@@ -91,7 +91,7 @@ const Card = styled.div`
 `;
 
 
-const Selector = () => {
+const Selector_old = () => {
   const { t } = useTranslation()
 
   return (
@@ -114,7 +114,7 @@ const Selector = () => {
 
 
 // Component
-const Selector_old = () => {
+const Selector = () => {
   const [query, setQuery] = useState("");
   const [cards, setCards] = useState([]);
 
@@ -137,7 +137,7 @@ const Selector_old = () => {
       <Header>
         <div>Kazan Explore</div>
         <nav>
-          <a href="#">Интересные места</a>
+          <a href="#">Интересные места</a>  
           <a href="#">Подборщик</a>
           <a href="#">Войти</a>
         </nav>
