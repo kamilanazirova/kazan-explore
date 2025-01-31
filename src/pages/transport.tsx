@@ -17,6 +17,7 @@ import { Events } from "../components/transport-components/events";
 import { Table, Th } from "../components/transport-components/events/events.styled";
 import { Schedule } from "../components/transport-components/schedule";
 import { mainApi } from "../__data__/service/main-api";
+import { URLs } from "../__data__/urls";
 
 const Transport = () => {
   const { t } = useTranslation()
@@ -49,7 +50,7 @@ const Transport = () => {
               />}
             </ErrorBoundary>
             <h2>{t('kazan-explore.transport.click_on_the_route')}</h2>
-            <Button onBusClick={handleBusClick} type={t('kazan-explore.transport.type')} numbers={busData} />
+            {URLs.features.transport.busSchedule && <Button onBusClick={handleBusClick} type={t('kazan-explore.transport.type')} numbers={busData} />}
             <ErrorBoundary>
               {selectedBus && (
                 <>
@@ -71,7 +72,7 @@ const Transport = () => {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <YandexMap />
+          {URLs.features.transport.map && <YandexMap/>}
           </ErrorBoundary>
 
         </ErrorBoundary>
