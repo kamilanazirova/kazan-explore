@@ -1,88 +1,71 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+
 import { useTranslation } from 'react-i18next';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.svg';
 import { URLs } from "../../__data__/urls";
 import { Link } from 'react-router-dom';
 import {
   ImgLogo,
   MenuLi,
-  OverlayLogin,
-  StyledLogin,
-  StyledMenu,
-  MenuIconButton,
-  StyledNav
+  StyledMenu
 } from './header-links.styled';
-import { UserAvatar } from '../user-avatar';
-import { useUser } from '../../hooks/useUser';
-import { Tooltip } from '@mui/material';
-import { LanguageSwitcher } from '../translate/translate'; 
-
+import { NavigationDrawer } from '../navigation-drawer';
+import { LanguageSwitcher } from '../translate/translate';
+import { AccountMenu } from '../account-menu';
+import Burger from './burger';
+import {
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+  Box
+} from '@mui/material';
 
 const nav = {
-  places: { key: 'header.places', href: URLs.ui.places },
-  transport: { key: 'header.transport', href: URLs.ui.transport },
-  sport: { key: 'header.sport', href: URLs.ui.sport },
-  history: { key: 'header.history', href: URLs.ui.history },
-  education: { key: 'header.education', href: URLs.ui.education },
+  places: { key: 'kazan-explore.header.places', href: URLs.ui.places },
+  transport: { key: 'kazan-explore.header.transport', href: URLs.ui.transport },
+  sport: { key: 'kazan-explore.header.sport', href: URLs.ui.sport },
+  history: { key: 'kazan-explore.header.history', href: URLs.ui.history },
+  education: { key: 'kazan-explore.header.education', href: URLs.ui.education },
 };
 
-export function HeaderLinks({ isOpen }) {
-  const { t } = useTranslation()
+export function HeaderLinks() {
+  const { t } = useTranslation();
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
-  const [isAuth, setAuth] = useState(false);
-  const { user, removeUser } = useUser();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down(1000));
+  const hasLinks = Object.values(nav).some((item) => item.href);
 
-  const onLogOut = () => {
-    const { t } = useTranslation()
-
-    removeUser();
-  }
-
-  useEffect(() => {
-    if (user && user.email) {
-      setAuth(true);
-    } else {
-      setAuth(false);
-    }
-  }, [user]);
+  const toggleDrawer = (open) => {
+    setDrawerOpen(open);
+  };
 
   return (
-    <StyledNav isOpen={isOpen}>
-
-      <Link to={URLs.baseUrl}>
-        <ImgLogo src={logo} alt="логотип сайта" />
-      </Link>
-
-      <StyledMenu>
-        {Object.values(nav).map(({ key, href }) => (
-          <MenuLi key={key}>
-            <Link to={href}>{t(key)}</Link>
-          </MenuLi>
-        ))}
-      </StyledMenu>
-
-      <OverlayLogin>
-        {URLs.ui.entrance && (
-          <StyledLogin>
-            {!isAuth ? (
-              <Link to={URLs.ui.entrance}>{t('header.login')}</Link>
-            ) : (
-              <Link onClick={onLogOut} to={URLs.ui.entrance}>{t('header.logout')}</Link>
-            )}
-          </StyledLogin>
-        )}
-      </OverlayLogin>
-      <LanguageSwitcher />
-
-      {URLs.ui.profile.on && isAuth &&
-        <Tooltip title="Профиль">
-          <MenuIconButton>
-            <Link to={URLs.ui.profile.getUrl(`${user.email}`)}>
-              <UserAvatar name={user.name} variant="small" />
-            </Link>
-          </MenuIconButton>
-        </Tooltip>
-      }
-    </StyledNav>
+    <>
+      <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          {hasLinks && isMobile && (
+            <Burger onClick={() => toggleDrawer(true)} />
+          )}
+          <Link to={URLs.baseUrl}>
+            <ImgLogo src={logo} alt="логотип сайта" />
+          </Link>
+        </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+          {!isMobile && (
+            <StyledMenu>
+              {Object.values(nav).map(({ key, href }) => (
+                (href) && <MenuLi key={key}>
+                  <Link to={href}>{t(key)}</Link>
+                </MenuLi>
+              ))}
+            </StyledMenu>
+          )}
+          <LanguageSwitcher />
+          <AccountMenu />
+        </Box>
+      </Toolbar>
+      {hasLinks && <NavigationDrawer drawerOpen={drawerOpen} toggleDrawer={toggleDrawer} nav={nav} />}
+    </>
   );
 }

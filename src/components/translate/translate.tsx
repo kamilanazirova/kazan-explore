@@ -1,56 +1,62 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useLanguage } from '../../context/language-context'; // Используем контекст
 import Flag from 'react-world-flags';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import tatarstanFlag from '../../assets/flags/tatarstan.png'; 
+import tatarstanFlag from '../../assets/flags/tatarstan.png';
+import {
+  Box,
+  IconButton,
+  Menu,
+  MenuItem,
+  Tooltip,
+} from '@mui/material';
 
 export const LanguageSwitcher = () => {
-  const { i18n } = useTranslation();
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  const { language, changeLanguage } = useLanguage();
+  const [anchorEl, setAnchorEl] = useState(null);
+  const isOpen = Boolean(anchorEl);
 
-  const changeLanguage = (lng: string) => {
-    i18n.changeLanguage(lng); // Меняем язык
-    localStorage.setItem("i18nextLng", lng); // Сохраняем выбранный язык в localStorage
+  const handleOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleLanguageChange = (lng: string) => {
+    changeLanguage(lng); // Меняем язык через контекст
+    localStorage.setItem("i18nextLng", lng); // Сохраняем в localStorage
+    handleClose();
   };
 
   return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggleDropdown}>
-       <DropdownToggle tag="span" data-toggle="dropdown" aria-expanded={dropdownOpen}>
-        {/* Показываем флаг в зависимости от языка */}
-        {i18n.language === "tt" ? (
-          <img
-            src={tatarstanFlag}
-            alt="Tatarstan flag"
-            width={25}
-            height={15}
-          />
-        ) : (
-          <Flag
-            code={i18n.language === "ru" ? "RU" : "GB"}
-            width={25}
-            height={25}
-          />
-        )}
-      </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem onClick={() => changeLanguage("ru")}>
-          <Flag code="RU" width={25} height={25} /> Русский
-        </DropdownItem>
-        <DropdownItem onClick={() => changeLanguage("en")}>
-          <Flag code="GB" width={25} height={25} /> English
-        </DropdownItem>
-        <DropdownItem onClick={() => changeLanguage("tt")}>
-          <img
-            src={tatarstanFlag}
-            alt="Tatarstan flag"
-            width={25}
-            height={15}
-          />{" "}
-          Татарча
-        </DropdownItem>
-      </DropdownMenu>
-    </Dropdown>
+    <Box>
+      <Tooltip title="Выбрать язык">
+        <IconButton onClick={handleOpen} size="large">
+          {language === 'tt' ? (
+            <img src={tatarstanFlag} alt="Tatarstan flag" width={25} height={15} />
+          ) : (
+            <Flag code={language === 'ru' ? 'RU' : 'GB'} width={25} height={25} />
+          )}
+        </IconButton>
+      </Tooltip>
+      <Menu
+        anchorEl={anchorEl}
+        open={isOpen}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'center' }}
+      >
+        <MenuItem onClick={() => handleLanguageChange('ru')}>
+          <Flag code="RU" width={25} height={25} style={{ marginRight: 8 }} /> Русский
+        </MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('en')}>
+          <Flag code="GB" width={25} height={25} style={{ marginRight: 8 }} /> English
+        </MenuItem>
+        <MenuItem onClick={() => handleLanguageChange('tt')}>
+          <img src={tatarstanFlag} alt="Tatarstan flag" width={25} height={15} style={{ marginRight: 8 }} /> Татарча
+        </MenuItem>
+      </Menu>
+    </Box>
   );
 };

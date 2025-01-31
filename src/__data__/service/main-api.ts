@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData } from '../model/common'
-import i18n from 'i18next';
+import { PlaceData, SportData, TripScheduleData, EventsData, EducationData, QuizResultData } from '../model/common'
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
@@ -14,6 +13,7 @@ export const mainApi = createApi({
     'SportsList',
     'SportFirstTextData',
     'SportSecondTextData',
+    'SportQuizData',
     'PlaceData',
     'InfoTransportData',
     'BusData',
@@ -25,21 +25,22 @@ export const mainApi = createApi({
     'EducationText',
     'EducationList',
     'KfuData',
-    'UserData'
+    'UserData',
+    'QuizResultData'
   ],
   endpoints: (builder) => ({
     infoFirstData: builder.query<any, void>({
       providesTags: ['InfoAboutKazanData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutKazan?lang=${language}`;
       },
     }),
     newsList: builder.query<any, void>({
       providesTags: ['NewsData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getNews?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getNews?lang=${language}`;
       },
     }),
 
@@ -98,6 +99,13 @@ export const mainApi = createApi({
         return `/getSecondText?lang=${language}`;
       },
     }),
+    sportQuiz: builder.query<any, void>({
+      providesTags: ['SportQuizData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getSportQuiz?lang=${language}`;
+      },
+    }),
 
     // history page
     historyText: builder.query<any, void>({
@@ -136,6 +144,18 @@ export const mainApi = createApi({
         const language = localStorage.getItem('i18nextLng') || 'ru';
         return `/getInfoAboutKFU?lang=${language}`;
       },
+    }),
+    quizResults: builder.query<QuizResultData[], string>({
+      providesTags: ['QuizResultData'],
+      query: (userId) => `/getQuizResults/${userId}`,
+    }),
+    saveQuizResult: builder.mutation<void, { userId: string; quizId: string; result: number }>({
+      invalidatesTags: ['QuizResultData'],
+      query: (data) => ({
+        url: '/addQuizResult',
+        method: 'POST',
+        body: data,
+      }),
     }),
   }),
 })

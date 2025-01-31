@@ -2,6 +2,7 @@
     {
         "id": "1",
         "type": "Basketball",
+        "sport": "basketball",
         "title": "UNICS",
         "text": "UNICS Basketball Club is a Russian men's basketball team founded in 1991. It represents Kazan, the capital of the Republic of Tatarstan. The club competes in the Professional Basketball League. 'UNICS' stands for 'University — Culture — Sport.'",
         "logo": "unics_logo",
@@ -23,6 +24,7 @@
     {
         "id": "3",
         "type": "Hockey",
+        "sport": "hockey",
         "title": "Ak Bars",
         "text": "Ak Bars Hockey Club from Kazan is one of the most renowned and successful professional hockey teams in Russia. Founded in 1956, it is a member of the Kontinental Hockey League (KHL), the most prestigious league in Russia and one of the strongest in the world.",
         "logo": "akbars_logo",
@@ -44,6 +46,7 @@
     {
         "id": "5",
         "type": "Football",
+        "sport": "football",
         "title": "Rubin",
         "text": "Rubin Kazan (tat. Рубин Казан футбол төркеме) is a Russian football club from Kazan. One of the leading Russian football clubs in the second half of the 2000s. Its history dates back to 1936, but the official founding date is 1958.",
         "logo": "rubin_logo",
@@ -55,6 +58,7 @@
     {
         "id": "6",
         "type": "Volleyball",
+        "sport": "volleyball",
         "title": "Zenit-Kazan",
         "text": "Zenit-Kazan is a Russian men's volleyball team founded in 2000. Initially named 'Dynamo' until 2004, it was later known as 'Dynamo-Tattransgaz' until June 2008. The team is a 4-time Russian champion, 3-time Russian Cup winner, and a Champions League winner for the 2007/08 and 2011/12 seasons. Its main colors are white and blue.",
         "logo": "zenit_logo",
@@ -76,6 +80,7 @@
     {
         "id": "8",
         "type": "Water Polo",
+        "sport": "water-polo",
         "title": "Sintez",
         "text": "The development of water polo in Kazan was boosted by the construction of the first 50-meter swimming pool, 'Orgsintez,' in 1973. Based on this pool, the Sintez senior team was formed, earning the right to play in the first group of the RSFSR championship.",
         "logo": "waterpolo_logo",

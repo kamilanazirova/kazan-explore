@@ -110,11 +110,3 @@ export const ImgLogo = styled.img`
     margin-left: 30px;
     margin: 4px 0 4px 30px;
 `;
-
-export const MenuIconButton = mstyled(IconButton)(({ theme }) => ({
-  padding: 0,
-  transition: 'box-shadow 0.2s ease-out',
-  '&:hover, &.Mui-focusVisible': {
-    boxShadow: `0px 0px 0px 5px ${alpha("#ffffff", 0.16)}`,
-  },
-}));

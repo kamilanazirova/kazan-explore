@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from 'react-i18next';
 
 import sport_icon from '../assets/icons/sport_icon.svg'
-import sport_arenas from '../assets/sport/sport_arenas.png'
+import sport_arenas from '../assets/sport/sport_arenas.webp'
 
 import { Header } from "../components/header";
 import { Title } from "../components/title";
@@ -17,7 +17,6 @@ const Sport = () => {
 
     const { data: sportsList } = mainApi.useSportsListQuery()
     const { data: sportSecondTextData } = mainApi.useSportSecondTextDataQuery()
-
     const { data: sportFirstTextData, isLoading, error } = mainApi.useSportFirstTextDataQuery();
 
     if (isLoading) return <p>Loading...</p>;
@@ -27,7 +26,7 @@ const Sport = () => {
         <>
             <Header />
             <Wrapper>
-                <Title image={sport_icon} title={t('sport.title')} alt="спортивная иконка" />
+                <Title image={sport_icon} title={t('kazan-explore.sport.title')} alt="спортивная иконка" />
                 <ErrorBoundary>
                     <div className="text">
                         <h2>{sportFirstTextData.title}</h2>
@@ -37,10 +36,11 @@ const Sport = () => {
                             ))}
                         </div>
                     </div>
-                    <h1> {t('sport.list_title')} </h1>
+                    <h1> {t('kazan-explore.sport.list_title')} </h1>
                     <ErrorBoundary>
                         {sportsList?.map((item, index) => (
                             <SpoortCard key={index}
+                                sport={item.sport}
                                 type={item.type}
                                 title={item.title}
                                 text={item.text}
