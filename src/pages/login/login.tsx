@@ -9,6 +9,7 @@ import { usersApi } from "../../__data__/service/users-api";
 import { LoginData } from "../../__data__/model/common";
 import { URLs } from "../../__data__/urls";
 import { useUser } from "../../hooks/useUser";
+import { mainApi } from "../../__data__/service/main-api";
 
 const Login = () => {
     const { t } = useTranslation()
@@ -28,14 +29,21 @@ const Login = () => {
     const [getUserFromLogin, { isLoading: isLoginLoading }] = usersApi.useGetUserFromLoginMutation();
     const [getUserFromRegister, { isLoading: isRegisterLoading }] = usersApi.useGetUserFromRegisterMutation();
     const [getUserFromRecover, { isLoading: isRecoverLoading }] = usersApi.useGetUserFromRecoverMutation();
+    const [setUserFromResponse] = mainApi.useSetUserMutation();
 
     const handleEntranceSubmit = async (e) => {
         e.preventDefault();
 
         try {
             const data = await getUserFromLogin(entranceData).unwrap();
-            saveUser(data);
-            location.replace(`${URLs.baseUrl}`);
+            try {
+                const user = await setUserFromResponse(data).unwrap();
+                saveUser(user);
+                location.replace(`${URLs.baseUrl}`);
+            }
+            catch (error) {
+                console.error(error);
+            }
         } catch (error) {
             alert(error.message || t('kazan-explore.error.login_error'));
             console.error(t('kazan-explore.error.login_error'), error);
@@ -56,8 +64,13 @@ const Login = () => {
                 email: registerData.email,
                 password: registerData.password
             }).unwrap();
-            saveUser(data);
-            location.replace(`${URLs.baseUrl}`);
+            try {
+                const user = await setUserFromResponse(data).unwrap(); 
+                saveUser(user);
+                location.replace(`${URLs.baseUrl}`);
+            } catch (error) {
+                console.error(error);
+            }
         } catch (error) {
             console.error(t('kazan-explore.error.registration_error'), error);
             alert(error.message || t('error.registration_error'));

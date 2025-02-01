@@ -29,6 +29,7 @@ export const AccountMenu = () => {
 
     const onLogOut = () => {
         removeUser();
+        location.replace(URLs.ui.entrance || URLs.baseUrl);
     }
 
     const handleMenuOpen = (event) => {

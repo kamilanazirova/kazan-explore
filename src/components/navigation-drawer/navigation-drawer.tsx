@@ -39,7 +39,6 @@ const NavigationDrawer = ({ drawerOpen, toggleDrawer, nav }: StyledDrawerProps) 
                         key={key}
                         href={href}
                         sx={{
-                            textDecoration: "none",
                             color: "inherit",
                             "&:hover": {
                                 color: "#90caf9",
