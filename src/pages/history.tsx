@@ -11,6 +11,7 @@ import { Wrapper } from "../global-styles";
 import { ErrorBoundary } from "../components/error-boundary";
 import { mainApi } from "../__data__/service/main-api";
 import { HistoryList } from "../components/hostory-list";
+import { ApplicationForm } from "../components/application-form";
 
 const History = () => {
     const { t } = useTranslation()
@@ -23,11 +24,14 @@ const History = () => {
         <>
             <Header />
             <Wrapper>
-                <Title image={history_icon} title={t('history.title')} alt="спортивная иконка" />
+                <Title image={history_icon} title={t('history.title')} alt="иконка культуры" />
                 <ErrorBoundary>
                     <div className="text">
                         <p>{historyText?.first}</p>
                     </div>
+                    <div className="App">
+                    <ApplicationForm />
+                </div>
                 </ErrorBoundary>
                 <ErrorBoundary>
                     {historyList?.map((item, index) => (
