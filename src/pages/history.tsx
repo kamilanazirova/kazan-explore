@@ -24,7 +24,7 @@ const History = () => {
         <>
             <Header />
             <Wrapper>
-                <Title image={history_icon} title={t('history.title')} alt="иконка культуры" />
+                <Title image={history_icon} title={t('kazan-explore.history.title')} alt="иконка культуры" />
                 <ErrorBoundary>
                     <div className="text">
                         <p>{historyText?.first}</p>
