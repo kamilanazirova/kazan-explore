@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,7 +6,6 @@ export const Container = styled.div`
   margin-top: 20px;
   width: 100%; /* Растягиваем контейнер по ширине */
 `;
-
 export const Description = styled.p`
   margin-top: 0;
   font-size: 20px;
@@ -17,7 +15,6 @@ export const Description = styled.p`
   padding: 15px 20px; /* Добавила отступы, чтобы текст не прилипал к краям */
   box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
 `;
-
 export const FormWrapper = styled.form`
   background: #d9d9d9;
   padding: 25px;
@@ -29,12 +26,10 @@ export const FormWrapper = styled.form`
   flex-direction: column;
   gap: 10px;
 `;
-
 export const Title = styled.h2`
   margin: 8px;
   color: #333;
 `;
-
 export const Input = styled.input`
   width: 100%;
   padding: 12px;
@@ -43,7 +38,6 @@ export const Input = styled.input`
   font-size: 16px;
   box-sizing: border-box;
 `;
-
 export const Button = styled.button`
   width: 100%;
   padding: 12px;
@@ -54,19 +48,16 @@ export const Button = styled.button`
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
-
   &:hover {
     background: #1b5e20; /* Более темный оттенок при наведении */
   }
 `;
-
 export const SuccessMessage = styled.p`
   color: green;
   font-size: 14px;
   text-align: center;
   margin-top: 10px;
 `;
-
 export const ErrorMessage = styled.p`
   color: red;
   font-size: 12px;
