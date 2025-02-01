@@ -61,6 +61,8 @@ export function HeaderLinks() {
               ))}
             </StyledMenu>
           )}
+        </Box>
+        <Box sx={{ display: 'flex', gap: '1rem' }}>
           <LanguageSwitcher />
           <AccountMenu />
         </Box>

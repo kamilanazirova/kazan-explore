@@ -83,10 +83,10 @@
     "kazan-explore.sport.quiz.take_test": "Пройти тест",
     "kazan-explore.sport.quiz.your_result": "Ваш результат:",
     "kazan-explore.sport.quiz.correct_answers": "Вы ответили правильно на {{score}} из {{total}} вопросов.",
-    "kazan-explore.sport.quiz.super_fan": "Вы настоящий знаток казанского спорта! У вас отличные знания о команде. Так держать!",
+    "kazan-explore.sport.quiz.super_fan": "Вы настоящий знаток! У вас отличные знания. Так держать!",
     "kazan-explore.sport.quiz.good_fan": "Отлично! Вы почти эксперт. Еще чуть-чуть, и вы будете знать всё!",
-    "kazan-explore.sport.quiz.average_fan": "Неплохо! Вы знаете команду, но есть куда расти. Продолжайте узнавать больше!",
-    "kazan-explore.sport.quiz.try_again": "Похоже, вам стоит немного больше узнать о команде. Попробуйте еще раз — вы точно справитесь лучше!",
+    "kazan-explore.sport.quiz.average_fan": "Неплохо! Вы многое знаете, но есть куда расти. Продолжайте узнавать больше!",
+    "kazan-explore.sport.quiz.try_again": "Похоже, вам стоит немного больше узнать. Попробуйте еще раз — вы точно справитесь лучше!",
     "kazan-explore.sport.quiz.result_image_alt": "Результат",
     "kazan-explore.sport.quiz.close_button": "Закрыть",
     
