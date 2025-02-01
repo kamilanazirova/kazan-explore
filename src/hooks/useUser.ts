@@ -27,6 +27,7 @@ export const useUser = () => {
     try {
       localStorage.removeItem(STORAGE_KEY);
       setUser(null);
+      window.dispatchEvent(new Event('storage'));
     } catch (error) {
       console.error('Error removing user data from localStorage:', error);
     }
@@ -45,7 +46,6 @@ export const useUser = () => {
         console.error('Error syncing with localStorage:', error);
       }
     };
-
     window.addEventListener('storage', handleStorageChange);
     return () => window.removeEventListener('storage', handleStorageChange);
   }, []);

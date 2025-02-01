@@ -41,22 +41,22 @@ const SportQuiz = ({ sport }) => {
 
     if (percentage >= 90) {
       return {
-        text: t("sport.quiz.super_fan"),
+        text: t("kazan-explore.sport.quiz.super_fan"),
         image: SportQuizImages["super_fan"],
       };
     } else if (percentage >= 70) {
       return {
-        text: t("sport.quiz.good_fan"),
+        text: t("kazan-explore.sport.quiz.good_fan"),
         image: SportQuizImages["good_fan"],
       };
     } else if (percentage >= 50) {
       return {
-        text: t("sport.quiz.average_fan"),
+        text: t("kazan-explore.sport.quiz.average_fan"),
         image: SportQuizImages["average_fan"],
       };
     } else {
       return {
-        text: t("sport.quiz.try_again"),
+        text: t("kazan-explore.sport.quiz.try_again"),
         image: SportQuizImages["try_again"],
       };
     }
