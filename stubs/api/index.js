@@ -30,16 +30,6 @@ router.get('/getInfoAboutKazan', (request, response) => {
     }
 });
 
-router.get('/getServices', (request, response) => {
-    const lang = request.query.lang || 'ru';
-    try {
-        const data = require(`../json/first/services/${lang}/success.json`);
-        response.send(data);
-    } catch (error) {
-        response.status(404).send({ message: 'Language not found' });
-    }
-})
-
 router.get('/getNews', (request, response) => {
     const lang = request.query.lang || 'ru';
     try {
@@ -152,6 +142,16 @@ router.get('/getHistoryList', (request, response) => {
     const lang = request.query.lang || 'ru';
     try {
         const data = require(`../json/history/list/${lang}/success.json`);
+        response.send(data);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+
+router.get('/getHistoryQuiz', (request, response) => {
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require(`../json/history/culture-quiz/${lang}/success.json`);
         response.send(data);
     } catch (error) {
         response.status(404).send({ message: 'Language not found' });

@@ -9,6 +9,7 @@ export { default as intro_hockey } from './intro/intro_hochey.webp'
 export { default as intro_football } from './intro/intro_football.webp'
 export { default as intro_volleyball } from './intro/intro_volleyball.webp'
 export { default as intro_water_polo } from './intro/intro_water_polo.webp'
+export { default as culture } from './intro/culture.webp'
 //basketball
 export { default as b_one } from './basketball/b_one.webp'
 export { default as b_two } from './basketball/b_two.webp'
