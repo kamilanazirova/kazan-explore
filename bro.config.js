@@ -25,7 +25,8 @@ module.exports = {
     "kazan-explore": {
       "transport-page.map": true,
       "transport-page.bus-schedule": true,
-      "sport.quiz": true
+      "sport.quiz": true,
+      "quiz.results": true
       // add your features here in the format [featureName]: { value: string }
     },
   },
