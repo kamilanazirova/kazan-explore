@@ -26,6 +26,7 @@ const nav = {
   sport: { key: 'kazan-explore.header.sport', href: URLs.ui.sport },
   history: { key: 'kazan-explore.header.history', href: URLs.ui.history },
   education: { key: 'kazan-explore.header.education', href: URLs.ui.education },
+  selector: { key: 'kazan-explore.header.selector', href: URLs.ui.selector },
 };
 
 export function HeaderLinks() {

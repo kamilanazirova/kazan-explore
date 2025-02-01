@@ -33,6 +33,9 @@
     "kazan-explore.header.login": "Вход",
     "kazan-explore.header.logout": "Выход",
     "kazan-explore.header.profile": "Профиль",
+
+    "kazan-explore.header.selector": "Подборщик интересных мест",
+
     
     "kazan-explore.profile.title": "Личный кабинет",
     "kazan-explore.profile.quizIds.basketball": "Баскетбол",

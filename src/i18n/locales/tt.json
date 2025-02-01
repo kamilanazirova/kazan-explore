@@ -33,6 +33,9 @@
     "kazan-explore.header.login": "Керегез",
     "kazan-explore.header.logout": "Чык",
     "kazan-explore.header.profile": "Профиле",
+
+    "kazan-explore.header.selector": "Подборщик интересных мест",
+
     
     "kazan-explore.profile.title": "Шәхси кабинет",
     "kazan-explore.profile.quizIds.basketball": "Баскетбол",

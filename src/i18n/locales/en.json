@@ -33,6 +33,8 @@
     "kazan-explore.header.login": "Login",
     "kazan-explore.header.logout": "Log out",
     "kazan-explore.header.profile": "Profile",
+
+    "kazan-explore.header.selector": "AI help selector",
     
     "kazan-explore.profile.title": "Profile",
     "kazan-explore.profile.quizIds.basketball": "Basketball",
