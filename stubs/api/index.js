@@ -283,10 +283,8 @@ router.get('/getQuizResults/:userId', async (request, response) => {
 
     try {
         const results = await ResultsModel.findOne({ userId: userId }).exec();
-
-        if (!results)
-            return response.status(404).send({ message: 'Quiz results not found' });
-
+        if (!results || !results.items || results.items.length === 0)
+            return response.status(200).send([]);
         response.send(results.items);
     } catch (error) {
         response.status(500).send({ message: 'An error occurred while fetching quiz results' });
