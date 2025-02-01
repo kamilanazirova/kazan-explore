@@ -1,105 +1,99 @@
 {
-    "error": {
-        "boundary": "Something went wrong.",
-        "login_error": "Login error:",
-        "registration_error": "Registration error:",
-        "recovery_error": "Password recovery error:",
-        "passwords_do_not_match": "Passwords do not match",
-        "password_restored": "Password restored"
-    },
-    "login": {
-        "entrance": "Login",
-        "registration": "Registration",
-        "recovery": "Password Recovery",
-        "login": "Login",
-        "password": "Password",
-        "repeat_password": "Repeat Password",
-        "create_a_new_password": "Create a New Password",
-        "set_a_new_password": "Set a New Password",
-        "entrance_button": "Log In",
-        "no_account": "Don't have an account?",
-        "forgete_password": "Forgot password?",
-        "go_to_registration": "Sign Up",
-        "go_to_recovery": "Recover",
-        "name": "Name",
-        "already_have_account": "Already have an account?",
-        "enter_name": "Enter your name",
-        "enter_email": "Enter your email",
-        "enter_password": "Enter your password"
-    },
-    "header": {
-        "places": "Interesting places",
-        "transport": "Transport and infrastructure",
-        "sport": "Sports and entertainment",
-        "history": "History and culture",
-        "education": "Science and education",
-        "login": "Login",
-        "logout": "Log out",
-        "profile": "Profile"
-    },
-    "profile": {
-        "title": "Profile",
-        "quizIds": {
-            "basketball": "Basketball",
-            "hockey": "Hockey",
-            "football": "Football",
-            "volleyball": "Volleyball",
-            "water-polo": "Water polo"
-        },
-        "result": "Result:",
-        "results_title": "Test Results",
-        "no_tests_yet": "You have not taken any tests yet.",
-        "new_test": "Take a New Test",
-        "show_more": "Show more"
-    },
-    "main": {
-        "chakchak": "Buy chakchak ",
-        "uchpuchmak": "Try uchpuchmak ",
-        "under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity.",
-        "newsTitle": "News in Kazan"
-    },
-    "places": {
-        "title": "Interesting Places",
-        "info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
-        "review": "Leave a review"
-    },
-    "transport": {
-        "title": "Transport and Infrastructure",
-        "click_on_the_route": "Click on the route of interest to see its schedule",
-        "type": "Buses",
-        "schedule": "Route",
-        "route_length": "Route length",
-        "operating_mode": "Operating mode"
-    },
-    "sport": {
-        "title": "Sports and Entertainment",
-        "list_title": "Sports Teams and Clubs of Kazan",
-        "quiz": {
-            "welcome_to_quiz_text": "Welcome to the quiz!",
-            "intro_img_alt": "Introductory image",
-            "start_quiz_button": "Start quiz",
-            "question": "Question",
-            "next_button": "Next",
-            "finish_button": "Finish",
-            "take_test": "Take the test",
-            "your_result": "Your result:",
-            "correct_answers": "You answered correctly {{score}} out of {{total}} questions.",
-            "super_fan": "You're a true expert in Kazan sports! You have excellent knowledge of the team. Keep it up!",
-            "good_fan": "Great! You're almost an expert. Just a little more and you'll know everything!",
-            "average_fan": "Not bad! You know the team, but there's room to grow. Keep learning more!",
-            "try_again": "It seems you need to learn a bit more about the team. Try again — you'll do better next time!",
-            "result_image_alt": "Result",
-            "close_button": "Close"
-        }
-    },
-    "history": {
-        "title": "History and culture"
-    },
-    "education": {
-        "title": "Science and Education"
-    },
-    "footer": {
-        "tcontacts": "Contact information",
-        "tsocialsites": "We are on social networks"
-    }
+    "kazan-explore.error.boundary": "Something went wrong.",
+    "kazan-explore.error.login_error": "Login error:",
+    "kazan-explore.error.registration_error": "Registration error:",
+    "kazan-explore.error.recovery_error": "Password recovery error:",
+    "kazan-explore.error.passwords_do_not_match": "Passwords do not match",
+    "kazan-explore.error.password_restored": "Password restored",
+    
+    "kazan-explore.login.entrance": "Login",
+    "kazan-explore.login.registration": "Registration",
+    "kazan-explore.login.recovery": "Password Recovery",
+    "kazan-explore.login.login": "Login",
+    "kazan-explore.login.password": "Password",
+    "kazan-explore.login.repeat_password": "Repeat Password",
+    "kazan-explore.login.create_a_new_password": "Create a New Password",
+    "kazan-explore.login.set_a_new_password": "Set a New Password",
+    "kazan-explore.login.entrance_button": "Log In",
+    "kazan-explore.login.no_account": "Don't have an account?",
+    "kazan-explore.login.forgete_password": "Forgot password?",
+    "kazan-explore.login.go_to_registration": "Sign Up",
+    "kazan-explore.login.go_to_recovery": "Recover",
+    "kazan-explore.login.name": "Name",
+    "kazan-explore.login.already_have_account": "Already have an account?",
+    "kazan-explore.login.enter_name": "Enter your name",
+    "kazan-explore.login.enter_email": "Enter your email",
+    "kazan-explore.login.enter_password": "Enter your password",
+    
+    "kazan-explore.header.places": "Interesting places",
+    "kazan-explore.header.transport": "Transport and infrastructure",
+    "kazan-explore.header.sport": "Sports and entertainment",
+    "kazan-explore.header.history": "History and culture",
+    "kazan-explore.header.education": "Science and education",
+    "kazan-explore.header.login": "Login",
+    "kazan-explore.header.logout": "Log out",
+    "kazan-explore.header.profile": "Profile",
+    
+    "kazan-explore.profile.title": "Profile",
+    "kazan-explore.profile.quizIds.basketball": "Basketball",
+    "kazan-explore.profile.quizIds.hockey": "Hockey",
+    "kazan-explore.profile.quizIds.football": "Football",
+    "kazan-explore.profile.quizIds.volleyball": "Volleyball",
+    "kazan-explore.profile.quizIds.water-polo": "Water polo",
+    "kazan-explore.profile.result": "Result:",
+    "kazan-explore.profile.results_title": "Test Results",
+    "kazan-explore.profile.no_tests_yet": "You have not taken any tests yet.",
+    "kazan-explore.profile.new_test": "Take a New Test",
+    "kazan-explore.profile.show_more": "Show more",
+    
+    "kazan-explore.main.chakchak": "Buy chakchak",
+    "kazan-explore.main.uchpuchmak": "Try uchpuchmak",
+    "kazan-explore.main.under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity.",
+    "kazan-explore.main.newsTitle": "News in Kazan",
+    "kazan-explore.main.services.banks": "Banks",
+    "kazan-explore.main.services.hospitals": "Hospitals",
+    "kazan-explore.main.services.pharmacies": "Pharmacies",
+    "kazan-explore.main.services.airports": "Airports",
+    "kazan-explore.main.services.title": "Services and Amenities",
+    "kazan-explore.main.services.info": "Information",
+    "kazan-explore.main.services.choose_info": "Choose information",
+    "kazan-explore.main.services.close_botton": "Close",
+    "kazan-explore.main.services.back_bptton": "Back",
+    "kazan-explore.main.services.no_info": "No information for this category.",
+
+    "kazan-explore.places.title": "Interesting Places",
+    "kazan-explore.places.info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
+    "kazan-explore.places.review": "Leave a review",
+    
+    "kazan-explore.transport.title": "Transport and Infrastructure",
+    "kazan-explore.transport.click_on_the_route": "Click on the route of interest to see its schedule",
+    "kazan-explore.transport.type": "Buses",
+    "kazan-explore.transport.schedule": "Route",
+    "kazan-explore.transport.route_length": "Route length",
+    "kazan-explore.transport.operating_mode": "Operating mode",
+    
+    "kazan-explore.sport.title": "Sports and Entertainment",
+    "kazan-explore.sport.list_title": "Sports Teams and Clubs of Kazan",
+    "kazan-explore.sport.quiz.welcome_to_quiz_text": "Welcome to the quiz!",
+    "kazan-explore.sport.quiz.intro_img_alt": "Introductory image",
+    "kazan-explore.sport.quiz.start_quiz_button": "Start quiz",
+    "kazan-explore.sport.quiz.question": "Question",
+    "kazan-explore.sport.quiz.next_button": "Next",
+    "kazan-explore.sport.quiz.finish_button": "Finish",
+    "kazan-explore.sport.quiz.take_test": "Take the test",
+    "kazan-explore.sport.quiz.your_result": "Your result:",
+    "kazan-explore.sport.quiz.correct_answers": "You answered correctly {{score}} out of {{total}} questions.",
+    "kazan-explore.sport.quiz.super_fan": "You're a true expert in Kazan sports! You have excellent knowledge of the team. Keep it up!",
+    "kazan-explore.sport.quiz.good_fan": "Great! You're almost an expert. Just a little more and you'll know everything!",
+    "kazan-explore.sport.quiz.average_fan": "Not bad! You know the team, but there's room to grow. Keep learning more!",
+    "kazan-explore.sport.quiz.try_again": "It seems you need to learn a bit more about the team. Try again — you'll do better next time!",
+    "kazan-explore.sport.quiz.result_image_alt": "Result",
+    "kazan-explore.sport.quiz.close_button": "Close",
+    
+    "kazan-explore.history.title": "History and culture",
+    
+    "kazan-explore.education.title": "Science and Education",
+    
+    "kazan-explore.footer.tcontacts": "Contact information",
+    "kazan-explore.footer.tsocialsites": "We are on social networks"
 }

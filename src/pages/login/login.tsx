@@ -45,8 +45,8 @@ const Login = () => {
                 console.error(error);
             }
         } catch (error) {
-            alert(error.message || t('error.login_error'));
-            console.error(t('error.login_error'), error);
+            alert(error.message || t('kazan-explore.error.login_error'));
+            console.error(t('kazan-explore.error.login_error'), error);
         }
     };
 
@@ -54,7 +54,7 @@ const Login = () => {
         e.preventDefault();
 
         if (registerData.password !== registerData.confirmPassword) {
-            alert(t('error.passwords_do_not_match'));
+            alert(t('kazan-explore.error.passwords_do_not_match'));
             return;
         }
 
@@ -72,7 +72,7 @@ const Login = () => {
                 console.error(error);
             }
         } catch (error) {
-            console.error(t('error.registration_error'), error);
+            console.error(t('kazan-explore.error.registration_error'), error);
             alert(error.message || t('error.registration_error'));
         }
     };
@@ -91,7 +91,7 @@ const Login = () => {
     const handleRecoverSubmit = async (e) => {
         e.preventDefault();
         if (registerData.password !== registerData.confirmPassword) {
-            alert(t('error.passwords_do_not_match'));
+            alert(t('kazan-explore.error.passwords_do_not_match'));
             return;
         }
 
@@ -109,8 +109,8 @@ const Login = () => {
                     console.log(error.text)
                 })
         } catch (error) {
-            console.error(t('error.recovery_error'), error);
-            alert(t('error.recovery_error'));
+            console.error(t('kazan-explore.error.recovery_error'), error);
+            alert(t('kazan-explore.error.recovery_error'));
         }
     };
 
@@ -120,43 +120,42 @@ const Login = () => {
             <Wrapper>
                 {currentLocation === 'entrance' &&
                     <Form onSubmit={handleEntranceSubmit}>
-                        <EntranceState>{t('login.entrance')}</EntranceState>
+                        <EntranceState>{t('kazan-explore.login.entrance')}</EntranceState>
 
-                        <FormLabel>{t('login.login')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.login')}</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder={t('login.enter_email')}
+                            placeholder={t('kazan-explore.login.enter_email')}
                             value={entranceData.email} onChange={handleInputChange}
                             disabled={isLoginLoading}
                         />
 
-                        <FormLabel>{t('login.password')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder={t('login.enter_password')}
-                            value={entranceData.password} onChange={handleInputChange}
+                            placeholder={t('kazan-explore.login.enter_password')}
+                            value={entranceData.password} onChange={handleInputChange} 
                             disabled={isLoginLoading}
                         />
                         <Enter>
-                            {!isLoginLoading && <EnterField type="submit">{t('login.entrance_button')}</EnterField>}
-                            {isLoginLoading && <CircularProgress />}
+                            {!isLoginLoading && <EnterField type="submit">{t('kazan-explore.login.entrance_button')}</EnterField>}
+                            {isLoginLoading && <CircularProgress />}</Enter>
+                        <Enter>
+                            {t('kazan-explore.login.no_account')} <FormLink href={URLs.ui.registration}> {t('kazan-explore.login.go_to_registration')}</FormLink>
                         </Enter>
-                        {URLs.ui.registration && <Enter>
-                            {t('login.no_account')} <FormLink href={URLs.ui.registration}> {t('login.go_to_registration')}</FormLink>
-                        </Enter>}
                         {URLs.ui.recover && <Enter>
-                            {t('login.forgete_password')} <FormLink href={URLs.ui.recover}>{t('login.go_to_recovery')}</FormLink>
+                            {t('kazan-explore.login.forgete_password')} <FormLink href={URLs.ui.recover}>{t('kazan-explore.login.go_to_recovery')}</FormLink>
                         </Enter>}
                     </Form>}
 
                 {currentLocation === 'registration' &&
                     <Form onSubmit={handleRegisterSubmit}>
 
-                        <EntranceState>{t('login.registration')}</EntranceState>
-                        <FormLabel>{t('login.name')}</FormLabel>
+                        <EntranceState>{t('kazan-explore.login.registration')}</EntranceState>
+                        <FormLabel>{t('kazan-explore.login.name')}</FormLabel>
                         <InputField type="text"
                             name="name"
-                            placeholder={t('login.enter_name')}
+                            placeholder={t('kazan-explore.login.enter_name')}
                             value={registerData.name} onChange={handleInputChange}
                             disabled={isRegisterLoading}
                         />
@@ -164,67 +163,67 @@ const Login = () => {
                         <FormLabel>Email</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder={t('login.enter_email')}
+                            placeholder={t('kazan-explore.login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
                             disabled={isRegisterLoading}
                         />
 
-                        <FormLabel>{t('login.password')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder={t('login.enter_password')}
+                            placeholder={t('kazan-explore.login.enter_password')}
                             value={registerData.password} onChange={handleInputChange}
                             disabled={isRegisterLoading}
                         />
 
-                        <FormLabel>{t('login.repeat_password')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.repeat_password')}</FormLabel>
                         <InputField type="password"
                             name="confirmPassword"
-                            placeholder={t('login.enter_password')}
+                            placeholder={t('kazan-explore.login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange}
                             disabled={isRegisterLoading}
                         />
                         <Enter>
-                            {!isRegisterLoading && <EnterField type="submit">{t('login.go_to_registration')}</EnterField>}
+                            {!isRegisterLoading && <EnterField type="submit">{t('kazan-explore.login.go_to_registration')}</EnterField>}
                             {isRegisterLoading && <CircularProgress />}
                         </Enter>
-                        {URLs.ui.entrance && <Enter>
-                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
-                        </Enter>}
+                        <Enter>
+                            {t('kazan-explore.login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('kazan-explore.login.entrance_button')}</FormLink>
+                        </Enter>
                     </Form>}
 
                 {currentLocation === 'recover' &&
                     <Form onSubmit={handleRecoverSubmit}>
-                        <EntranceState>{t('login.recovery')}</EntranceState>
+                        <EntranceState>{t('kazan-explore.login.recovery')}</EntranceState>
 
                         <FormLabel>Email</FormLabel>
                         <InputField type="email"
                             name="email"
-                            placeholder={t('login.enter_email')}
+                            placeholder={t('kazan-explore.login.enter_email')}
                             value={registerData.email} onChange={handleInputChange}
                             disabled={isRecoverLoading}
                         />
 
-                        <FormLabel>{t('login.create_a_new_password')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.create_a_new_password')}</FormLabel>
                         <InputField type="password"
                             name="password"
-                            placeholder={t('login.enter_password')}
+                            placeholder={t('kazan-explore.login.enter_password')}
                             value={registerData.password} onChange={handleInputChange} />
 
-                        <FormLabel>{t('login.repeat_password')}</FormLabel>
+                        <FormLabel>{t('kazan-explore.login.repeat_password')}</FormLabel>
                         <InputField type="password"
                             name="confirmPassword"
-                            placeholder={t('login.enter_password')}
+                            placeholder={t('kazan-explore.login.enter_password')}
                             value={registerData.confirmPassword} onChange={handleInputChange}
                             disabled={isRecoverLoading}
                         />
                         <Enter>
-                            {!isRecoverLoading && <EnterField type="submit">{t('login.set_a_new_password')}</EnterField>}
+                            {!isRecoverLoading && <EnterField type="submit">{t('kazan-explore.login.set_a_new_password')}</EnterField>}
                             {isRecoverLoading && <CircularProgress />}
                         </Enter>
-                        {URLs.ui.entrance && <Enter>
-                            {t('login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('login.entrance_button')}</FormLink>
-                        </Enter>}
+                        <Enter>
+                        {t('kazan-explore.login.already_have_account')} <FormLink href={URLs.ui.entrance}>{t('kazan-explore.login.entrance_button')}</FormLink>
+                        </Enter>
                     </Form>}
             </Wrapper>
         </>

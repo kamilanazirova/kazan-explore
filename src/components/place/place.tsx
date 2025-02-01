@@ -35,7 +35,7 @@ export const Place = ({ type, image, head, text, componentKey }) => {
                     marginLeft: '80px', // Отступ слева
                 }}
                 >
-                {t('places.review')}
+                {t('kazan-explore.places.review')}
                 </button>
                 <ReviewModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} onSubmit={handleReviewSubmit} reviews={reviews} componentKey={componentKey} />
             </Container>

@@ -19,6 +19,7 @@ export const mainApi = createApi({
   }),
   tagTypes: [
     'InfoAboutKazanData',
+    'ServicesData',
     'NewsData',
     'SportsList',
     'SportFirstTextData',
@@ -44,6 +45,13 @@ export const mainApi = createApi({
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru';
         return `/getInfoAboutKazan?lang=${language}`;
+      },
+    }),
+    servicesList: builder.query<any, void>({
+      providesTags: ['ServicesData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getServices?lang=${language}`;
       },
     }),
     newsList: builder.query<any, void>({

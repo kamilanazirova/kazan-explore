@@ -1,0 +1,1 @@
+export * as CultureQuizImages from './culture-quiz'

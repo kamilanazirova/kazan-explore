@@ -40,7 +40,7 @@ const ProfilePanel = () => {
 
         return (
             <Typography variant="body2" color="text.secondary">
-                {t('profile.no_tests_yet')}
+                {t('kazan-explore.profile.no_tests_yet')}
             </Typography>
         );
     };
@@ -51,7 +51,7 @@ const ProfilePanel = () => {
                 <ProfileInfo />
                 <Divider />
                 <ResultsLabel>
-                    {t('profile.results_title')}
+                    {t('kazan-explore.profile.results_title')}
                 </ResultsLabel>
                 {renderQuizData()}
                 {URLs.ui.sport &&
@@ -60,7 +60,7 @@ const ProfilePanel = () => {
                         <Box mt={1} textAlign="center">
                             <Link to={URLs.ui.sport}>
                                 <Button variant="contained" color="primary">
-                                    {t('profile.new_test')}
+                                    {t('kazan-explore.profile.new_test')}
                                 </Button>
                             </Link>
                         </Box>

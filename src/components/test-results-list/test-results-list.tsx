@@ -23,7 +23,7 @@ const TestResultsList = ({ testResults }) => {
                         <ListItem>
                             <ListItemText
                                 primary={t(`profile.quizIds.${item.quizId}`, { defaultValue: item.quizId })}
-                                secondary={`${t('profile.result')} ${item.result}%`}
+                                secondary={`${t('kazan-explore.profile.result')} ${item.result}%`}
                             />
                         </ListItem>
                         {(index < Math.min(visibleCount, testResults.length) - 1) &&
@@ -33,7 +33,7 @@ const TestResultsList = ({ testResults }) => {
             </List>
             {hasMoreResults && (
                 <ClickTypography onClick={handleShowMore}>
-                    {t('profile.show_more')}
+                    {t('kazan-explore.profile.show_more')}
                 </ClickTypography>
             )}
         </>

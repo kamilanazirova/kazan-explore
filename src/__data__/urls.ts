@@ -32,7 +32,12 @@ export const URLs = {
   },
   features: {
     quizzes: {
+      sport: getKazanExploreFeatures()?.['sport.quiz'],
       results: getKazanExploreFeatures()?.['quiz.results']
+    },
+    transport: {
+      map: getKazanExploreFeatures()?.['transport-page.map'],
+      busSchedule: getKazanExploreFeatures()?.['transport-page.bus-schedule']
     }
   }
 }

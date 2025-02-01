@@ -21,11 +21,11 @@ import {
 } from '@mui/material';
 
 const nav = {
-  places: { key: 'header.places', href: URLs.ui.places },
-  transport: { key: 'header.transport', href: URLs.ui.transport },
-  sport: { key: 'header.sport', href: URLs.ui.sport },
-  history: { key: 'header.history', href: URLs.ui.history },
-  education: { key: 'header.education', href: URLs.ui.education },
+  places: { key: 'kazan-explore.header.places', href: URLs.ui.places },
+  transport: { key: 'kazan-explore.header.transport', href: URLs.ui.transport },
+  sport: { key: 'kazan-explore.header.sport', href: URLs.ui.sport },
+  history: { key: 'kazan-explore.header.history', href: URLs.ui.history },
+  education: { key: 'kazan-explore.header.education', href: URLs.ui.education },
 };
 
 export function HeaderLinks() {
@@ -61,6 +61,8 @@ export function HeaderLinks() {
               ))}
             </StyledMenu>
           )}
+        </Box>
+        <Box sx={{ display: 'flex', gap: '1rem' }}>
           <LanguageSwitcher />
           <AccountMenu />
         </Box>

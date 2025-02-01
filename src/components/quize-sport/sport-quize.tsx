@@ -41,22 +41,22 @@ const SportQuiz = ({ sport }) => {
 
     if (percentage >= 90) {
       return {
-        text: t("sport.quiz.super_fan"),
+        text: t("kazan-explore.sport.quiz.super_fan"),
         image: SportQuizImages["super_fan"],
       };
     } else if (percentage >= 70) {
       return {
-        text: t("sport.quiz.good_fan"),
+        text: t("kazan-explore.sport.quiz.good_fan"),
         image: SportQuizImages["good_fan"],
       };
     } else if (percentage >= 50) {
       return {
-        text: t("sport.quiz.average_fan"),
+        text: t("kazan-explore.sport.quiz.average_fan"),
         image: SportQuizImages["average_fan"],
       };
     } else {
       return {
-        text: t("sport.quiz.try_again"),
+        text: t("kazan-explore.sport.quiz.try_again"),
         image: SportQuizImages["try_again"],
       };
     }
@@ -68,7 +68,7 @@ const SportQuiz = ({ sport }) => {
     <ErrorBoundary>
       <div>
         <Button variant="contained" sx={buttonStyles} color="primary" onClick={handleOpen}>
-          {t("sport.quiz.take_test")}
+          {t("kazan-explore.sport.quiz.take_test")}
         </Button>
 
         <Modal open={open} onClose={handleClose}>
@@ -77,20 +77,20 @@ const SportQuiz = ({ sport }) => {
               <QuizContent questions={questions} introText={intro_text} introImage={intro_image} onFinish={handleFinish} />
             ) : (
               <div style={introContainer}>
-                <Typography variant="h6">{t("sport.quiz.your_result")}</Typography>
+                <Typography variant="h6">{t("kazan-explore.sport.quiz.your_result")}</Typography>
                 <Typography sx={resultText}>
-                {t("sport.quiz.correct_answers", { score: result.score, total: result.total })}  
+                {t("kazan-explore.sport.quiz.correct_answers", { score: result.score, total: result.total })}  
                 </Typography>
                 <Typography sx={resultText}>
                   {feedback.text}
                 </Typography>
                 <img
                   src={feedback.image}
-                  alt={t("sport.quiz.result_image_alt")} 
+                  alt={t("kazan-explore.sport.quiz.result_image_alt")} 
                   style={resultImageStyle}
                 />
                 <Button variant="contained" color="secondary" onClick={handleClose} sx={finishButtonStyle}>
-                {t("sport.quiz.close_button")}
+                {t("kazan-explore.sport.quiz.close_button")}
                 </Button>
               </div>
             )}

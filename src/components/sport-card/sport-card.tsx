@@ -8,6 +8,7 @@ import line from '../../assets/sport/line.png';
 
 import './sport-card.styled';
 import { Wrapper, Text, BodyText, Images, Line, H3 } from "./sport-card.styled";
+import { URLs } from "../../__data__/urls";
 
 export const SpoortCard = ({
     sport,
@@ -23,7 +24,7 @@ export const SpoortCard = ({
     <>
         {type && (
             <h2><div style={{ display: 'flex', alignItems: 'center' }}>
-                {type} <span style={{ margin: '0 8px' }}></span> <SportQuiz sport={sport} />
+                {type} <span style={{ margin: '0 8px' }}></span> {URLs.features.quizzes.sport && <SportQuiz sport={sport}/>}
             </div></h2>
         )}
         <Wrapper>
