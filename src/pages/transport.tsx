@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
 import transport_icon from '../assets/icons/transport_icon.svg'
-import bus from '../assets/transport/bus.png'
+import bus from '../assets/transport/bus.webp'
 
 import { Wrapper } from "../global-styles";
 import { Header } from "../components/header";
@@ -17,6 +17,7 @@ import { Events } from "../components/transport-components/events";
 import { Table, Th } from "../components/transport-components/events/events.styled";
 import { Schedule } from "../components/transport-components/schedule";
 import { mainApi } from "../__data__/service/main-api";
+import { URLs } from "../__data__/urls";
 
 const Transport = () => {
   const { t } = useTranslation()
@@ -38,7 +39,7 @@ const Transport = () => {
         <ErrorBoundary>
           {<Title
             image={transport_icon}
-            title={t('transport.title')}
+            title={t('kazan-explore.transport.title')}
             alt="иконка транспорт" />}
           <ErrorBoundary>
             <ErrorBoundary>
@@ -48,8 +49,8 @@ const Transport = () => {
                 alt="Фотография автобуса изнутри"
               />}
             </ErrorBoundary>
-            <h2>{t('transport.click_on_the_route')}</h2>
-            <Button onBusClick={handleBusClick} type={t('transport.type')} numbers={busData} />
+            <h2>{t('kazan-explore.transport.click_on_the_route')}</h2>
+            {URLs.features.transport.busSchedule && <Button onBusClick={handleBusClick} type={t('kazan-explore.transport.type')} numbers={busData} />}
             <ErrorBoundary>
               {selectedBus && (
                 <>
@@ -71,12 +72,11 @@ const Transport = () => {
           </ErrorBoundary>
 
           <ErrorBoundary>
-            <YandexMap />
+          {URLs.features.transport.map && <YandexMap/>}
           </ErrorBoundary>
 
         </ErrorBoundary>
-
-        {/* <h1>Календарь культурных и общественных событий</h1>
+        <h1>Календарь культурных и общественных событий</h1>
         <Table>
           <thead>
             <tr>
@@ -94,7 +94,7 @@ const Transport = () => {
             place={item.place}
           >
           </Events>
-        ))} */}
+        ))} 
       </Wrapper>
       <Footer />
     </>

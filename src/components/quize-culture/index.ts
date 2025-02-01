@@ -1,0 +1,1 @@
+export { default as CultureQuize } from './culture-quize'

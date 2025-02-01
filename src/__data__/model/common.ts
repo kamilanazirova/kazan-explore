@@ -60,6 +60,7 @@ export type HistoryTextData = {
 }
 
 export type UserData = {
+  _id: string;
   name: string;
   email: string;
   token: string;
@@ -79,4 +80,9 @@ export type RegisterData = {
 export type RecoverUserData = {
   email: string;
   password: string;
+}
+
+export type QuizResultData = {
+  quizId: string;
+  result: Number;
 }

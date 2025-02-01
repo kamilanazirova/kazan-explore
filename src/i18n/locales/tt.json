@@ -1,105 +1,99 @@
 {
-    "error": {
-        "boundary": "Нәрсәдер дөрес эшләмәде.",
-        "login_error": "Керү хатасы:",
-        "registration_error": "Теркәү хатасы:",
-        "recovery_error": "Парольне тергезү хатасы:",
-        "passwords_do_not_match": "Парольләр туры килми",
-        "password_restored": "Пароль тергезелде"
-    },
-    "login": {
-        "entrance": "Керү",
-        "registration": "Теркәү",
-        "recovery": "Парольне тергезү",
-        "login": "Логин",
-        "password": "Пароль",
-        "repeat_password": "Парольне кабатлагыз",
-        "create_a_new_password": "Яңа пароль уйлап табыгыз",
-        "set_a_new_password": "Яңа пароль куегыз",
-        "entrance_button": "Керергә",
-        "no_account": "Аккаунт юкмы?",
-        "forgete_password": "Парольне оныттыгызмы?",
-        "go_to_registration": "Теркәү",
-        "go_to_recovery": "Тергезү",
-        "name": "Исем",
-        "already_have_account": "Инде аккаунт бармы?",
-        "enter_name": "Исемегезне кертәгез",
-        "enter_email": "Email адресын кертәгез",
-        "enter_password": "Парольне кертәгез"
-    },
-    "header": {
-        "places": "Кызыклы урыннар",
-        "transport": "Транспорт һәм инфраструктура",
-        "sport": "Спорт һәм күңел ачу",
-        "history": "Тарих һәм мәдәният",
-        "education": "Фән һәм мәгариф",
-        "login": "Керегез",
-        "logout": "Чык",
-        "profile": "Профиле",
-        "selector": "Ясалма интеллект җыючы"
-    },
-    "profile": {
-        "title": "Шәхси кабинет",
-        "test_names": {
-            "city_history": "Шәһәр тарихы",
-            "districts": "Районнарны белү",
-            "tatar_language": "Татар теле",
-            "key_rate": "Төп ставка"
-        },
-        "result": "Нәтиҗә:",
-        "results_title": "Тест нәтиҗәләре",
-        "no_tests_yet": "Сез әле тестлар үтмәдегез.",
-        "new_test": "Яңа тест үтәргә",
-        "show_more": "Күбрәк күрсәтү"
-    },
-    "main": {
-        "chakchak": "Чак-чәк сатып алыгыз",
-        "uchpuchmak": "Очпочмакны кулланып карагыз",
-        "under_video": "Кошлар күзеннән Казаннан алынган фотосурәт шәһәрнең сокландыргыч панорамасын күрсәтә, аның матурлыгын һәм архитектур төрлелеген күрсәтә.",
-        "newsTitle": "Казандагы яңалыклар"
-    },
-    "places": {
-        "title": "Кызыклы урыннар",
-        "info": "Казанда ел саен 2 миллионнан артык турист була, алар шәһәрнең иң кызыклы урыннарын күрергә омтыла. Хәзер без алар турында сөйләячәкбез.",
-        "review": "Фикер калдырырга"
-    },
-    "transport": {
-        "title": "Транспорт һәм инфраструктура",
-        "click_on_the_route": "Маршрутның расписаниесен карау өчен, аны сайлагыз",
-        "type": "Автобуслар",
-        "schedule": "Маршрут",
-        "route_length": "Маршрут озынлыгы",
-        "operating_mode": "Эш тәртибе"
-    },
-    "sport": {
-        "title": "Спорт һәм күңел ачу",
-        "list_title": "Казанның спорт командалары һәм клублары",
-        "quiz": {
-            "welcome_to_quiz_text": "Викторинага рәхим итегез!",
-            "intro_img_alt": "Кереш рәсем",
-            "start_quiz_button": "Тестны башлау",
-            "question": "Сорау",
-            "next_button": "Киләсе",
-            "finish_button": "Тәмам",
-            "take_test": "Тест үтү",
-            "your_result": "Сезнең нәтиҗә:",
-            "correct_answers": "Сез дөрес җавап бирдегез {{score}} сорауга {{total}} арасыннан.",
-            "super_fan": "Сез Казан спортын яратучы чын белгеч! Команда турында бик яхшы белемнәрегез бар. Шулай дәвам итегез!",
-            "good_fan": "Бик яхшы! Сез диярлек эксперт. Әле бер аз гына калган, һәм сез барын да белерсез!",
-            "average_fan": "Яхшы! Сез команданы беләсез, ләкин үсәргә мөмкин. Тағы да күбрәк өйрәнегез!",
-            "try_again": "Күрәсең, команда турында күбрәк белү кирәк. Кабатлап карагыз — сез яхшырак эшләячәксез!",
-            "result_image_alt": "Нәтиҗә",
-            "close_button": "Ябык"
-        }
-    },
-    "history": {
-        "title": "Тарих һәм мәдәният"
-    },
-    "education": {
-        "title": "Фән һәм мәгариф"
-    },
-    "footer": {
-        "tcontacts": "Контакт өчен мәгълүмат",
-        "tsocialsites": "Без социаль челтәрләрдә"
-    }
+    "kazan-explore.error.boundary": "Нәрсәдер дөрес эшләмәде.",
+    "kazan-explore.error.login_error": "Керү хатасы:",
+    "kazan-explore.error.registration_error": "Теркәү хатасы:",
+    "kazan-explore.error.recovery_error": "Парольне тергезү хатасы:",
+    "kazan-explore.error.passwords_do_not_match": "Парольләр туры килми",
+    "kazan-explore.error.password_restored": "Пароль тергезелде",
+    
+    "kazan-explore.login.entrance": "Керү",
+    "kazan-explore.login.registration": "Теркәү",
+    "kazan-explore.login.recovery": "Парольне тергезү",
+    "kazan-explore.login.login": "Логин",
+    "kazan-explore.login.password": "Пароль",
+    "kazan-explore.login.repeat_password": "Парольне кабатлагыз",
+    "kazan-explore.login.create_a_new_password": "Яңа пароль уйлап табыгыз",
+    "kazan-explore.login.set_a_new_password": "Яңа пароль куегыз",
+    "kazan-explore.login.entrance_button": "Керергә",
+    "kazan-explore.login.no_account": "Аккаунт юкмы?",
+    "kazan-explore.login.forgete_password": "Парольне оныттыгызмы?",
+    "kazan-explore.login.go_to_registration": "Теркәү",
+    "kazan-explore.login.go_to_recovery": "Тергезү",
+    "kazan-explore.login.name": "Исем",
+    "kazan-explore.login.already_have_account": "Инде аккаунт бармы?",
+    "kazan-explore.login.enter_name": "Исемегезне кертәгез",
+    "kazan-explore.login.enter_email": "Email адресын кертәгез",
+    "kazan-explore.login.enter_password": "Парольне кертәгез",
+    
+    "kazan-explore.header.places": "Кызыклы урыннар",
+    "kazan-explore.header.transport": "Транспорт һәм инфраструктура",
+    "kazan-explore.header.sport": "Спорт һәм күңел ачу",
+    "kazan-explore.header.history": "Тарих һәм мәдәният",
+    "kazan-explore.header.education": "Фән һәм мәгариф",
+    "kazan-explore.header.login": "Керегез",
+    "kazan-explore.header.logout": "Чык",
+    "kazan-explore.header.profile": "Профиле",
+    
+    "kazan-explore.profile.title": "Шәхси кабинет",
+    "kazan-explore.profile.quizIds.basketball": "Баскетбол",
+    "kazan-explore.profile.quizIds.hockey": "Хоккей",
+    "kazan-explore.profile.quizIds.football": "Футбол",
+    "kazan-explore.profile.quizIds.volleyball": "Волейбол",
+    "kazan-explore.profile.quizIds.water-polo": "Су полосы",
+    "kazan-explore.profile.result": "Нәтиҗә:",
+    "kazan-explore.profile.results_title": "Тест нәтиҗәләре",
+    "kazan-explore.profile.no_tests_yet": "Сез әле тестлар үтмәдегез.",
+    "kazan-explore.profile.new_test": "Яңа тест үтәргә",
+    "kazan-explore.profile.show_more": "Күбрәк күрсәтү",
+    
+    "kazan-explore.main.chakchak": "Чак-чәк сатып алыгыз ",
+    "kazan-explore.main.uchpuchmak": "Очпочмакны кулланып карагыз ",
+    "kazan-explore.main.under_video": "Кошлар күзеннән Казаннан алынган фотосурәт шәһәрнең сокландыргыч панорамасын күрсәтә, аның матурлыгын һәм архитектур төрлелеген күрсәтә.",
+    "kazan-explore.main.newsTitle": "Казандагы яңалыклар",
+    "kazan-explore.main.services.banks": "Банклар",
+    "kazan-explore.main.services.hospitals": "Хастаханәләр",
+    "kazan-explore.main.services.pharmacies": "Аптекалар",
+    "kazan-explore.main.services.airports": "Аэропортлар",
+    "kazan-explore.main.services.title": "Хезмәтләр һәм уңайлыклар",
+    "kazan-explore.main.services.info": "Мәгълүмат",
+    "kazan-explore.main.services.choose_info": "Мәгълүмат сайлагыз",
+    "kazan-explore.main.services.close_botton": "Ябу",
+    "kazan-explore.main.services.back_bptton": "Кайту",
+    "kazan-explore.main.services.no_info": "Әлеге категория өчен мәгълүмат юк.",
+
+    "kazan-explore.places.title": "Кызыклы урыннар",
+    "kazan-explore.places.info": "Казанда ел саен 2 миллионнан артык турист була, алар шәһәрнең иң кызыклы урыннарын күрергә омтыла. Хәзер без алар турында сөйләячәкбез.",
+    "kazan-explore.places.review": "Фикер калдырырга",
+    
+    "kazan-explore.transport.title": "Транспорт һәм инфраструктура",
+    "kazan-explore.transport.click_on_the_route": "Маршрутның расписаниесен карау өчен, аны сайлагыз",
+    "kazan-explore.transport.type": "Автобуслар",
+    "kazan-explore.transport.schedule": "Маршрут",
+    "kazan-explore.transport.route_length": "Маршрут озынлыгы",
+    "kazan-explore.transport.operating_mode": "Эш тәртибе",
+    
+    "kazan-explore.sport.title": "Спорт һәм күңел ачу",
+    "kazan-explore.sport.list_title": "Казанның спорт командалары һәм клублары",
+    "kazan-explore.sport.quiz.welcome_to_quiz_text": "Викторинага рәхим итегез!",
+    "kazan-explore.sport.quiz.intro_img_alt": "Кереш рәсем",
+    "kazan-explore.sport.quiz.start_quiz_button": "Тестны башлау",
+    "kazan-explore.sport.quiz.question": "Сорау",
+    "kazan-explore.sport.quiz.next_button": "Киләсе",
+    "kazan-explore.sport.quiz.finish_button": "Тәмам",
+    "kazan-explore.sport.quiz.take_test": "Тест үтү",
+    "kazan-explore.sport.quiz.your_result": "Сезнең нәтиҗә:",
+    "kazan-explore.sport.quiz.correct_answers": "Сез дөрес җавап бирдегез {{score}} сорауга {{total}} арасыннан.",
+    "kazan-explore.sport.quiz.super_fan": "Сез Казан спортын яратучы чын белгеч! Команда турында бик яхшы белемнәрегез бар. Шулай дәвам итегез!",
+    "kazan-explore.sport.quiz.good_fan": "Бик яхшы! Сез диярлек эксперт. Әле бер аз гына калган, һәм сез барын да белерсез!",
+    "kazan-explore.sport.quiz.average_fan": "Яхшы! Сез команданы беләсез, ләкин үсәргә мөмкин. Тағы да күбрәк өйрәнегез!",
+    "kazan-explore.sport.quiz.try_again": "Күрәсең, команда турында күбрәк белү кирәк. Кабатлап карагыз — сез яхшырак эшләячәксез!",
+    "kazan-explore.sport.quiz.result_image_alt": "Нәтиҗә",
+    "kazan-explore.sport.quiz.close_button": "Ябык",
+    
+    "kazan-explore.history.title": "Тарих һәм мәдәният",
+    
+    "kazan-explore.education.title": "Фән һәм мәгариф",
+    
+    "kazan-explore.footer.tcontacts": "Контакт өчен мәгълүмат",
+    "kazan-explore.footer.tsocialsites": "Без социаль челтәрләрдә"
 }

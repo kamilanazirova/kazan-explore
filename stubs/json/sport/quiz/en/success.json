@@ -788,5 +788,121 @@
                 "image_url": "w_six"
             }
         ]
-    }
+    },
+    "history": {
+        "intro_text": "Let's see how well you know UNICS!",
+        "intro_image": "culture",
+        "questions": [
+        {
+            "question": "When was Kazan founded?",
+            "options": [
+                "1005",
+                "1156",
+                "1230",
+                "1323"
+            ],
+            "correct_answer": "1005",
+            "image_url": "culture"
+        },
+        {
+            "question": "What is the main river flowing through Kazan?",
+            "options": [
+                "Volga",
+                "Kazanka",
+                "Kama",
+                "Izh"
+            ],
+            "correct_answer": "Kazanka",
+            "image_url": "culture"
+        },
+        {
+            "question": "Who was the first khan of Kazan?",
+            "options": [
+                "Ulugh Muhammad",
+                "Akhmat",
+                "Shah Ali",
+                "Mamuka"
+            ],
+            "correct_answer": "Ulugh Muhammad",
+            "image_url": "culture"
+        },
+        {
+            "question": "What is the name of Kazan's main sports complex where the 2013 Universiade was held?",
+            "options": [
+                "Kazan Arena",
+                "Tatneft Arena",
+                "Bugulma Arena",
+                "Ak Bars Sports Palace"
+            ],
+            "correct_answer": "Kazan Arena",
+            "image_url": "culture"
+        },
+        {
+            "question": "Which mosque in Kazan is considered one of the largest in Russia?",
+            "options": [
+                "Kul Sharif Mosque",
+                "Mari El Mosque",
+                "Aisha Mosque",
+                "Imam Muhammad Mosque"
+            ],
+            "correct_answer": "Kul Sharif Mosque",
+            "image_url": "culture"
+        },
+        {
+            "question": "What is the name of the square where the Kazan Kremlin and Kul Sharif Mosque are located?",
+            "options": [
+                "Vakhitov Square",
+                "Freedom Square",
+                "Kremlin Square",
+                "Revolution Square"
+            ],
+            "correct_answer": "Kremlin Square",
+            "image_url": "culture"
+        },
+        {
+            "question": "What symbol of Kazan is depicted on the city's coat of arms?",
+            "options": [
+                "Dragon",
+                "Tiger",
+                "Lion",
+                "Eagle"
+            ],
+            "correct_answer": "Dragon",
+            "image_url": "culture"
+        },
+        {
+            "question": "Who was the architect of the Kazan Kremlin?",
+            "options": [
+                "Ivan Zarudny",
+                "Fyodor Benjamin",
+                "Andrey Ushakov",
+                "Yury Dashevsky"
+            ],
+            "correct_answer": "Andrey Ushakov",
+            "image_url": "culture"
+        },
+        {
+            "question": "Which of these universities is located in Kazan?",
+            "options": [
+                "Moscow State University",
+                "Kazan Federal University",
+                "St. Petersburg Polytechnic University",
+                "Novosibirsk State University"
+            ],
+            "correct_answer": "Kazan Federal University",
+            "image_url": "culture"
+        },
+        {
+            "question": "What is the name of the largest street in Kazan, which is also the center of the city's nightlife?",
+            "options": [
+                "Kremlin Street",
+                "Bauman Street",
+                "Pushkin Street",
+                "Kayum Nasyri Street"
+            ],
+            "correct_answer": "Bauman Street",
+            "image_url": "culture"
+        }
+    ]
+}
 }

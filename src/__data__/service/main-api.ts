@@ -1,15 +1,25 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, SelectorData, UserData, LoginData, RegisterData, RecoverUserData} from '../model/common'
-import i18n from 'i18next';
+import { PlaceData, SportData, TripScheduleData, EventsData, EducationData, QuizResultData, UserData } from '../model/common'
 import { URLs } from '../urls'
 
 const apiUrl = URLs.api.main
 
 export const mainApi = createApi({
   reducerPath: 'main-api',
-  baseQuery: fetchBaseQuery({ baseUrl: apiUrl }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiUrl, prepareHeaders: (headers) => {
+      const user = JSON.parse(localStorage.getItem('user'));
+
+      if (user && user.token) {
+        headers.set('authorization', `Bearer ${user.token}`)
+      }
+
+      return headers
+    }
+  }),
   tagTypes: [
     'InfoAboutKazanData',
+    'ServicesData',
     'NewsData',
     'SportsList',
     'SportFirstTextData',
@@ -27,21 +37,29 @@ export const mainApi = createApi({
     'EducationList',
     'SelectorData',
     'KfuData',
-    'UserData'
+    'UserData',
+    'QuizResultData'
   ],
   endpoints: (builder) => ({
     infoFirstData: builder.query<any, void>({
       providesTags: ['InfoAboutKazanData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getInfoAboutKazan?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutKazan?lang=${language}`;
+      },
+    }),
+    servicesList: builder.query<any, void>({
+      providesTags: ['ServicesData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getServices?lang=${language}`;
       },
     }),
     newsList: builder.query<any, void>({
       providesTags: ['NewsData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; // Берём текущий язык
-        return `/getNews?lang=${language}`; // Передаём язык как параметр
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getNews?lang=${language}`;
       },
     }),
 
@@ -58,8 +76,8 @@ export const mainApi = createApi({
     infoTransportData: builder.query<any, void>({
       providesTags: ['InfoTransportData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; 
-        return `/getInfoAboutTransportPage?lang=${language}`; 
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutTransportPage?lang=${language}`;
       },
     }),
     busData: builder.query<string[], void>({
@@ -89,14 +107,14 @@ export const mainApi = createApi({
     sportFirstTextData: builder.query<any, void>({
       providesTags: ['SportFirstTextData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; 
-        return `/getFirstText?lang=${language}`; 
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getFirstText?lang=${language}`;
       },
     }),
     sportSecondTextData: builder.query<any, void>({
       providesTags: ['SportSecondTextData'],
       query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru'; 
+        const language = localStorage.getItem('i18nextLng') || 'ru';
         return `/getSecondText?lang=${language}`;
       },
     }),
@@ -146,13 +164,27 @@ export const mainApi = createApi({
         return `/getInfoAboutKFU?lang=${language}`;
       },
     }),
-    // education page
-    selectorText: builder.query<SelectorData[], void>({
-      providesTags: ['SelectorData'],
-      query: () => {
-        const language = localStorage.getItem('i18nextLng') || 'ru';
-        return `/getInfoAboutSelector?lang=${language}`;
-      },
+    setUser: builder.mutation<UserData, UserData>({
+      invalidatesTags: ['UserData'],
+      query: (loginData) => ({
+        url: '/signin',
+        method: 'POST',
+        body: { user: loginData }
+      })
+    }),
+    quizResults: builder.query<QuizResultData[], string>({
+      providesTags: ['QuizResultData'],
+      query: (userId) => ({
+        url: `/getQuizResults/${userId}`,
+      }),
+    }),
+    saveQuizResult: builder.mutation<void, { userId: string; quizId: string; result: number }>({
+      invalidatesTags: ['QuizResultData'],
+      query: (data) => ({
+        url: '/addQuizResult',
+        method: 'POST',
+        body: data,
+      }),
     }),
   }),
 })
