@@ -22,7 +22,7 @@ const nav = {
   selector: { key: 'header.selector', href: URLs.ui.selector }
 };
 
-export function HeaderLinks({ isOpen }) {
+export function   HeaderLinks({ isOpen }) {
   const { t } = useTranslation()
 
   return (

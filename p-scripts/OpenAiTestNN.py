@@ -1,6 +1,6 @@
 import openai
 
-API_TOKEN = open("ApiKeyOpenAI.txt").read().strip()
+API_TOKEN = open("ApiKeyOpenAI.env").read().strip()
 openai.api_key = API_TOKEN
 
 

@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { useTranslation } from 'react-i18next';
-
-//import interesting_logo from '../assets/places/LibraryOutline.png'
-import gpt_logo from '../assets/icons/gpt-tiny-logo.png'
-
 import { Header } from "../components/header";
 import { Footer } from "../components/footer";
 import { Wrapper } from "../global-styles";
 import { Title } from "../components/title";
 import { ErrorBoundary } from "../components/error-boundary";
-import { MapWithMarkers } from "../components/map-with-markers";
 import { mainApi } from "../__data__/service/main-api";
 import { Place } from "../components/place";
-import YandexMap from "../components/yandex-map/yandex-map";
-//import { t } from "i18next";
+import gpt_logo from '../assets/icons/gpt-tiny-logo.png';
+import { MapWithMarkers } from "../components/map-with-markers";
 
 // Styled components
 const PageContainer = styled.div`
@@ -61,7 +56,7 @@ const Button = styled.button`
   color: white;
   background-color: #35c7ad;
   border: none;
-  border-radius: 4px;
+  border-radius: 4px; 
   cursor: pointer;
   &:hover {
     background-color: #2aa890;
@@ -101,17 +96,32 @@ export const InputField = styled.textarea`
   
 `;
 
-export const SubmitButton = styled.button`
+const SubmitButton = styled.button`
   margin-top: 16px;
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #ffcc00; /* Жёлтая кнопка, ближе к дизайну */
+  background-color: #ffcc00;
   color: black;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   &:hover {
-    background-color: #e6b800; /* Чуть темнее при наведении */
+    background-color: #e6b800;
+  }
+`;
+
+const LoadingSpinner = styled.div`
+  margin-top: 20px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 `;
 
@@ -123,77 +133,108 @@ export const FormWrapper = styled.div`
   margin-right: 150px;
 `;
 
-// Component
+// Компонент Selector
 const Selector = () => {
   const { data: placesList } = mainApi.usePlacesListQuery();
   const [query, setQuery] = useState("");
-  const [cards, setCards] = useState([]);
-  const { t } = useTranslation()
+  const [filteredPlaces, setFilteredPlaces] = useState([]);  // Массив отфильтрованных карточек
+  const [loading, setLoading] = useState(false);  
+  const { t } = useTranslation();
 
-  const handleSearch = () => {
-    
+  const handleSearch = async () => {
     if (!query.trim()) {
       alert("Поле запроса не должно быть пустым!");
       return;
     }
-
-    // Заглушка: Добавление фиктивных карточек
-    setCards([
-      { id: 1, title: "Кремль Казани", description: "Описание места 1" },
-      { id: 2, title: "Музей Чак-Чака", description: "Описание места 2" },
-      { id: 3, title: "Центр семьи 'Казан'", description: "Описание места 3" },
-    ]);
+  
+    // Включаем индикатор загрузки и сбрасываем карточки
+    setLoading(true);
+    setFilteredPlaces([]);  
+  
+    try {
+      // Отправка запроса на сервер
+      const response = await fetch('http://localhost:8000/run-script', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ query: query }),
+      });
+  
+      if (!response.ok) {
+        alert("Ошибка при получении ответа от сервера");
+        return;
+      }
+  
+      const data = await response.json();
+      let rawIndexes = data.response.trim(); // Получаем строку с индексами
+  
+      let selectedIndexes = [];
+  
+      // Обрабатываем разные форматы данных
+      if (rawIndexes.startsWith("[") && rawIndexes.endsWith("]")) {
+        // Если это список Python (например, "[1, 3, 5]")
+        selectedIndexes = JSON.parse(rawIndexes);
+      } else if (rawIndexes.includes(",")) {
+        // Если индексы идут через запятую ("1,3,5")
+        selectedIndexes = rawIndexes.split(",").map(num => parseInt(num.trim()));
+      } else {
+        // Если пришло одно число без списка
+        selectedIndexes = [parseInt(rawIndexes)];
+      }
+  
+      // Фильтруем placesList по индексам
+      const filtered = placesList.filter((_, index) => selectedIndexes.includes(index));
+  
+      // Обновляем состояние с отфильтрованными карточками
+      setFilteredPlaces(filtered);
+    } catch (error) {
+      alert("Произошла ошибка при запросе.");
+    } finally {
+      setLoading(false);
+    }
   };
+  
 
   return (
     <PageContainer>
       <Header />
       <Wrapper>
-      <Title image={gpt_logo} 
-            title={t('selector.title')} 
-            alt="Иконка подборщика" />
-      <h3>{t('selector.info')}</h3>
-      {/* <Description>
-        Ежегодно Казань посещает более 2 млн туристов, которые стремятся увидеть
-        самые интересные места города. <br></br>
-        Если вы ещё не определились, куда пойти, то наш подборщик вам в этом поможет.
-      </Description> */}
-      <FormWrapper>
-      <InputSection>
-        <p>
-          В поле ниже введите свои предпочтения, интересы или задайте вопрос <br></br> 
-          в свободном стиле, а наш подборщик на их основе  <br></br>
-          порекомендует Вам, куда всё-таки стоит сходить
-        </p>
-        <InputField 
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ваши предпочтения"
-        />
-        <SubmitButton onClick={handleSearch}>Подобрать места</SubmitButton>
-      </InputSection>
-      <MapWithMarkers width="1000px"/>
-      </FormWrapper>
-      {cards.length > 0 && (
-        <ErrorBoundary>
-          {placesList?.map((item, index) => (
-            <Place key={index}
-              type={item.type}
-              head={item.head}
-              text={item.text}
-              image={item.image}
-              componentKey={item.id}
-            >
-            </Place>
-          ))}
-        </ErrorBoundary>
-      )}
-      
+        <Title image={gpt_logo} title={t('selector.title')} alt="Иконка подборщика" />
+        <h3>{t('selector.info')}</h3>
+        <FormWrapper>
+          <InputSection>
+            <p>
+              Введите свои предпочтения или вопрос, и наш подборщик порекомендует вам места.
+            </p>
+            <InputField 
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Ваши предпочтения"
+            />
+            <SubmitButton onClick={handleSearch}>Подобрать места</SubmitButton>
+            {loading && <LoadingSpinner />} {/* Индикатор загрузки */}
+          </InputSection>
+          <MapWithMarkers width="1000px"/>
+        </FormWrapper>
 
+        {filteredPlaces.length > 0 && (
+          <ErrorBoundary>
+            {filteredPlaces.map((item, index) => (
+              <Place key={item.id} 
+                     type={item.type}
+                     head={item.head}
+                     text={item.text}
+                     image={item.image}
+                     componentKey={item.id}
+              />
+            ))}
+          </ErrorBoundary>
+        )}
       </Wrapper>
       <Footer />
     </PageContainer>
   );
 };
 
-export default Selector;
+export default Selector;  

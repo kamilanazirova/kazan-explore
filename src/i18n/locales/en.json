@@ -35,7 +35,8 @@
         "education": "Science and education",
         "login": "Login",
         "logout": "Log out",
-        "profile": "Profile"
+        "profile": "Profile",
+        "selector": "AI help selector"
     },
     "profile": {
         "title": "Profile",
@@ -96,10 +97,6 @@
     },
     "education": {
         "title": "Science and Education"
-    },
-    "selector": {
-        "title": "AI help selector",
-        "info": "Every year Kazan is visited by more than 2 million tourists who seek to see the most interesting places of the city. If you haven't decided where to go yet, our AI selector will help you with this."
     },
     "footer": {
         "tcontacts": "Contact information",
