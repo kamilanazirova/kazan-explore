@@ -18,6 +18,7 @@ import { Table, Th } from "../components/transport-components/events/events.styl
 import { Schedule } from "../components/transport-components/schedule";
 import { mainApi } from "../__data__/service/main-api";
 import { URLs } from "../__data__/urls";
+import EventsList from "../components/transport-components/events/events-list";
 
 const Transport = () => {
   const { t } = useTranslation()
@@ -76,8 +77,9 @@ const Transport = () => {
           </ErrorBoundary>
 
         </ErrorBoundary>
-
-        {/* <h1>Календарь культурных и общественных событий</h1>
+        <h1>Культурные события в Казани</h1>
+        <EventsList />
+        <h1>Календарь культурных и общественных событий</h1>
         <Table>
           <thead>
             <tr>
@@ -95,7 +97,7 @@ const Transport = () => {
             place={item.place}
           >
           </Events>
-        ))} */}
+        ))} 
       </Wrapper>
       <Footer />
     </>

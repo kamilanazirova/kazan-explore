@@ -50,7 +50,17 @@
     "kazan-explore.main.uchpuchmak": "Очпочмакны кулланып карагыз ",
     "kazan-explore.main.under_video": "Кошлар күзеннән Казаннан алынган фотосурәт шәһәрнең сокландыргыч панорамасын күрсәтә, аның матурлыгын һәм архитектур төрлелеген күрсәтә.",
     "kazan-explore.main.newsTitle": "Казандагы яңалыклар",
-    
+    "kazan-explore.main.services.banks": "Банклар",
+    "kazan-explore.main.services.hospitals": "Хастаханәләр",
+    "kazan-explore.main.services.pharmacies": "Аптекалар",
+    "kazan-explore.main.services.airports": "Аэропортлар",
+    "kazan-explore.main.services.title": "Хезмәтләр һәм уңайлыклар",
+    "kazan-explore.main.services.info": "Мәгълүмат",
+    "kazan-explore.main.services.choose_info": "Мәгълүмат сайлагыз",
+    "kazan-explore.main.services.close_botton": "Ябу",
+    "kazan-explore.main.services.back_bptton": "Кайту",
+    "kazan-explore.main.services.no_info": "Әлеге категория өчен мәгълүмат юк.",
+
     "kazan-explore.places.title": "Кызыклы урыннар",
     "kazan-explore.places.info": "Казанда ел саен 2 миллионнан артык турист була, алар шәһәрнең иң кызыклы урыннарын күрергә омтыла. Хәзер без алар турында сөйләячәкбез.",
     "kazan-explore.places.review": "Фикер калдырырга",

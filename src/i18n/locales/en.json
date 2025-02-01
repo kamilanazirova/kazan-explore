@@ -50,7 +50,17 @@
     "kazan-explore.main.uchpuchmak": "Try uchpuchmak",
     "kazan-explore.main.under_video": "The photo, taken from a bird's eye view over Kazan, provides a breathtaking panoramic view of the city, revealing its beauty and architectural diversity.",
     "kazan-explore.main.newsTitle": "News in Kazan",
-    
+    "kazan-explore.main.services.banks": "Banks",
+    "kazan-explore.main.services.hospitals": "Hospitals",
+    "kazan-explore.main.services.pharmacies": "Pharmacies",
+    "kazan-explore.main.services.airports": "Airports",
+    "kazan-explore.main.services.title": "Services and Amenities",
+    "kazan-explore.main.services.info": "Information",
+    "kazan-explore.main.services.choose_info": "Choose information",
+    "kazan-explore.main.services.close_botton": "Close",
+    "kazan-explore.main.services.back_bptton": "Back",
+    "kazan-explore.main.services.no_info": "No information for this category.",
+
     "kazan-explore.places.title": "Interesting Places",
     "kazan-explore.places.info": "Kazan is visited by more than 2 million tourists annually who strive to see the most interesting places in the city. Now we will tell you about them.",
     "kazan-explore.places.review": "Leave a review",

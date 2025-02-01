@@ -187,6 +187,13 @@ export const globalStyles = css`
         padding: 0;
     }
     
+    .weather-services {
+        display: flex;
+        flex-direction: column; /* Располагаем дочерние элементы друг под другом */
+        gap: 10px; 
+        margin-left: 50px;
+    }
+    
     .news {
         width: 100%;
         height: auto;
