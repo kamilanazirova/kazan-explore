@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { Dialog, DialogActions, DialogContent, DialogTitle, Typography, Button } from '@mui/material';
-import { ArrowBack as ArrowBackIcon } from '@mui/icons-material';
 import InfoButton from '../services-button/services-button'; // Импортируем новый компонент
 import { mainApi } from "../../__data__/service/main-api";
 import { ServiceImageWrapper, ServiceImage, ServiceText, BackButton, ButtonWrapper } from './services.styled'; // Импортируем стилизованные компоненты
@@ -83,7 +82,6 @@ const InfoDialog = () => {
                 fullWidth
                 variant="contained"
                 color="secondary"
-                startIcon={<ArrowBackIcon />}
                 onClick={handleBackClick}
               >
                 {t('kazan-explore.main.services.back_bptton')}

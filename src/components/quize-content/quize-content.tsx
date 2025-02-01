@@ -119,7 +119,7 @@ const QuizContent = ({ questions, onFinish, introText, introImage }) => {
               sx={nextButtonStyle}
               onClick={handleNext}
             >
-              {currentQuestion + 1 < questions.length ? t('sport.quiz.next_button') : t('sport.quiz.finish_button')}
+              {currentQuestion + 1 < questions.length ? t('kazan-explore.sport.quiz.next_button') : t('kazan-explore.sport.quiz.finish_button')}
             </Button>
           )}
         </div>
