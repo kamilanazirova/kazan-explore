@@ -162,6 +162,17 @@ router.get('/getInfoAboutKFU', (request, response) => {
     }
 })
 
+router.get('/getInfoAboutSelector', (request, response) => {
+    const lang = request.query.lang || 'ru';
+    try {
+        const data = require('../json/education/kfu/success.json');
+        const translatedData = data[lang] || data['ru'];
+        response.send(translatedData);
+    } catch (error) {
+        response.status(404).send({ message: 'Language not found' });
+    }
+})
+
 
 // Login
 router.post('/entrance', (request, response) => {

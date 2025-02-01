@@ -1,7 +1,11 @@
 import React from 'react';
 import { YMaps, Map, Placemark } from 'react-yandex-maps';
 
-export const MapWithMarkers = () => {
+interface MapProps {
+    width?: string;
+  }
+
+  export const MapWithMarkers: React.FC<MapProps> = ({ width = '1100px' }) => {
     const places = [
         { coordinates: [55.797557, 49.107295], name: 'Кремль' },
         { coordinates: [55.798379, 49.105238], name: 'Мечеть Кул-Шариф' },
@@ -12,7 +16,7 @@ export const MapWithMarkers = () => {
     ];
 
     return (
-        <div style={{ width: '1100px', height: '700px' }}>
+        <div style={{ width, height: '700px' }}>
             <YMaps>
                 <Map
                     defaultState={{ center: [55.797557, 49.107295], zoom: 15 }}

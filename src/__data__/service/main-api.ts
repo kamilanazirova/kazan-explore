@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, UserData, LoginData, RegisterData, RecoverUserData } from '../model/common'
+import { NewsData, PlaceData, SportData, TripScheduleData, EventsData, EducationData, SelectorData, UserData, LoginData, RegisterData, RecoverUserData} from '../model/common'
 import i18n from 'i18next';
 import { URLs } from '../urls'
 
@@ -25,6 +25,7 @@ export const mainApi = createApi({
     'HistoryList',
     'EducationText',
     'EducationList',
+    'SelectorData',
     'KfuData',
     'UserData'
   ],
@@ -143,6 +144,14 @@ export const mainApi = createApi({
       query: () => {
         const language = localStorage.getItem('i18nextLng') || 'ru';
         return `/getInfoAboutKFU?lang=${language}`;
+      },
+    }),
+    // education page
+    selectorText: builder.query<SelectorData[], void>({
+      providesTags: ['SelectorData'],
+      query: () => {
+        const language = localStorage.getItem('i18nextLng') || 'ru';
+        return `/getInfoAboutSelector?lang=${language}`;
       },
     }),
   }),

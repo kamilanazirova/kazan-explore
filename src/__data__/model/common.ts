@@ -48,6 +48,11 @@ export type EducationData = {
   text: string;
 }
 
+export type SelectorData = {
+  title: string;
+  text: string;
+}
+
 export type HistoryTextData = {
   image: string;
   title: string;
