@@ -11,6 +11,7 @@ import { Weather } from "../components/weather";
 import { News } from "../components/news";
 import { Wrapper } from "../global-styles";
 import { mainApi } from "../__data__/service/main-api";
+import InfoDialog from "../components/services/services";
 
 const first = () => {
   const { t } = useTranslation()
@@ -33,18 +34,21 @@ const first = () => {
           <div className="info">
             <div className="video">
               <img src={kazann} alt="Казань с высоты птичьего полёта" className="kazan-video" />
-              <p className="about-video">{t('main.under_video')}</p>
+              <p className="about-video">{t('kazan-explore.main.under_video')}</p>
             </div>
-            <Weather />
+            <div className="weather-services">
+              <Weather />
+              <InfoDialog />
+            </div>
           </div>
         </section>
         <section className="news">
-          <p className="tnews">{t('main.newsTitle')}</p> {/* Заголовок локализован через i18n */}
+          <p className="tnews">{t('kazan-explore.main.newsTitle')}</p>
           {newsList?.map((item, index) => (
             <News
               key={index}
               image={item.image}
-              title={item.title} 
+              title={item.title}
               text={item.text}
             />
           ))}

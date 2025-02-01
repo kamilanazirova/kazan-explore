@@ -22,7 +22,7 @@ const Education = () => {
     <>
       <Header />
       <Wrapper>
-        <Title image={science_icon} title={t('education.title')} alt="Иконка" />
+        <Title image={science_icon} title={t('kazan-explore.education.title')} alt="Иконка" />
         <ErrorBoundary>
           <p>{t(educationText?.text)}</p>
           <EducationCardWrapper>

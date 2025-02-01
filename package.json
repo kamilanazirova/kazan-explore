@@ -1,6 +1,6 @@
 {
     "name": "kazan-explore",
-    "version": "2.3.3",
+    "version": "2.3.6",
     "description": "![image](https://blog.ostrovok.ru/wp-content/uploads/2023/02/1%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F-2.jpg)",
     "main": "./src/index.tsx",
     "scripts": {
@@ -16,9 +16,10 @@
     "license": "ISC",
     "dependencies": {
         "@brojs/cli": "^1.6.3",
-        "@emotion/react": "^11.1.5",
-        "@emotion/styled": "^11.11.5",
-        "@mui/material": "^6.1.10",
+        "@emotion/react": "^11.14.0",
+        "@emotion/styled": "^11.14.0",
+        "@mui/icons-material": "^6.4.2",
+        "@mui/material": "^6.4.2",
         "@reduxjs/toolkit": "^2.4.0",
         "@types/react": "^18.2.79",
         "@types/react-dom": "^18.2.25",

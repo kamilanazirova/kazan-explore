@@ -1,0 +1,102 @@
+{
+    "banks": [
+        {
+            "name": "Sberbank of Russia",
+            "description": "One of the largest and most popular banks in Russia. There are many branches and ATMs in Kazan. Sberbank offers a wide range of services, including loans, deposits, insurance, business services, and online banking."
+        },
+        {
+            "name": "VTB",
+            "description": "The second largest bank in Russia, with many offices and ATMs in Kazan. VTB offers various financial products for individuals and businesses, including loans, deposits, investment solutions, and cards."
+        },
+        {
+            "name": "Tinkoff Bank",
+            "description": "Although Tinkoff does not have traditional offices in Kazan, its products and services are available in the city through online banking and remote services. Tinkoff offers favorable terms for credit cards, deposits, and services for small and medium-sized businesses."
+        },
+        {
+            "name": "Alfa-Bank",
+            "description": "One of the largest private banks in Russia, with offices in Kazan. Alfa-Bank offers standard banking services such as loans, deposits, cards, as well as investment and insurance products."
+        },
+        {
+            "name": "Rosselkhozbank",
+            "description": "Rosselkhozbank is also present in Kazan, specializing in servicing the agro-industrial complex, but also provides services for individuals and businesses, including loans, deposits, and cards."
+        },
+        {
+            "name": "RBC Bank",
+            "description": "A Russian bank with several offices and ATMs in Kazan. It offers loans, cards, deposits, and business services."
+        },
+        {
+            "name": "Bank Saint Petersburg",
+            "description": "A local bank that also provides services in Kazan. It offers a wide range of banking products for individuals and businesses."
+        }
+    ],
+    "hospitals": [
+        {
+            "name": "Kazan City Clinical Hospital No. 1",
+            "description": "One of the largest multidisciplinary hospitals in Kazan, offering services in surgery, traumatology, neurology, cardiology, and other medical fields. Modern technologies and highly qualified staff."
+        },
+        {
+            "name": "Republican Clinical Hospital",
+            "description": "The main medical organization of the Republic of Tatarstan, providing a wide range of services for adults and children, including emergency care, high-tech surgeries, and diagnostics."
+        },
+        {
+            "name": "City Hospital No. 7",
+            "description": "A hospital specializing in providing medical care in therapeutic, surgical, and resuscitation medicine. The hospital employs experienced specialists and uses modern treatment methods."
+        },
+        {
+            "name": "Kazan Children's Clinical Hospital",
+            "description": "A specialized medical facility for children, providing services for the treatment of diseases related to pediatrics, surgery, cardiology, and other fields for children of all ages."
+        },
+        {
+            "name": "Kazan Oncology Dispensary",
+            "description": "A medical institution specializing in the treatment of oncological diseases. It uses the latest methods of cancer diagnosis and treatment, including chemotherapy, radiotherapy, and surgical interventions."
+        },
+        {
+            "name": "City Hospital No. 18",
+            "description": "A multidisciplinary medical institution offering treatment in various medical fields, including traumatology, neurology, and cardiology. The hospital has a rehabilitation department for patients recovering from serious diseases."
+        },
+        {
+            "name": "Republican Hospital for War Veterans",
+            "description": "A medical institution providing specialized care for World War II veterans, disabled individuals, and elderly people. It also offers a wide range of services for citizens with chronic diseases."
+        }
+    ],
+    "pharmacies": [
+        {
+            "name": "Apteka 36.6",
+            "description": "A pharmacy chain with a wide range of medications, vitamins, cosmetics, and health products. Loyalty programs and online orders for customer convenience."
+        },
+        {
+            "name": "Rigla",
+            "description": "One of the largest pharmacy chains in Russia. It offers a wide range of medicines, medical products, and cosmetics. It also provides the option to order online."
+        },
+        {
+            "name": "Zdorovaya Semya",
+            "description": "A pharmacy chain focused on the sale of medicines and health products, including medical equipment. Often runs promotions and discounts on popular items."
+        },
+        {
+            "name": "A5 Pharmacy Chain",
+            "description": "Pharmacies offering a wide range of products, including medicines, vitamins, cosmetics, and children's products. Convenient delivery and online order services."
+        },
+        {
+            "name": "Samson-Pharma Pharmacy",
+            "description": "A pharmacy chain offering customers all necessary medicines and health products. Pharmacies offer various discount and bonus programs for regular customers."
+        },
+        {
+            "name": "Tsvetnoy Pharmacy Chain",
+            "description": "Pharmacies known for their convenient locations and high-quality service. They sell medicines, vitamins, self-care products, and medical equipment."
+        },
+        {
+            "name": "Doctor Stoletev Pharmacy",
+            "description": "A pharmacy chain focused on selling pharmaceutical products, medical goods, and cosmetics. Convenient service and promotions for customers."
+        }
+    ],
+    "airports": [
+        {
+            "name": "Kazan International Airport",
+            "description": "The main airport of the city of Kazan, serving international and domestic flights. The airport is equipped with modern terminals, comfortable waiting areas, shops, and restaurants. It is one of the largest in the Volga region and an important transport hub for Tatarstan."
+        },
+        {
+            "name": "Kazan-2 (when it was operational)",
+            "description": "Previously used for domestic flights and military needs. It is no longer fully operational as all passenger flights have been redirected to Kazan International Airport. The airport building is closed for commercial air traffic."
+        }
+    ]
+}

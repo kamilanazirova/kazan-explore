@@ -14,7 +14,7 @@ const ProfileInfo = () => {
         <UserInfoBox>
             <UserAvatar name={user?.name} variant="medium" />
             <InfoTextBox>
-                <InfoLabel>{t('profile.title')}</InfoLabel>
+                <InfoLabel>{t('kazan-explore.profile.title')}</InfoLabel>
                 <InfoTitle variant="h6">
                     {user?.name}
                     <StyledEmail variant="body2">{`(${user?.email})`}</StyledEmail>

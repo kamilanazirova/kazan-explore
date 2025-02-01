@@ -28,7 +28,7 @@ const ProfilePanel = () => {
         if (isLoading) {
             return <CircularProgress sx={{ justifyContent: 'center' }} />;
         }
-    
+
         if (quizResults?.length > 0) {
             return <TestResultsList testResults={quizResults} />;
         }
@@ -38,10 +38,10 @@ const ProfilePanel = () => {
                 <Lottie animationData={require('src/assets/profile/ghost_error.json')} />
             )
         }
-    
+
         return (
             <Typography variant="body2" color="text.secondary">
-                {t('profile.no_tests_yet')}
+                {t('kazan-explore.profile.no_tests_yet')}
             </Typography>
         );
     };
@@ -52,17 +52,21 @@ const ProfilePanel = () => {
                 <ProfileInfo />
                 <Divider />
                 <ResultsLabel>
-                    {t('profile.results_title')}
+                    {t('kazan-explore.profile.results_title')}
                 </ResultsLabel>
                 {renderQuizData()}
-                <Divider sx={{ mt: 2 }} />
-                <Box mt={1} textAlign="center">
-                    <Link to={URLs.ui.sport}>
-                        <Button variant="contained" color="primary">
-                            {t('profile.new_test')}
-                        </Button>
-                    </Link>
-                </Box>
+                {URLs.ui.sport &&
+                    <>
+                        <Divider sx={{ mt: 2 }} />
+                        <Box mt={1} textAlign="center">
+                            <Link to={URLs.ui.sport}>
+                                <Button variant="contained" color="primary">
+                                    {t('kazan-explore.profile.new_test')}
+                                </Button>
+                            </Link>
+                        </Box>
+                    </>
+                }
             </Paper>
         </Container>
     );

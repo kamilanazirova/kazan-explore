@@ -18,10 +18,10 @@ export function Overlay() {
             <Head className="title">Explore Kazan</Head>
             <Body className="text-about-kazan">{infoFirstData?.description}</Body>
             <Button1>
-                <Link href="https://2chak.ru/">{t('main.chakchak')}</Link>
+                <Link href="https://2chak.ru/">{t('kazan-explore.main.chakchak')}</Link>
             </Button1>
             <Button2>
-                <Link href="https://tubatay.com/">{t('main.uchpuchmak')}</Link>
+                <Link href="https://tubatay.com/">{t('kazan-explore.main.uchpuchmak')}</Link>
             </Button2>
         </StyledOverlay>
     )
